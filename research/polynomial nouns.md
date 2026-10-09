@@ -34,7 +34,7 @@ if nouns are polynomials, then noun operations become polynomial operations:
 | axis(noun, path) — deep access | traverse path, O(depth) | evaluate at binary point, O(1) |
 | cons(a, b) — construction | allocate cell, set pointers, O(1) | $g(x_1, \ldots) = (1-x_1) \cdot a(x_2, \ldots) + x_1 \cdot b(x_2, \ldots)$, O(1) |
 | H(noun) — identity | [[hemera]] recursive hash, O(N) | Lens.commit(polynomial), O(N) |
-| verify axis | O(depth) hemera hashes | O(1) Lens opening, ~200 bytes |
+| verify axis | O(depth) hemera hashes | one Lens opening (WHIR, hemera Merkle paths inside) |
 
 the structural operations (axis, cons) are unchanged semantically. the COST changes: axis drops from O(depth) to O(1). identity drops from recursive hemera hashing to a single Lens commitment.
 
@@ -47,16 +47,16 @@ current:    CID = hemera(content)                           32 bytes
 algebraic:  CID = hemera(Lens.commit(content) ‖ domain_tag)  32 bytes
 ```
 
-same size. same content-addressing property. same collision resistance (Brakedown uses hemera internally for the binding hash). but the algebraic CID supports operations that hemera hashes cannot:
+same size. same content-addressing property. same collision resistance (the lens PCS commits with a hemera Merkle tree). but the algebraic CID supports operations that hemera hashes cannot:
 
 | capability | hemera CID | algebraic CID |
 |---|---|---|
 | content verification | rehash all content, compare | recommit all content, compare |
-| partial access | **impossible** — must download everything | Lens.open(position) → ~200 byte proof |
+| partial access | **impossible** — must download everything | Lens.open(position) → one PCS opening |
 | random access | **impossible** | evaluate at any point, O(1) |
 | range proof | **impossible** | batch Lens opening over range |
 | algebraic composition | **impossible** | add commitments, multiply by scalar |
-| streaming verification | O(log N) × 32B per chunk (BAO) | ~200B per chunk (Lens opening), 5× smaller |
+| streaming verification | O(log N) × 32B per chunk (BAO) | one Lens opening per chunk or per batch of chunks (larger than a BAO path for one chunk; amortises in batches) |
 
 the Lens commitment is a strict superset of hemera hash for content addressing. everything hemera can do, the Lens can do — plus random access, range proofs, and algebraic composition.
 
@@ -67,7 +67,7 @@ hemera's structured capacity provides domain separation: different modes for dif
 the solution: hemera WRAPS the Lens commitment.
 
 ```
-raw Lens commitment:  C = Brakedown.commit(polynomial)         32 bytes
+raw Lens commitment:  C = Lens.commit(polynomial)             32 bytes
 domain-separated:    CID = hemera(C ‖ domain_tag)              32 bytes
 
 domain_tag ∈ {PARTICLE, FORMULA, COMMITMENT, NULLIFIER, SIGNAL, ...}
@@ -88,12 +88,12 @@ BAO (hemera tree):
   seek to chunk k:   must process chunks 0..k-1 first
 
 algebraic streaming:
-  per-chunk proof:   Lens.open(commitment, k) ≈ 200 bytes
+  per-chunk proof:   Lens.open(commitment, k) — one PCS opening (hemera Merkle paths inside)
   order:             any (evaluate at any point)
   seek to chunk k:   directly, O(1)
 ```
 
-5× smaller per-chunk proofs AND random-access seeking. for a video: stream from any position, verify each chunk independently. for a neural network: verify any layer's weights without downloading the full model.
+random-access seeking; per-chunk proofs are not smaller than a BAO path (the earlier "5× smaller" assumed a ~0.2 KB opening without Merkle paths that does not exist), batching many positions into one opening is what amortises them. for a video: stream from any position, verify each chunk independently. for a neural network: verify any layer's weights without downloading the full model.
 
 the commitment (32 bytes) must be known before streaming begins. this is trivially satisfied — the particle CID IS the commitment (or wraps it). you always know the CID before requesting content.
 
@@ -108,17 +108,17 @@ current:    axis(noun, path) = walk tree for |path| steps, O(depth)
             verify: O(depth) hemera hashes for Merkle authentication
 
 algebraic:  axis(noun, path) = evaluate polynomial at binary(path), O(1)
-            verify: one Lens opening, ~200 bytes, O(1) field ops
+            verify: one Lens opening (WHIR: sumcheck rounds + hemera Merkle paths)
 ```
 
 for a deep noun (depth 32, e.g., a particle index with $2^{32}$ entries):
 
 ```
 current:    axis costs 32 tree hops × hemera = 32 × 736 = ~23,500 constraints
-algebraic:  axis costs 1 Lens opening ≈ ~200 field operations
+algebraic:  axis costs 1 Lens opening (WHIR verifier: sumcheck rounds + hemera Merkle paths)
 ```
 
-100× reduction in the most common operation.
+the reduction is real only when openings are batched across many axis calls; a single opening verifies hemera Merkle paths too, so the earlier "100×" figure does not hold.
 
 ### cons is unchanged
 
@@ -167,15 +167,12 @@ role                          hemera calls     was
 ─────                         ────────────     ───
 1. Fiat-Shamir seed           1 per proof      1 per proof (unchanged)
 2. domain separation          1 per noun       O(N/8) per noun (was recursive tree hash)
-3. Brakedown binding hash     1 per lens commit inside Brakedown (internal, unchanged)
-
-total: ~3 hemera calls per proof-carrying nox execution
-was:   hundreds to thousands per execution
+3. PCS Merkle hashing         per committed codeword and per opened query (WHIR / tensor-RS commit with hemera Merkle trees)
 ```
 
-hemera goes from the dominant cost to negligible. the hash function becomes the trust anchor — the cryptographic root that makes Lens binding secure — not the hot-path computation.
+the earlier claim that hemera collapses to a handful of calls per execution assumed a lens without Merkle trees; that lens does not exist. every hash-only PCS commits with a Merkle tree, and its leaves and query paths are hemera calls — a lower bound for a hash-only, post-quantum system. hemera stays on the hot path of proving and verifying (hemera speed in the opening is a main cause of the succinct profile's verify time, see [[soft3/proposals/proof-system-repair|proof-system repair]]).
 
-all hemera optimizations (folded sponge, batched proving, algebraic Fiat-Shamir, constraint-free MDS, partial round collapse) become less critical for performance because there are so few hemera calls. they remain valuable for the remaining calls but the pressure is off.
+what polynomial nouns do remove is the recursive tree hash for noun identity: domain separation becomes one call per noun. hemera throughput work (batched proving, sponge optimisations) stays relevant.
 
 ## implications for [[BBG]]
 
@@ -185,10 +182,10 @@ a particle's content is stored as a multilinear polynomial. the particle CID is 
 
 ```
 current:    verify particle content → download all, rehash → O(N) hemera
-algebraic:  verify byte range [a,b] → Lens.open(CID, [a,b]) → ~200 bytes, O(1)
+algebraic:  verify byte range [a,b] → Lens.open(CID, [a,b]) → one PCS opening
 ```
 
-for a 1 GB neural network model stored as a particle: verify any 4 KB chunk (one layer's weights) with a 200-byte proof. no download of the other 999.996 MB.
+for a 1 GB neural network model stored as a particle: verify any 4 KB chunk (one layer's weights) with one PCS opening. no download of the other 999.996 MB.
 
 ### DAS becomes native
 
@@ -206,19 +203,19 @@ this means: DAS is FREE for polynomial nouns. no separate erasure coding. no sep
 
 ### BBG_poly and particle polynomials share a lens
 
-BBG_poly (state polynomial) and particle content polynomials all use the same Brakedown lens. one commitment scheme for everything: state queries, content verification, DAS sampling, axis evaluation, proof generation.
+BBG_poly (state polynomial) and particle content polynomials all use the same lens PCS. one commitment scheme for everything: state queries, content verification, DAS sampling, axis evaluation, proof generation.
 
 ```
 current stack:
   hemera → noun identity (content addressing)
   hemera → tree hashing (NMT, Merkle)
-  Brakedown → state commitment (BBG_poly)
-  Brakedown → proof commitment (zheng)
+  lens → state commitment (BBG_poly)
+  lens → proof commitment (zheng)
   separate DAS scheme (2D Reed-Solomon + NMT)
 
 algebraic stack:
-  Brakedown → EVERYTHING (nouns, state, proofs, DAS)
-  hemera → domain separation wrapper (3 calls per execution)
+  lens → EVERYTHING (nouns, state, proofs, DAS)
+  hemera → domain separation wrapper + PCS Merkle trees + Fiat–Shamir
 ```
 
 ## implications for [[zheng]]
@@ -233,19 +230,16 @@ this enables:
 
 ### proof-carrying computation stays the same
 
-each reduce() folds one trace row into the [[HyperNova]] accumulator (~30 field ops). polynomial nouns don't change this — the fold mechanism operates on CCS instances regardless of whether the witness values are tree hashes or Lens commitments.
+the nox machine is one uniform step relation accumulated step by step (ARC-style accumulation of Reed–Solomon evaluation claims, zheng phase 3; the earlier fold was unsound and is retired). polynomial nouns don't change this — accumulation operates on the step relation's claims regardless of whether the witness values are tree hashes or Lens commitments.
 
 ### verifier circuit shrinks
 
 the [[zheng]] verifier (a nox program) currently spends most constraints on hemera hash verification (Merkle paths for lens, Fiat-Shamir challenges). with polynomial nouns:
 
 ```
-current verifier:    ~12K constraints (Brakedown)
-                     dominated by Fiat-Shamir hemera calls
-
-algebraic verifier:  ~5K constraints (estimated)
-                     fewer hemera calls → fewer constraints
-                     axis operations in verification are O(1) Lens openings
+verifier cost:       dominated by hemera (PCS Merkle paths + Fiat–Shamir)
+                     polynomial nouns remove noun-identity tree hashing,
+                     not the PCS Merkle paths; measured cost TODO(F-numbers)
 ```
 
 ## implications for [[structural-sync|structural sync]]
@@ -297,7 +291,7 @@ the shortest particles ("cat", "dog", "love") have the MOST links — they are t
 
 ## the unified primitive
 
-the endgame: one cryptographic primitive (Brakedown lens) for all purposes.
+the endgame: one cryptographic primitive (the lens PCS) for all purposes.
 
 ```
 noun identity:       Lens.commit(noun_polynomial)
@@ -311,11 +305,11 @@ completeness proof:  Lens.open(commitment, namespace_range)
 
 hemera's remaining role:
   domain_tag:        hemera(Lens.commit ‖ tag) — one call per identity
-  Fiat-Shamir:       hemera seed — one call per proof
-  Brakedown binding: hemera internally — one call per commit
+  Fiat-Shamir:       hemera transcript — per round
+  PCS Merkle trees:  hemera — per committed codeword and per opened query
 ```
 
-one Lens. one field ([[Goldilocks field|Goldilocks]]). one hash ([[hemera]], now ~3 calls per execution). one proof system ([[zheng]]). one VM ([[nox]], 18 patterns: 16 compute + call + look). trees and polynomials are the same object. computation and state share one commitment scheme. proving and accessing share one opening protocol.
+one Lens. one field ([[Goldilocks field|Goldilocks]]). one hash ([[hemera]], domain separation + PCS Merkle trees + Fiat–Shamir). one proof system ([[zheng]]). one VM ([[nox]], 18 patterns: 16 compute + call + look). trees and polynomials are the same object. computation and state share one commitment scheme. proving and accessing share one opening protocol.
 
 ## open questions
 
@@ -341,12 +335,12 @@ one Lens. one field ([[Goldilocks field|Goldilocks]]). one hash ([[hemera]], now
 - [ ] nox/reference/patterns.md — pattern 0 (axis): O(1) for lens nouns. pattern 15 (hash): hemera wraps lens commit for large content
 - [ ] nox/reference/trace.md — trace registers may contain Lens commitments as values
 - [ ] nox/reference/jets.md — state jets use O(1) axis. add: lens noun jets
-- [ ] nox/reference/reduction.md — proof-carrying: ~3 hemera calls per execution (was hundreds)
+- [ ] nox/reference/reduction.md — proof-carrying: noun identity drops the recursive tree hash; PCS Merkle hashing remains
 - [ ] nox/reference/state-operations.md — READ = O(1) polynomial evaluation
 
 ### phase 2: hemera reference (role collapse)
 
-- [ ] hemera/reference/README.md — role: ~3 calls per execution (domain separation, Fiat-Shamir, Brakedown binding)
+- [ ] hemera/reference/README.md — role: domain separation, Fiat–Shamir, PCS Merkle trees
 - [ ] hemera/reference/tree.md — tree hashing for small nouns only. large nouns use Lens commitment
 
 ### phase 3: bbg reference (particles ARE polynomials)
@@ -358,16 +352,12 @@ one Lens. one field ([[Goldilocks field|Goldilocks]]). one hash ([[hemera]], now
 
 ### phase 4: bbg + nox explanation
 
-- [ ] bbg/docs/explanation/architecture-overview.md — pipeline: axis O(1), hemera ~3 calls, DAS native
+- [ ] bbg/docs/explanation/architecture-overview.md — pipeline: axis by Lens opening, DAS native
 - [ ] bbg/docs/explanation/data-availability.md — DAS = polynomial extension (no separate erasure step)
 - [ ] bbg/docs/explanation/why-polynomial-state.md — add: nouns ARE polynomials (not just state)
 
 ### phase 5: roadmap cleanup
 
-- [ ] DELETE hemera/roadmap/batched-proving.md — ~3 hemera calls, batching is pointless
-- [ ] DELETE hemera/roadmap/folded-sponge.md — ~3 hemera calls, folding is pointless
-- [ ] DEPRIORITIZE hemera/roadmap/algebraic-fiat-shamir.md — still relevant (1 of 3 calls is FS)
-- [ ] DEPRIORITIZE hemera/roadmap/constraint-free-mds.md — marginal with 3 calls
-- [ ] DEPRIORITIZE hemera/roadmap/partial-round-collapse.md — marginal with 3 calls
+- withdrawn: deleting or deprioritising the hemera throughput roadmaps (batched proving, folded sponge, constraint-free MDS, partial round collapse) — it assumed a lens without Merkle trees; the PCS hashes Merkle trees, so hemera stays on the hot path
 
 see [[nox]] for the 18 patterns (16 compute + call + look), [[hemera]] for the hash primitive, [[BBG]] for polynomial state, [[zheng]] for the proof system, [[Brakedown]] for the Lens, [[data structures for polynomial state]] for storage architecture, [[algebraic state commitments]] for why polynomial state is natural, [[structural-sync]] for the five verification layers

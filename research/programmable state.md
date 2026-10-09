@@ -19,7 +19,7 @@ the answer is yes. the polynomial doesn't know what it stores. it evaluates at a
 
 $$\text{BBG\_poly}: \mathbb{F}_p^3 \to \mathbb{F}_p$$
 
-a function from (index, key, time) to value, committed via [[Brakedown]] lens. the current 12 evaluation dimensions (particles, axons, neurons, etc.) are a CONVENTION — the polynomial evaluates happily at index=42 or index=10000. nothing in the mathematics constrains the dimension count.
+a function from (index, key, time) to value, committed via the [[lens]] PCS (WHIR over Reed–Solomon, hemera Merkle root). the current 12 evaluation dimensions (particles, axons, neurons, etc.) are a CONVENTION — the polynomial evaluates happily at index=42 or index=10000. nothing in the mathematics constrains the dimension count.
 
 the constraint is not the polynomial. it is the CIRCUIT — the [[CCS]] constraints that validate state transitions. the cyberlink circuit says "update dimensions 0,1,2,3,4 with these specific relationships." if you want dimension 42, you need a circuit that validates transitions for dimension 42.
 
@@ -27,9 +27,9 @@ the constraint is not the polynomial. it is the CIRCUIT — the [[CCS]] constrai
 
 ```
 LAYER 1: COMMITMENT (authentication)
-  BBG_poly committed via Brakedown lens
+  BBG_poly committed via the lens PCS
   any (key → value) pair can be committed, opened, verified
-  O(1) proof, ~200 bytes, 10-50 μs
+  one PCS opening (succinct profile; goal ≤ 64 KB, verify ≤ 1 ms)
   NO SCHEMA — raw field elements at arbitrary evaluation points
 
 LAYER 2: SCHEMA (meaning)
@@ -146,7 +146,7 @@ if a user table becomes widely used, a level-1 CCS jet can be added for it (prot
 | column | field within the value at an evaluation point |
 | INSERT | nox program executing INSERT pattern → CCS jet (5 constraints) |
 | UPDATE | nox program executing UPDATE pattern → CCS jet (5 constraints) |
-| SELECT | Lens opening (~200 bytes, 10-50 μs) |
+| SELECT | Lens opening (succinct profile; goal ≤ 64 KB, verify ≤ 1 ms) |
 | JOIN | batch Lens opening across dimensions (structural — same polynomial) |
 | WHERE | verifiable query compilation (CozoDB → CCS) |
 | query optimizer | CCS jet recognition (pattern match) |
@@ -206,7 +206,7 @@ this is not a general-purpose SQL database that happens to be authenticated. it 
 
 - **no ad-hoc schema changes**: once a table is deployed, its schema (nox program) is immutable (content-addressed). deploying a new version = deploying a new program = new dimension. migrations are explicit, not ALTER TABLE.
 
-- **no free reads**: every read is a Lens opening. on a local node, this is O(1) field ops (fast). over the network, it costs ~200 bytes bandwidth. there is no "free SELECT" — every query is authenticated.
+- **no free reads**: every read is a Lens opening. on a local node, this is a direct evaluation (fast). over the network, it costs one PCS opening of bandwidth (batched across queries). there is no "free SELECT" — every query is authenticated.
 
 - **no ACID transactions across tables**: a single [[signal]] can update multiple dimensions (like a cyberlink updates 5), but the transition program must be a single nox formula. there is no BEGIN/COMMIT/ROLLBACK across independent programs.
 
@@ -216,7 +216,7 @@ the tradeoff: less flexible than PostgreSQL, more powerful than any blockchain s
 
 ## open questions
 
-1. **dimension allocation**: who assigns dimension numbers? sequential allocation (next available) is simple but wastes space if tables are abandoned. content-addressed dimensions (dimension = H(table_name)) avoid collision but produce sparse evaluation domains — does Brakedown handle sparse domains efficiently?
+1. **dimension allocation**: who assigns dimension numbers? sequential allocation (next available) is simple but wastes space if tables are abandoned. content-addressed dimensions (dimension = H(table_name)) avoid collision but produce sparse evaluation domains — does the lens PCS handle sparse domains efficiently?
 
 2. **schema evolution**: how does a table add a field? deploy a new nox program with the extended schema, migrate data from old dimension to new. can this be done lazily (read from old, write to new, garbage-collect old)?
 

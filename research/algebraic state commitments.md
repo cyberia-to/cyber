@@ -39,7 +39,7 @@ polynomial:      1 commitment, O(1) to open at any point
 |---|---|---|---|
 | state update | ~106K constraints | ~3.2K constraints | 33× |
 | cross-index consistency | ~1.5K (LogUp) | 0 (definitional) | ∞ |
-| completeness proof | ~1 KiB per namespace | ~200 bytes | 5× |
+| completeness proof | ~1 KiB per namespace | one Lens opening (batched) | to be measured |
 | per-block (1000 links) | ~108M constraints | ~7.5M | 14× |
 
 the constraint reduction cascades through the [[zheng]] proof pipeline: fewer constraints → smaller proofs → faster verification → cheaper participation → more [[neurons]] → denser [[cybergraph]].
@@ -60,12 +60,12 @@ with one polynomial, `BBG_poly(axons_out, P, _)` and `BBG_poly(axons_in, P, _)` 
 
 | operation | NMT proof | polynomial proof |
 |---|---|---|
-| single inclusion | 32 × 32B = 1 KiB | ~200 bytes (Lens opening) |
-| namespace range (100 entries) | ~100 KiB | ~5 KiB |
-| light client sync per namespace | ~1 KiB | ~200 bytes |
-| DAS sample | 1 KiB (NMT path) | 200 bytes (Lens opening) |
+| single inclusion | 32 × 32B = 1 KiB | one Lens opening |
+| namespace range (100 entries) | ~100 KiB | one batched Lens opening |
+| light client sync per namespace | ~1 KiB | one Lens opening, batched across namespaces |
+| DAS sample | 1 KiB (NMT path) | one Lens opening, batched across samples |
 
-a light client on a phone downloading 100 namespace proofs: 100 KiB → 20 KiB. 5× less bandwidth. in regions with expensive mobile data, this is the difference between usable and unusable.
+a single hash-only PCS opening (WHIR, hemera Merkle paths inside) is larger than one NMT path; the polynomial wins only when many queries are batched into one opening. the earlier ~0.2 KB-per-opening and "5× less bandwidth" figures assumed an opening without Merkle paths that does not exist; batched sizes are TODO(F-numbers).
 
 ## what is traded
 
@@ -75,7 +75,7 @@ a light client on a phone downloading 100 namespace proofs: 100 KiB → 20 KiB. 
 
 polynomial completeness is computational: the Lens (polynomial commitment scheme) must be sound. if the Lens breaks, the polynomial can produce false proofs. this is weaker.
 
-the mitigation: Brakedown is a hash-based lens — its soundness relies on collision resistance of [[Hemera]], the same hash that NMT nodes use. the trust root is identical. the difference: NMTs use [[Hemera]] structurally (tree shape = completeness). polynomials use [[Hemera]] algebraically (polynomial binding = completeness). both trust the same primitive.
+the mitigation: the lens PCS (WHIR over Reed–Solomon) is hash-based — its soundness relies on collision resistance of [[Hemera]], the same hash that NMT nodes use. the trust root is identical. the difference: NMTs use [[Hemera]] structurally (tree shape = completeness). polynomials use [[Hemera]] algebraically (polynomial binding = completeness). both trust the same primitive.
 
 the hybrid migration: during transition, run BOTH systems. NMT and polynomial must agree on every query. divergence = bug or cryptographic break. years of agreement build confidence.
 
@@ -85,7 +85,7 @@ Merkle trees are understood since 1979. polynomial commitments over extension fi
 
 the migration path (prop in [[algebraic-nmt]]):
 1. Verkle-tree hybrid: tree structure preserved, lens at nodes (33× cheaper, NMT as backup)
-2. Flat polynomial: tree eliminated, Brakedown commitment, NMT removed after confidence
+2. Flat polynomial: tree eliminated, lens PCS commitment, NMT removed after confidence
 3. Unified polynomial: all 9 indexes → one commitment, cross-index structural
 
 ## the algorithm: Verkle-tree state commitment (phase 1)
@@ -167,8 +167,8 @@ open(tree, index, namespace, key):
 
   return (leaf.value, proof)
   # proof size: depth × PCS_opening_size
-  # binary Verkle, depth 32: 32 × ~200B = ~6.4 KiB (larger than NMT 1 KiB)
-  # arity-256 Verkle, depth 4: 4 × ~200B = ~800B (smaller than NMT)
+  # with a hash-only PCS each opening carries hemera Merkle paths,
+  # so depth × PCS_opening_size exceeds the NMT path at any arity
 
 verify(root, namespace, key, value, proof):
   current ← root
@@ -265,10 +265,10 @@ current DAS:
   cost per sample: O(log n) hemera hashes
 
 algebraic DAS:
-  sample cell → Lens opening → field op verification
-  cost per sample: O(1) field ops
+  sample cell → Lens opening → sumcheck + hemera Merkle path verification
+  cost: one batched opening for all samples
 
-  20 samples: 20 KiB → 4 KiB bandwidth, hemera calls → field ops
+  20 samples: one batched opening; size TODO(F-numbers)
 ```
 
 ### [[foculus]] convergence
@@ -290,13 +290,13 @@ algebraic:
 
 ```
 current:
-  join: 1 zheng proof (50 μs) + NMT namespace sync (~1 KiB per namespace)
+  join: 1 zheng proof + NMT namespace sync (~1 KiB per namespace)
 
 algebraic:
-  join: 1 zheng proof (50 μs) + lens namespace sync (~200 bytes per namespace)
+  join: 1 zheng proof (goal ≤ 64 KB, verify ≤ 1 ms) + lens namespace sync (one batched opening)
 
   full state verification: ONE polynomial commitment (32 bytes)
-  every query: ONE Lens opening (~200 bytes)
+  every query: ONE Lens opening (batched across queries)
 
   the lightest possible client: store 32 bytes, verify anything
 ```
@@ -313,7 +313,7 @@ every operation in the [[cybergraph]] becomes 33× cheaper in constraints. at fi
 
 ### architectural: tree-free blockchain
 
-no Merkle tree for public state. no internal nodes. no tree rebalancing. no path recomputation. the entire concept of "tree traversal" disappears from the state layer. what replaces it: polynomial evaluation. a fundamentally different computational primitive.
+no per-index tree for public state. no internal nodes to store. no tree rebalancing. no path recomputation per update. the PCS itself still commits with a hemera Merkle tree over the Reed–Solomon codeword — a lower bound for a hash-only system — but "tree traversal" disappears from the state model. what replaces it: polynomial evaluation. a fundamentally different computational primitive.
 
 every blockchain since Bitcoin uses hash trees for state authentication. algebraic state commitments are a departure from this 15-year architectural assumption. the question is not "is it faster?" (yes, 33×). the question is: "is the algebraic trust model sound enough to replace the structural trust model?" the [[Hemera]] collision resistance underlies both. the migration path with hybrid verification provides the empirical answer.
 

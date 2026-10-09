@@ -30,9 +30,9 @@ the stack was built bottom-up. the cryptographic floor is implemented and tested
 |---|---|---|---|---|---|
 | [[strata]] | five algebras, [[nebu]] Goldilocks | 16.1K | 453 | every field operation | complete |
 | [[hemera]] | [[Poseidon2]] hash, [[particle]] identity | 11.4K | 313 | particles, transcripts, trees | complete, unaudited |
-| [[lens]] | commitment backends, 7 crates | 5.6K | 128 | Brakedown for zheng, bbg openings | evaluation binding is `TensorMerkle`; recursive form blocked |
+| [[lens]] | commitment backends, 7 crates | 5.6K | 128 | WHIR and tensor-RS PCS for zheng, bbg openings | evaluation binding is `TensorMerkle`; recursive form blocked |
 | [[soft3/nox|nox]] | proof-native VM, 18 patterns + jets | 8.9K | 175 | the protocol's own programs | complete |
-| [[zheng]] | SuperSpartan + Brakedown + HyperNova folding | 12.6K | 211 | ticket proofs, fold, decide, privacy proofs | execution proofs bind computation to result; fold + decide exist; private execution incomplete |
+| [[zheng]] | Spartan over CCS + lens PCS (WHIR), one ZHENGPF1 envelope: public v3 / state-public / succinct / zk (veil) profiles; ARC-style accumulation lands in this release | 12.6K | 211 | ticket proofs, accumulation, decide, privacy proofs | execution proofs bind computation to result; the old fold + decide are legacy (unsound, feature `legacy`), replaced by accumulation; private execution incomplete |
 | [[soft3/bbg|bbg]] | authenticated state, vendored fjall | 13.1K | 216 | state, openings, file store | core complete; durable storage gates open (P0) |
 | [[radio]] | QUIC transport, gossip, blobs with cyber-bao | 194K | 559 | signal gossip, file bytes by particle | multi-node tested; a dependency of nothing in phase 1 yet |
 | [[foculus]] | consensus by convergence, beacon, settlement, tickets, fold, domain finality | 15.7K | 207 | cores 2, 3, 5 | single machine, never a network; `net` feature on upstream iroh |
@@ -145,7 +145,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 |---|---|---|---|---|---|
 | 1 | φ* exists, unique, converges with κ < 1 | tru | proven | convergence.md, bostrom measurement λ₂ ≈ 0.13 | closed |
 | 2 | Σφ*ᵢ = 1 | tru | proven | tri-kernel spec | closed |
-| 3 | ticket proof cost < ticket reward | foculus, zheng | open | measure on real m(n) with the folded proof; foculus/audit/ticket-proof-cost.md — O(1) shape holds (decide ~18.7ms, verify ~9.2ms flat n=8..512), reward-side pricing still blocked on #26/#27; PR open: [foculus#6](https://github.com/cyberia-to/foculus/pull/6) — measured: decide/verify 9–19 ms per ticket, flat in size; spec said 10–50 µs | 2026-09-25 |
+| 3 | ticket proof cost < ticket reward | foculus, zheng | open | measure on real m(n) with the accumulated proof (ARC-style accumulation, zheng phase 3); foculus/audit/ticket-proof-cost.md — O(1) shape holds (decide ~18.7ms, verify ~9.2ms flat n=8..512), reward-side pricing still blocked on #26/#27; PR open: [foculus#6](https://github.com/cyberia-to/foculus/pull/6) — measured: decide/verify 9–19 ms per ticket, flat in size; the old spec's microsecond verify figure was never real | 2026-09-25 |
 | 4 | progress-freedom across clusters: difficulty schedule corrects per-cluster cost | foculus | open | settle-target banded linearly by cluster size (`tickets::banded_target`); two-point measurement n=4 vs n=32 shows flat target ratio ~12x collapsed to ~1.5x banded (launch #4, foculus/audit/progress-freedom-banding.md); network-scale million.rs simulation still open; PR open: [foculus#10](https://github.com/cyberia-to/foculus/pull/10) — banded target by cluster size | 2026-10-09 |
 | 5 | fold is a commutative monoid, decide is O(1) | zheng, foculus | open | end-to-end on three nodes; PR open: [zheng#20](https://github.com/cyberia-to/zheng/pull/20) — fold either order, both decide() | 2026-10-09 |
 | 6 | beacon unpredictable and unbiasable | foculus | open | VDF over finalized signals, attack_vectors.rs; PR open: [foculus#7](https://github.com/cyberia-to/foculus/pull/7) — four VDF-binding attacks rejected | 2026-10-16 |

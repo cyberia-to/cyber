@@ -304,7 +304,7 @@ One chip. Three technologies. Four primitives. One field.
 
 ### Why zheng, not SNARKs
 
-SNARKs (Groth16, PLONK) produce smaller proofs (~200 bytes vs ~200 KB) but require trusted setup and rely on elliptic curve assumptions that quantum computers break. [[zheng]] proofs are larger but transparent (no setup ceremony), hash-based (post-quantum), and native to the [[Goldilocks field]]. For a system meant to outlast current hardware generations, zheng is the only choice.
+SNARKs (Groth16, PLONK) produce smaller proofs (a few hundred bytes vs tens of KB: the zheng zk profile proves a hemera preimage in 63.9 KB; the goal for any computation is ≤ 64 KB) but require trusted setup and rely on elliptic curve assumptions that quantum computers break. [[zheng]] proofs are larger but transparent (no setup ceremony), hash-based (post-quantum), and native to the [[Goldilocks field]]. For a system meant to outlast current hardware generations, zheng is the only choice.
 
 ### Why TFHE, not BGV/CKKS
 

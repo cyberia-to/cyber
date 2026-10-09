@@ -224,7 +224,7 @@ Hemera = Poseidon2(
 
 Every parameter that appears as a code-level quantity is a power of 2. The only exception is $d = 7$, which is the minimum invertible S-box exponent over Goldilocks — a mathematical constraint.
 
-Security properties: 256-bit classical collision resistance, 170-bit quantum collision resistance, algebraic degree $7^{64} \approx 2^{1046}$.
+Security properties: the 32-byte (4-limb) identity digest gives 128-bit classical collision resistance (birthday on $p^2$) and ~85-bit quantum collision resistance (BHT), per the zheng soundness ledger (specs/soundness.md); hemera profile v2 (hemera#15) proposes longer identity digests. Algebraic degree $7^{64} \approx 2^{1046}$.
 
 ### 4.3 Self-Bootstrapping
 [[Hemera]] generates her own round constants. The permutation with all 144 constants set to zero (Hemera₀) is already a well-defined nonlinear function — the S-box and MDS matrices provide all the mixing. Feed the bytes `[0x63, 0x79, 0x62, 0x65, 0x72]` through Hemera₀ as a sponge and squeeze 144 field elements. These become the round constants. Hemera = Hemera₀ + these constants. Freeze forever.
@@ -673,19 +673,19 @@ Validity conditions: authorization (signature or ZK proof), sufficient balance, 
 |----------|-------|-------|
 | Trusted setup | Required | Not required |
 | Quantum resistant | No | Yes |
-| Proof size | ~200 bytes | ~100-200 KB |
+| Proof size | ~200 bytes | goal ≤ 64 KB (succinct profile measured 15,921 B at hash.tri) |
 | Security basis | Discrete log | Hash only |
 | Field compatible | Specific | Any (Goldilocks) |
 
 Self-verification property: the zheng verifier is expressible as a [[nox]] program. Zheng verification requires field arithmetic (patterns 5, 7, 8), hash computation (pattern 15), polynomial evaluation, and Merkle verification — all [[nox]]-native. Using only Layer 1 patterns, the verifier takes ~600,000 pattern applications. With Layer 3 jets (hash, poly_eval, merkle_verify, sumcheck, ntt), the cost drops to ~70,000 — an ~8.5× reduction that makes recursive composition practical.
 
-This enables recursive proof composition: prove a computation, then prove that the verification of that proof is correct, then prove the verification of that verification. Each level produces a proof of constant size (~100-200 KB). $N$ transactions collapse into a single proof via aggregation — $O(1)$ on-chain verification for $O(N)$ transactions. The Layer 2 `call` instruction enables the prover to inject witness values (private keys, model weights, optimization solutions) that the [[zheng]] proof constrains without the verifier knowing them — this is how privacy and provability coexist. The Layer 2 `look` instruction enables programs to read authenticated state from [[bbg]] without embedding full state in the trace.
+This enables recursive proof composition across systems: a verifier is itself a program that can be proven. Constant size for long computations comes from accumulation, not recursion: the nox machine is one uniform step relation, the Reed–Solomon evaluation claims of each step are accumulated (ARC-style hash-based accumulation), and one decider — a single WHIR opening of the final accumulator — proves the whole run. The goal is a proof ≤ 64 KB with verification ≤ 1 ms, constant in the number of steps (measured accumulation and decider figures: TODO(F-numbers)). $N$ transactions collapse into a single proof — $O(1)$ on-chain verification for $O(N)$ transactions. The Layer 2 `call` instruction enables the prover to inject witness values (private keys, model weights, optimization solutions) that the [[zheng]] proof constrains without the verifier knowing them — this is how privacy and provability coexist. The Layer 2 `look` instruction enables programs to read authenticated state from [[bbg]] without embedding full state in the trace.
 
 The system closes on itself. No trusted external verifier remains.
 
 ### 9.4 Namespace Sync
 
-To sync namespace $ns$: the responder provides range bounds in the sorted polynomial, Brakedown opening proofs for boundary elements, and edge data. The client verifies that the boundaries bracket exactly the requested namespace and that all Brakedown opening proofs are valid against the BBG root.
+To sync namespace $ns$: the responder provides range bounds in the sorted polynomial, lens (WHIR) opening proofs for boundary elements, and edge data. The client verifies that the boundaries bracket exactly the requested namespace and that all opening proofs are valid against the BBG root.
 
 If verification passes: "I have ALL edges in namespace $ns$. Nothing hidden." The guarantee is mathematical. Cost: $O(|\text{my\_edges}|)$ data + $O(\log^2 |G|)$ proof overhead.
 
@@ -915,7 +915,7 @@ The value function is read in surprise-weighted form, $v^\star(S) = \Delta\phi^+
 
 Attribution settles in two phases because the two facts it needs exist at different times. A [[neuron]] proposes instantly and alone: it computes its standalone marginal $\Delta\phi^+_\nu$ against the header it observed and proves it. Among substitutes — the clustered pile-on that is the common case — that marginal is a ceiling on what the link can settle for, so a phone can claim without seeing the rest of the epoch. Settlement then divides the real joint shift once the contender set and the crowd's predictions exist.
 
-Settlement is mined rather than decided. Shapley estimation is a sampling process, so each sample is a lottery ticket: a miner picks a nonce, derives an ordering from the epoch beacon, computes the marginal under that ordering, and wins if a hash committing to its identity and to the sampled value falls below target. The settlement is the average of every published sample, tightening with every draw by [[Hoeffding]]; no actor produces the answer, it converges out of the swarm. The work that secures the chain is the work that computes the fair division — one act, not two — and every winning ticket carries a [[zheng]] proof that folds into a single constant-size accumulator per cluster, so verification is $O(1)$ regardless of ticket count. Detail: [[rewards]] §6–7.
+Settlement is mined rather than decided. Shapley estimation is a sampling process, so each sample is a lottery ticket: a miner picks a nonce, derives an ordering from the epoch beacon, computes the marginal under that ordering, and wins if a hash committing to its identity and to the sampled value falls below target. The settlement is the average of every published sample, tightening with every draw by [[Hoeffding]]; no actor produces the answer, it converges out of the swarm. The work that secures the chain is the work that computes the fair division — one act, not two — and every winning ticket carries a [[zheng]] proof that is accumulated (ARC-style hash-based accumulation) into a single constant-size accumulator per cluster, so verification is $O(1)$ regardless of ticket count. Detail: [[rewards]] §6–7.
 
 Stake acts on two independent axes, and separating them is the structural defense against wealth concentration. Rank: any real stake, including passive $v_\ell = 0$, weights $A^{\text{eff}}$ and so moves $\phi^*$ and [[cyberank]]. Reward: only correct risk under $v_\ell \neq 0$ earns a share of the streams. Idle, passive, or Sybil capital can shape the graph and pulls no income; a passive link is a purchase of influence, priced at the time-value of the stake, and rational only for a neuron whose use of that influence exceeds its cost. Locked capital cannot compound by sitting still.
 
@@ -1037,7 +1037,7 @@ Cost determinism: cost is identical across all reduction orders and implementati
 
 Focus conservation: $\sum_i \text{focus}(i) = 1$ for all valid states. All operations preserve sum; invalid transitions rejected by verification.
 
-Privacy soundness: a valid ZK proof implies all circuit constraints are satisfied with probability $\geq 1 - 2^{-128}$, by zheng soundness.
+Privacy soundness: a valid ZK proof implies all circuit constraints are satisfied except with probability at most $2^{-128}$: the zk profile (veil) proves 128.2 bits, accounted component by component in the zheng soundness ledger (specs/soundness.md), with hash terms resting on hemera collision resistance (128-bit classical for its 32-byte digest).
 
 Double-spend prevention: each record has unique (nonce, owner\_secret) pair. Nullifier is deterministic: same record produces same nullifier. Nullifier set is append-only. Transaction rejected if nullifier already exists.
 
@@ -1197,7 +1197,7 @@ Each primitive gets an independent base fee updated via the EIP-1559 exponential
 
 Emergent hierarchy follows from [[focus]] + relay economics + [[location proof]]. Nodes in better physical locations with higher bandwidth earn more relay fees, stake more, create more weighted [[cyberlinks]], accumulate higher [[focus]]. Hubs form without permission, and the hierarchy is liquid — reversible in real time as conditions change. No sharding is needed for structure to emerge on a single chain.
 
-The fractal [[consensus]] architecture formalizes this emergent structure into layers: L0 (local, massive compute, no [[consensus]]), L1 (neighborhood, local BFT), L2 (shard, shard BFT), L3 (global, verification only). Recursive [[zheng]] composition produces O(1) global state regardless of network scale. Layer boundaries emerge from observed hub structure, then are formalized — not designed in advance.
+The fractal [[consensus]] architecture formalizes this emergent structure into layers: L0 (local, massive compute, no [[consensus]]), L1 (neighborhood, local BFT), L2 (shard, shard BFT), L3 (global, verification only). [[zheng]] accumulation (with recursion only for composition across layers) produces an O(1) global proof regardless of network scale. Layer boundaries emerge from observed hub structure, then are formalized — not designed in advance.
 
 See [[cyber/architecture]] for the full specification of the five primitives, [[location proof]] construction, economic design principles, and fractal scaling vision.
 
@@ -1414,7 +1414,7 @@ The launch is a sequence of phases, each a network that must hold before the nex
 | 2 | canary: the two chains under real use and weekly red team | 90 days, all economic invariants hold, no critical bug under attack | 2026-11-05 → 2027-02 |
 | 3 | [[cyber/$CYB|$CYB]] mainnet | implementations in several languages agree on 10⁶ blocks; the formal spine green; the gates of §21.4 answered | after phase 2 |
 
-Phase 1 ships four cores, none cut and none faked: the mint by Shapley and settlement mining (§14.3); the fold of winning tickets into one accumulator per cluster; consensus by convergence on independent nodes (§11); and the hybrid economics of truth markets and two-axis staking (§13.2, §14.4). Personal chains under [[oikos]] and the three privacy invariants (§10) ship with them. Cut from phase 1 and returned in later phases: general programmability on chain, the viewing economy, paid inference, and [[cyber/$CYB|$CYB]] itself. A milestone is code that passes its gate. The date exists for phase 1 only, and what does not fit the date is cut, never squeezed.
+Phase 1 ships four cores, none cut and none faked: the mint by Shapley and settlement mining (§14.3); the accumulation of winning tickets into one accumulator per cluster (ARC-style, §14.3); consensus by convergence on independent nodes (§11); and the hybrid economics of truth markets and two-axis staking (§13.2, §14.4). Personal chains under [[oikos]] and the three privacy invariants (§10) ship with them. Cut from phase 1 and returned in later phases: general programmability on chain, the viewing economy, paid inference, and [[cyber/$CYB|$CYB]] itself. A milestone is code that passes its gate. The date exists for phase 1 only, and what does not fit the date is cut, never squeezed.
 
 ### 21.4 Mainnet Gates
 

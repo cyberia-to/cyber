@@ -161,11 +161,11 @@ When all five layers are optimized, the entire pipeline from computation to veri
 A signal is a self-certifying batch of state transitions. During creation:
 
 1. The VM executes each step, generating a trace row
-2. Each trace row is folded into a running accumulator
-3. Each hash operation enters the accumulator through the sponge construction
-4. At computation end, one decider over the accumulator yields the proof
+2. Each step is an instance of one uniform step relation; its Reed–Solomon evaluation claims are accumulated into a running accumulator (hash-based accumulation, ARC/WARP-style [14]): the step batches claims with a sumcheck, commits one combined word, samples out-of-domain points and opens a few query positions
+3. The accumulator is one hemera Merkle root plus a fixed number of claims, independent of the number of steps
+4. At computation end, one decider — a single WHIR opening of the final accumulator — yields the proof (goal ≤ 64 KB, verify ≤ 1 ms; measured TODO(F-numbers))
 
-The fold of the earlier design (HyperNova [10] over hemera) was unsound; its per-step costs and the figures derived from them in this section do not hold. The repaired accumulation lives in [[soft3/proposals/proof-system-repair|the proof-system repair]].
+The earlier design used a CCS folding scheme [10] over hemera; it was unsound (hemera is a hash, not a homomorphic commitment), and its per-step costs do not hold. Accumulation lands in zheng phase 3; see [[soft3/proposals/proof-system-repair|the proof-system repair]].
 
 This is *proof-carrying computation*: the proof accumulates during execution rather than being generated afterward.
 
@@ -173,7 +173,7 @@ This is *proof-carrying computation*: the proof accumulates during execution rat
 
 When signals enter the network:
 
-1. Each signal's validity proof is folded into a block accumulator
+1. Each signal's validity proof is accumulated into a block accumulator
 2. State updates apply to a unified polynomial commitment replacing separate tree structures
 3. Cross-index consistency is structural (same polynomial) — no separate consistency proof needed
 
@@ -198,9 +198,9 @@ When completeness proofs transition from NMT paths to polynomial openings (algeb
 
 | | NMT-based DAS | Algebraic DAS |
 |---|---|---|
-| Sample proof | $O(\log n) \times 32$ bytes | $\sim$200 bytes (Lens opening) |
-| 20-sample verification | 20 KiB bandwidth | 4 KiB bandwidth |
-| Per-sample verification | $O(\log n)$ hash operations | $O(1)$ field operations |
+| Sample proof | $O(\log n) \times 32$ bytes | one Lens opening (WHIR, hemera Merkle paths inside) |
+| 20-sample verification | 20 KiB bandwidth | one batched opening (size TODO(F-numbers)) |
+| Per-sample verification | $O(\log n)$ hash operations | sumcheck rounds + hemera Merkle paths |
 
 This is not a separate optimization — it is a natural consequence of the completeness layer becoming algebraic. When the tree becomes a polynomial, every proof that referenced the tree automatically becomes a polynomial opening.
 
@@ -214,17 +214,17 @@ The full pipeline with all optimizations:
 | Per-operation constraints | $\sim$107,500 | $\sim$3,200 | 33× |
 | Per-block (1000 ops) | $\sim$148M constraints | $\sim$8.3M | 18× |
 | Epoch composition (1000 blocks) | $\sim$70M constraints | — | — |
-| Hash calls/block (state) | 144,000 | 0 (algebraic) | — |
+| Hash calls/block (state) | 144,000 | PCS Merkle hashing only | to be measured |
 | Light client join bandwidth | Full chain | — | — |
 | Light client join verification | $O(\text{chain})$ replay | one decider | — |
-| DAS bandwidth | 20 KiB | 4 KiB | 5× |
+| DAS bandwidth | 20 KiB | one batched opening | to be measured |
 | Checkpoint size | Variable | — | — |
 
 The cost of adding one edge to the permanent, verified, globally-available knowledge graph:
 
 | Component | Constraints |
 |---|---|
-| Proof overhead per computation step | $\sim$30 field ops (folded) |
+| Proof overhead per computation step | one accumulation step (cost TODO(F-numbers)) |
 | Content identity (hash) | $\sim$164 (folded sponge) |
 | Public state update | $\sim$3,200 (algebraic polynomial) |
 | Private state update | $\sim$5,000 (polynomial mutator set) |
@@ -303,3 +303,5 @@ No failure falls outside these three categories. The three layers are jointly su
 [12] J. Benet, "IPFS — Content Addressed, Versioned, P2P File System," 2014.
 
 [13] M. Kleppmann and A. R. Beresford, "A Conflict-Free Replicated JSON Datatype," IEEE TPDS 2017.
+
+[14] B. Bünz, P. Mishra, W. Nguyen, W. Wang, "Accumulation without Homomorphism" (ARC), IACR eprint 2024/1731; B. Bünz, A. Chiesa, G. Fenzi, W. Wang, "Linear-Time Accumulation Schemes" (WARP), IACR eprint 2025/753.
