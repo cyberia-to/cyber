@@ -138,6 +138,49 @@ doubling the partial rounds costs +15% in-circuit; the paranoid profile +60%; Ke
 
 revision after the owner's objection (2026-10-08): condition 3 is withdrawn. two profiles reintroduce mode variance that `hemera/roadmap/one-pure-hash.md` removed, double the analysis and bounty surface, and save only the hashing share of ephemeral proofs — which the hemera roadmap endgame (~3 calls per execution, Merkle-free lens) already makes small. one profile, heavy, everywhere. native throughput is unchanged (~2300 multiplications per permutation against ~2224 today, the inverse chain being that expensive natively); in-circuit +76% per permutation on S-box constraints. the post-quantum digest is a separate parameter: 48 bytes at t=16 for 128-bit quantum collision, or 64 bytes at t=24 to keep one permutation per tree node. the proposal with the full cost table is hemera PR #15 (`hemera/roadmap/profile-v2.md`).
 
+## 6. 2026-10-09 — the openai/math release, read against the primitives
+
+on 2026-10-06 OpenAI published `github.com/openai/math`: 719 manuscripts in 372 result families from an unreleased internal model (~3 hours of ChatGPT-Pro-class compute per result), 242 families with Lean formalizations, three withdrawn by 10-07 for a sign error, fourteen repaired. the manuscript map was read family by family for anything touching the stack's assumptions.
+
+### what is in it that touches cryptography
+
+| family | result | bearing on primitives |
+|---|---|---|
+| 102, 105 | the Unique Games Conjecture (Lean), 2-to-1 games with perfect completeness | hardness of approximation; no cryptographic assumption moves |
+| 142 | deterministic polynomial-time factorization in 𝔽_p[x], no GRH | derandomizes Berlekamp / Cantor–Zassenhaus. root finding in 𝔽_p[x] is the engine of univariate algebraic attacks on Poseidon-class hashes, but attackers were always allowed randomness: attack cost is unchanged. a signal that the model is at home exactly in this area |
+| 200 | Eisenbud–Green–Harris and lex-plus-powers, characteristic zero | the theorems that pin Hilbert functions of ideals containing a regular sequence — the mathematics behind degree-of-regularity estimates in Gröbner-basis cryptanalysis. a tool for *provable* bounds on polynomial-system solving, in both directions; over characteristic zero, so transfer to large-p systems is an assumption |
+| 130 | exact DFT in O(n (log n)^{1−10⁻¹³}), Lean | the NTT is the arithmetic of both Goldilocks proofs and lattice schemes; δ = 10⁻¹³ changes nothing in practice; a theoretical barrier fell |
+| 177 | bounded-degree 𝔽₂ coboundary expanders in every dimension | high-dimensional expanders feed locally testable codes and PCPs — the code side of hash-based proof systems (Brakedown's expander codes). constructive; good news for proof systems if anything |
+| 279, 274, 283, 284 | exact quantum factoring over a fixed gate set; parity ∉ QAC⁰; unitary synthesis; the quartic query separation | refinements of quantum complexity; Shor's capability class is unchanged |
+| 272 | entanglement without distillable secret key | quantum key theory; no bearing on classical primitives |
+| 011, 028 | prime-factor statistics of p−1; Artin's primitive-root infinitude, unconditional | number theory of the kind that informs parameter choice; no attack |
+
+absent from all 372 families: LWE / SVP / SIS, lattice reduction or sieving, any Gröbner or XL algorithm, any hash or permutation cryptanalysis, isogenies, the discrete logarithm, classical integer factoring, any symmetric primitive. the release contains no break of any deployed cryptographic assumption, and the public commentary (Drake, Buterin) says the same.
+
+### consequences for cryptography
+
+the content is not the news; the capability is. a model that proves UGC, EGH, and a derandomized polynomial factorization in a few hours each is a model that can be pointed at a round-reduced CICO instance, at the Hilbert function of a specific S-box system, or at a sieve. the areas it is strongest in — algebra, number theory, combinatorics, complexity — are exactly the areas where polynomial-system solving lives. the ordering of exposure that the earlier sections argued is now observable rather than argued:
+
+1. algebraic hashes — their security is a Gröbner estimate, and the model just proved the theorems those estimates rest on;
+2. isogenies and class groups — rich algebraic structure, thin literature, the smallest community;
+3. structured lattices — structure the model has not yet touched in this release, which says nothing either way;
+4. curves — the discrete log has resisted forty years of humans; no result here moves it;
+5. hash-based constructions over conservative hashes — no structure to prove theorems about.
+
+### consequences for the stack's choices
+
+- hemera profile v2 (hemera PR #15) is reinforced, and its bounty acquires a new competitor class: expect AI-assisted submissions on reduced-round instances within weeks of posting. the margin rule (best attack ≤ ½ of the partial budget, ×2 for AI) was written for this; the ×2 is no longer hypothetical.
+- family 200 is a tool for us, not only against us: lex-plus-powers gives extremal Hilbert functions for ideals containing a regular sequence, which is the shape of the x⁷ round system. a research task for hemera: a provable degree-of-regularity bound for the proposed RF12/RP48 profile via EGH, with the characteristic-zero caveat stated. that would turn "margin by rule" into "margin with a theorem".
+- the AI red team precedes the bounty: run frontier models against reduced-round Hemera ourselves, with the `research/` models (full-round system, partial-subspace certificate) as the harness, before genesis freezes the profile.
+- lattices (seal = ML-KEM hybrid, veil deferred) and the VDF/PoSW: unchanged. nothing in the release touches them, and hybrid-by-construction was already the answer to "we do not know".
+- CSIDH stays out of the genesis path for the reasons of §3.3; this release adds no isogeny result but confirms the risk ordering.
+- ECDSA on the migration path: unchanged; the release has no discrete-log result. the sunset rule stays.
+- zheng: hash-only proofs are the right side of the release; family 177 may eventually improve the code behind Brakedown. the 128-bit challenge fix (§3.4 item 3) is unaffected and still owed.
+
+one sentence: nothing broke, and the thing that would break an algebraic hash got a demonstration — the stack's answer is a conservative profile with a theorem-backed margin and a red team that uses the same models.
+
+sources: `github.com/openai/math` (README, CONTENTS.md, history.md, lean/formalization.yaml, read 2026-10-09); [Nature](https://www.nature.com/articles/d41586-026-03196-8); [AHM statement](https://terrytao.wordpress.com/2026/10/07/ahm-statement-on-openais-october-6-release-of-mathematical-documents/); [KuCoin on the crypto debate](https://www.kucoin.com/news/flash/ai-advances-in-math-spark-crypto-security-debate).
+
 ## sources
 
 - [Vitalik Buterin on AI and ECDSA, october 2026](https://www.kucoin.com/blog/vitalik-ai-warning-ecdsa-ethereum-wallet-security) · [Justin Drake, ethereum "bunker mode"](https://www.trendingtopics.eu/ethereum-bunker-mode-ai-quantum-bitcoin/)
