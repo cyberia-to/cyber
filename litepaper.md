@@ -73,13 +73,13 @@ the beautiful part: these are one computation read four times. the state is the 
 
 three of the four are borrowed theorems. the fourth is cyber's own, and it is what makes work and stake finally work together. every earlier hybrid bolted proof-of-stake onto proof-of-work as two voting rules fighting over a block. here they are two kinds of contribution from one budget, and each fixes the other's known failure: stake compounds wealth, so only active risk under [[valence]] earns and passive capital buys rank and nothing else; work burns energy on nothing, so the hash is a Shapley sample; stake has a closed door, so the subsidy is stake-blind. the split calibrates itself from what the chain observes — a thermostat, not a calendar. the full law: [[rewards]].
 
-copying earns nothing. a perfect copy of a link produces the same focus shift and zero surprise, so it joins the mint weightless while its capital still ranks.
+copying earns nothing. a perfect copy of a link produces the same focus shift and zero surprise, so it joins the mint weightless while its capital still ranks. what the mint pays for, in two words: [[surprising syntropy]].
 
 ---
 
 ## the best money
 
-every hard currency rationed supply with a cost. gold's cost is geological. bitcoin's cost is thermodynamic and buys only an ordering of transactions. [[cyber/$CYB|$CYB]]'s cost is epistemic: minting is gated by measured [[syntropy]], and the schedule caps it from above — whichever is lower binds.
+every hard currency rationed supply with a cost. gold's cost is geological. bitcoin's cost is thermodynamic and buys only an ordering of transactions. [[cyber/$CYB|$CYB]]'s cost is epistemic: minting is gated by measured [[surprising syntropy]], and the schedule caps it from above — whichever is lower binds.
 
 | | gold | bitcoin | [[cyber/$CYB\|$CYB]] |
 |---|---|---|---|
