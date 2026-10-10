@@ -478,7 +478,7 @@ token overlap of body text (frontmatter stripped), 2026-09-08:
 | `research/structural-sync.md` title: "verified convergence without consensus"; comparison table "Consensus: None" | foculus *is* consensus at layer 5; CRDT is local merge only | substrate + layer-5 split in `specs/structural-sync.md` |
 | `research/vec formalization.md`: "four properties" then lists six; P5 = 16 nox patterns; P2/P3 = NMT | `specs/vec.md`: six properties from the start; P5 = 18 patterns (16 compute + call + look); P2 still NMT pending Lens | spec. NMT→Lens is bbg work, not a new foculus page |
 | research BBG_root / algebraic NMT as if still proposed; "replaces 9 independent hash trees" | bbg already committed to polynomial + Lens; chaosnet public dimensions are six | cite bbg spec, do not re-propose |
-| continuous fold / ~30 field ops / ~200-byte accumulator as foculus content | already specified in `foculus/specs/fold-mining.md` (HyperNova IVC) | fold-mining spec |
+| continuous fold / constant-size accumulator as foculus content | already specified in `foculus/specs/fold-mining.md` (accumulation scheme: ARC, per [[soft3/proposals/proof-system-repair|the proof-system repair]]) | fold-mining spec |
 
 living-spec bug, fix if the file is touched: `specs/provable-consensus.md` circuit totals 1,420M constraints; the closing paragraph still says "624 million" (copied from the research draft).
 

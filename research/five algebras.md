@@ -193,7 +193,7 @@ R_q multiply via NTT: NTT(a) → pointwise → INTT = 3n nebu muls. for n=1024: 
 
 jali is where encrypted computation lives. every time the [[superintelligence]] computes on data it cannot see — encrypted inference, private cyberlinks, homomorphic hashing — it thinks in jali.
 
-verification: ring operations are proved via the jali [[lens]] (Brakedown with NTT batching). zheng ring-aware CCS exploits R_q structure: automorphisms as permutation arguments, NTT batch commitments, running noise accumulators. ring-structured rows have sel_ring=1 in the universal CCS. HyperNova folds into the Goldilocks accumulator.
+verification: ring operations are proved via the jali [[lens]] (Brakedown with NTT batching). zheng ring-aware CCS exploits R_q structure: automorphisms as permutation arguments, NTT batch commitments, running noise accumulators. ring-structured rows have sel_ring=1 in the universal CCS. these rows accumulate into the Goldilocks accumulator.
 
 ### jali jets for [[nox]]
 
@@ -204,7 +204,7 @@ no new Layer 1 patterns needed. polynomial multiply decomposes to ntt + pointwis
 | jet_ntt_batch | n polynomial NTTs sharing evaluation domain | O(n × N) vs O(n × N log N) |
 | jet_key_switch | automorphism-based key switching | O(k × log N) vs O(k × N) |
 | jet_gadget_decomp | coefficient bit-decomposition for bootstrapping | O(N × k) binary ops |
-| jet_noise_track | running noise bound accumulator | ~30 field ops per fold |
+| jet_noise_track | running noise bound accumulator | — |
 | jet_blind_rotate | full blind rotation (n poly muls + accumulate) | O(n × N) batched |
 
 ## the composition principle

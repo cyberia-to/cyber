@@ -82,9 +82,9 @@ given finite storage across the network, the exponential allocation minimises to
 mass-weighted polynomial encoding: high-$\phi^*$ particles occupy low-degree polynomial terms (cheap to verify), low-$\phi^*$ particles occupy high-degree terms (expensive).
 
 ```
-hot layer (top 2⁸):     8 rounds, ~2 KiB proof, ~50 μs
-warm layer (next 2¹²):   12 rounds, ~5 KiB proof, ~200 μs
-cold layer (remaining):  20 rounds, ~12 KiB proof, ~500 μs
+hot layer (top 2⁸):     8 rounds
+warm layer (next 2¹²):   12 rounds
+cold layer (remaining):  20 rounds
 ```
 
 the verification cost is exponential in layer depth. the allocation of data to layers follows the exponential principle: the optimal layering minimises expected verification cost under the constraint that all data must be accessible.
@@ -111,13 +111,15 @@ total:    2^{k+1} - 1 = O(N)
 
 the geometric series $\sum 2^{-i}$ converges to 2 — the same exponential convergence that makes the prover O(N). the halving IS the exponential principle applied to computational resources: each round does exponentially less work than the previous, and the total is bounded by twice the first round.
 
-### [[HyperNova]] folding
+### accumulation
 
-each fold compresses two CCS instances into one with ~30 field operations. after $N$ folds:
+each step folds one claim into a running accumulator. after $N$ steps:
 
 - information compressed: $N$ instances → 1 accumulator
-- computational cost: $30N$ field operations
-- verification: one decider ($\sim$12K constraints)
+- computational cost: $O(N)$
+- verification: one decider
+
+the per-fold cost and decider size of the retired fold over hemera do not hold; see [[soft3/proposals/proof-system-repair|the proof-system repair]].
 
 the compression ratio is exponential: $N$ instances in $O(N)$ work, verified in $O(1)$. the universal law appears as the gap between linear cost and exponential compression — the same gap that makes entropy encoding efficient.
 

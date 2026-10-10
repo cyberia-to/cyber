@@ -53,7 +53,7 @@ the arguments ARE the [[cyberlink]] 5-tuple. evaluating IS creating an edge. bef
 
 ## trace = proof
 
-every reduce() produces rows in the execution trace. this trace IS the [[zheng]] witness — no separate proof generation. [[SuperSpartan]] checks constraints via [[sumcheck]]. [[Brakedown]] commits with O(N) field ops. [[HyperNova]] folds rows during execution. the boundary between execution and proving dissolves.
+every reduce() produces rows in the execution trace. this trace IS the [[zheng]] witness — no separate proof generation. [[SuperSpartan]] checks constraints via [[sumcheck]]. [[Brakedown]] commits with O(N) field ops. the rows accumulate during execution (the accumulation scheme is set by [[soft3/proposals/proof-system-repair|the proof-system repair]]). the boundary between execution and proving dissolves.
 
 ## five execution regimes
 
@@ -67,7 +67,7 @@ nox is parameterised: nox<F, W, H>. same 16 patterns, different algebras. five [
 | privacy | [[genies]] (F_q) | stealth, key exchange, post-quantum | dedicated PCS |
 | encrypted | [[jali]] (R_q) | TFHE, encrypted computation | Ikat |
 
-all fold into ONE [[HyperNova]] accumulator. five algebras, one proof.
+all fold into ONE accumulator. five algebras, one proof.
 
 ## jets
 

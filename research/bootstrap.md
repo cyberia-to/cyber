@@ -273,7 +273,7 @@ STATE AFTER STAGE 2:
 ### Phase 6: zheng (proof infrastructure)                    5-8 sessions
 
 PARALLEL TRACK A — Rust prover (permanent):
-  sumcheck prover, Brakedown committer, HyperNova folder
+  sumcheck prover, polynomial committer, accumulator
   generates zheng proofs from nox traces
 
 PARALLEL TRACK B — Trident verifier:
@@ -316,7 +316,7 @@ Trident arithmetic (.tri files from Phase 4) = jet formulas. formula hashes comp
 | genies | genies.tri | genies crate | 5 |
 | trop | trop.tri | trop crate | 6 |
 | hemera | hemera.tri | hemera crate | 1 (hash) |
-| zheng | zheng.tri | — | 1 (decider, 89 constraints) |
+| zheng | zheng.tri | — | 1 (decider) |
 
 test: `∀ jets: rust_jet(x) == trident_formula(x)` on random inputs. CHECKPOINT 4 passes.
 

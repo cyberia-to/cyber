@@ -152,7 +152,7 @@ A2   conserve_template     balance conservation (n vs ~4,000 constraints)
 ### decider (1 jet)
 
 ```
-A3   decider               all-history verifier (89 constraints)
+A3   decider               all-history verifier
 ```
 
 ### counts
@@ -166,7 +166,7 @@ A3   decider               all-history verifier (89 constraints)
 | isogeny-curves | [[genies]] (F_q) | 5 | native F_q privacy |
 | tropical-semiring | [[trop]] (min,+) | 6 | O(n²)-O(n³) optimization |
 | state | F_p circuits | 6 | 500× state transition proving |
-| decider | F_p accumulator | 1 | 89 constraints — all-history verification |
+| decider | F_p accumulator | 1 | all-history verification |
 
 ## group 4: jet reserved (0xA4–0xBF)
 

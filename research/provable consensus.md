@@ -9,7 +9,7 @@ date: 2026-03-23
 
 ## the claim
 
-[[foculus]] consensus — the fixed point of the [[tri-kernel]] composite operator over the [[cybergraph]] — can be proven correct inside a [[zheng]] circuit. a single proof (~50 μs to verify) replaces all voting rounds, all message passing, all quorum checks. consensus becomes computation.
+[[foculus]] consensus — the fixed point of the [[tri-kernel]] composite operator over the [[cybergraph]] — can be proven correct inside a [[zheng]] circuit. a single proof replaces all voting rounds, all message passing, all quorum checks. consensus becomes computation.
 
 the [[tri-kernel]] is three operators, not one. [[PageRank]] (diffusion) is only a third of the picture:
 
@@ -37,7 +37,7 @@ provable consensus eliminates all of it. the protocol becomes:
 1. validator reads committed graph state (algebraic NMT opening)
 2. validator computes φ* (sparse matrix-vector multiply, 23 iterations)
 3. validator proves the computation correct (zheng proof)
-4. anyone verifies the proof (50 μs, one hash check)
+4. anyone verifies the proof
 ```
 
 no messages between validators. no leader. no quorum. no voting. no finality gadget. the proof IS the consensus. if two validators compute from the same committed state, they produce the same φ* — guaranteed by determinism, verified by proof.
@@ -205,9 +205,9 @@ with GPU acceleration (SuperSpartan's SpMV is embarrassingly parallel): ~2-3 min
 
 ### proof verification
 
-verifier time: O(log N) = O(log 1.42B) ≈ 31 Hemera hashes + field ops ≈ 50 μs.
+verifier time: the figure derived from the retired zheng design does not hold; the measured verifier lives in [[soft3/proposals/proof-system-repair|the proof-system repair]].
 
-one number: 50 μs to verify that the complete tri-kernel (diffusion + springs + heat) over 2.9 million particles converged to the correct φ*. on a phone. without downloading the graph.
+one proof to verify that the complete tri-kernel (diffusion + springs + heat) over 2.9 million particles converged to the correct φ*. on a phone. without downloading the graph.
 
 ## what this replaces
 
@@ -218,7 +218,7 @@ one number: 50 μs to verify that the complete tri-kernel (diffusion + springs +
 | message passing | O(N) per round, multiple rounds | not needed — proof replaces agreement |
 | finality gadget | Casper/Grandpa/etc. | not needed — π_i > τ is finality |
 | sync committee | rotating subset vouches for chain tip | not needed — proof is self-verifying |
-| light client trust | trust sync committee / SPV | trust math — verify proof in 50 μs |
+| light client trust | trust sync committee / SPV | trust math — verify one proof |
 | fork choice | longest chain / heaviest subtree / LMD-GHOST | φ* — the unique fixed point |
 | slashing | detect & punish after the fact | prevention — invalid φ* can't produce valid proof |
 
@@ -244,7 +244,7 @@ epoch 2: prove φ*₂ from graph state G₂
          FOLD: prove (proof₁ valid ∧ G₂ = G₁ + new_signals ∧ φ*₂ correct)
 epoch N: ONE accumulated proof covers ALL history
 
-verification: 50 μs regardless of how many epochs
+verification: one proof regardless of how many epochs
 ```
 
 a light client joining at epoch 1,000,000 verifies ONE proof. that proof attests:
@@ -253,7 +253,7 @@ a light client joining at epoch 1,000,000 verifies ONE proof. that proof attests
 - all finality decisions followed from the correct φ*
 - the current state is the result of correctly applying all transitions
 
-this is not "trust the sync committee" or "verify all block headers." this is mathematical certainty compressed to 50 μs.
+this is not "trust the sync committee" or "verify all block headers." this is mathematical certainty compressed to one proof.
 
 ## the dependency chain
 
@@ -284,7 +284,7 @@ algebraic NMT is not an optimization. it is the prerequisite. without it, consen
 | current ([[bostrom]]) | CometBFT (Tendermint fork) | voted, 2/3 quorum, leader-based |
 | phase 1 | [[foculus]] on NMT state | computed locally, gossip-verified |
 | phase 2 | foculus on algebraic NMT | computed locally, proof-verified per epoch |
-| phase 3 | provable consensus | proven once, verified by anyone in 50 μs |
+| phase 3 | provable consensus | proven once, verified by anyone |
 | phase 4 | recursive provable consensus | accumulated proof covers all history |
 
 phase 2 is the critical transition. algebraic NMT makes graph reads algebraic. once reads are algebraic, φ* computation fits in a zheng circuit. once it fits in a circuit, it can be proven. once it can be proven, voting becomes unnecessary.
@@ -295,6 +295,6 @@ consensus has been a PROTOCOL problem since Lamport (1982). nodes communicate to
 
 provable consensus reclassifies it as a COMPUTATION problem. φ* is a function of the graph. the function is deterministic. the computation is provable. the proof is verifiable. no communication between validators is needed for agreement — only for data propagation.
 
-this is a category shift, not an optimization. the question changes from "how do nodes agree?" to "can a node prove it computed correctly?" the answer — enabled by algebraic state commitments and recursive proofs — is yes. 624 million constraints. 50 microseconds to verify. consensus without consensus.
+this is a category shift, not an optimization. the question changes from "how do nodes agree?" to "can a node prove it computed correctly?" the answer — enabled by algebraic state commitments and recursive proofs — is yes. 624 million constraints. one proof to verify. consensus without consensus.
 
 see [[foculus]] for the consensus specification. see [[algebraic state commitments]] for the enabling primitive. see [[cyber/research/vec formalization]] for the formal consistency model. see [[structural sync]] for the five-layer framework. see [[collective focus theorem]] for the convergence proof. see [[cyber/research/spectral gap from convergence]] for the empirical observation that bostrom converges in 23 iterations
