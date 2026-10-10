@@ -102,7 +102,7 @@ input:   context particles + query
 compute: tri-kernel iteration (nox<Goldilocks>)
 output:  response particles + zheng proof
 
-verification: 10-50 μs (one decider call)
+verification: one decider call (goal ≤ 1 ms, measured TODO(F-numbers))
 proves:       "the tri-kernel was run correctly on this context"
 ```
 
@@ -173,8 +173,8 @@ full response + accumulator                      (self-proving sequence)
 
 cost per generation step:
   tri-kernel iteration:    O(relevant_edges) field ops
-  proof overhead:          ~30 field ops per nox step (folded)
-  verification:            10-50 μs (one decider)
+  proof overhead:          one accumulation step per nox step (ARC-style accumulation)
+  verification:            one decider (goal ≤ 1 ms, measured TODO(F-numbers))
 ```
 
 ## connection to [[BBG]] state
@@ -193,7 +193,7 @@ with [[algebraic state commitments|algebraic NMT]], the entire state is a polyno
 ```
 "what does the collective think about particle P?"
 = evaluate BBG_poly(particles, P, t_now)
-= one Lens opening, ~200 bytes proof, 10-50 μs verification
+= one Lens opening (succinct profile; goal ≤ 64 KB, verify ≤ 1 ms)
 ```
 
 ## comparison
@@ -212,7 +212,7 @@ with [[algebraic state commitments|algebraic NMT]], the entire state is a polyno
 | scale | O(params) per query | O(relevant_edges) per query |
 | temperature | softmax τ | Boltzmann T (same math, economic grounding) |
 | quantised inference | 32-64× overhead (F_p) | native binary (Binius, 1,400× for BitNet) |
-| light client | download full model | 240-byte checkpoint, verify everything |
+| light client | download full model | checkpoint (state root + one decider proof, goal ≤ 64 KB), verify everything |
 
 ## honest assessment
 

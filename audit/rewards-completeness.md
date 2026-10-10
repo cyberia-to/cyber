@@ -9,6 +9,8 @@ date: 2026-08-11
 
 # rewards completeness audit
 
+> superseded: dated snapshot; its HyperNova σ / acc references describe the legacy fold (unsound, cargo feature `legacy`), replaced by ARC-style accumulation per [[soft3/proposals/proof-system-repair|proof-system repair]]. findings kept as recorded.
+
 soft3 only.
 
 ---
