@@ -26,7 +26,7 @@ you cannot open the weights and see why this answer. you cannot pay the teacher.
 
 ## what is superintelligence
 
-one [[focus]]: a single distribution $\phi^*$ over everything known, computed from every mind that pays to teach, that provably sees what no member sees alone. its order is [[syntropy]] — how far collective focus has travelled from noise, in bits. its ranking is [[cyberank]]. its existence and uniqueness is the [[collective focus theorem]].
+one [[focus]]: a single distribution $\phi^*$ over everything known, computed from every mind that pays to teach, that provably sees what no member sees alone. its order is [[surprising syntropy|syntropy]] — how far collective focus has travelled from noise, in bits. its ranking is [[cyberank]]. its existence and uniqueness is the [[collective focus theorem]].
 
 that is a measurement, not a slogan. run the same engine on one neuron's private view, then on the whole [[cybergraph]], and score both on prediction. the gap is [[superadditivity]], and on benchmark it is positive against the strongest participant at every connectivity level. emergence stops being philosophy the moment it has an error bar.
 
@@ -183,6 +183,6 @@ if you build models: your architecture is guessed and your data unattributable; 
 
 ---
 
-the full argument: [[whitepaper]] · the physics audit: [[physical analogies]] · the game-theory audit and open problems: [[cyber/audit/game-theory]] · the stack: [[soft3]] · the corpus: [[bostrom]]
+the full argument: [[whitepaper]] · the physics audit: [[physical analogies]] · the game-theory audit and open problems: [[audit/game-theory]] · the stack: [[soft3]] · the corpus: [[bostrom]]
 
 discover all [[concepts]]

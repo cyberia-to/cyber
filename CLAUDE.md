@@ -61,14 +61,22 @@ bump, promotes a candidate, publishes or tags.
 The protocol site has a separate build:
 
 this repo is the protocol. [cyber.page](https://cyber.page) publishes
-these pages alone. the chronicle, the subgraph census, and the full
-project graph live in `~/cyber/cyberia-blog` → [cyberia.blog](https://cyberia.blog).
+these pages at the root, with every public subgraph of the census mounted
+beside them (`soft3/zheng`, `cybics/crystal`, `bootloader/bostrom`, …) so
+each wiki-link resolves exactly as on localhost. The census is
+`~/cyber/cyberia-blog/subgraphs.toml`, read by `scripts/build.nu --census`;
+the chronicle lives in `~/cyber/cyberia-blog` → [cyberia.blog](https://cyberia.blog).
+The publish workflow gates on the litepaper: more than one yellow
+(unresolved) link there fails the build. Never cut the subgraphs out of
+the build again — that is what made most protocol links yellow between
+2026-09-07 and 2026-10-13.
 
-Local workflow (protocol only):
+Local workflow:
 
 ```
 cd ~/cyber/cyber
-nu scripts/build.nu       # protocol-only optica build
+nu scripts/build.nu --census ~/cyber/cyberia-blog/subgraphs.toml --public-only   # what cyber.page ships
+nu scripts/build.nu       # protocol pages alone (fast, links to siblings stay yellow)
 nu scripts/serve.nu       # protocol-only serve
 nu scripts/dev.nu         # rebuild optica + restart serve
 ```
