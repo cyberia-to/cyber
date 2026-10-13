@@ -112,7 +112,7 @@ what creates a money is what it measures. gold is dug, the dollar is borrowed, b
 
 the unit. 1 CYB is 1 CYB, and 1 CYB = 10¹² cy. the cap is the [[Goldilocks field|field]]: $p / 10^{12}$ = 18,446,744 CYB — arithmetic, not a vote. genesis is 187,416 CYB, about 1%, to $TOCYB holders at 666 cy per TOCYB: prior stake continues. the rest is emitted only for proven positive focus shift; the clock bounds how much can exist, knowledge decides whether it does. if the graph learned nothing, nothing is minted. fair launch, no issuer, no owner. the physical floor is the [[landauer limit|Landauer limit]], ~3×10⁻²¹ J per bit: the lightest asset physics permits, and the one worth carrying between planets.
 
-the law generalizes: cyber is only the first [[oikos|oikos]] — one chain, one token, rooted by one name. every other token is born as its own household chain, registered here by name, its value never leaving home. trading is conditions under proofs ([[3c]]), so the bridge exploit class, the largest in crypto's history, is made unexpressible. the quality tree the money is built against: [[best money]].
+the law generalizes: cyber is only the first [[oikos|oikos]] — one chain, one token, rooted by one name. every other token is born as its own household chain, registered here by name, its value never leaving home. trading is conditions under proofs ([[3c]]), so the bridge exploit class, the largest in crypto's history, is made unexpressible.
 
 ---
 
