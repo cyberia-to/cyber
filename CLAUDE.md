@@ -66,8 +66,8 @@ beside them (`soft3/zheng`, `cybics/crystal`, `bootloader/bostrom`, …) so
 each wiki-link resolves exactly as on localhost. The census is
 `~/cyber/cyberia-blog/subgraphs.toml`, read by `scripts/build.nu --census`;
 the chronicle lives in `~/cyber/cyberia-blog` → [cyberia.blog](https://cyberia.blog).
-The publish workflow gates on the litepaper: more than one yellow
-(unresolved) link there fails the build. Never cut the subgraphs out of
+The publish workflow gates on the litepaper: any yellow (unresolved)
+link there fails the build. Never cut the subgraphs out of
 the build again — that is what made most protocol links yellow between
 2026-09-07 and 2026-10-13.
 
