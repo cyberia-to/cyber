@@ -180,14 +180,14 @@ what the bootloader could not do — rank itself without an operator, prove, pri
 
 ### present
 
-phase 0 is done: field, hash, commitments, VM, proofs, state. phase 1 is in delivery: the bootloader reborn on soft3 — same keys, same balances — on 2026-11-05, five years to the day after the bostrom genesis.
+today has one focus: bostrom and space pussy come back to life on soft3. on 2026-11-05, five years to the day after the bostrom genesis, both chains relaunch as the first networks on the new infrastructure — same keys, same balances, the burial snapshots as genesis, and the cores the old chains never had. phase 0, the foundations — field, hash, commitments, VM, proofs, state — is done. what does not fit the date is cut from it, never squeezed in.
 
 | | [[bootloader/tokens/$BOOT\|$BOOT]] · [[bostrom]] | [[bootloader/tokens/$PUSSY\|$PUSSY]] · [[space pussy]] |
 |---|---|---|
-| role | the bootloader: the graph that boots the mind | the canary: takes every rehearsal first |
-| reborn | 2026-11-05 on soft3, from the burial snapshot | 2026-11-05, minutes apart, identical binary, identical genesis pipeline |
-| mechanics | settlement mining · fold · consensus by convergence · truth markets · two-axis staking · privacy at genesis | the same, first |
-| gate | two chains live from the burial snapshots; every core property green or explicitly deferred | |
+| what it is | the bootloader: the graph that boots the mind — 3,143,650 particles, 2,949,732 links, 61,675 accounts carried over | the canary: takes every rehearsal first, minutes ahead |
+| born from | the burial snapshot, rebuilt bit-exact from block events | its own snapshot, identical binary, identical genesis pipeline |
+| what is new | settlement mining · fold · consensus by convergence · truth markets · two-axis staking · privacy at genesis | the same, first |
+| gate | two chains live from the snapshots; every core property green or explicitly deferred | |
 
 the tracker, with every gate and decision: [[launch]].
 
