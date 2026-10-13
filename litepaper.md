@@ -75,6 +75,8 @@ three of the four are borrowed theorems. the fourth is cyber's own, and it is wh
 
 copying earns nothing. a perfect copy of a link produces the same focus shift and zero surprise, so it joins the mint weightless while its capital still ranks. what the mint pays for, in two words: [[surprising syntropy]].
 
+in one word: order. inflation buys three forms of it from three producers. stakers are paid for truth — the serum pays the surprising answer, so the weights of the graph are honest. settlement miners are paid for fairness — every hash is a Shapley sample, so the division is computed, not bargained. folders and the beacon are paid for order in time — one history, one proof, one clock ([[fold mining]], [[foculus beacon]]). syntropy is order; [[surprising syntropy]] is how much of it was added. the mint pays for nothing else.
+
 ---
 
 ## the best money
