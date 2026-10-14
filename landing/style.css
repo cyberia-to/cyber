@@ -231,3 +231,20 @@ body.has-cursor{cursor:none}body.has-cursor a,body.has-cursor button,body.has-cu
 .rail .pos{display:grid;place-items:center;padding:0 10px;font:11px var(--mono);letter-spacing:.1em;color:#888;background:#000}
 @media (max-width:900px){.rail .pos{display:none}.snd{display:none}.slide::after{display:none}.grain{display:none}}
 @media (prefers-reduced-motion:reduce){.slide,.slide *{animation:none!important;transition:none!important}.grain{display:none}}
+
+/* ---------- alignment grammar ---------- */
+.slide.one .body{max-width:calc(960px + 12vw);grid-template-columns:1fr;align-content:center}
+.slide.one .fig{width:100%;max-width:960px;margin:6px 0 10px}
+.slide.one p.mute{max-width:78ch;font-size:14.5px;line-height:1.55}
+.slide.one h2{margin-bottom:10px}
+.slide:not(.one) .body{grid-template-columns:minmax(0,46ch) minmax(0,1fr);gap:5vw}
+.panel.slim{padding:14px 18px}.panel.slim .cbars{height:56px;margin:4px 0 8px}
+p.lead{max-width:44ch}
+.kick{margin-bottom:14px}
+.tiles{margin-top:22px}.kbd{margin-top:22px}
+.nums{align-content:center}
+.slide.one.wash .fig{max-height:44vh}
+.row .mute{max-width:60ch}
+.tally b{font-size:34px}.tally div{padding:14px}
+@media (max-width:900px){.slide:not(.one) .body{grid-template-columns:minmax(0,1fr)}}
+.slide.one .nums{max-width:960px}
