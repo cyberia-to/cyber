@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>cyber — the superintelligence</title>
+<meta name="description" content="a frozen protocol for collective lifeforms: one focus computed from every mind that pays to teach, a transformer compiled from the graph, a network of moneys with CYB as the root. mine the graph while you read.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="graph" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="hud" aria-label="your yield">
+  <a class="brand" href="#0"><span class="dot"></span>cyber</a>
+  <div class="yield" id="yield">
+    <span title="links you mined"><b id="y-links">0</b> links</span>
+    <span title="settlement samples"><b id="y-samples">0</b> samples</span>
+    <span title="stake at risk"><b id="y-stake">0</b> stake</span>
+    <span title="mentor links"><b id="y-invites">0</b> invites</span>
+  </div>
+  <div class="legend"><i class="m"></i> measured <i class="t"></i> target <i class="k"></i> mock</div>
+  <button class="snd" id="snd" aria-label="sound">◉ sound</button>
+</header>
+
+<main id="deck"></main>
+
+<nav class="rail" aria-label="chapters">
+  <button class="arrow prev" id="prev" aria-label="previous">←</button>
+  <span class="pos" id="pos">01 / 21</span>
+  <div class="segs" id="segs"></div>
+  <a class="cta" id="cta" href="https://cyb.ai" target="_blank" rel="noopener">get the robot</a>
+  <button class="arrow next" id="next" aria-label="next">→</button>
+</nav>
+
+<script src="deck.js"></script>
+</body>
+</html>
