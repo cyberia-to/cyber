@@ -135,7 +135,11 @@ p.mute,.mute{color:var(--mute);font-size:15px;line-height:1.5;max-width:52ch}
 .fine{font-family:var(--mono);font-size:11px;opacity:.6;letter-spacing:.06em;line-height:1.6}
 
 @media (max-width:900px){
-  .slide .body{grid-template-columns:1fr;gap:18px;padding:2vh 6vw;overflow:auto;align-content:start}
+  .slide .body{grid-template-columns:minmax(0,1fr);gap:18px;padding:2vh 6vw;overflow:auto;align-content:start}
+  .ledgers{grid-template-columns:1fr}.ledger{min-height:0}.ledger .row-l{white-space:normal}
+  .matrix{font-size:12px}.matrix td{padding:10px 6px}
+  .chips{display:none}.kbd{display:none}
+  .rail .arrow{width:48px}
   h1{font-size:clamp(38px,11vw,64px)}h2{font-size:clamp(28px,8vw,48px)}
   .hud{gap:12px;font-size:11px}.legend{display:none}.yield{gap:10px}
   .tally{grid-template-columns:repeat(2,1fr)}

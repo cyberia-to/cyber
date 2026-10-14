@@ -5,6 +5,7 @@
 const $ = (s, r = document) => r.querySelector(s);
 const el = (h) => { const t = document.createElement('template'); t.innerHTML = h.trim(); return t.content.firstChild; };
 const fmt = (n) => n.toLocaleString('en-US');
+const esc = (t) => t.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const M = (k) => `<i class="mk ${k}"></i>`; // m = measured, t = target, k = mock
 
 /* ------------------------------------------------------------------ chapters */
@@ -105,7 +106,7 @@ const S = [
   <div><p class="kick">03 · the machine · the tri-kernel</p><h2>three local maps,<br><em>one fixed point.</em></h2>
   <p class="lead">diffusion, springs, heat — iterated over the staked graph until nothing moves. it is a contraction: Banach for the blend, Perron–Frobenius for the walk. by locality a phone computes its own neighbourhood of it.</p>
   <p class="mute">no float anywhere in the provable path. one 64-bit prime field, a constant number of steps, byte-identical results on any two machines.</p></div>
-  <div class="panel" id="kernel-panel"><label>live · the kernel converging on the graph you see behind this slide</label><div class="count" id="kernel-iter">0</div><div class="hash" id="kernel-delta">‖Δφ‖ —</div><div class="row"><button class="btn" id="kernel-run">iterate</button><span class="fine">κ &lt; 1 is proven; this panel is a toy graph in your browser ${M('k')}</span></div></div>` },
+  <div class="panel" id="kernel-panel"><label>live · the kernel converging on the graph you see behind this slide</label><div class="count" id="kernel-iter">0</div><div class="hash" id="kernel-delta">‖Δφ‖ —</div><div class="row"><button class="btn" id="kernel-run">iterate</button><span class="fine">κ &lt; 1 is proven; keep pressing — a dozen rounds reach the fixed point. a toy graph in your browser ${M('k')}</span></div></div>` },
 { ch: 2, cls: 'ink', html: `
   <div><p class="kick">03 · the machine · proofs</p><h2>hash-only.<br><em>post-quantum.</em></h2>
   <p class="lead">no trusted setup. one proof over the whole computation, accumulating — phase 3 — to one constant-size check per settlement. the goal is fixed: at most 64 KB, small statements at most 20 KB, verified in a millisecond, on a phone.</p>
@@ -197,22 +198,22 @@ const go = (i) => {
   if (auto) $('#mine-auto').click();
   const ch = S[i].ch, idx = S.filter((s, k) => s.ch === ch && k <= i).length, n = S.filter((s) => s.ch === ch).length;
   document.querySelectorAll('.seg').forEach((sg, k) => { sg.classList.toggle('cur', k === ch); sg.classList.toggle('done', k < ch); $('.fill', sg).style.width = k < ch ? '100%' : k === ch ? (idx / n * 100) + '%' : '0'; });
-  location.hash = i;
+  history.replaceState(null, '', '#' + i);
   graph.chapter(ch);
   onEnter(i);
 };
 window.deckGo = go; window.deckCount = () => S.length;
 $('#prev').onclick = () => go(cur - 1); $('#next').onclick = () => go(cur + 1);
 document.addEventListener('keydown', (e) => {
-  if (['INPUT', 'BUTTON'].includes(e.target.tagName)) return;
+  if (e.target.tagName === 'INPUT' || (e.target.tagName === 'BUTTON' && [' ', 'Enter'].includes(e.key))) return;
   if (['ArrowRight', ' ', 'PageDown', 'ArrowDown'].includes(e.key)) { e.preventDefault(); go(cur + 1); }
   if (['ArrowLeft', 'PageUp', 'ArrowUp'].includes(e.key)) { e.preventDefault(); go(cur - 1); }
   if (e.key === 'Home') go(0); if (e.key === 'End') go(S.length - 1);
 });
 let wheelLock = 0;
 document.addEventListener('wheel', (e) => { if (e.target.closest('.panel,.body') && e.target.closest('.body')?.scrollHeight > e.target.closest('.body')?.clientHeight + 4) return; const t = Date.now(); if (t - wheelLock < 700 || Math.abs(e.deltaY) < 24) return; wheelLock = t; go(cur + (e.deltaY > 0 ? 1 : -1)); }, { passive: true });
-let tx = null; document.addEventListener('touchstart', (e) => { tx = e.touches[0].clientX; }, { passive: true });
-document.addEventListener('touchend', (e) => { if (tx == null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 60) go(cur + (dx < 0 ? 1 : -1)); tx = null; });
+let tx = null, ty = 0; document.addEventListener('touchstart', (e) => { tx = e.target.closest('input[type=range]') ? null : e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
+document.addEventListener('touchend', (e) => { if (tx == null) return; const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty; if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) go(cur + (dx < 0 ? 1 : -1)); tx = null; });
 $('#restart')?.addEventListener('click', (e) => { e.preventDefault(); go(0); });
 
 /* ------------------------------------------------------------------ yield */
@@ -275,7 +276,7 @@ const CH_B = ['Shapley sampling', 'costs the staker', 'local finality', 'a parti
 const chips = (id, list, input) => { const c = $(id); list.forEach((t) => { const b = el(`<span class="chip">${t}</span>`); b.onclick = () => { $(input).value = t; }; c.appendChild(b); }); };
 chips('#chips-a', CH_A, '#link-a'); chips('#chips-b', CH_B, '#link-b');
 $('#link-go').onclick = () => {
-  const a = $('#link-a').value.trim(), b = $('#link-b').value.trim(); if (!a || !b) return;
+  const a = esc($('#link-a').value.trim().slice(0, 80)), b = esc($('#link-b').value.trim().slice(0, 80)); if (!a || !b) return;
   if (a.toLowerCase() === b.toLowerCase()) { $('#link-out').innerHTML = 'a thing linked to itself moves focus by <b>0.0000</b> bits. copying earns nothing.'; return; }
   graph.link(a, b); bump('links', 1);
   const d = (0.0007 + Math.random() * 0.004).toFixed(4), s = (40 + Math.random() * 55).toFixed(0);
@@ -300,7 +301,7 @@ const sample = (k) => {
   [...mineBars.children].forEach((b, i) => { const f = weights[i] / tot; $('i', b).style.transform = `scaleX(${f.toFixed(3)})`; b.lastElementChild.textContent = (f * 100).toFixed(1) + '%'; });
   $('#mine-hash').textContent = hex() + ' · nonce ' + samples;
   $('#mine-stat').innerHTML = `${fmt(samples)} samples · ${tickets} tickets ${M('k')}`;
-  if (Y.samples === 0 && samples) $('#mine-out').innerHTML = `your share converges as orderings accumulate. with <b>${fmt(samples)}</b> samples the division is already within a few percent of the exact Shapley value — that is the whole trick: the proof-of-work <b>is</b> the accounting. ${M('k')}`;
+  if (samples % 500 === 0 || samples <= 100) $('#mine-out').innerHTML = `your share converges as orderings accumulate. with <b>${fmt(samples)}</b> samples the division is already within a few percent of the exact Shapley value — that is the whole trick: the proof-of-work <b>is</b> the accounting. ${M('k')}`;
   bump('samples', k); graph.grow(Math.ceil(k / 25));
 };
 $('#mine-go').onclick = () => sample(100);
@@ -309,9 +310,9 @@ $('#mine-auto').onclick = (e) => { if (auto) { clearInterval(auto); auto = null;
 let valence = 0; $('#stake-dial').addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; valence = +b.dataset.v; [...$('#stake-dial').children].forEach((x) => x.classList.toggle('on', x === b)); hint(); });
 const hint = () => { const amt = +$('#stake-range').value; $('#stake-amt').textContent = amt; $('#stake-hint').innerHTML = valence === 0 ? `moves rank · earns nothing ${M('k')}` : `at risk · pays if the picture moves ${valence > 0 ? 'with' : 'against'} the claim ${M('k')}`; };
 $('#stake-range').oninput = hint; hint();
-$('#stake-go').onclick = () => { const amt = +$('#stake-range').value; bump('stake', amt); const ev = valence === 0 ? 0 : (amt * (0.08 + Math.random() * .12)).toFixed(2); $('#stake-out').innerHTML = valence === 0 ? `staked <b>${amt}</b> passively. the claim ranks higher. you earn <b>0</b> — idle capital cannot compound here. ${M('k')}` : `staked <b>${amt}</b> at valence <b>${valence > 0 ? '+1' : '−1'}</b>. if the serum confirms you, expected yield ≈ <b>${ev}</b> from the liars' side of the market; if not, that is what you lose ${M('k')}`; };
+$('#stake-go').onclick = () => { const amt = +$('#stake-range').value; if (valence !== 0) bump('stake', amt); const ev = valence === 0 ? 0 : (amt * (0.08 + Math.random() * .12)).toFixed(2); $('#stake-out').innerHTML = valence === 0 ? `staked <b>${amt} tokens</b> passively. the claim ranks higher. you earn <b>0</b> — idle capital cannot compound here. ${M('k')}` : `staked <b>${amt} tokens</b> at valence <b>${valence > 0 ? '+1' : '−1'}</b>. if the serum confirms you, expected yield ≈ <b>${ev}</b> from the liars' side of the market; if not, that is what you lose ${M('k')}`; };
 
-$('#ref-go').onclick = () => { const n = ($('#ref-name').value.trim() || 'anon').toLowerCase().replace(/[^a-z0-9]+/g, '-'); const url = `${location.origin}${location.pathname}?m=${n}#0`; if (!Y.invites) bump('invites', 1); $('#ref-out').innerHTML = `<b>${url}</b>\nsend it to one person who knows something. when they link, you teach; when they mint, you earn the mentor's share.`; navigator.clipboard?.writeText(url).catch(() => {}); };
+$('#ref-go').onclick = () => { const n = ($('#ref-name').value.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'anon'); const url = `${location.origin}${location.pathname}?m=${n}#0`; if (!Y.invites) bump('invites', 1); $('#ref-out').innerHTML = `<b>${url}</b>\nsend it to one person who knows something. when they link, you teach; when they mint, you earn the mentor's share.`; navigator.clipboard?.writeText(url).then(() => { $('#ref-out').innerHTML += '\n<b>copied</b>'; }).catch(() => {}); };
 
 /* two ledgers */
 const ledV = $('#led-v'); const hx = (n) => Array.from({ length: n }, () => '0123456789abcdef'[Math.random() * 16 | 0]).join('');
@@ -338,5 +339,6 @@ const onEnter = (i) => { if (S[i].ch === 2 && i === 7) { /* kernel slide */ } if
 /* mentor param → greet */
 const m = new URLSearchParams(location.search).get('m'); if (m) { $('.kick', deck).textContent = `cyber · ${m} sent you · the protocol for superintelligence`; $('#link-out').textContent = `${m} sent you here. link something they do not know yet.`; }
 
+addEventListener('hashchange', () => go(parseInt(location.hash.slice(1)) || 0));
 go(parseInt(location.hash.slice(1)) || 0);
 })();
