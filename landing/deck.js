@@ -63,7 +63,7 @@ const linkFig = () => {
   o += `<line x1="240" y1="145" x2="520" y2="145" stroke="currentColor" stroke-width="3" marker-end="url(#ah)"/><defs><marker id="ah" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>`;
   o += T(380, 132, 'cyberlink', { fs: 15, w: 700, a: 'middle' });
   o += T(380, 170, '“p belongs with q”', { fs: 11, a: 'middle', op: .7 });
-  const call = (x, y, t, d, up) => `<line x1="${x}" y1="${up ? 110 : 180}" x2="${x}" y2="${y}" stroke="currentColor" stroke-opacity=".45" stroke-dasharray="2 4"/>` + T(x, up ? y - 16 : y + 18, t, { fs: 12, w: 700, a: 'middle' }) + T(x, up ? y - 3 : y + 32, d, { fs: 10, a: 'middle', op: .7 });
+  const call = (x, y, t, d, up) => `<g class="hov"><rect x="${x - 120}" y="${up ? y - 30 : y + 4}" width="240" height="42" fill="transparent"/><line x1="${x}" y1="${up ? 110 : 180}" x2="${x}" y2="${y}" stroke="currentColor" stroke-opacity=".45" stroke-dasharray="2 4"/>` + T(x, up ? y - 16 : y + 18, t, { fs: 12, w: 700, a: 'middle' }) + T(x, up ? y - 3 : y + 32, d, { fs: 10, a: 'middle', op: .7 }) + '</g>';
   o += call(285, 50, 'structural · link(from, to)', 'a directed edge between two cards', true);
   o += call(500, 50, 'who · when', 'ride on the signal, not the link', true);
   o += call(270, 230, 'economic · box(coin, amount)', 'conviction · weight in A^eff', false);
@@ -79,9 +79,9 @@ const signalFig = () => {
   const w = 76, x0 = 50, y = 110;
   F.forEach(([sym, name, meaning], i) => {
     const x = x0 + i * w, col = COLS[i % 7];
-    o += `<rect x="${x}" y="${y}" width="${w - 4}" height="56" rx="8" fill="${col}" fill-opacity=".14" stroke="${col}"/>` + T(x + (w - 4) / 2, y + 26, sym, { fs: 16, w: 700, a: 'middle', ff: MONO }) + T(x + (w - 4) / 2, y + 44, name, { fs: 9, a: 'middle', op: .7 });
+    o += `<g class="hov"><rect x="${x}" y="${y}" width="${w - 4}" height="56" rx="8" fill="${col}" fill-opacity=".14" stroke="${col}"/>` + T(x + (w - 4) / 2, y + 26, sym, { fs: 16, w: 700, a: 'middle', ff: MONO }) + T(x + (w - 4) / 2, y + 44, name, { fs: 9, a: 'middle', op: .7 });
     const lines = []; let cur = ''; for (const wd of meaning.split(' ')) { if ((cur + ' ' + wd).trim().length > 13 && cur) { lines.push(cur); cur = wd; } else cur = (cur + ' ' + wd).trim(); } if (cur) lines.push(cur);
-    lines.slice(0, 3).forEach((ln, k) => { o += T(x + (w - 4) / 2, y + 74 + k * 11, ln, { fs: 8, a: 'middle', op: .8 }); });
+    lines.slice(0, 3).forEach((ln, k) => { o += T(x + (w - 4) / 2, y + 74 + k * 11, ln, { fs: 8, a: 'middle', op: .8 }); }); o += '</g>';
   });
   const bx = x0 + 1 * w, bw = 3 * w - 4; o += `<path d="M${bx},${y - 10} v-8 h${bw} v8" fill="none" stroke="${COLS[3]}" stroke-width="1.5"/>` + T(bx + bw / 2, y - 24, 'σ · one zheng proof covers these', { fs: 10, w: 700, a: 'middle', c: COLS[3] });
   const px = x0 + 4 * w + (w - 4) / 2; o += `<path d="M${px},${y - 10} C ${px},${y - 60} ${x0 - 10},${y - 60} ${x0 - 10},${y + 28}" fill="none" stroke="${COLS[4]}" stroke-width="1.5" stroke-dasharray="3 4" marker-end="url(#ah3)"/><defs><marker id="ah3" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="${COLS[4]}"/></marker></defs>` + T(px + 20, y - 46, 'prev → the author\'s last signal: every neuron is a chain', { fs: 10, w: 700, c: COLS[4] });
@@ -101,9 +101,9 @@ const compileFig = () => {
   // three derivations
   const rows = [[70, 'effective rank of Σ_φ⋆', 'd⋆ = exp H(σ(Σ_φ⋆))', 'embedding dimension'], [150, 'count of dialects', 'h⋆ ≥ |Dialect(G)|', 'attention heads'], [230, 'diameter × contraction', 'L⋆ = diam(G) · ⌈log(1/ε) / log(1/κ)⌉', 'layers']];
   for (const [y, from, formula, to] of rows) {
-    o += `<line x1="195" y1="${y}" x2="250" y2="${y}" stroke="currentColor" stroke-opacity=".4"/><line x1="470" y1="${y}" x2="538" y2="${y}" stroke="currentColor" stroke-opacity=".4" marker-end="url(#ah2)"/>`;
+    o += `<g class="hov"><line x1="195" y1="${y}" x2="250" y2="${y}" stroke="currentColor" stroke-opacity=".4"/><line x1="470" y1="${y}" x2="538" y2="${y}" stroke="currentColor" stroke-opacity=".4" marker-end="url(#ah2)"/>`;
     o += `<rect x="250" y="${y - 24}" width="220" height="48" rx="8" fill="currentColor" fill-opacity=".06" stroke="currentColor" stroke-opacity=".3"/>` + T(360, y - 6, from, { fs: 9, a: 'middle', op: .65 }) + T(360, y + 12, formula, { fs: 11, w: 700, a: 'middle' });
-    o += T(544, y + 4, to, { fs: 10, op: .85 });
+    o += T(544, y + 4, to, { fs: 10, op: .85 }) + '</g>';
   }
   o += `<defs><marker id="ah2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="currentColor" fill-opacity=".6"/></marker></defs>`;
   // transformer stack glyph
@@ -164,9 +164,9 @@ const triFig = () => {
     o += `<circle cx="${cx}" cy="${cy}" r="52" fill="${col}" fill-opacity=".1" stroke="${col}" stroke-width="1.5"/>`;
     const pts = [[0, -30], [28, -8], [18, 26], [-18, 26], [-28, -8]];
     pts.forEach(([x, y], i) => { const [x2, y2] = pts[(i + 1) % 5]; o += `<line x1="${cx + x}" y1="${cy + y}" x2="${cx + x2}" y2="${cy + y2}" stroke="${col}" stroke-opacity=".7"/>`; });
-    if (k === 0) pts.forEach(([x, y]) => { o += `<line x1="${cx + x}" y1="${cy + y}" x2="${cx + x * .3}" y2="${cy + y * .3}" stroke="${col}" stroke-opacity=".5" marker-end="url(#ah4)"/>`; });
-    if (k === 1) pts.forEach(([x, y], i) => { const [x2, y2] = pts[(i + 2) % 5]; o += `<line x1="${cx + x}" y1="${cy + y}" x2="${cx + x2}" y2="${cy + y2}" stroke="${col}" stroke-opacity=".35" stroke-dasharray="2 3"/>`; });
-    if (k === 2) for (let r = 10; r <= 40; r += 10) o += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${col}" stroke-opacity="${.5 - r / 100}"/>`;
+    if (k === 0) pts.forEach(([x, y], i) => { o += `<line x1="${cx + x}" y1="${cy + y}" x2="${cx + x * .3}" y2="${cy + y * .3}" stroke="${col}" stroke-opacity=".5" marker-end="url(#ah4)"><animate attributeName="stroke-opacity" values=".2;.9;.2" dur="1.6s" begin="${i * .3}s" repeatCount="indefinite"/></line>`; });
+    if (k === 1) pts.forEach(([x, y], i) => { const [x2, y2] = pts[(i + 2) % 5]; o += `<line x1="${cx + x}" y1="${cy + y}" x2="${cx + x2}" y2="${cy + y2}" stroke="${col}" stroke-opacity=".35" stroke-dasharray="2 3"><animate attributeName="stroke-dashoffset" values="0;-10" dur="1s" repeatCount="indefinite"/></line>`; });
+    if (k === 2) for (let r = 10; r <= 40; r += 10) o += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${col}" stroke-opacity="${.5 - r / 100}"><animate attributeName="r" values="${r};${r + 10}" dur="2.4s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values="${.5 - r / 100};0" dur="2.4s" repeatCount="indefinite"/></circle>`;
     pts.forEach(([x, y]) => { o += `<circle cx="${cx + x}" cy="${cy + y}" r="3.5" fill="${col}"/>`; });
     o += T(cx, cy + 74, `${n} · ${sym}`, { fs: 13, w: 700, a: 'middle' }) + T(cx, cy + 90, d, { fs: 9, a: 'middle', op: .7 });
     if (k < 2) o += T(cx + 100, cy + 5, '+', { fs: 22, w: 700, a: 'middle', op: .6 });
@@ -179,7 +179,7 @@ const triFig = () => {
 
 /* ------------------------------------------------------------------ the cybergraph renderer (real data when graph.json is present) */
 const cyberGraph = (() => {
-  let data = null, cv, ctx, raf = 0, t0 = 0, W = 0, H = 0, mx = -1e9, my = -1e9, adj = null;
+  let data = null, cv, ctx, raf = 0, t0 = 0, W = 0, H = 0, mx = -1e9, my = -1e9, adj = null, lastHov = -1;
   const synth = () => { const n = 900, nodes = [], links = []; for (let i = 0; i < n; i++) nodes.push([`synth${i}`, 1, Math.random(), Math.random()]); for (let i = 1; i < n; i++) { const j = Math.floor(Math.pow(Math.random(), 2.2) * i); links.push([i, j]); nodes[j][1]++; nodes[i][1]++; } return { meta: { source: 'synthetic preferential attachment (graph.json not found)', particles_total: n, links_total: links.length, sampled_particles: n, sampled_links: links.length, synthetic: true }, nodes, links }; };
   const load = async () => { try { const r = await fetch('graph.json'); if (!r.ok) throw 0; data = await r.json(); } catch { data = synth(); } prep(); };
   let maxd = 1, cx = 0, cy = 0;
@@ -188,9 +188,9 @@ const cyberGraph = (() => {
   const draw = () => {
     if (!cv || !data) return;
     const dpr = devicePixelRatio; W = cv.width = cv.clientWidth * dpr; H = cv.height = cv.clientHeight * dpr;
-    const t = (performance.now() - t0) / 1000, ang = t * .04, s = Math.min(W, H) * .56, zoom = 1 + .05 * Math.sin(t * .4);
+    const t = (performance.now() - t0) / 1000, ang = t * .04, s = Math.min(W, H) * .56, zoom = (1 + .05 * Math.sin(t * .4)) * userZoom;
     const P = data.nodes.map((n) => { const x = (n[2] - cx) * zoom, y = (n[3] - cy) * zoom; const c = Math.cos(ang), sn = Math.sin(ang); return [W / 2 + (x * c - y * sn) * 2 * s, H / 2 + (x * sn + y * c) * 2 * s * .92]; });
-    let hov = -1, hd = 18 * dpr; P.forEach((p, i) => { const d = Math.hypot(p[0] - mx, p[1] - my); if (d < hd) { hd = d; hov = i; } });
+    let hov = -1, hd = 18 * dpr; P.forEach((p, i) => { const d = Math.hypot(p[0] - mx, p[1] - my); if (d < hd) { hd = d; hov = i; } }); lastHov = hov; if (hov < 0 && pinned >= 0) hov = pinned;
     ctx.clearRect(0, 0, W, H);
     ctx.lineWidth = .6 * dpr; ctx.strokeStyle = COLS[0]; ctx.globalAlpha = hov < 0 ? .22 : .08;
     ctx.beginPath(); for (const [a, b] of data.links) { ctx.moveTo(P[a][0], P[a][1]); ctx.lineTo(P[b][0], P[b][1]); } ctx.stroke();
@@ -202,10 +202,12 @@ const cyberGraph = (() => {
     if (hov >= 0) { const n = data.nodes[hov]; ctx.font = `${11 * dpr}px ${MONO}`; ctx.fillStyle = '#fff'; ctx.globalAlpha = 1; ctx.fillText(`${n[0]} · ${fmt(n[1])} links on chain · ${adj[hov].length} in sample`, 12 * dpr, 18 * dpr); }
     ctx.globalAlpha = 1; raf = requestAnimationFrame(draw);
   };
+  let userZoom = 1, pinned = -1;
   const onMove = (e) => { const r = cv.getBoundingClientRect(); mx = (e.clientX - r.left) * devicePixelRatio; my = (e.clientY - r.top) * devicePixelRatio; };
+  const onWheel = (e) => { e.preventDefault(); e.stopPropagation(); userZoom = Math.min(4, Math.max(.6, userZoom * (e.deltaY > 0 ? .92 : 1.08))); };
   const run = (init) => { let phi = null, lastD = 0; return { step() { if (!data) return null; if (!phi) { phi = data.nodes.map(() => init === 'random' ? Math.random() : 1); const z = phi.reduce((a, b) => a + b, 0); phi = phi.map((v) => v / z); } const next = phi.map((v, i) => { const nb = adj[i]; if (!nb.length) return .15 / data.nodes.length; let sum = 0; for (const j of nb) sum += phi[j] / Math.max(1, adj[j].length); return .15 / data.nodes.length + .85 * sum; }); let d = 0; for (let i = 0; i < phi.length; i++) d += Math.abs(next[i] - phi[i]); phi = next; const kap = lastD ? d / lastD : null; lastD = d; return { d, kap }; }, get phi() { return phi; }, reset() { phi = null; lastD = 0; } }; };
   const runA = run('uniform'); const iterate = () => runA.step();
-  return { iterate, run, load() { if (!data) load(); }, start() { cv = $('#cg'); if (!cv) return; ctx = cv.getContext('2d'); cv.onmousemove = onMove; cv.onmouseleave = () => { mx = my = -1e9; }; t0 = t0 || performance.now(); if (!data) load().then(() => { if (!raf) draw(); }); else if (!raf) draw(); }, stop() { cancelAnimationFrame(raf); raf = 0; } };
+  return { iterate, run, load() { if (!data) load(); }, start() { cv = $('#cg'); if (!cv) return; ctx = cv.getContext('2d'); cv.onmousemove = onMove; cv.onmouseleave = () => { mx = my = -1e9; }; cv.onwheel = onWheel; cv.onclick = () => { pinned = pinned === lastHov ? -1 : lastHov; sfx.tick(); }; t0 = t0 || performance.now(); if (!data) load().then(() => { if (!raf) draw(); }); else if (!raf) draw(); }, stop() { cancelAnimationFrame(raf); raf = 0; } };
 })();
 
 /* ------------------------------------------------------------------ slides */
@@ -322,10 +324,38 @@ const S = [
   <div class="panel"><label>bring a mind · your name</label><input type="text" id="ref-name" placeholder="name" value=""><div class="row"><button class="btn" id="ref-go">make my link</button><span class="fine">mentor's share · 10% of the student's token at birth + fees for life · proposed ${M('t')}</span></div><div class="out" id="ref-out">every neuron that joins through your link is your student. teaching is paid here, for once.</div></div>` },
 ];
 
+
+/* ------------------------------------------------------------------ sound · synthesized, no files */
+const sfx = (() => {
+  let ac = null, master = null, on = localStorage.getItem('cyber.sound') !== 'off', amb = null;
+  const ensure = () => { if (ac) return true; try { ac = new (window.AudioContext || window.webkitAudioContext)(); master = ac.createGain(); master.gain.value = .22; master.connect(ac.destination); } catch { return false; } return true; };
+  const resume = () => { if (ac && ac.state === 'suspended') ac.resume(); };
+  const tone = (f0, f1, dur, type = 'sine', g = .5, at = 0) => { if (!on || !ensure()) return; resume(); const t = ac.currentTime + at; const o = ac.createOscillator(), v = ac.createGain(); o.type = type; o.frequency.setValueAtTime(f0, t); if (f1) o.frequency.exponentialRampToValueAtTime(f1, t + dur); v.gain.setValueAtTime(0, t); v.gain.linearRampToValueAtTime(g, t + .006); v.gain.exponentialRampToValueAtTime(.0005, t + dur); o.connect(v); v.connect(master); o.start(t); o.stop(t + dur + .02); };
+  const noise = (dur, g = .3, hp = 2000) => { if (!on || !ensure()) return; resume(); const t = ac.currentTime; const n = ac.sampleRate * dur | 0, b = ac.createBuffer(1, n, ac.sampleRate), d = b.getChannelData(0); for (let i = 0; i < n; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / n); const src = ac.createBufferSource(); src.buffer = b; const f = ac.createBiquadFilter(); f.type = 'highpass'; f.frequency.value = hp; const v = ac.createGain(); v.gain.value = g; src.connect(f); f.connect(v); v.connect(master); src.start(t); };
+  const ambient = (start) => { if (!ensure()) return; if (start && !amb && on) { const v = ac.createGain(); v.gain.value = 0; v.connect(master); const f = ac.createBiquadFilter(); f.type = 'lowpass'; f.frequency.value = 220; f.connect(v); const os = [55, 55.4, 82.5].map((fr) => { const o = ac.createOscillator(); o.type = 'triangle'; o.frequency.value = fr; o.connect(f); o.start(); return o; }); v.gain.linearRampToValueAtTime(.06, ac.currentTime + 4); amb = { v, os }; } if (!start && amb) { amb.v.gain.linearRampToValueAtTime(0, ac.currentTime + 1); const a = amb; amb = null; setTimeout(() => a.os.forEach((o) => o.stop()), 1200); } };
+  const NOTES = [220, 246.9, 277.2, 329.6, 370, 440, 493.9];
+  return {
+    get on() { return on; },
+    toggle() { on = !on; localStorage.setItem('cyber.sound', on ? 'on' : 'off'); if (on) { ensure(); resume(); ambient(true); tone(660, 990, .12, 'sine', .4); } else ambient(false); return on; },
+    wake() { if (on && ensure()) { resume(); ambient(true); } },
+    tick() { noise(.02, .25, 3000); tone(1800, 1200, .03, 'square', .08); },
+    move(dir, ch) { noise(.03, .2, 1500); tone(dir > 0 ? 440 : 520, dir > 0 ? 560 : 400, .08, 'sine', .25); if (ch != null) { const r = NOTES[ch]; tone(r, null, .5, 'sine', .18, .04); tone(r * 1.5, null, .45, 'sine', .1, .08); } },
+    link() { tone(880, 1320, .16, 'sine', .35); tone(1320, 1760, .22, 'triangle', .18, .1); },
+    hash() { noise(.012, .12, 4000); },
+    ticket() { tone(1760, 1750, .35, 'sine', .3); tone(2640, 2630, .25, 'sine', .12, .02); },
+    converge(d) { const f = 220 + 1200 * Math.min(1, Math.max(0, (-Math.log10(Math.max(d, 1e-9)) - 1) / 7)); tone(f, f * 1.02, .07, 'triangle', .22); },
+    stake(v) { tone(v ? 160 : 110, 60, .25, 'sine', .45); noise(.05, .15, 800); },
+    mentor() { [0, 2, 4, 6].forEach((k, i) => tone(NOTES[k] * 2, null, .3, 'sine', .22, i * .09)); },
+    chord(ch) { const r = NOTES[ch]; [1, 1.25, 1.5, 2].forEach((m, i) => tone(r * m, null, .9, 'sine', .14, i * .05)); },
+  };
+})();
+/* count-up for integer figures */
+const countUp = (slide) => { slide.querySelectorAll('.n big').forEach((b) => { if (b.dataset.done) return; const raw = b.firstChild && b.firstChild.nodeType === 3 ? b.firstChild.nodeValue.trim() : ''; if (!/^[\d,]+$/.test(raw)) return; const target = +raw.replace(/,/g, ''); if (!target || target < 100) return; b.dataset.done = 1; const t0 = performance.now(); const step = (t) => { const k = Math.min(1, (t - t0) / 900), e = 1 - Math.pow(1 - k, 3); b.firstChild.nodeValue = Math.round(target * e).toLocaleString('en-US'); if (k < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); }); };
+
 /* ------------------------------------------------------------------ build */
 const deck = $('#deck'), segs = $('#segs');
 S.forEach((s, i) => {
-  const d = el(`<section class="slide ch${s.ch} ${s.cls || ''}" data-i="${i}" style="--c:${CH[s.ch].c}"><div class="body">${s.html}</div>${s.bridge ? `<p class="bridge">→ ${s.bridge}</p>` : ''}</section>`);
+  const d = el(`<section class="slide ch${s.ch} ${s.cls || ''}" data-i="${i}" data-ch="${String(s.ch + 1).padStart(2, '0')}" style="--c:${CH[s.ch].c}"><div class="body">${s.html}</div>${s.bridge ? `<p class="bridge">→ ${s.bridge}</p>` : ''}</section>`);
   deck.appendChild(d);
 });
 CH.forEach((c, i) => {
@@ -339,8 +369,15 @@ let cur = -1, auto = null;
 const go = (i) => {
   i = Math.max(0, Math.min(S.length - 1, i));
   if (i === cur) return;
+  const dir = i > cur ? 1 : -1, prevCh = cur >= 0 ? S[cur].ch : -1;
   cur = i;
-  document.querySelectorAll('.slide').forEach((s, k) => s.classList.toggle('on', k === i));
+  deck.dataset.dir = dir;
+  document.querySelectorAll('.slide').forEach((s, k) => { s.classList.toggle('on', k === i); s.classList.toggle('left', k < i); });
+  sfx.move(dir, S[i].ch !== prevCh ? S[i].ch : null);
+  if (navigator.vibrate) navigator.vibrate(8);
+  graph.pulse();
+  countUp(document.querySelectorAll('.slide')[i]);
+  $('#pos').textContent = `${String(i + 1).padStart(2, '0')} / ${S.length}`;
   document.body.classList.toggle('ink', (S[i].cls || '').includes('ink'));
   document.body.className = document.body.className.replace(/\bch\d\b/g, '').trim() + ' ch' + S[i].ch;
   if (auto) $('#mine-auto').click();
@@ -363,6 +400,11 @@ document.addEventListener('wheel', (e) => { if (e.target.closest('.panel,.body')
 let tx = null, ty = 0; document.addEventListener('touchstart', (e) => { tx = e.target.closest('input[type=range]') ? null : e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
 document.addEventListener('touchend', (e) => { if (tx == null) return; const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty; if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) go(cur + (dx < 0 ? 1 : -1)); tx = null; });
 $('#restart')?.addEventListener('click', (e) => { e.preventDefault(); go(0); });
+document.addEventListener('pointerdown', (e) => { sfx.wake(); if (e.target.closest('button, a, .chip, .seg, input[type=range]')) sfx.tick(); }, { passive: true });
+document.addEventListener('keydown', () => sfx.wake(), { once: true });
+const sndBtn = $('#snd'); const sndPaint = () => { sndBtn.textContent = sfx.on ? '◉ sound' : '○ sound'; sndBtn.classList.toggle('off', !sfx.on); }; sndBtn.onclick = () => { sfx.toggle(); sndPaint(); }; sndPaint();
+/* cursor: a dot and a lagging ring on fine pointers */
+if (matchMedia('(pointer:fine)').matches) { const dot = el('<div class="cur-dot"></div>'), ring = el('<div class="cur-ring"></div>'); document.body.append(dot, ring); let rx = 0, ry = 0, tx2 = 0, ty2 = 0; addEventListener('mousemove', (e) => { tx2 = e.clientX; ty2 = e.clientY; dot.style.transform = `translate(${tx2}px,${ty2}px)`; const hot = e.target.closest('button, a, .chip, .seg, input, canvas, .fig'); ring.classList.toggle('hot', !!hot); }, { passive: true }); const lag = () => { rx += (tx2 - rx) * .18; ry += (ty2 - ry) * .18; ring.style.transform = `translate(${rx}px,${ry}px)`; requestAnimationFrame(lag); }; lag(); document.body.classList.add('has-cursor'); }
 
 /* ------------------------------------------------------------------ yield */
 const Y = { links: 0, samples: 0, stake: 0, invites: 0 };
@@ -415,6 +457,7 @@ const graph = (() => {
     },
     iterate() { for (const p of nodes) { let s = 0, n = 0; for (const [a, b] of edges) { if (a === p) { s += b.phi; n++; } if (b === p) { s += a.phi; n++; } } p.next = n ? .15 * p.phi + .85 * s / n : p.phi * .97; } let d = 0; for (const p of nodes) { d += Math.abs(p.next - p.phi); p.phi = p.next; } const m = Math.max(...nodes.map((p) => p.phi)) || 1; for (const p of nodes) p.phi = p.phi / m; return d / nodes.length; },
     grow(n) { add(n); pulse = .6; },
+    pulse() { pulse = Math.max(pulse, .8); },
   };
 })();
 
@@ -426,7 +469,7 @@ chips('#chips-a', CH_A, '#link-a'); chips('#chips-b', CH_B, '#link-b');
 $('#link-go').onclick = () => {
   const a = esc($('#link-a').value.trim().slice(0, 80)), b = esc($('#link-b').value.trim().slice(0, 80)); if (!a || !b) return;
   if (a.toLowerCase() === b.toLowerCase()) { $('#link-out').innerHTML = 'a thing linked to itself moves focus by <b>0.0000</b> bits. copying earns nothing.'; return; }
-  graph.link(a, b); bump('links', 1);
+  graph.link(a, b); bump('links', 1); sfx.link();
   const d = (0.0007 + Math.random() * 0.004).toFixed(4), s = (40 + Math.random() * 55).toFixed(0);
   sha(a + ' → ' + b).then((h) => { const o = $('#link-out'); o.innerHTML = o.innerHTML.replace('particle …', `particle <b>${h}</b>`); });
   $('#link-out').innerHTML = `linked <b>${a}</b> ⟶ <b>${b}</b> · particle … (sha-256 here, hemera on mainnet)\nΔφ⋆ <b>+${d} bits</b> · surprise <b>${s}%</b> against the crowd's prediction · your share of the shift: <b>100%</b> until someone else links it ${M('k')}\n${Y.links === 1 ? 'that is what the mint pays for. nothing else.' : 'the graph behind you grew. keep going.'}`;
@@ -434,8 +477,8 @@ $('#link-go').onclick = () => {
 };
 
 const cbar = (chart, v, col) => { const b = el(`<i title="${v.toExponential(2)}"></i>`); b.dataset.v = v; if (col) b.style.background = col; chart.appendChild(b); while (chart.children.length > 36) chart.firstChild.remove(); const mx = Math.max(...[...chart.children].map((x) => +x.dataset.v)) || 1; [...chart.children].forEach((x) => { x.style.height = Math.max(2, 100 * (+x.dataset.v) / mx) + '%'; }); };
-let kIter = 0; $('#kernel-run').onclick = () => { let n = 0; const chart = $('#kernel-chart'); const run = () => { const real = cyberGraph.iterate(); const d = real ? real.d : graph.iterate(); graph.iterate(); kIter++; n++; cbar(chart, d); $('#kernel-iter').textContent = fmt(kIter); $('#kernel-delta').textContent = `‖Δφ‖ = ${d.toExponential(2)}${real && real.kap ? ` · κ̂ ≈ ${Math.min(real.kap, .999).toFixed(3)}` : ''}`; if (n < 12 && d > 1e-7) requestAnimationFrame(run); else if (d <= 1e-7) $('#kernel-delta').textContent += ' · fixed point'; }; run(); };
-$('#unique-run').onclick = () => { const chart = $('#unique-chart'); chart.innerHTML = ''; const A = cyberGraph.run('random'), B = cyberGraph.run('random'); let n = 0; const step = () => { const ra = A.step(), rb = B.step(); if (!ra) { $('#unique-out').textContent = 'sample still loading — open the cybergraph slide first'; return; } let dist = 0; const pa = A.phi, pb = B.phi; for (let i = 0; i < pa.length; i++) dist += Math.abs(pa[i] - pb[i]); n++; cbar(chart, dist, n % 2 ? COLS[4] : '#fff'); $('#unique-out').textContent = `step ${n} · ‖φ_A − φ_B‖₁ = ${dist.toExponential(2)}`; if (n < 80 && dist > 1e-6) requestAnimationFrame(step); else $('#unique-out').textContent += dist <= 1e-6 ? ' · one focus' : ''; }; step(); };
+let kIter = 0; $('#kernel-run').onclick = () => { let n = 0; const chart = $('#kernel-chart'); const run = () => { const real = cyberGraph.iterate(); const d = real ? real.d : graph.iterate(); graph.iterate(); kIter++; n++; cbar(chart, d); sfx.converge(d); $('#kernel-iter').textContent = fmt(kIter); $('#kernel-delta').textContent = `‖Δφ‖ = ${d.toExponential(2)}${real && real.kap ? ` · κ̂ ≈ ${Math.min(real.kap, .999).toFixed(3)}` : ''}`; if (n < 12 && d > 1e-7) requestAnimationFrame(run); else if (d <= 1e-7) $('#kernel-delta').textContent += ' · fixed point'; }; run(); };
+$('#unique-run').onclick = () => { const chart = $('#unique-chart'); chart.innerHTML = ''; const A = cyberGraph.run('random'), B = cyberGraph.run('random'); let n = 0; const step = () => { const ra = A.step(), rb = B.step(); if (!ra) { $('#unique-out').textContent = 'sample still loading — open the cybergraph slide first'; return; } let dist = 0; const pa = A.phi, pb = B.phi; for (let i = 0; i < pa.length; i++) dist += Math.abs(pa[i] - pb[i]); n++; cbar(chart, dist, n % 2 ? COLS[4] : '#fff'); if (n % 3 === 0) sfx.converge(dist); $('#unique-out').textContent = `step ${n} · ‖φ_A − φ_B‖₁ = ${dist.toExponential(2)}`; if (n < 80 && dist > 1e-6) requestAnimationFrame(step); else { $('#unique-out').textContent += dist <= 1e-6 ? ' · one focus' : ''; if (dist <= 1e-6) sfx.chord(2); } }; step(); };
 
 const NAMES = ['you', 'archivist', 'neuron 0x3f…', 'sensor'];
 const weights = [0, 0, 0, 0]; let samples = 0, tickets = 0;
@@ -445,7 +488,7 @@ const sample = (k) => {
   for (let i = 0; i < k; i++) {
     const order = [0, 1, 2, 3].sort(() => Math.random() - .5); let acc = 0;
     for (const j of order) { const v = acc + [1.0, 1.6, .7, .4][j] * (0.6 + Math.random() * .8); weights[j] += v - acc; acc = v; }
-    samples++; if (Math.random() < .03) { tickets++; $('#mine-tickets').appendChild(el('<i></i>')); }
+    samples++; if (Math.random() < .03) { tickets++; $('#mine-tickets').appendChild(el('<i></i>')); sfx.ticket(); }
   }
   const tot = weights.reduce((a, b) => a + b, 0) || 1;
   [...mineBars.children].forEach((b, i) => { const f = weights[i] / tot; $('i', b).style.transform = `scaleX(${f.toFixed(3)})`; b.lastElementChild.textContent = (f * 100).toFixed(1) + '%'; });
@@ -454,15 +497,15 @@ const sample = (k) => {
   if (samples % 500 === 0 || samples <= 100) $('#mine-out').innerHTML = `your share converges as orderings accumulate. with <b>${fmt(samples)}</b> samples the division is already within a few percent of the exact Shapley value — that is the whole trick: the proof-of-work <b>is</b> the accounting. ${M('k')}`;
   bump('samples', k); graph.grow(Math.ceil(k / 25));
 };
-$('#mine-go').onclick = () => sample(100);
+$('#mine-go').onclick = () => { sfx.hash(); sample(100); };
 $('#mine-auto').onclick = (e) => { if (auto) { clearInterval(auto); auto = null; e.target.textContent = 'auto'; } else { auto = setInterval(() => sample(20), 120); e.target.textContent = 'stop'; } };
 
 let valence = 0; $('#stake-dial').addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; valence = +b.dataset.v; [...$('#stake-dial').children].forEach((x) => x.classList.toggle('on', x === b)); hint(); });
 const hint = () => { const amt = +$('#stake-range').value; $('#stake-amt').textContent = amt; $('#stake-hint').innerHTML = valence === 0 ? `moves rank · earns nothing ${M('k')}` : `at risk · pays if the picture moves ${valence > 0 ? 'with' : 'against'} the claim ${M('k')}`; };
 $('#stake-range').oninput = hint; hint();
-$('#stake-go').onclick = () => { const amt = +$('#stake-range').value; if (valence !== 0) bump('stake', amt); const ev = valence === 0 ? 0 : (amt * (0.08 + Math.random() * .12)).toFixed(2); $('#stake-out').innerHTML = valence === 0 ? `staked <b>${amt} tokens</b> passively. the claim ranks higher. you earn <b>0</b> — idle capital cannot compound here. ${M('k')}` : `staked <b>${amt} tokens</b> at valence <b>${valence > 0 ? '+1' : '−1'}</b>. if the serum confirms you, expected yield ≈ <b>${ev}</b> from the liars' side of the market; if not, that is what you lose ${M('k')}`; };
+$('#stake-go').onclick = () => { const amt = +$('#stake-range').value; sfx.stake(valence); if (valence !== 0) bump('stake', amt); const ev = valence === 0 ? 0 : (amt * (0.08 + Math.random() * .12)).toFixed(2); $('#stake-out').innerHTML = valence === 0 ? `staked <b>${amt} tokens</b> passively. the claim ranks higher. you earn <b>0</b> — idle capital cannot compound here. ${M('k')}` : `staked <b>${amt} tokens</b> at valence <b>${valence > 0 ? '+1' : '−1'}</b>. if the serum confirms you, expected yield ≈ <b>${ev}</b> from the liars' side of the market; if not, that is what you lose ${M('k')}`; };
 
-$('#ref-go').onclick = () => { const n = ($('#ref-name').value.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'anon'); const url = `${location.origin}${location.pathname}?m=${n}#0`; if (!Y.invites) bump('invites', 1); $('#ref-out').innerHTML = `<b>${url}</b>\nsend it to one person who knows something. when they link, you teach; when they mint, you earn the mentor's share.`; navigator.clipboard?.writeText(url).then(() => { $('#ref-out').innerHTML += '\n<b>copied</b>'; }).catch(() => {}); };
+$('#ref-go').onclick = () => { const n = ($('#ref-name').value.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'anon'); const url = `${location.origin}${location.pathname}?m=${n}#0`; sfx.mentor(); if (!Y.invites) bump('invites', 1); $('#ref-out').innerHTML = `<b>${url}</b>\nsend it to one person who knows something. when they link, you teach; when they mint, you earn the mentor's share.`; navigator.clipboard?.writeText(url).then(() => { $('#ref-out').innerHTML += '\n<b>copied</b>'; }).catch(() => {}); };
 
 /* two ledgers */
 const ledV = $('#led-v'); const hx = (n) => Array.from({ length: n }, () => '0123456789abcdef'[Math.random() * 16 | 0]).join('');

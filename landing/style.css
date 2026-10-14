@@ -183,3 +183,51 @@ p.mute,.mute{color:var(--mute);font-size:15px;line-height:1.5;max-width:52ch}
 @media (max-width:900px){.bridge{display:none}}
 .cbars{display:flex;align-items:flex-end;gap:3px;height:70px;margin:8px 0 10px;border-bottom:1px solid rgba(255,255,255,.2)}
 .cbars i{flex:1;display:block;background:var(--c);border-radius:2px 2px 0 0;min-width:4px;transition:height .2s}
+
+/* ---------- motion ---------- */
+.slide{transition:opacity .5s ease,transform .6s cubic-bezier(.16,.88,.24,1);transform:translateX(0)}
+.slide:not(.on){transform:translateX(calc(var(--dx,40px)))}
+.slide.left:not(.on){--dx:-40px}
+#deck[data-dir="-1"] .slide:not(.on):not(.left){--dx:40px}
+.slide.on .kick{animation:reveal .55s steps(28) both}
+.slide.on h1,.slide.on h2{animation:rise .6s cubic-bezier(.16,.88,.24,1) both}
+.slide.on p.lead{animation:rise .6s .12s cubic-bezier(.16,.88,.24,1) both}
+.slide.on .nums .n,.slide.on .steps .step,.slide.on .tiles .tile,.slide.on .tally>div{animation:rise .5s cubic-bezier(.16,.88,.24,1) both}
+.slide.on .nums .n:nth-child(2),.slide.on .steps .step:nth-child(2),.slide.on .tiles .tile:nth-child(2),.slide.on .tally>div:nth-child(2){animation-delay:.08s}
+.slide.on .nums .n:nth-child(3),.slide.on .steps .step:nth-child(3),.slide.on .tiles .tile:nth-child(3),.slide.on .tally>div:nth-child(3){animation-delay:.16s}
+.slide.on .nums .n:nth-child(4),.slide.on .steps .step:nth-child(4),.slide.on .tiles .tile:nth-child(4),.slide.on .tally>div:nth-child(4){animation-delay:.24s}
+.slide.on .nums .n:nth-child(5),.slide.on .steps .step:nth-child(5){animation-delay:.32s}
+.slide.on .nums .n:nth-child(6),.slide.on .steps .step:nth-child(6){animation-delay:.4s}
+.slide.on .fig,.slide.on .panel,.slide.on .cgwrap{animation:rise .7s .1s cubic-bezier(.16,.88,.24,1) both}
+.slide.on .bridge{animation:fade 1s .9s both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:.75}}
+@keyframes reveal{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+.hero-word{background-size:300% 100%;animation:shimmer 9s linear infinite}
+@keyframes shimmer{from{background-position:0 0}to{background-position:300% 0}}
+h2 em{position:relative}
+.slide.on h2 em{animation:glow 2.6s ease-in-out .5s infinite alternate}
+@keyframes glow{from{text-shadow:0 0 0 transparent}to{text-shadow:0 0 28px color-mix(in srgb,var(--c) 55%,transparent)}}
+.slide.ink.on h2 em{animation:none}
+/* chapter watermark */
+.slide::after{content:attr(data-ch);position:absolute;right:4vw;bottom:calc(var(--rail) + 8px);font:700 clamp(120px,22vw,320px)/1 var(--sans);letter-spacing:-.04em;color:currentColor;opacity:.045;pointer-events:none}
+/* grain */
+.grain{position:fixed;inset:-50%;width:200%;height:200%;z-index:2;pointer-events:none;opacity:.07;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-2%,1%)}40%{transform:translate(1%,-2%)}60%{transform:translate(-1%,2%)}80%{transform:translate(2%,-1%)}100%{transform:translate(0,0)}}
+/* cursor */
+body.has-cursor{cursor:none}body.has-cursor a,body.has-cursor button,body.has-cursor input,body.has-cursor .chip,body.has-cursor .seg,body.has-cursor canvas{cursor:none}
+.cur-dot{position:fixed;left:-4px;top:-4px;width:8px;height:8px;border-radius:50%;background:#fff;z-index:50;pointer-events:none;mix-blend-mode:difference}
+.cur-ring{position:fixed;left:-16px;top:-16px;width:32px;height:32px;border-radius:50%;border:1.5px solid #fff;z-index:50;pointer-events:none;mix-blend-mode:difference;opacity:.7;transition:width .2s,height .2s,left .2s,top .2s,border-color .2s}
+.cur-ring.hot{width:48px;height:48px;left:-24px;top:-24px;border-color:var(--c4);opacity:1}
+/* hover life */
+.tile{transition:transform .2s,border-color .2s,box-shadow .2s}.tile:hover{transform:translateY(-3px);border-color:var(--c);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.btn{transition:transform .12s,box-shadow .2s,filter .2s}.btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px color-mix(in srgb,var(--c) 35%,transparent);filter:brightness(1.05)}
+.step{transition:background .2s,padding-left .2s}.step:hover{background:color-mix(in srgb,var(--c) 7%,transparent);padding-left:6px}
+.n:hover big{text-shadow:0 0 22px color-mix(in srgb,var(--c) 60%,transparent)}
+.fig g.hov{transition:opacity .2s}.fig:hover g.hov{opacity:.35}.fig g.hov:hover{opacity:1}
+.seg{transition:opacity .25s,flex .3s}.seg:hover{flex:1.4}
+/* hud sound + rail position */
+.snd{margin-left:14px;background:transparent;border:1px solid currentColor;border-radius:999px;color:inherit;font:11px var(--mono);letter-spacing:.1em;padding:4px 10px;cursor:pointer;opacity:.8}.snd.off{opacity:.45}
+.rail .pos{display:grid;place-items:center;padding:0 10px;font:11px var(--mono);letter-spacing:.1em;color:#888;background:#000}
+@media (max-width:900px){.rail .pos{display:none}.snd{display:none}.slide::after{display:none}.grain{display:none}}
+@media (prefers-reduced-motion:reduce){.slide,.slide *{animation:none!important;transition:none!important}.grain{display:none}}
