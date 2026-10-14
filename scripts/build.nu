@@ -44,6 +44,14 @@ def main [
     if ($"($root)/_redirects" | path exists) {
         cp $"($root)/_redirects" $"($out)/_redirects"
     }
+    # the landing deck is the home of cyber.page: it replaces optica's root
+    # index.html; every graph page keeps its URL underneath.
+    if ($"($root)/landing/index.html" | path exists) {
+        cp $"($root)/landing/index.html" $"($out)/index.html"
+        cp $"($root)/landing/style.css" $"($out)/style.css"
+        cp $"($root)/landing/deck.js" $"($out)/deck.js"
+        print "landing → /"
+    }
 }
 
 # Siblings contribute their markdown. Source code and data files render as
