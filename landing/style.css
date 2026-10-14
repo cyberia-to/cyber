@@ -178,3 +178,6 @@ p.mute,.mute{color:var(--mute);font-size:15px;line-height:1.5;max-width:52ch}
 .slide.one.wash .fig{max-height:40vh}.slide.one.wash .mute{font-size:14px;max-width:62ch}
 #cg{cursor:crosshair}
 @media (max-width:900px){.cgcap #cg-meta{display:none}.cgcap{bottom:8px}}
+.bridge{position:absolute;left:6vw;right:6vw;bottom:calc(var(--rail) + 12px);margin:0;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;opacity:.75;pointer-events:none}
+.slide.ink .bridge{color:#000}.slide.ink.ch5 .bridge,.slide.ink.ch6 .bridge{color:#fff}
+@media (max-width:900px){.bridge{display:none}}

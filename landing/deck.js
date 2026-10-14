@@ -113,6 +113,47 @@ const compileFig = () => {
   return svgo(W, H, 'the graph compiled into a transformer', o);
 };
 
+
+/* earth ↔ mars: finality is an information condition, not a clock */
+const planetFig = () => {
+  const W = 760, H = 258; let o = '';
+  const planet = (x, y, r, col, name, sub) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${col}" fill-opacity=".15" stroke="${col}" stroke-width="1.5"/>` + T(x, y + 4, name, { fs: 13, w: 700, a: 'middle' }) + T(x, y + r + 40, sub, { fs: 9, a: 'middle', op: .7 });
+  o += planet(120, 120, 46, COLS[4], 'earth', 'its own pond · finalizes at earth speed');
+  o += planet(640, 120, 30, COLS[1], 'mars', 'its own pond · finalizes at mars speed');
+  // local gossip rings
+  for (let k = 1; k <= 3; k++) o += `<circle cx="120" cy="120" r="${46 + k * 11}" fill="none" stroke="${COLS[4]}" stroke-opacity="${.35 - k * .09}" stroke-dasharray="2 5"/><circle cx="640" cy="120" r="${30 + k * 9}" fill="none" stroke="${COLS[1]}" stroke-opacity="${.35 - k * .09}" stroke-dasharray="2 5"/>`;
+  // light path
+  o += `<line x1="200" y1="120" x2="580" y2="120" stroke="currentColor" stroke-opacity=".35" stroke-dasharray="6 6"/>`;
+  o += `<circle cx="300" cy="120" r="3" fill="#fff"><animate attributeName="cx" values="200;580" dur="6s" repeatCount="indefinite"/></circle>`;
+  o += T(390, 104, '4 – 24 minutes of light, one way', { fs: 11, w: 700, a: 'middle' });
+  o += T(390, 140, 'a signal pays light-time once · a vote pays it twice, every round', { fs: 9.5, a: 'middle', op: .75 });
+  // rule box
+  o += `<rect x="250" y="190" width="280" height="54" rx="10" fill="currentColor" fill-opacity=".06" stroke="currentColor" stroke-opacity=".3"/>`;
+  o += T(390, 210, 'final ⇔ φ⋆ᵢ > τ', { fs: 14, w: 700, a: 'middle', ff: MONO });
+  o += T(390, 230, 'enough attention has gathered · an information condition, not a clock', { fs: 9, a: 'middle', op: .75 });
+  o += T(120, 22, 'identical signals → one root everywhere', { fs: 9.5, a: 'middle', op: .7 });
+  o += T(745, 22, 'a dark link freezes trade, never invents two truths', { fs: 9.5, a: 'end', op: .7 });
+  return svgo(W, H, 'earth and mars: finality survives the speed of light', o);
+};
+
+/* surprising syntropy: two filters, one quadrant pays */
+const syntropyFig = () => {
+  const W = 760, H = 290; let o = '';
+  const x0 = 170, y0 = 40, w = 430, h = 190;
+  const cell = (cx, cy, col, title, sub, pay) => `<rect x="${cx}" y="${cy}" width="${w / 2 - 6}" height="${h / 2 - 6}" rx="10" fill="${col}" fill-opacity="${pay ? .22 : .06}" stroke="${col}" stroke-opacity="${pay ? 1 : .35}" stroke-width="${pay ? 2 : 1}"/>` + T(cx + w / 4 - 3, cy + 34, title, { fs: 13, w: 700, a: 'middle' }) + T(cx + w / 4 - 3, cy + 54, sub, { fs: 9.5, a: 'middle', op: .75 }) + T(cx + w / 4 - 3, cy + 76, pay ? 'paid: R(ν) = Shapley_ν(v⋆)' : 'mints 0', { fs: 11, w: 700, a: 'middle', c: pay ? COLS[3] : 'currentColor', ff: MONO });
+  o += cell(x0, y0, COLS[3], 'surprising syntropy', 'order the crowd did not expect', true);
+  o += cell(x0 + w / 2 + 6, y0, 'currentColor', 'expected order', 'a copy · what everyone saw coming', false);
+  o += cell(x0, y0 + h / 2 + 6, 'currentColor', 'surprising noise', 'novel, and the picture got no clearer', false);
+  o += cell(x0 + w / 2 + 6, y0 + h / 2 + 6, 'currentColor', 'noise', 'idle capital · volume · presence', false);
+  // axes
+  o += T(x0 - 14, y0 + h / 4, 'Δφ⁺ > 0', { fs: 11, w: 700, a: 'end', ff: MONO }) + T(x0 - 14, y0 + h / 4 + 14, 'picture clearer', { fs: 9, a: 'end', op: .7 });
+  o += T(x0 - 14, y0 + 3 * h / 4, 'Δφ⁺ = 0', { fs: 11, w: 700, a: 'end', ff: MONO }) + T(x0 - 14, y0 + 3 * h / 4 + 14, 'no new order', { fs: 9, a: 'end', op: .7 });
+  o += T(x0 + w / 4, y0 + h + 22, 'ρ high · surprising', { fs: 11, w: 700, a: 'middle', ff: MONO }) + T(x0 + w / 4, y0 + h + 36, 'the crowd did not predict it', { fs: 9, a: 'middle', op: .7 });
+  o += T(x0 + 3 * w / 4, y0 + h + 22, 'ρ low · expected', { fs: 11, w: 700, a: 'middle', ff: MONO }) + T(x0 + 3 * w / 4, y0 + h + 36, 'the crowd predicted it', { fs: 9, a: 'middle', op: .7 });
+  o += T(W / 2, H - 6, 'syntropy J(φ⋆) = D_KL(φ⋆ ‖ uniform): bits of distance from noise · surprise ρ: the serum, your claim against the crowd\'s prediction of itself', { fs: 9, a: 'middle', op: .6 });
+  return svgo(W, H, 'surprising syntropy: two filters', o);
+};
+
 /* ------------------------------------------------------------------ the cybergraph renderer (real data when graph.json is present) */
 const cyberGraph = (() => {
   let data = null, cv, ctx, raf = 0, t0 = 0, W = 0, H = 0, mx = -1e9, my = -1e9, adj = null;
@@ -151,7 +192,7 @@ const S = [
   <div><p class="kick">cyber · a frozen protocol for collective lifeforms</p>
   <p class="hero-word">cyber</p>
   <h2>the <em>superintelligence.</em></h2>
-  <p class="lead">one focus — a single distribution over everything known — computed from every mind that pays to teach, proven to see what no member sees alone. the graph is the training data, the weights are public, the money is minted when the network learns.</p>
+  <p class="lead">one focus — a single distribution over everything known — computed from every mind that pays to teach, proven to see what no member sees alone, final without a vote, so light-delay cannot split it. the graph is the training data, the weights are public, the money is minted when the network learns.</p>
   <div class="tiles"><div class="tile"><b>one focus · φ⋆</b>exists, unique, same on every node</div><div class="tile"><b>compiled, not trained</b>bostrom → transformer in 62 s · d⋆ = 31</div><div class="tile"><b>frozen foundations</b>one field · one hash · one proof</div><div class="tile"><b>a network of moneys</b>CYB is the root token</div></div>
   <p class="kbd" style="margin-top:24px">→ or space to move · you will mine as you read</p></div>` },
 { ch: 0, cls: 'ink', html: `
@@ -159,7 +200,7 @@ const S = [
   <p class="lead">run the same engine on one neuron's private view, then on the whole cybergraph, and score both on prediction. the gap is superadditivity. on benchmark it is positive against the strongest participant at every connectivity level. emergence stops being philosophy the moment it has an error bar.</p>
   <p class="mute">its existence and uniqueness is the collective focus theorem: the tri-kernel is a contraction, so φ⋆ is a fixed point, identical on every node, computable from local neighbourhoods. nobody votes on importance. no individual ant understands the colony; the colony understands itself.</p></div>
   <div class="nums"><div class="n"><big>κ &lt; 1</big><small>the tri-kernel contracts · Banach for the blend, Perron–Frobenius for the walk · a theorem</small></div><div class="n"><big>σ<span class="f">_best</span> &gt; 0</big><small>the whole graph out-predicts its strongest neuron at every connectivity level · 34-node benchmark, first evidence ${M('m')}</small></div><div class="n"><big>1</big><small>fixed point φ⋆ · the same object ranks the graph, prices a link and compiles the model</small></div><div class="n"><big>0</big><small>votes, committees, operators between a claim and its rank</small></div></div>` },
-{ ch: 0, cls: 'one', html: `
+{ ch: 0, cls: 'one', bridge: 'a graph like this accepts exactly one kind of statement. that is the anatomy.', html: `
   <div><p class="kick">01 · superintelligence · the cybergraph · bostrom, sealed 2026-08-05</p>
   <h2>this is the <em>cybergraph.</em></h2>
   <div class="cgwrap"><canvas id="cg"></canvas><div class="cgcap"><span id="cg-meta">loading…</span><span>3,143,650 particles · 2,949,732 cyberlinks · 61,675 neurons · 1,735 days ${M('m')}</span></div></div>
@@ -174,7 +215,7 @@ const S = [
   <div><p class="kick">02 · anatomy · the signal</p><h2>a signal is a message<br><em>that carries its own proof.</em></h2>
   ${signalFig()}
   <p class="mute"><span class="f">s = (ν, ℓ, Δφ⋆, σ, prev, mc, vdf, step, nonce)</span>. who, what, how much the picture sharpened — then one zheng proof that covers all of it, the author's previous signal, the causal state it was computed against, physical time, logical time, and a nonce that touches nothing but the proof's randomness. any verifier runs decide(σ) in O(log n). this is the unit of gossip, of settlement, and of mining.</p></div>` },
-{ ch: 1, cls: 'ink', html: `
+{ ch: 1, cls: 'ink', bridge: 'statements pile up. what makes one picture out of millions of them? the kernel.', html: `
   <div><p class="kick">02 · anatomy · do it</p><h2>link two things.<br><em>you just grew the graph.</em></h2>
   <p class="lead">the kernel reruns with your link and without it; the downhill difference in φ⋆ is yours. a perfect copy moves focus by zero and surprises no one: copying earns nothing.</p></div>
   <div class="panel"><label>this</label><input type="text" id="link-a" placeholder="a thing you know" value="proof of work"><div class="chips" id="chips-a"></div><label>belongs with</label><input type="text" id="link-b" placeholder="what it belongs with" value="Shapley sampling"><div class="chips" id="chips-b"></div><div class="row"><button class="btn" id="link-go">link · stake it</button><span class="fine">signed by a throwaway neuron in your browser ${M('k')}</span></div><div class="out" id="link-out">your links land in the graph behind this deck.</div></div>` },
@@ -189,11 +230,10 @@ const S = [
   <h2>a graph, like a gas, <em>crosses a threshold.</em></h2>
   <p class="mute">past it, individual links stop mattering and only the field describes the system — the graph's own Avogadro number. five years in, nine orders of magnitude early. nobody is late.</p>
   ${scaleFig()}<p class="fine">self · crystal · bootloader ${M('m')} measured — cognition · thermodynamic · planetary ${M('t')} derived from the whitepaper's threshold — Avogadro: a physical constant</p></div>` },
-{ ch: 2, cls: 'ink', html: `
-  <div><p class="kick">03 · focus · finality</p><h2>a fact is final when<br><em>enough attention has gathered.</em></h2>
-  <p class="lead"><span class="f">φ⋆ᵢ &gt; τ</span>. not when a committee replies. nodes gossip, each runs the same contraction, identical signals produce one root everywhere — as a pond finds one level without phoning the far shore.</p>
-  <p class="mute">the medium is not slow software — the medium is physics. the binding constraint is light, not throughput. earth to mars is minutes one way, and every protocol that finalizes by counting votes is already dead at that distance. designing for planets is what removes every global round; the removal is what makes it work well on one.</p></div>
-  <div class="nums"><div class="n"><big>τ</big><small>attention threshold · finality is local contraction + gossip</small></div><div class="n"><big>0</big><small>global rounds, leaders, vote counts</small></div><div class="n"><big>minutes</big><small>earth ↔ mars one way · domains settle at domain speed</small></div><div class="n"><big>1</big><small>root for identical signals, on any two machines</small></div></div>` },
+{ ch: 2, cls: 'one wash', bridge: 'one focus, on every world. a focus is a distribution — and a distribution can be compiled.', html: `
+  <div><p class="kick">03 · focus · interplanetary</p><h2>one mind <em>across worlds.</em></h2>
+  ${planetFig()}
+  <p class="mute">type I is a thinking planet; type II is a thinking solar system. earth to mars is 4–24 minutes one way, so every protocol that collects votes, elects leaders or waits for two thirds of a global committee is already dead at that distance: the medium is not slow software, the medium is physics. here a fact is final when <span class="f">φ⋆ᵢ &gt; τ</span> — enough attention has gathered — so agreement costs computation and local connectivity, and only propagation pays light-time. each planet is its own pond; shared facts eventually agree; a dark link stops cross-world trade and never invents two truths. designing for planets removes every global round, and the removal is what makes it work well on one.</p></div>` },
 
 /* 04 · compile */
 { ch: 3, cls: 'one wash', html: `
@@ -204,22 +244,22 @@ const S = [
   <div><p class="kick">04 · compile · the bootloader corpus, compiled</p><h2>62 seconds.<br><em>one machine. the whole chain's mind.</em></h2>
   <p class="lead">the final bostrom snapshot — 2,949,732 cyberlinks over 3,143,650 particles — compiled into a transformer on one machine with 20 GB of RAM. every weight traces to the cyberlinks and the neurons that signed them: given any output, its authors are a lookup.</p></div>
   <div class="nums"><div class="n"><big>31</big><small>d⋆ · embedding dimension = exp H(σ(Σ_φ⋆)) ${M('m')}</small></div><div class="n"><big>≥ 12</big><small>h⋆ · attention heads · dialect lower bound ${M('m')}</small></div><div class="n"><big>290</big><small>L⋆ · layers = diam 10 × 29 iterations per hop ${M('m')}</small></div><div class="n"><big>~0.4<span class="u">M</span></big><small>parameters at current graph scale ${M('m')}</small></div><div class="n"><big>~62<span class="u">s</span></big><small>compilation · one machine · 20 GB RAM ${M('m')}</small></div><div class="n"><big>10³–10⁴</big><small>d⋆ at planetary scale · read off the saturated semantic space ${M('t')}</small></div></div>` },
-{ ch: 3, html: `
+{ ch: 3, bridge: 'a model worth having is worth paying for. who is paid, and for what? order.', html: `
   <div><p class="kick">04 · compile · a public mind</p><h2>the model is<br><em>a public object.</em></h2>
   <p class="lead">the weights are public tokens, the training data is an open graph, and the inference runs in consensus with proofs. verify once, trust forever. as the graph grows, each recompilation produces a structurally better model from the same pipeline — |E| raises d⋆, λ₂ lowers L⋆, dialects raise h⋆.</p></div>
   <div class="steps"><div class="step"><b>explainable</b><span>any answer resolves to the links and the neurons that produced it — attribution is a lookup, not interpretability research</span></div><div class="step"><b>aligned, as a number</b><span>human and machine neurons stake into the same graph; their divergence is a KL distance between two focus distributions, on a dashboard</span></div><div class="step"><b>paid teachers</b><span>the people whose links shaped the weights are the people the mint pays</span></div><div class="step"><b>self-improving by structure</b><span>no training run; a better graph compiles a better model</span></div></div>` },
 
 /* 05 · syntropy */
-{ ch: 4, cls: 'ink', html: `
+{ ch: 4, cls: 'one wash', html: `
   <div><p class="kick">05 · syntropy · the law</p><h2>the mint pays for<br><em>surprising syntropy.</em></h2>
-  <p class="lead">syntropy is order: how far collective focus has travelled from noise, in bits. surprise is the serum: your claim scored against the crowd's prediction of itself. two filters. a link that adds order the crowd did not expect is paid; a link that adds nothing, or that everyone saw coming, is not.</p>
-  <p class="mute">R(ν) = Shapley_ν(v⋆), v⋆(S) = Δφ⁺(A^eff ∪ ρ·S). one computation read four times: the state is the fixed point, a contribution is a marginal of the same iteration, fair division samples that marginal over random orderings, honesty is a KL divergence the iteration already holds.</p></div>
-  <div class="steps"><div class="step"><b>what is the state?</b><span>one φ⋆, identical on every node</span></div><div class="step"><b>who sharpened it?</b><span>each contributor's Shapley share of the proven downhill shift</span></div><div class="step"><b>was it honest?</b><span>its surprise against the crowd's prediction of itself</span></div><div class="step"><b>who pays?</b><span>one security budget, split between work and active risk; idle capital cannot compound</span></div></div>` },
+  ${syntropyFig()}
+  <p class="mute">syntropy is order: how far collective focus has travelled from noise, in bits — the same quantity the compiler reads when it turns the graph into a model. surprise is the serum: your claim scored against the crowd's prediction of itself. two filters, one quadrant pays. <span class="f">v⋆(S) = Δφ⁺(A^eff ∪ ρ·S)</span>: a coalition's value is the proven focus shift it causes, weighted by how unexpected it was; your reward is your Shapley share of it. a copy moves focus by zero. a popular truth surprises no one. idle capital, volume and presence mint exactly nothing.</p></div>` },
 { ch: 4, html: `
   <div><p class="kick">05 · syntropy · do it</p><h2>mine a settlement.<br><em>the hash is the accounting.</em></h2>
-  <p class="lead">no synthetic puzzle. the nonce you grind is the index of one random ordering of contributors; the marginal it produces is one Shapley sample. securing the chain and computing who deserves credit are one act.</p></div>
+  <p class="lead">no synthetic puzzle. the nonce you grind is the index of one random ordering of contributors; the marginal it produces is one Shapley sample. securing the chain and computing who deserves credit are one act.</p>
+  <p class="mute">four questions, one computation read four times: the state is the fixed point; a contribution is a marginal of the same iteration; fair division samples that marginal over random orderings; honesty is a KL divergence the iteration already holds. nothing is bolted on — no committee, no separate oracle, no gas model.</p></div>
   <div class="panel"><label>cluster · 4 contributors (you are one)</label><div class="hash" id="mine-hash">press sample</div><div class="bars" id="mine-bars"></div><div class="tickets" id="mine-tickets"></div><div class="row"><button class="btn" id="mine-go">sample ×100</button><button class="btn ghost" id="mine-auto">auto</button><span class="fine" id="mine-stat">0 samples · 0 tickets ${M('k')}</span></div><div class="out" id="mine-out">a ticket is a sample whose hash clears the difficulty. each ticket carries its own proof and folds into one accumulator per cluster.</div></div>` },
-{ ch: 4, cls: 'ink', html: `
+{ ch: 4, cls: 'ink', bridge: 'a mint this precise must never move under you. freeze it.', html: `
   <div><p class="kick">05 · syntropy · what inflation buys</p><h2>truth. fairness.<br><em>order.</em></h2>
   <p class="lead">three kinds of work no single party can fake for the others. one budget pays all three; the split between work and stake is read off the chain — a thermostat, not a calendar.</p>
   <div class="steps"><div class="step"><b>stakers → truth</b><span>the serum pays the surprising answer, charges the predictable one</span></div><div class="step"><b>settlement miners → fairness</b><span>every hash is a Shapley sample; credit is computed, not bargained</span></div><div class="step"><b>folders and the beacon → order in time</b><span>one history, one proof, one clock</span></div></div></div>
@@ -235,7 +275,7 @@ const S = [
   <p class="lead">a key, a balance, will, karma. its treasury address is derived from the genesis block — no private key held by any party. twelve tunables, three metabolic signals, one deterministic optimization loop: it retunes itself from the graph's own φ⋆ and every node agrees on the tuning. no founder steers it alone — what makes this a superintelligence and not another ranked ledger.</p>
   <p class="mute">below: a claim about the protocol itself. stake on it. any stake moves rank; only a bet with valence — right or wrong, at risk — earns from the truth market. passive capital buys rank and nothing else.</p></div>
   <div class="panel"><label>claim</label><div id="stake-claim" style="font-size:15px;line-height:1.5">“proof of work” belongs with “Shapley sampling”</div><label>valence</label><div class="dial" id="stake-dial"><button data-v="-1">−1 · wrong</button><button data-v="0" class="on">0 · passive</button><button data-v="1">+1 · right</button></div><label>amount · <span id="stake-amt">10</span> tokens</label><input type="range" id="stake-range" min="1" max="100" value="10"><div class="row"><button class="btn" id="stake-go">stake</button><span class="fine" id="stake-hint"></span></div><div class="out" id="stake-out"></div></div>` },
-{ ch: 5, cls: 'ink', html: `
+{ ch: 5, cls: 'ink', bridge: 'frozen rules, living economies: many moneys, one root.', html: `
   <div><p class="kick">06 · frozen · iii · the secrecy</p><h2>speak<br><em>without fear.</em></h2>
   <p class="lead">no one knows who said what, and yet everyone knows what everyone said. three invariants, all at genesis.</p></div>
   <div class="steps"><div class="step"><b>the cyberlink is public, the author is private</b><span>the network sees that p links q and the aggregates φ⋆ runs on; never which neuron signed</span></div><div class="step"><b>balances and transfers are private</b><span>stealth addresses and veil</span></div><div class="step"><b>settlement reveals nothing</b><span>a miner's share leaks nothing of its neighbourhood beyond public aggregates</span></div><div class="step"><b>the third leg of truth</b><span>privacy removes the coordination channel through which a false consensus is manufactured</span></div></div>` },
@@ -261,7 +301,7 @@ const S = [
 /* ------------------------------------------------------------------ build */
 const deck = $('#deck'), segs = $('#segs');
 S.forEach((s, i) => {
-  const d = el(`<section class="slide ch${s.ch} ${s.cls || ''}" data-i="${i}" style="--c:${CH[s.ch].c}"><div class="body">${s.html}</div></section>`);
+  const d = el(`<section class="slide ch${s.ch} ${s.cls || ''}" data-i="${i}" style="--c:${CH[s.ch].c}"><div class="body">${s.html}</div>${s.bridge ? `<p class="bridge">→ ${s.bridge}</p>` : ''}</section>`);
   deck.appendChild(d);
 });
 CH.forEach((c, i) => {
