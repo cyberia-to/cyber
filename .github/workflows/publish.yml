@@ -8,6 +8,7 @@ on:
       - 'publish.toml'
       - '_redirects'
       - 'scripts/build.nu'
+      - 'landing/**'
       - '.github/workflows/publish.yml'
   workflow_dispatch:
   repository_dispatch:
