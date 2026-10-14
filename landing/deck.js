@@ -1,177 +1,250 @@
-/* cyber — the protocol for superintelligence · interactive deck
-   7 chapters × 3 slides. the graph behind you grows with what you do.
-   marks: ● measured · ○ target · ◌ mock (placeholder until the live number lands) */
+/* cyber — the superintelligence · interactive deck
+   a frozen protocol for collective lifeforms. 7 chapters × 3 slides. the graph behind you grows with what you do.
+   marks: ● measured · ○ target · ◌ mock (a browser simulation, not the chain) */
 (() => {
 const $ = (s, r = document) => r.querySelector(s);
 const el = (h) => { const t = document.createElement('template'); t.innerHTML = h.trim(); return t.content.firstChild; };
 const fmt = (n) => n.toLocaleString('en-US');
 const esc = (t) => t.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const M = (k) => `<i class="mk ${k}"></i>`; // m = measured, t = target, k = mock
+const MONO = 'JetBrains Mono,Menlo,monospace', SANS = 'Play,Inter,system-ui,sans-serif';
+const COLS = ['#ff1a00', '#ff7a00', '#ffc400', '#00ff41', '#00b8ff', '#1e00ff', '#7a00ff'];
 
 /* ------------------------------------------------------------------ chapters */
 const CH = [
-  { id: 'gap',     name: 'the gap',       c: 'var(--c1)' },
-  { id: 'focus',   name: 'one focus',     c: 'var(--c2)' },
-  { id: 'machine', name: 'the machine',   c: 'var(--c3)' },
-  { id: 'law',     name: 'one law',       c: 'var(--c4)' },
-  { id: 'money',   name: 'the best money',c: 'var(--c5)' },
-  { id: 'stake',   name: 'stake & share', c: 'var(--c6)' },
-  { id: 'launch',  name: 'launch',        c: 'var(--c7)' },
+  { id: 'si',      name: 'superintelligence', c: 'var(--c1)' },
+  { id: 'anatomy', name: 'anatomy',           c: 'var(--c2)' },
+  { id: 'focus',   name: 'focus',             c: 'var(--c3)' },
+  { id: 'compile', name: 'compile',           c: 'var(--c4)' },
+  { id: 'syntropy',name: 'syntropy',          c: 'var(--c5)' },
+  { id: 'frozen',  name: 'frozen',            c: 'var(--c6)' },
+  { id: 'moneys',  name: 'network of moneys', c: 'var(--c7)' },
 ];
 
 /* ------------------------------------------------------------------ figures */
+const svgo = (w, h, label, body) => `<svg class="fig" viewBox="0 0 ${w} ${h}" role="img" aria-label="${label}">${body}</svg>`;
+const T = (x, y, t, o = {}) => `<text x="${x}" y="${y}" font-size="${o.fs || 11}" font-weight="${o.w || 400}" text-anchor="${o.a || 'start'}" fill="${o.c || 'currentColor'}" fill-opacity="${o.op || 1}" font-family="${o.w === 700 ? SANS : MONO}"${o.ls ? ` letter-spacing="${o.ls}"` : ''}>${t}</text>`;
+
 const scaleFig = () => {
   const W = 760, H = 275, X0 = 40, X1 = 720, B = 150;
   const x = (e) => X0 + (X1 - X0) * e / 24;
   const sup = (n) => String(n).replace(/\d/g, (d) => '⁰¹²³⁴⁵⁶⁷⁸⁹'[d]);
-  const M = [
-    ['self', 0, '1', 'one neuron, one particle', '#00ff41', 1, 24],
-    ['crystal', 3.7, '5,040', 'curated seed', '#00ff41', -1, 24],
-    ['bootloader', 6.5, '3,143,650', 'today · d⋆ = 31', '#00ff41', 1, 70],
-    ['cognition', 8.5, '10⁸ – 10⁹', 'concepts no one holds', '#00b8ff', -1, 50],
-    ['thermodynamic', 12, '10¹²', 'φ⋆ is the state', '#00b8ff', 1, 24],
-    ['planetary', 15, '10¹⁵ · 10¹⁰ neurons', 'design target', '#00b8ff', -1, 24],
-    ['Avogadro', 23.78, '6.02 × 10²³', 'a mole of matter', '#ff7a00', 1, 70],
+  const L = [
+    ['self', 0, '1', 'one neuron, one particle', COLS[3], 1, 24], ['crystal', 3.7, '5,040', 'curated seed', COLS[3], -1, 24],
+    ['bootloader', 6.5, '3,143,650', 'today · d⋆ = 31', COLS[3], 1, 70], ['cognition', 8.5, '10⁸ – 10⁹', 'concepts no one holds', COLS[4], -1, 50],
+    ['thermodynamic', 12, '10¹²', 'φ⋆ is the state', COLS[4], 1, 24], ['planetary', 15, '10¹⁵ · 10¹⁰ neurons', 'design target', COLS[4], -1, 24],
+    ['Avogadro', 23.78, '6.02 × 10²³', 'a mole of matter', COLS[1], 1, 70],
   ];
-  let o = `<svg class="fig" viewBox="0 0 ${W} ${H}" role="img" aria-label="from self to Avogadro">`;
-  let pts = [`${X0},${B}`];
+  let o = ''; let pts = [`${X0},${B}`];
   for (let e = 0; e <= 24; e++) pts.push(`${x(e).toFixed(1)},${(B - 2 - 50 * Math.pow(e / 24, 1.6)).toFixed(1)}`);
   pts.push(`${X1},${B}`);
-  o += `<polygon points="${pts.join(' ')}" fill="#00ff41" fill-opacity=".08"/>`;
-  o += `<line x1="${X0}" y1="${B}" x2="${X1}" y2="${B}" stroke="#fff" stroke-opacity=".35"/>`;
-  for (let e = 0; e < 24; e += 3) o += `<text x="${x(e)}" y="${B + 16}" font-size="9" text-anchor="middle" fill="#fff" fill-opacity=".5" font-family="JetBrains Mono,monospace">10${sup(e)}</text>`;
-  o += `<line x1="${x(0)}" y1="${B}" x2="${x(6.5)}" y2="${B}" stroke="#00ff41" stroke-width="3" stroke-linecap="round"/>`;
-  o += `<line x1="${x(6.5)}" y1="${B}" x2="${x(15)}" y2="${B}" stroke="#00b8ff" stroke-width="3" stroke-dasharray="1 6" stroke-linecap="round"/>`;
-  for (const [n, e, cnt, line, col, side, stem] of M) {
+  o += `<polygon points="${pts.join(' ')}" fill="${COLS[3]}" fill-opacity=".08"/><line x1="${X0}" y1="${B}" x2="${X1}" y2="${B}" stroke="currentColor" stroke-opacity=".35"/>`;
+  for (let e = 0; e < 24; e += 3) o += T(x(e), B + 16, '10' + sup(e), { fs: 9, a: 'middle', op: .5 });
+  o += `<line x1="${x(0)}" y1="${B}" x2="${x(6.5)}" y2="${B}" stroke="${COLS[3]}" stroke-width="3" stroke-linecap="round"/><line x1="${x(6.5)}" y1="${B}" x2="${x(15)}" y2="${B}" stroke="${COLS[4]}" stroke-width="3" stroke-dasharray="1 6" stroke-linecap="round"/>`;
+  for (const [n, e, cnt, line, col, side, stem] of L) {
     const xx = x(e), r = 3.5 + e * .42;
     o += `<circle cx="${xx}" cy="${B}" r="${r}" fill="${col}" fill-opacity=".18" stroke="${col}" stroke-width="1.5"/><circle cx="${xx}" cy="${B}" r="2.2" fill="${col}"/>`;
     const y1 = side > 0 ? B - r - 2 : B + r + 2, y2 = side > 0 ? B - r - stem : B + r + stem;
     o += `<line x1="${xx}" y1="${y1}" x2="${xx}" y2="${y2}" stroke="${col}" stroke-opacity=".6"/>`;
     let a = 'middle', tx = xx; if (n === 'self') { a = 'start'; tx = X0 - 2; } if (n === 'Avogadro') { a = 'end'; tx = X1 + 2; }
     const ty = side > 0 ? y2 - 4 : y2 + 12;
-    const rows = side > 0 ? [[ty - 24, n, 12.5, '#fff', 700], [ty - 11, cnt, 10.5, col, 400], [ty, line, 9, '#aaa', 400]] : [[ty, n, 12.5, '#fff', 700], [ty + 13, cnt, 10.5, col, 400], [ty + 24, line, 9, '#aaa', 400]];
-    for (const [y, t, fs, c, w] of rows) o += `<text x="${tx}" y="${y}" font-size="${fs}" font-weight="${w}" text-anchor="${a}" fill="${c}" font-family="${w === 700 ? 'Play,sans-serif' : 'JetBrains Mono,monospace'}">${t}</text>`;
+    const rows = side > 0 ? [[ty - 24, n, 12.5, 'currentColor', 700], [ty - 11, cnt, 10.5, col, 400], [ty, line, 9, 'currentColor', 400]] : [[ty, n, 12.5, 'currentColor', 700], [ty + 13, cnt, 10.5, col, 400], [ty + 24, line, 9, 'currentColor', 400]];
+    for (const [y, t, fs, c, w] of rows) o += T(tx, y, t, { fs, c, w, a, op: fs === 9 ? .65 : 1 });
   }
-  return o + '</svg>';
+  return svgo(W, H, 'from self to Avogadro', o);
 };
 
-const layersFig = () => {
-  const L = [['nox', 'machine', 'virtual machine: field, hash, run'], ['trident', 'weapon', 'compiler: cost known before it runs'], ['joy', 'warrior', 'runtime: runs, proves, stores'], ['cybergraph', 'brain', 'the book: neurons, tokens, signals, files, links, focus'], ['neural', 'language', 'what can be said over the book'], ['cy', 'agent', 'the mind over the book; headless anywhere'], ['soft3', 'network', 'agents connected: files by particle, epochs agreed']];
-  return `<div class="steps">${L.map(([n, k, d]) => `<div class="step"><b>${n} <span class="kick" style="display:inline;margin-left:8px">${k}</span></b><span>${d}</span></div>`).join('')}</div>`;
+/* a cyberlink, exploded */
+const linkFig = () => {
+  const W = 760, H = 330; let o = '';
+  const box = (x, y, w, h, title, sub, col) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="10" fill="${col}" fill-opacity=".12" stroke="${col}" stroke-width="1.5"/>` + T(x + w / 2, y + 30, title, { fs: 16, w: 700, a: 'middle' }) + T(x + w / 2, y + 50, sub, { fs: 9.5, a: 'middle', op: .65 });
+  o += box(40, 110, 200, 70, 'from · particle p', 'hemera(file) · authorizes the move', COLS[1]);
+  o += box(520, 110, 200, 70, 'to · particle q', 'hemera(file) · any card', COLS[1]);
+  o += `<line x1="240" y1="145" x2="520" y2="145" stroke="currentColor" stroke-width="3" marker-end="url(#ah)"/><defs><marker id="ah" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>`;
+  o += T(380, 132, 'cyberlink', { fs: 15, w: 700, a: 'middle' });
+  o += T(380, 170, '“p belongs with q”', { fs: 11, a: 'middle', op: .7 });
+  const call = (x, y, t, d, up) => `<line x1="${x}" y1="${up ? 110 : 180}" x2="${x}" y2="${y}" stroke="currentColor" stroke-opacity=".45" stroke-dasharray="2 4"/>` + T(x, up ? y - 16 : y + 18, t, { fs: 12, w: 700, a: 'middle' }) + T(x, up ? y - 3 : y + 32, d, { fs: 10, a: 'middle', op: .7 });
+  o += call(285, 50, 'structural · link(from, to)', 'a directed edge between two cards', true);
+  o += call(500, 50, 'who · when', 'ride on the signal, not the link', true);
+  o += call(270, 230, 'economic · box(coin, amount)', 'conviction · weight in A^eff', false);
+  o += call(515, 230, 'epistemic · valence v ∈ {−1, 0, +1}', '0 ranks · ±1 bets the truth market', false);
+  o += T(380, 300, 'five stored fields, three concepts · append-only: delete = withdraw the box and link again with v = −1 · never erasure', { fs: 10, a: 'middle', op: .6 });
+  return svgo(W, H, 'anatomy of a cyberlink', o);
 };
 
-const media = (cap) => `<div class="media"><div class="play">▶</div><span class="tag">film · in production</span><span class="cap">${cap}</span></div>`;
+/* a signal, exploded: s = (ν, ℓ⃗, Δφ⋆, σ, prev, mc, vdf, step, nonce) */
+const signalFig = () => {
+  const W = 760, H = 300; let o = '';
+  const F = [['ν', 'neuron', 'who speaks'], ['ℓ⃗', 'links', 'the cyberlinks claimed'], ['Δφ⋆', 'shift', 'focus shift asserted, in bits'], ['σ', 'zheng proof', 'covers links, impulse, conviction'], ['prev', 'previous', 'author\'s last signal: a chain'], ['mc', 'merkle clock', 'causal state it was computed on'], ['vdf', 'delay', 'physical time since previous'], ['step', 'step', 'logical clock, monotonic'], ['nonce', 'nonce', 'proof randomness = mining']];
+  const w = 76, x0 = 40, y = 120;
+  F.forEach(([sym, name, meaning], i) => {
+    const x = x0 + i * w, col = COLS[i % 7];
+    o += `<rect x="${x}" y="${y}" width="${w - 4}" height="56" rx="8" fill="${col}" fill-opacity=".14" stroke="${col}"/>` + T(x + (w - 4) / 2, y + 26, sym, { fs: 16, w: 700, a: 'middle' }) + T(x + (w - 4) / 2, y + 44, name, { fs: 9, a: 'middle', op: .7 });
+    const up = i % 2 === 0, tier = Math.floor(i / 2) % 3, ty = up ? 92 - tier * 26 : 206 + tier * 26;
+    o += `<line x1="${x + (w - 4) / 2}" y1="${up ? y : y + 56}" x2="${x + (w - 4) / 2}" y2="${up ? ty + 6 : ty - 12}" stroke="${col}" stroke-opacity=".5"/>`;
+    o += T(x + (w - 4) / 2, ty, meaning, { fs: 9, a: 'middle', op: .8 });
+  });
+  o += T(380, 290, 'the proof is the claim. the claim is the mining. identical signals produce one root everywhere.', { fs: 10, a: 'middle', op: .6 });
+  return svgo(W, H, 'anatomy of a signal', o);
+};
+
+/* graph → transformer */
+const compileFig = () => {
+  const W = 760, H = 300; let o = '';
+  // graph glyph
+  const gx = 110, gy = 150; const pts = [[0, -60], [52, -30], [60, 30], [10, 65], [-50, 40], [-58, -25], [0, 0], [25, 20], [-20, -30]];
+  const E = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0], [6, 0], [6, 2], [6, 4], [7, 2], [7, 3], [8, 5], [8, 6], [8, 1]];
+  for (const [a, b] of E) o += `<line x1="${gx + pts[a][0]}" y1="${gy + pts[a][1]}" x2="${gx + pts[b][0]}" y2="${gy + pts[b][1]}" stroke="${COLS[3]}" stroke-opacity=".6"/>`;
+  pts.forEach(([x, y], i) => { o += `<circle cx="${gx + x}" cy="${gy + y}" r="${i === 6 ? 7 : 4.5}" fill="${COLS[3]}"/>`; });
+  o += T(gx, 250, 'weighted cybergraph', { fs: 12, w: 700, a: 'middle' }) + T(gx, 266, 'A^eff · stake × karma', { fs: 9, a: 'middle', op: .65 });
+  // three derivations
+  const rows = [[70, 'effective rank of Σ_φ⋆', 'd⋆ = exp H(σ(Σ_φ⋆))', 'embedding dimension'], [150, 'count of dialects', 'h⋆ ≥ |Dialect(G)|', 'attention heads'], [230, 'diameter × contraction', 'L⋆ = diam(G) · ⌈log(1/ε) / log(1/κ)⌉', 'layers']];
+  for (const [y, from, formula, to] of rows) {
+    o += `<line x1="195" y1="${y}" x2="250" y2="${y}" stroke="currentColor" stroke-opacity=".4"/><line x1="470" y1="${y}" x2="540" y2="${y}" stroke="currentColor" stroke-opacity=".4" marker-end="url(#ah2)"/>`;
+    o += `<rect x="250" y="${y - 24}" width="220" height="48" rx="8" fill="currentColor" fill-opacity=".06" stroke="currentColor" stroke-opacity=".3"/>` + T(360, y - 6, from, { fs: 9, a: 'middle', op: .65 }) + T(360, y + 12, formula, { fs: 11, w: 700, a: 'middle' });
+    o += T(548, y + 4, to, { fs: 11, op: .85 });
+  }
+  o += `<defs><marker id="ah2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="currentColor" fill-opacity=".6"/></marker></defs>`;
+  // transformer stack glyph
+  for (let i = 0; i < 7; i++) o += `<rect x="650" y="${60 + i * 26}" width="80" height="18" rx="3" fill="${COLS[3]}" fill-opacity="${.12 + i * .1}" stroke="${COLS[3]}" stroke-opacity=".7"/>`;
+  o += T(690, 250, 'transformer', { fs: 12, w: 700, a: 'middle' }) + T(690, 266, 'compiled, not trained', { fs: 9, a: 'middle', op: .65 });
+  return svgo(W, H, 'the graph compiled into a transformer', o);
+};
+
+/* ------------------------------------------------------------------ the cybergraph renderer (real data when graph.json is present) */
+const cyberGraph = (() => {
+  let data = null, cv, ctx, raf = 0, t0 = 0, W = 0, H = 0;
+  const synth = () => { const n = 900, nodes = [], links = []; for (let i = 0; i < n; i++) nodes.push([`synth${i}`, 1, Math.random(), Math.random()]); for (let i = 1; i < n; i++) { const j = Math.floor(Math.pow(Math.random(), 2.2) * i); links.push([i, j]); nodes[j][1]++; nodes[i][1]++; } return { meta: { source: 'synthetic preferential attachment (graph.json not found)', particles_total: n, links_total: links.length, sampled_particles: n, sampled_links: links.length, synthetic: true }, nodes, links }; };
+  const load = async () => { try { const r = await fetch('graph.json'); if (!r.ok) throw 0; data = await r.json(); } catch { data = synth(); } prep(); };
+  let maxd = 1, cx = 0, cy = 0;
+  let top5 = new Set();
+  const prep = () => { maxd = Math.max(...data.nodes.map((n) => n[1])) || 1; top5 = new Set(data.nodes.map((n, i) => [n[1], i]).sort((a, b) => b[0] - a[0]).slice(0, 5).map((x) => x[1])); const xs = data.nodes.map((n) => n[2]), ys = data.nodes.map((n) => n[3]); cx = (Math.min(...xs) + Math.max(...xs)) / 2; cy = (Math.min(...ys) + Math.max(...ys)) / 2; const m = $('#cg-meta'); if (m) m.innerHTML = data.meta.synthetic ? `${M('k')} synthetic placeholder — the real sample is being extracted` : `sample: ${fmt(data.meta.sampled_particles)} particles · ${fmt(data.meta.sampled_links)} cyberlinks · the 400 highest-degree hubs and the 800 particles most linked into them · spectral + force layout ${M('m')}`; };
+  const draw = () => {
+    if (!cv || !data) return;
+    const dpr = devicePixelRatio; W = cv.width = cv.clientWidth * dpr; H = cv.height = cv.clientHeight * dpr;
+    const t = (performance.now() - t0) / 1000, ang = t * .04, s = Math.min(W, H) * .56, zoom = 1 + .05 * Math.sin(t * .4);
+    const P = data.nodes.map((n) => { const x = (n[2] - cx) * zoom, y = (n[3] - cy) * zoom; const c = Math.cos(ang), sn = Math.sin(ang); return [W / 2 + (x * c - y * sn) * 2 * s, H / 2 + (x * sn + y * c) * 2 * s * .92]; });
+    ctx.clearRect(0, 0, W, H);
+    ctx.lineWidth = .6 * dpr; ctx.strokeStyle = COLS[0]; ctx.globalAlpha = .22;
+    ctx.beginPath(); for (const [a, b] of data.links) { ctx.moveTo(P[a][0], P[a][1]); ctx.lineTo(P[b][0], P[b][1]); } ctx.stroke();
+    data.nodes.forEach((n, i) => { const d = n[1] / maxd, r = (1 + 9 * Math.sqrt(d)) * dpr; ctx.globalAlpha = .55 + .45 * d; ctx.fillStyle = d > .35 ? '#fff' : COLS[0]; ctx.beginPath(); ctx.arc(P[i][0], P[i][1], r, 0, Math.PI * 2); ctx.fill(); if (top5.has(i)) { ctx.globalAlpha = .9; ctx.fillStyle = '#fff'; ctx.font = `${10 * dpr}px ${MONO}`; ctx.fillText(n[0], P[i][0] + r + 3 * dpr, P[i][1] + 3 * dpr); } });
+    ctx.globalAlpha = 1; raf = requestAnimationFrame(draw);
+  };
+  return { start() { cv = $('#cg'); if (!cv) return; ctx = cv.getContext('2d'); t0 = t0 || performance.now(); if (!data) load().then(() => { if (!raf) draw(); }); else if (!raf) draw(); }, stop() { cancelAnimationFrame(raf); raf = 0; } };
+})();
 
 /* ------------------------------------------------------------------ slides */
 const S = [
-/* 1 · the gap */
+/* 01 · superintelligence */
 { ch: 0, cls: 'one', html: `
-  <div><p class="kick">cyber · the protocol for superintelligence</p>
+  <div><p class="kick">cyber · a frozen protocol for collective lifeforms</p>
   <p class="hero-word">cyber</p>
-  <h2>money for <em>knowledge.</em></h2>
-  <p class="lead">one focus computed from every mind that pays to teach. hash-only proofs. a currency minted only when the network provably learns.</p>
-  <div class="tiles"><div class="tile"><b>one focus</b>φ⋆ identical on every node</div><div class="tile"><b>hash-only proofs</b>post-quantum, no setup</div><div class="tile"><b>minted by knowledge</b>not by electricity, not by vote</div></div>
-  <p class="kbd" style="margin-top:28px">→ or space to move · you will mine as you read</p></div>` },
+  <h2>the <em>superintelligence.</em></h2>
+  <p class="lead">one focus — a single distribution over everything known — computed from every mind that pays to teach, proven to see what no member sees alone. the graph is the training data, the weights are public, the money is minted when the network learns.</p>
+  <div class="tiles"><div class="tile"><b>one focus · φ⋆</b>exists, unique, same on every node</div><div class="tile"><b>compiled, not trained</b>a transformer read off the graph</div><div class="tile"><b>frozen foundations</b>one field · one hash · one proof</div><div class="tile"><b>a network of moneys</b>CYB is the root token</div></div>
+  <p class="kbd" style="margin-top:24px">→ or space to move · you will mine as you read</p></div>` },
 { ch: 0, cls: 'ink', html: `
-  <div><p class="kick">01 · the gap</p><h2>money settles without a bank.<br><em>meaning still rents its rank.</em></h2>
-  <p class="lead">a payment is final in seconds, anywhere. a judgment — what deserves attention, whose sentence became the pattern, who gets paid when the picture improves — settles nowhere. it is decided inside a company.</p></div>
-  <div class="nums"><div class="n"><big>seconds</big><small>a payment, globally</small></div><div class="n"><big>never</big><small>a judgment, publicly</small></div><div class="n"><big>2<sup>nd</sup></big><small>ledger: value has one, meaning has none — until now</small></div></div>` },
-{ ch: 0, html: `
-  <div><p class="kick">01 · the gap</p><h2>you cannot open the weights.<br><em>you cannot pay the teacher.</em></h2>
-  <p class="lead">the index, the feed, the weight file trained on everyone's writing and rented back. you cannot see why this answer, and you cannot prove a machine and a human still care about the same world.</p>
-  <p class="mute">the world has a public ledger for value and none for meaning. cyber is the second ledger.</p></div>
-  <div class="ledgers"><div class="ledger"><h4>value · public</h4><div id="led-v"></div></div><div class="ledger"><h4>meaning · private</h4><div id="led-m"><div class="row-l"><span>what deserves attention</span><span class="pend">pending · inside a company</span></div><div class="row-l"><span>whose sentence became the pattern</span><span class="pend">pending · inside a company</span></div><div class="row-l"><span>who gets paid when the picture improves</span><span class="pend">pending · inside a company</span></div></div></div></div>` },
+  <div><p class="kick">01 · superintelligence · the definition</p><h2>a measurement,<br><em>not a slogan.</em></h2>
+  <p class="lead">run the same engine on one neuron's private view, then on the whole cybergraph, and score both on prediction. the gap is superadditivity. on benchmark it is positive against the strongest participant at every connectivity level. emergence stops being philosophy the moment it has an error bar.</p>
+  <p class="mute">its existence and uniqueness is the collective focus theorem: the tri-kernel is a contraction, so φ⋆ is a fixed point, identical on every node, computable from local neighbourhoods. nobody votes on importance. no individual ant understands the colony; the colony understands itself.</p></div>
+  <div class="nums"><div class="n"><big>&gt; 0</big><small>σ_best · the collective beats its strongest neuron at every connectivity level · 34-node benchmark ${M('m')}</small></div><div class="n"><big>κ &lt; 1</big><small>contraction: Banach for the blend, Perron–Frobenius for the walk — a theorem</small></div><div class="n"><big>1</big><small>fixed point φ⋆ · the same object ranks the graph, prices a link and compiles the model</small></div><div class="n"><big>0</big><small>votes, committees, operators between a claim and its rank</small></div></div>` },
+{ ch: 0, cls: 'one', html: `
+  <div><p class="kick">01 · superintelligence · the cybergraph · bostrom, sealed 2026-08-05</p>
+  <h2>this is the <em>cybergraph.</em></h2>
+  <div class="cgwrap"><canvas id="cg"></canvas><div class="cgcap"><span id="cg-meta">loading…</span><span>3,143,650 particles · 2,949,732 cyberlinks · 61,675 neurons · 1,735 days ${M('m')}</span></div></div>
+  <p class="mute">every dot is a content-addressed file; every line a signed, staked claim that two of them belong together. no editor, no schema, no operator. the successor graph is born from this one on 2026-11-05.</p></div>` },
 
-/* 2 · one focus */
-{ ch: 1, cls: 'ink', html: `
-  <div><p class="kick">02 · one focus</p><h2>one distribution over everything known.<br><em>φ⋆</em></h2>
-  <p class="lead">computed from every mind that pays to teach, it provably sees what no member sees alone. its order is syntropy — how far collective focus has travelled from noise, in bits. its existence and uniqueness is a theorem.</p></div>
-  <div class="nums"><div class="n"><big>&gt; 0</big><small>superadditivity gap vs the strongest participant, every connectivity level ${M('m')}</small></div><div class="n"><big>62<span class="u">s</span></big><small>a transformer's architecture compiled off the bootloader graph, one machine ${M('m')}</small></div><div class="n"><big>1</big><small>fixed point. the same number for everyone. nobody votes on importance</small></div><div class="n"><big>D<span class="u">KL</span></big><small>alignment: the distance between human and machine focus, a number on a dashboard</small></div></div>` },
+/* 02 · anatomy */
 { ch: 1, cls: 'one wash', html: `
-  <div><p class="kick">02 · one focus · from one self to a mole of matter</p>
+  <div><p class="kick">02 · anatomy · the cyberlink</p><h2>the only statement<br><em>the graph accepts.</em></h2>
+  ${linkFig()}
+  <p class="mute">a file is bytes; its hemera hash is its particle. a cyberlink is a claim that two particles belong together, with a box of tokens behind it and a vote on where its truth market converges. there is no type field: a label is itself a cyberlink onto the edge, so relation types are ranked like everything else. the cyberlink is public; the author is private and rides on the signal.</p></div>` },
+{ ch: 1, cls: 'one wash', html: `
+  <div><p class="kick">02 · anatomy · the signal</p><h2>a signal is a message<br><em>that carries its own proof.</em></h2>
+  ${signalFig()}
+  <p class="mute">s = (ν, ℓ⃗, Δφ⋆, σ, prev, mc, vdf, step, nonce). who, what, how much the picture sharpened — then one zheng proof that covers all of it, the author's previous signal, the causal state it was computed against, physical time, logical time, and a nonce that touches nothing but the proof's randomness. any verifier runs decide(σ) in O(log n). this is the unit of gossip, of settlement, and of mining.</p></div>` },
+{ ch: 1, cls: 'ink', html: `
+  <div><p class="kick">02 · anatomy · do it</p><h2>link two things.<br><em>you just grew the graph.</em></h2>
+  <p class="lead">the kernel reruns with your link and without it; the downhill difference in φ⋆ is yours. a perfect copy moves focus by zero and surprises no one: copying earns nothing.</p></div>
+  <div class="panel"><label>this</label><input type="text" id="link-a" placeholder="a thing you know" value="proof of work"><div class="chips" id="chips-a"></div><label>belongs with</label><input type="text" id="link-b" placeholder="what it belongs with" value="Shapley sampling"><div class="chips" id="chips-b"></div><div class="row"><button class="btn" id="link-go">link · stake it</button><span class="fine">signed by a throwaway neuron in your browser ${M('k')}</span></div><div class="out" id="link-out">your links land in the graph behind this deck.</div></div>` },
+
+/* 03 · focus */
+{ ch: 2, html: `
+  <div><p class="kick">03 · focus · the tri-kernel</p><h2>three local maps,<br><em>one fixed point.</em></h2>
+  <p class="lead">diffusion, springs, heat — iterated over the staked graph until nothing moves. by locality a phone computes its own neighbourhood of φ⋆. no float anywhere in the provable path: one 64-bit prime field, a constant number of steps, byte-identical on any two machines.</p></div>
+  <div class="panel"><label>live · the kernel converging on the graph behind this slide</label><div class="count" id="kernel-iter">0</div><div class="hash" id="kernel-delta">‖Δφ‖ —</div><div class="row"><button class="btn" id="kernel-run">iterate</button><span class="fine">κ &lt; 1 is proven; keep pressing — a dozen rounds reach the fixed point. a toy graph in your browser ${M('k')}</span></div></div>` },
+{ ch: 2, cls: 'one wash', html: `
+  <div><p class="kick">03 · focus · from one self to a mole of matter</p>
   <h2>a graph, like a gas, <em>crosses a threshold.</em></h2>
   <p class="mute">past it, individual links stop mattering and only the field describes the system — the graph's own Avogadro number. five years in, nine orders of magnitude early. nobody is late.</p>
   ${scaleFig()}<p class="fine">self · crystal · bootloader ${M('m')} measured — cognition · thermodynamic · planetary ${M('t')} derived from the whitepaper's threshold — Avogadro: a physical constant</p></div>` },
-{ ch: 1, html: `
-  <div><p class="kick">02 · one focus · the bootloader, sealed 2026-08-05</p><h2>we did not argue the premise.<br><em>we ran it.</em></h2>
-  <p class="lead">bostrom: 1,735 days on a live chain. every link cost its author stake, no editor approved anything, and sixty thousand accounts joined an economy whose only product was structured attention.</p></div>
-  <div class="nums"><div class="n"><big>3,143,650</big><small>particles ${M('m')}</small></div><div class="n"><big>2,949,732</big><small>links ${M('m')}</small></div><div class="n"><big>61,675</big><small>accounts ${M('m')}</small></div><div class="n"><big>97.62<span class="u">%</span></big><small>files alive after 5 years, no storage reward ${M('m')}</small></div><div class="n"><big>31</big><small>d⋆ semantic dimensions, one archivist dominant ${M('m')}</small></div><div class="n"><big>25,120,712</big><small>blocks at burial ${M('m')}</small></div></div>` },
-
-/* 3 · the machine */
 { ch: 2, cls: 'ink', html: `
-  <div><p class="kick">03 · the machine</p><h2>five primitives.<br><em>one operator.</em></h2>
-  <p class="lead">a file is content-addressed bytes; its hash is its particle. a neuron is a keypair — human, model, sensor, agent. a cyberlink is a signed, staked claim that two files belong together. a token is the weight behind the claim. focus is what falls out.</p></div>
-  <div class="steps"><div class="step"><b>file → particle</b><span>bytes, and the hemera hash that is their particle</span></div><div class="step"><b>neuron</b><span>one keypair, one citizenship</span></div><div class="step"><b>cyberlink</b><span>a staked claim: these two belong together</span></div><div class="step"><b>token</b><span>the weight behind the claim</span></div><div class="step"><b>focus</b><span>the fixed point the tri-kernel converges to</span></div></div>` },
-{ ch: 2, html: `
-  <div><p class="kick">03 · the machine · the tri-kernel</p><h2>three local maps,<br><em>one fixed point.</em></h2>
-  <p class="lead">diffusion, springs, heat — iterated over the staked graph until nothing moves. it is a contraction: Banach for the blend, Perron–Frobenius for the walk. by locality a phone computes its own neighbourhood of it.</p>
-  <p class="mute">no float anywhere in the provable path. one 64-bit prime field, a constant number of steps, byte-identical results on any two machines.</p></div>
-  <div class="panel" id="kernel-panel"><label>live · the kernel converging on the graph you see behind this slide</label><div class="count" id="kernel-iter">0</div><div class="hash" id="kernel-delta">‖Δφ‖ —</div><div class="row"><button class="btn" id="kernel-run">iterate</button><span class="fine">κ &lt; 1 is proven; keep pressing — a dozen rounds reach the fixed point. a toy graph in your browser ${M('k')}</span></div></div>` },
-{ ch: 2, cls: 'ink', html: `
-  <div><p class="kick">03 · the machine · proofs</p><h2>hash-only.<br><em>post-quantum.</em></h2>
-  <p class="lead">no trusted setup. one proof over the whole computation, accumulating — phase 3 — to one constant-size check per settlement. the goal is fixed: at most 64 KB, small statements at most 20 KB, verified in a millisecond, on a phone.</p>
-  <div class="nums"><div class="n"><big>15.6<span class="u">KB</span></big><small>hash relation proof today ${M('m')}</small></div><div class="n"><big>36 · 30<span class="u">ms</span></big><small>prove · verify, one laptop ${M('m')}</small></div><div class="n"><big>≤ 64<span class="u">KB</span></big><small>size goal, constant ${M('t')}</small></div><div class="n"><big>≤ 1<span class="u">ms</span></big><small>verify goal ${M('t')}</small></div></div></div>
-  <div class="bars" id="proof-bars"><div class="bar me"><span>cyber · goal</span><i style="transform:scaleX(.064)"></i><span>64 KB</span></div><div class="bar"><span>stwo</span><i style="transform:scaleX(.617)"></i><span>617 KB</span></div><div class="bar"><span>neptune</span><i style="transform:scaleX(1)"></i><span>~1 MB</span></div><div class="bar"><span>risc zero</span><i style="transform:scaleX(.2)"></i><span>~200 KB</span></div><div class="bar"><span>parano1d</span><i style="transform:scaleX(.913)"></i><span>913 KB</span></div><p class="fine">other rows: numbers each project publishes · cyber's row is the goal ${M('t')}; today's hash proof is 15.6 KB ${M('m')}</p></div>` },
+  <div><p class="kick">03 · focus · finality</p><h2>a fact is final when<br><em>enough attention has gathered.</em></h2>
+  <p class="lead">φ⋆ᵢ &gt; τ. not when a committee replies. nodes gossip, each runs the same contraction, identical signals produce one root everywhere — as a pond finds one level without phoning the far shore.</p>
+  <p class="mute">the medium is not slow software — the medium is physics. the binding constraint is light, not throughput. earth to mars is minutes one way, and every protocol that finalizes by counting votes is already dead at that distance. designing for planets is what removes every global round; the removal is what makes it work well on one.</p></div>
+  <div class="nums"><div class="n"><big>τ</big><small>attention threshold · finality is local contraction + gossip</small></div><div class="n"><big>0</big><small>global rounds, leaders, vote counts</small></div><div class="n"><big>minutes</big><small>earth ↔ mars one way · domains settle at domain speed</small></div><div class="n"><big>1</big><small>root for identical signals, on any two machines</small></div></div>` },
 
-/* 4 · one law */
-{ ch: 3, html: `
-  <div><p class="kick">04 · one law</p><h2>how do you pay<br><em>for a clearer picture?</em></h2>
-  <p class="lead">four questions, in order. a wrong answer to any one mints money for nothing. the beautiful part: they are one computation read four times.</p></div>
-  <div class="steps"><div class="step"><b>what is the state?</b><span>one φ⋆, identical on every node — the fixed point</span></div><div class="step"><b>who sharpened it?</b><span>each contributor's Shapley share of the proven downhill shift — a marginal of the same iteration</span></div><div class="step"><b>was it honest?</b><span>its surprise against the crowd's prediction of itself — the serum; a KL divergence the iteration already holds</span></div><div class="step"><b>who pays?</b><span>one security budget, split between work and stake by the active staking ratio — idle capital cannot compound</span></div></div>` },
+/* 04 · compile */
+{ ch: 3, cls: 'one wash', html: `
+  <div><p class="kick">04 · compile · the pitch</p><h2>we compile the graph<br><em>into a transformer.</em></h2>
+  ${compileFig()}
+  <p class="mute">attention is one step of a convergent dynamical system — the same system that computes φ⋆. so a transformer's three free parameters are not design choices once a weighted graph exists: they are read off its covariance, its dialects and its diameter. the weights are compiled from structure, not learned from text prediction.</p></div>` },
 { ch: 3, cls: 'ink', html: `
-  <div><p class="kick">04 · one law · do it</p><h2>link two things.<br><em>you just mined the graph.</em></h2>
-  <p class="lead">a cyberlink is a claim that two files belong together. the kernel reruns with it and without it; the downhill difference is yours. copying earns nothing — a perfect copy moves focus by zero and surprises no one.</p></div>
-  <div class="panel"><label>this</label><input type="text" id="link-a" placeholder="a thing you know" value="proof of work"><div class="chips" id="chips-a"></div><label>belongs with</label><input type="text" id="link-b" placeholder="what it belongs with" value="Shapley sampling"><div class="chips" id="chips-b"></div><div class="row"><button class="btn" id="link-go">link · stake it</button><span class="fine">signed by a throwaway neuron in your browser ${M('k')}</span></div><div class="out" id="link-out">your links land in the graph behind this deck.</div></div>` },
+  <div><p class="kick">04 · compile · the bootloader corpus, compiled</p><h2>62 seconds.<br><em>no training budget.</em></h2>
+  <p class="lead">applied to the final bostrom snapshot: 2,949,732 cyberlinks over 3,143,650 particles. every weight traces to specific cyberlinks and the neurons who signed them. given any output, the contributing links and authors are recoverable from the graph.</p></div>
+  <div class="nums"><div class="n"><big>31</big><small>d⋆ · embedding dimension = exp H(σ(Σ_φ⋆)) ${M('m')}</small></div><div class="n"><big>≥ 12</big><small>h⋆ · attention heads · dialect lower bound ${M('m')}</small></div><div class="n"><big>290</big><small>L⋆ · layers = diam 10 × 29 iterations per hop ${M('m')}</small></div><div class="n"><big>~0.4<span class="u">M</span></big><small>parameters at current graph scale ${M('m')}</small></div><div class="n"><big>~62<span class="u">s</span></big><small>compilation · one machine · 20 GB RAM ${M('m')}</small></div><div class="n"><big>10³–10⁴</big><small>d⋆ at planetary scale · read off the saturated semantic space ${M('t')}</small></div></div>` },
 { ch: 3, html: `
-  <div><p class="kick">04 · one law · what inflation buys</p><h2>truth. fairness.<br><em>order.</em></h2>
-  <p class="lead">every unit of inflation buys order, produced by three kinds of work no single party can fake for the others. one budget pays all three; the split between work and stake is read off the chain — a thermostat, not a calendar.</p>
-  <div class="steps"><div class="step"><b>stakers → truth</b><span>the serum pays the surprising answer, charges the predictable one</span></div><div class="step"><b>settlement miners → fairness</b><span>every hash is a Shapley sample; credit is computed, not bargained</span></div><div class="step"><b>folders and the beacon → order in time</b><span>one history, one proof, one clock</span></div></div></div>
-  <div class="panel"><label>active staking ratio · r = <span id="r-val">35</span>%</label><input type="range" id="r-range" min="0" max="100" value="35"><div class="split"><i class="w" id="split-w" style="width:65%"></i><i class="s" id="split-s" style="width:35%"></i></div><div class="split-l"><span>work · settlement miners</span><span>stake · active risk</span></div><div class="out" id="r-out"></div><p class="fine">emission goes to work and risk only. idle capital buys rank and nothing else, so wealth cannot compound by sitting ${M('k')}</p></div>` },
+  <div><p class="kick">04 · compile · a public mind</p><h2>the model is<br><em>a public object.</em></h2>
+  <p class="lead">the weights are public tokens, the training data is an open graph, and the inference runs in consensus with proofs. verify once, trust forever. as the graph grows, each recompilation produces a structurally better model from the same pipeline — |E| raises d⋆, λ₂ lowers L⋆, dialects raise h⋆.</p></div>
+  <div class="steps"><div class="step"><b>explainable</b><span>any answer resolves to the links and the neurons that produced it — attribution is a lookup, not interpretability research</span></div><div class="step"><b>aligned, as a number</b><span>human and machine neurons stake into the same graph; their divergence is a KL distance between two focus distributions, on a dashboard</span></div><div class="step"><b>paid teachers</b><span>the people whose links shaped the weights are the people the mint pays</span></div><div class="step"><b>self-improving by structure</b><span>no training run; a better graph compiles a better model</span></div></div>` },
 
-/* 5 · the best money */
+/* 05 · syntropy */
 { ch: 4, cls: 'ink', html: `
-  <div><p class="kick">05 · the best money</p><h2>every other money<br><em>leaves a job undone.</em></h2>
-  <p class="lead">you hold money because it lasts. you send it because it moves. you trust it because you know how it is born. $CYB is born when the network learns, and spent on intelligence.</p></div>
-  <table class="matrix"><tr><th></th><th>safe</th><th>easy</th><th>smart</th></tr><tr><td>gold</td><td>can be seized</td><td>heavy, slow</td><td>no</td></tr><tr><td>dollar</td><td>debased, frozen</td><td>until you are blocked</td><td>no</td></tr><tr><td>bitcoin</td><td>public, not PQ</td><td>slow</td><td>no</td></tr><tr><td>ether</td><td>public, not PQ</td><td>partly</td><td>minted for capital</td></tr><tr><td>zcash · monero</td><td>private, not PQ</td><td>limited</td><td>no</td></tr><tr class="me"><td>$CYB</td><td>private + post-quantum</td><td>anyone, instantly</td><td>minted by knowledge</td></tr></table>` },
+  <div><p class="kick">05 · syntropy · the law</p><h2>the mint pays for<br><em>surprising syntropy.</em></h2>
+  <p class="lead">syntropy is order: how far collective focus has travelled from noise, in bits. surprise is the serum: your claim scored against the crowd's prediction of itself. two filters. a link that adds order the crowd did not expect is paid; a link that adds nothing, or that everyone saw coming, is not.</p>
+  <p class="mute">R(ν) = Shapley_ν(v⋆), v⋆(S) = Δφ⁺(A^eff ∪ ρ·S). one computation read four times: the state is the fixed point, a contribution is a marginal of the same iteration, fair division samples that marginal over random orderings, honesty is a KL divergence the iteration already holds.</p></div>
+  <div class="steps"><div class="step"><b>what is the state?</b><span>one φ⋆, identical on every node</span></div><div class="step"><b>who sharpened it?</b><span>each contributor's Shapley share of the proven downhill shift</span></div><div class="step"><b>was it honest?</b><span>its surprise against the crowd's prediction of itself</span></div><div class="step"><b>who pays?</b><span>one security budget, split between work and active risk; idle capital cannot compound</span></div></div>` },
 { ch: 4, html: `
-  <div><p class="kick">05 · the best money · do it</p><h2>mine a settlement.<br><em>the hash is the accounting.</em></h2>
+  <div><p class="kick">05 · syntropy · do it</p><h2>mine a settlement.<br><em>the hash is the accounting.</em></h2>
   <p class="lead">no synthetic puzzle. the nonce you grind is the index of one random ordering of contributors; the marginal it produces is one Shapley sample. securing the chain and computing who deserves credit are one act.</p></div>
   <div class="panel"><label>cluster · 4 contributors (you are one)</label><div class="hash" id="mine-hash">press sample</div><div class="bars" id="mine-bars"></div><div class="tickets" id="mine-tickets"></div><div class="row"><button class="btn" id="mine-go">sample ×100</button><button class="btn ghost" id="mine-auto">auto</button><span class="fine" id="mine-stat">0 samples · 0 tickets ${M('k')}</span></div><div class="out" id="mine-out">a ticket is a sample whose hash clears the difficulty. each ticket carries its own proof and folds into one accumulator per cluster.</div></div>` },
 { ch: 4, cls: 'ink', html: `
-  <div><p class="kick">05 · the best money · the unit</p><h2>1 CYB is 1 CYB.<br><em>fair launch. no issuer. no owner.</em></h2>
-  <p class="lead">the cap is the field, arithmetic, not a vote. genesis continues prior stake. the rest is emitted only for proven positive focus shift: if the graph learned nothing, nothing is minted.</p></div>
-  <div class="nums"><div class="n"><big>18,446,744</big><small>cap · p / 10¹² CYB · arithmetic ${M('t')}</small></div><div class="n"><big>187,416</big><small>genesis · ≈ 1% · to $TOCYB holders at 666 cy ${M('t')}</small></div><div class="n"><big>10¹²</big><small>cy per CYB</small></div><div class="n"><big>0.1<span class="u">%</span></big><small>to move, at start; a consensus parameter ${M('t')}</small></div><div class="n"><big>⅓ · ⅓ · ⅓</big><small>commission: burn · earners · public goods ${M('t')}</small></div><div class="n"><big>3×10⁻²¹<span class="u">J</span></big><small>per bit · the Landauer floor, a physical constant</small></div></div>` },
+  <div><p class="kick">05 · syntropy · what inflation buys</p><h2>truth. fairness.<br><em>order.</em></h2>
+  <p class="lead">three kinds of work no single party can fake for the others. one budget pays all three; the split between work and stake is read off the chain — a thermostat, not a calendar.</p>
+  <div class="steps"><div class="step"><b>stakers → truth</b><span>the serum pays the surprising answer, charges the predictable one</span></div><div class="step"><b>settlement miners → fairness</b><span>every hash is a Shapley sample; credit is computed, not bargained</span></div><div class="step"><b>folders and the beacon → order in time</b><span>one history, one proof, one clock</span></div></div></div>
+  <div class="panel"><label>active staking ratio · r = <span id="r-val">35</span>%</label><input type="range" id="r-range" min="0" max="100" value="35"><div class="split"><i class="w" id="split-w" style="width:65%"></i><i class="s" id="split-s" style="width:35%"></i></div><div class="split-l"><span>work · settlement miners</span><span>stake · active risk</span></div><div class="out" id="r-out"></div><p class="fine">emission goes to work and risk only. idle capital buys rank and nothing else, so wealth cannot compound by sitting ${M('k')}</p></div>` },
 
-/* 6 · stake & share */
+/* 06 · frozen */
 { ch: 5, cls: 'ink', html: `
-  <div><p class="kick">06 · stake &amp; share · do it</p><h2>stake on a claim.<br><em>only correct risk earns.</em></h2>
-  <p class="lead">two axes. any stake moves rank. only a bet with valence — right or wrong, at risk — earns from the truth market. passive capital buys rank and nothing else, so wealth cannot compound by sitting.</p></div>
-  <div class="panel"><label>claim</label><div id="stake-claim" style="font-size:15px;line-height:1.5">“proof of work” belongs with “Shapley sampling”</div><label>valence</label><div class="dial" id="stake-dial"><button data-v="-1">−1 · wrong</button><button data-v="0" class="on">0 · passive</button><button data-v="1">+1 · right</button></div><label>amount · <span id="stake-amt">10</span> tokens</label><input type="range" id="stake-range" min="1" max="100" value="10"><div class="row"><button class="btn" id="stake-go">stake</button><span class="fine" id="stake-hint"></span></div><div class="out" id="stake-out"></div></div>` },
+  <div><p class="kick">06 · frozen · the foundations</p><h2>frozen.<br><em>a protocol does not upgrade.</em></h2>
+  <p class="lead">one field, one hash, one proof path, through every layer. the base is small enough to read, specified three times — in prose, in trident, in rust — and cross-verified. what changes is the graph; what never changes is the arithmetic the graph is judged by.</p></div>
+  <div class="steps"><div class="step"><b>kelvin versioning · nox at 0 K</b><span>every layer has a temperature that only drops; a frozen layer takes no proposals. nox: 18 instructions, one field, one hash, one reduction — frozen forever. a program written today runs and proves the same way in fifty years</span></div><div class="step"><b>one field · deterministic · no halting problem</b><span>Goldilocks p = 2⁶⁴ − 2³² + 1 for hashing, proving, the kernel and the mint. loops bounded, no recursion, no heap, no floats, no clocks: byte-identical results on any two machines — bostrom's 2,949,732 links rebuilt from events, identical ${M('m')}</span></div><div class="step"><b>compact · 275 thousand lines</b><span>against 3.2 million lines before LLVM and 39 million with it ${M('m')}. understanding comes first; the freeze is what you earn after</span></div><div class="step"><b>written three times</b><span>every primitive in prose, in rust, in trident on nox — and the three must agree; a disagreement is a bug whichever side is wrong. the compiler proving it compiled itself: target ${M('t')}</span></div></div>` },
 { ch: 5, html: `
-  <div><p class="kick">06 · stake &amp; share · privacy</p><h2>speak<br><em>without fear.</em></h2>
-  <p class="lead">no one knows who said what, and yet everyone knows what everyone said. three invariants, all at genesis.</p></div>
-  <div class="steps"><div class="step"><b>the cyberlink is public, the author is private</b><span>the network sees that p links q and the aggregates φ⋆ runs on; never which neuron signed</span></div><div class="step"><b>balances and transfers are private</b><span>stealth addresses and veil</span></div><div class="step"><b>settlement reveals nothing</b><span>a miner's share leaks nothing of its neighbourhood beyond public aggregates</span></div><div class="step"><b>why it is the third leg of truth</b><span>privacy removes the coordination channel through which a false consensus is manufactured</span></div></div>` },
+  <div><p class="kick">06 · frozen · self</p><h2>the protocol is<br><em>itself a neuron.</em></h2>
+  <p class="lead">a key, a balance, will, karma. its treasury address is derived from the genesis block — no private key held by any party. twelve tunables, three metabolic signals, one deterministic optimization loop: it retunes itself from the graph's own φ⋆ and every node agrees on the tuning. no founder steers it alone — what makes this a superintelligence and not another ranked ledger.</p>
+  <p class="mute">below: a claim about the protocol itself. stake on it. any stake moves rank; only a bet with valence — right or wrong, at risk — earns from the truth market. passive capital buys rank and nothing else.</p></div>
+  <div class="panel"><label>claim</label><div id="stake-claim" style="font-size:15px;line-height:1.5">“proof of work” belongs with “Shapley sampling”</div><label>valence</label><div class="dial" id="stake-dial"><button data-v="-1">−1 · wrong</button><button data-v="0" class="on">0 · passive</button><button data-v="1">+1 · right</button></div><label>amount · <span id="stake-amt">10</span> tokens</label><input type="range" id="stake-range" min="1" max="100" value="10"><div class="row"><button class="btn" id="stake-go">stake</button><span class="fine" id="stake-hint"></span></div><div class="out" id="stake-out"></div></div>` },
 { ch: 5, cls: 'ink', html: `
-  <div><p class="kick">06 · stake &amp; share · mentor</p><h2>bring a mind.<br><em>earn the mentor's share.</em></h2>
-  <p class="lead">every neuron that joins through your link is your student. at the birth of their home book a share of its own token is yours, and a share of that book's fees for as long as it lives — not a bounty, a cut of proven learning. teaching is paid here, for once.</p></div>
-  <div class="panel"><label>your name</label><input type="text" id="ref-name" placeholder="name" value=""><div class="row"><button class="btn" id="ref-go">make my link</button><span class="fine">mentor's share · 10% of the student's token at birth + fees for life · proposed ${M('t')}</span></div><div class="out" id="ref-out"></div></div>` },
+  <div><p class="kick">06 · frozen · privacy</p><h2>speak<br><em>without fear.</em></h2>
+  <p class="lead">no one knows who said what, and yet everyone knows what everyone said. three invariants, all at genesis.</p></div>
+  <div class="steps"><div class="step"><b>the cyberlink is public, the author is private</b><span>the network sees that p links q and the aggregates φ⋆ runs on; never which neuron signed</span></div><div class="step"><b>balances and transfers are private</b><span>stealth addresses and veil</span></div><div class="step"><b>settlement reveals nothing</b><span>a miner's share leaks nothing of its neighbourhood beyond public aggregates</span></div><div class="step"><b>the third leg of truth</b><span>privacy removes the coordination channel through which a false consensus is manufactured</span></div></div>` },
 
-/* 7 · launch */
+/* 07 · network of moneys */
 { ch: 6, cls: 'ink', html: `
-  <div><p class="kick">07 · launch</p><h2>bostrom and space pussy<br><em>come back to life.</em></h2>
-  <p class="lead">on 2026-11-05, five years to the day after the bostrom genesis, both chains relaunch as the first networks on soft3 — same keys, same balances, the burial snapshots as genesis, and the cores the old chains never had.</p></div>
-  <div><div class="count-down" id="cd">—</div><p class="fine">until 2026-11-05 13:22:42 UTC — the bostrom genesis block, to the second</p><div class="steps" style="margin-top:12px"><div class="step"><b>phase 0 · done</b><span>field, hash, commitments, VM, proofs, state</span></div><div class="step"><b>phase 1 · 2026-11-05</b><span>the bootloader reborn: settlement mining, fold, consensus by convergence, truth markets, two-axis staking, personal chains, privacy</span></div><div class="step"><b>phase 2 · 90 days ${M('t')}</b><span>canary: real use, weekly red team, every economic invariant holds</span></div><div class="step"><b>phase 3 · $CYB mainnet ${M('t')}</b><span>several implementations agree on 10⁶ blocks</span></div></div></div>` },
+  <div><p class="kick">07 · network of moneys</p><h2>cyber is a network of moneys.<br><em>CYB is the root.</em></h2>
+  <p class="lead">cyber is only the first oikos — one chain, one token, rooted by one name. every other token is born as its own household chain, registered here by name, its value never leaving home. trading is conditions under proofs, so the bridge exploit class — the largest in crypto's history — is made unexpressible.</p></div>
+  <div class="nums"><div class="n"><big>1</big><small>root token · CYB · minted only for proven focus shift</small></div><div class="n"><big>∞</big><small>household chains · every token its own oikos, named here · proposal ${M('t')}</small></div><div class="n"><big>18,446,744</big><small>CYB cap · p / 10¹² · arithmetic, not a vote ${M('t')}</small></div><div class="n"><big>187,416</big><small>genesis · ≈ 1% · prior stake continues ${M('t')}</small></div><div class="n"><big>0</big><small>bridges · value never leaves its home chain ${M('t')}</small></div><div class="n"><big>3</big><small>coins today · $CYB hard money · $BOOT kernel · $PUSSY community — one policy cannot hold all three signs of ΔS</small></div></div>` },
 { ch: 6, html: `
-  <div><p class="kick">07 · launch · the stack</p><h2>seven layers.<br><em>three bodies.</em></h2>
-  <p class="lead">one field, one proof, one focus through every layer. the stack is headless; three bodies run on it and each is a door: cyb the robot, cyber the superintelligence, cyberia the state.</p>
-  <div class="tiles"><a class="tile" href="https://cyb.ai" target="_blank" rel="noopener" style="text-decoration:none"><b>cyb</b>the robot · cyb.ai</a><a class="tile" href="https://cyber.page/litepaper/" style="text-decoration:none"><b>cyber</b>the superintelligence · litepaper</a><a class="tile" href="https://cyberia.to" target="_blank" rel="noopener" style="text-decoration:none"><b>cyberia</b>the state · cyberia.to</a></div></div>
-  ${layersFig()}` },
+  <div><p class="kick">07 · network of moneys · launch</p><h2>bostrom and space pussy<br><em>come back to life.</em></h2>
+  <p class="lead">on 2026-11-05, five years to the day after the bostrom genesis, both chains relaunch as the first networks on soft3 — same keys, same balances, the burial snapshots as genesis, and the cores the old chains never had. CYB follows in phase 3.</p>
+  <div class="count-down" id="cd">—</div><p class="fine">until 2026-11-05 13:22:42 UTC — the bostrom genesis block, to the second</p></div>
+  <div class="panel"><label>bring a mind · your name</label><input type="text" id="ref-name" placeholder="name" value=""><div class="row"><button class="btn" id="ref-go">make my link</button><span class="fine">mentor's share · 10% of the student's token at birth + fees for life · proposed ${M('t')}</span></div><div class="out" id="ref-out">every neuron that joins through your link is your student. teaching is paid here, for once.</div></div>` },
 { ch: 6, cls: 'one ink', html: `
-  <div><p class="kick">07 · launch · you</p><h2>you read the deck.<br><em>you also mined.</em></h2>
-  <div class="neuron" id="neuron-card"></div><div class="tally"><div><b id="t-links">0</b>links in the graph<a href="#10" data-k="links">↩ link something</a></div><div><b id="t-samples">0</b>settlement samples<a href="#13" data-k="samples">↩ mine</a></div><div><b id="t-stake">0</b>tokens at risk<a href="#15" data-k="stake">↩ stake</a></div><div><b id="t-invites">0</b>mentor links<a href="#17" data-k="invites">↩ bring a mind</a></div></div>
-  <p class="lead">everything here ran in your browser against a toy graph. on 2026-11-05 the same acts run on bostrom and space pussy, with proofs, for real. $CYB follows in phase 3.</p>
-  <div class="ctas"><a class="btn" href="https://cyb.ai" target="_blank" rel="noopener">get the robot</a><a class="btn ghost" href="https://cyber.page/litepaper/">read the litepaper</a><a class="btn ghost" href="https://cyber.page/launch/">the launch tracker</a><a class="btn ghost" href="#0" id="restart">start again</a></div>
-  <p class="fine" style="margin-top:22px">${M('m')} measured · ${M('t')} target · ${M('k')} mock — every number marked. the full argument: <a href="https://cyber.page/whitepaper/">whitepaper</a> · <a href="https://cyber.page/audit/game-theory/">the game-theory audit</a> · <a href="https://cyber.page/physical-analogies/">the physics audit</a>.</p></div>` },
+  <div><p class="kick">07 · network of moneys · you</p><h2>you read the deck.<br><em>you also mined.</em></h2>
+  <div class="neuron" id="neuron-card"></div><div class="tally"><div><b id="t-links">0</b>links in the graph<a href="#5" data-k="links">↩ link something</a></div><div><b id="t-samples">0</b>settlement samples<a href="#13" data-k="samples">↩ mine</a></div><div><b id="t-stake">0</b>tokens at risk<a href="#16" data-k="stake">↩ stake</a></div><div><b id="t-invites">0</b>mentor links<a href="#19" data-k="invites">↩ bring a mind</a></div></div>
+  <p class="lead">everything here ran in your browser against a toy graph. on 2026-11-05 the same acts run on bostrom and space pussy, with proofs, for real.</p>
+  <div class="ctas"><a class="btn" href="https://cyb.ai" target="_blank" rel="noopener">get the robot</a><a class="btn ghost" href="https://cyber.page/litepaper/">read the litepaper</a><a class="btn ghost" href="https://cyber.page/whitepaper/">the whitepaper</a><a class="btn ghost" href="https://cyber.page/launch/">the launch tracker</a><a class="btn ghost" href="#0" id="restart">start again</a></div>
+  <p class="fine" style="margin-top:22px">${M('m')} measured · ${M('t')} target · ${M('k')} mock — every number marked. <a href="https://cyber.page/audit/game-theory/">the game-theory audit</a> · <a href="https://cyber.page/physical-analogies/">the physics audit</a> · <a href="https://soft3.org">soft3.org</a></p></div>` },
 ];
 
 /* ------------------------------------------------------------------ build */
@@ -316,7 +389,7 @@ $('#ref-go').onclick = () => { const n = ($('#ref-name').value.trim().toLowerCas
 
 /* two ledgers */
 const ledV = $('#led-v'); const hx = (n) => Array.from({ length: n }, () => '0123456789abcdef'[Math.random() * 16 | 0]).join('');
-const ledTick = () => { if (cur !== 2) return; const r = el(`<div class="row-l"><span>tx ${hx(12)}…</span><span class="ok">settled · ${(2 + Math.random() * 4).toFixed(1)} s</span></div>`); ledV.prepend(r); while (ledV.children.length > 7) ledV.lastChild.remove(); };
+const ledTick = () => { if (cur !== 2 || !ledV) return; const r = el(`<div class="row-l"><span>tx ${hx(12)}…</span><span class="ok">settled · ${(2 + Math.random() * 4).toFixed(1)} s</span></div>`); ledV.prepend(r); while (ledV.children.length > 7) ledV.lastChild.remove(); };
 setInterval(ledTick, 900);
 
 /* one budget */
@@ -334,10 +407,10 @@ document.querySelectorAll('.tally a').forEach((a) => { a.addEventListener('click
 const cd = () => { const t = Date.parse('2026-11-05T13:22:42Z') - Date.now(); if (t < 0) { $('#cd').textContent = 'live'; return; } const d = Math.floor(t / 864e5), h = Math.floor(t % 864e5 / 36e5), m = Math.floor(t % 36e5 / 6e4), s = Math.floor(t % 6e4 / 1e3); $('#cd').textContent = `${d}d ${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`; };
 setInterval(cd, 1000); cd();
 
-const onEnter = (i) => { if (S[i].ch === 2 && i === 7) { /* kernel slide */ } if (i === S.length - 1) ['links', 'samples', 'stake', 'invites'].forEach((k) => { const t = $('#t-' + k); if (t) t.textContent = fmt(Y[k]); const a = $(`.tally a[data-k=${k}]`); if (a) a.style.display = Y[k] ? 'none' : 'block'; }); };
+const onEnter = (i) => { if (i === 2) cyberGraph.start(); else cyberGraph.stop(); if (i === S.length - 1) ['links', 'samples', 'stake', 'invites'].forEach((k) => { const t = $('#t-' + k); if (t) t.textContent = fmt(Y[k]); const a = $(`.tally a[data-k=${k}]`); if (a) a.style.display = Y[k] ? 'none' : 'block'; }); };
 
 /* mentor param → greet */
-const m = new URLSearchParams(location.search).get('m'); if (m) { $('.kick', deck).textContent = `cyber · ${m} sent you · the protocol for superintelligence`; $('#link-out').textContent = `${m} sent you here. link something they do not know yet.`; }
+const m = new URLSearchParams(location.search).get('m'); if (m) { $('.kick', deck).textContent = `cyber · ${m} sent you · a frozen protocol for collective lifeforms`; $('#link-out').textContent = `${m} sent you here. link something they do not know yet.`; }
 
 addEventListener('hashchange', () => go(parseInt(location.hash.slice(1)) || 0));
 go(parseInt(location.hash.slice(1)) || 0);

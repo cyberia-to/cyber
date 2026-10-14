@@ -31,7 +31,7 @@ body.ink .hud{color:#000}body.ink .legend{color:rgba(0,0,0,.6)}body.ink .brand .
 .slide.one .body{grid-template-columns:1fr;max-width:1100px}
 .slide.ink{background:var(--c);color:#000}
 .slide.ink .mute,.slide.ink .kick,.slide.ink .n small{color:rgba(0,0,0,.6)}
-.slide.ink.ch5,.slide.ink.ch6{color:#fff}.slide.ink.ch5 .kick,.slide.ink.ch6 .kick,.slide.ink.ch5 .mute,.slide.ink.ch6 .mute,.slide.ink.ch5 .n small,.slide.ink.ch6 .n small{color:rgba(255,255,255,.65)}.slide.ink.ch5 h2 em,.slide.ink.ch6 h2 em{color:#000}.slide.ink.ch5 .step,.slide.ink.ch6 .step,.slide.ink.ch5 .tally div,.slide.ink.ch6 .tally div{border-color:rgba(255,255,255,.3)}.slide.ink.ch5 .fine,.slide.ink.ch6 .fine{opacity:.8}
+.slide.ink.ch5,.slide.ink.ch6,.slide.ink.ch5 p.lead,.slide.ink.ch6 p.lead,.slide.ink.ch5 .step,.slide.ink.ch6 .step{color:#fff}.slide.ink.ch5 .kick,.slide.ink.ch6 .kick,.slide.ink.ch5 .mute,.slide.ink.ch6 .mute,.slide.ink.ch5 .n small,.slide.ink.ch6 .n small{color:rgba(255,255,255,.65)}.slide.ink.ch5 h2 em,.slide.ink.ch6 h2 em{color:#000}.slide.ink.ch5 .step,.slide.ink.ch6 .step,.slide.ink.ch5 .tally div,.slide.ink.ch6 .tally div{border-color:rgba(255,255,255,.3)}.slide.ink.ch5 .fine,.slide.ink.ch6 .fine{opacity:.8}
 body.ink.ch5 .hud,body.ink.ch6 .hud{color:#fff}body.ink.ch5 .legend,body.ink.ch6 .legend{color:rgba(255,255,255,.6)}body.ink.ch5 .brand .dot,body.ink.ch6 .brand .dot{background:#fff}
 .slide.wash{background:rgba(0,0,0,.55)}
 .kick{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--c);margin:0 0 18px}
@@ -164,3 +164,10 @@ p.mute,.mute{color:var(--mute);font-size:15px;line-height:1.5;max-width:52ch}
 .tally div a{display:block;margin-top:8px;font-size:11px;opacity:.7;text-decoration:none;letter-spacing:.08em}
 
 @media (max-width:900px){.slide .ledgers{grid-template-columns:1fr}.slide .ledger{min-height:0}.slide .ledger .row-l{white-space:normal}}
+
+/* the cybergraph */
+.cgwrap{position:relative;width:100%;height:min(56vh,520px);border:1px solid rgba(255,255,255,.18);border-radius:16px;overflow:hidden;background:rgba(0,0,0,.6);margin:6px 0 10px}
+.cgwrap canvas{width:100%;height:100%;display:block}
+.cgcap{position:absolute;left:12px;right:12px;bottom:10px;display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;opacity:.85;flex-wrap:wrap}
+.slide.one .tiles .tile{flex:1 1 180px}
+@media (max-width:900px){.cgwrap{height:46vh}}
