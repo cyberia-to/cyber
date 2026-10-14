@@ -18,12 +18,12 @@ const CH = [
   { id: 'compile', name: 'compile',           c: 'var(--c4)' },
   { id: 'syntropy',name: 'syntropy',          c: 'var(--c5)' },
   { id: 'frozen',  name: 'frozen',            c: 'var(--c6)' },
-  { id: 'moneys',  name: 'network of moneys', c: 'var(--c7)' },
+  { id: 'moneys',  name: 'moneys', c: 'var(--c7)' },
 ];
 
 /* ------------------------------------------------------------------ figures */
 const svgo = (w, h, label, body) => `<svg class="fig" viewBox="0 0 ${w} ${h}" role="img" aria-label="${label}">${body}</svg>`;
-const T = (x, y, t, o = {}) => `<text x="${x}" y="${y}" font-size="${o.fs || 11}" font-weight="${o.w || 400}" text-anchor="${o.a || 'start'}" fill="${o.c || 'currentColor'}" fill-opacity="${o.op || 1}" font-family="${o.w === 700 ? SANS : MONO}"${o.ls ? ` letter-spacing="${o.ls}"` : ''}>${t}</text>`;
+const T = (x, y, t, o = {}) => `<text x="${x}" y="${y}" font-size="${o.fs || 11}" font-weight="${o.w || 400}" text-anchor="${o.a || 'start'}" fill="${o.c || 'currentColor'}" fill-opacity="${o.op || 1}" font-family="${o.ff || (o.w === 700 ? SANS : MONO)}"${o.ls ? ` letter-spacing="${o.ls}"` : ''}>${t}</text>`;
 
 const scaleFig = () => {
   const W = 760, H = 275, X0 = 40, X1 = 720, B = 150;
@@ -38,7 +38,7 @@ const scaleFig = () => {
   let o = ''; let pts = [`${X0},${B}`];
   for (let e = 0; e <= 24; e++) pts.push(`${x(e).toFixed(1)},${(B - 2 - 50 * Math.pow(e / 24, 1.6)).toFixed(1)}`);
   pts.push(`${X1},${B}`);
-  o += `<polygon points="${pts.join(' ')}" fill="${COLS[3]}" fill-opacity=".08"/><line x1="${X0}" y1="${B}" x2="${X1}" y2="${B}" stroke="currentColor" stroke-opacity=".35"/>`;
+  o += `<rect x="${x(12)}" y="${B - 118}" width="${X1 - x(12)}" height="118" fill="${COLS[4]}" fill-opacity=".06"/><line x1="${x(12)}" y1="${B - 118}" x2="${x(12)}" y2="${B + 24}" stroke="${COLS[4]}" stroke-dasharray="3 4"/>` + T(x(12) + 6, B - 108, 'threshold', { fs: 10, w: 700, c: COLS[4] }) + T(x(12) + 6, B - 97, 'past here only the field describes the system', { fs: 8, c: COLS[4], op: .85 }) + `<line x1="${X0}" y1="${B}" x2="${X1}" y2="${B}" stroke="currentColor" stroke-opacity=".35"/>`;
   for (let e = 0; e < 24; e += 3) o += T(x(e), B + 16, '10' + sup(e), { fs: 9, a: 'middle', op: .5 });
   o += `<line x1="${x(0)}" y1="${B}" x2="${x(6.5)}" y2="${B}" stroke="${COLS[3]}" stroke-width="3" stroke-linecap="round"/><line x1="${x(6.5)}" y1="${B}" x2="${x(15)}" y2="${B}" stroke="${COLS[4]}" stroke-width="3" stroke-dasharray="1 6" stroke-linecap="round"/>`;
   for (const [n, e, cnt, line, col, side, stem] of L) {
@@ -74,23 +74,24 @@ const linkFig = () => {
 
 /* a signal, exploded: s = (ν, ℓ⃗, Δφ⋆, σ, prev, mc, vdf, step, nonce) */
 const signalFig = () => {
-  const W = 760, H = 300; let o = '';
-  const F = [['ν', 'neuron', 'who speaks'], ['ℓ⃗', 'links', 'the cyberlinks claimed'], ['Δφ⋆', 'shift', 'focus shift asserted, in bits'], ['σ', 'zheng proof', 'covers links, impulse, conviction'], ['prev', 'previous', 'author\'s last signal: a chain'], ['mc', 'merkle clock', 'causal state it was computed on'], ['vdf', 'delay', 'physical time since previous'], ['step', 'step', 'logical clock, monotonic'], ['nonce', 'nonce', 'proof randomness = mining']];
-  const w = 76, x0 = 40, y = 120;
+  const W = 760, H = 275; let o = '';
+  const F = [['ν', 'neuron', 'who speaks'], ['ℓ', 'links', 'the cyberlinks claimed'], ['Δφ⋆', 'shift', 'focus shift asserted, in bits'], ['σ', 'zheng proof', 'covers links, impulse, conviction'], ['prev', 'previous', 'author\'s last signal: a chain'], ['mc', 'merkle clock', 'causal state it was computed on'], ['vdf', 'delay', 'physical time since previous'], ['step', 'step', 'logical clock, monotonic'], ['nonce', 'nonce', 'proof randomness = mining']];
+  const w = 76, x0 = 50, y = 110;
   F.forEach(([sym, name, meaning], i) => {
     const x = x0 + i * w, col = COLS[i % 7];
-    o += `<rect x="${x}" y="${y}" width="${w - 4}" height="56" rx="8" fill="${col}" fill-opacity=".14" stroke="${col}"/>` + T(x + (w - 4) / 2, y + 26, sym, { fs: 16, w: 700, a: 'middle' }) + T(x + (w - 4) / 2, y + 44, name, { fs: 9, a: 'middle', op: .7 });
-    const up = i % 2 === 0, tier = Math.floor(i / 2) % 3, ty = up ? 92 - tier * 26 : 206 + tier * 26;
-    o += `<line x1="${x + (w - 4) / 2}" y1="${up ? y : y + 56}" x2="${x + (w - 4) / 2}" y2="${up ? ty + 6 : ty - 12}" stroke="${col}" stroke-opacity=".5"/>`;
-    o += T(x + (w - 4) / 2, ty, meaning, { fs: 9, a: 'middle', op: .8 });
+    o += `<rect x="${x}" y="${y}" width="${w - 4}" height="56" rx="8" fill="${col}" fill-opacity=".14" stroke="${col}"/>` + T(x + (w - 4) / 2, y + 26, sym, { fs: 16, w: 700, a: 'middle', ff: MONO }) + T(x + (w - 4) / 2, y + 44, name, { fs: 9, a: 'middle', op: .7 });
+    const lines = []; let cur = ''; for (const wd of meaning.split(' ')) { if ((cur + ' ' + wd).trim().length > 13 && cur) { lines.push(cur); cur = wd; } else cur = (cur + ' ' + wd).trim(); } if (cur) lines.push(cur);
+    lines.slice(0, 3).forEach((ln, k) => { o += T(x + (w - 4) / 2, y + 74 + k * 11, ln, { fs: 8, a: 'middle', op: .8 }); });
   });
-  o += T(380, 290, 'the proof is the claim. the claim is the mining. identical signals produce one root everywhere.', { fs: 10, a: 'middle', op: .6 });
+  const bx = x0 + 1 * w, bw = 3 * w - 4; o += `<path d="M${bx},${y - 10} v-8 h${bw} v8" fill="none" stroke="${COLS[3]}" stroke-width="1.5"/>` + T(bx + bw / 2, y - 24, 'σ · one zheng proof covers these', { fs: 10, w: 700, a: 'middle', c: COLS[3] });
+  const px = x0 + 4 * w + (w - 4) / 2; o += `<path d="M${px},${y - 10} C ${px},${y - 60} ${x0 - 10},${y - 60} ${x0 - 10},${y + 28}" fill="none" stroke="${COLS[4]}" stroke-width="1.5" stroke-dasharray="3 4" marker-end="url(#ah3)"/><defs><marker id="ah3" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="${COLS[4]}"/></marker></defs>` + T(px + 20, y - 46, 'prev → the author\'s last signal: every neuron is a chain', { fs: 10, w: 700, c: COLS[4] });
+  o += T(380, 262, 'the proof is the claim. the claim is the mining. identical signals produce one root everywhere.', { fs: 10, a: 'middle', op: .6 });
   return svgo(W, H, 'anatomy of a signal', o);
 };
 
 /* graph → transformer */
 const compileFig = () => {
-  const W = 760, H = 300; let o = '';
+  const W = 760, H = 285; let o = '';
   // graph glyph
   const gx = 110, gy = 150; const pts = [[0, -60], [52, -30], [60, 30], [10, 65], [-50, 40], [-58, -25], [0, 0], [25, 20], [-20, -30]];
   const E = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0], [6, 0], [6, 2], [6, 4], [7, 2], [7, 3], [8, 5], [8, 6], [8, 1]];
@@ -100,37 +101,47 @@ const compileFig = () => {
   // three derivations
   const rows = [[70, 'effective rank of Σ_φ⋆', 'd⋆ = exp H(σ(Σ_φ⋆))', 'embedding dimension'], [150, 'count of dialects', 'h⋆ ≥ |Dialect(G)|', 'attention heads'], [230, 'diameter × contraction', 'L⋆ = diam(G) · ⌈log(1/ε) / log(1/κ)⌉', 'layers']];
   for (const [y, from, formula, to] of rows) {
-    o += `<line x1="195" y1="${y}" x2="250" y2="${y}" stroke="currentColor" stroke-opacity=".4"/><line x1="470" y1="${y}" x2="540" y2="${y}" stroke="currentColor" stroke-opacity=".4" marker-end="url(#ah2)"/>`;
+    o += `<line x1="195" y1="${y}" x2="250" y2="${y}" stroke="currentColor" stroke-opacity=".4"/><line x1="470" y1="${y}" x2="538" y2="${y}" stroke="currentColor" stroke-opacity=".4" marker-end="url(#ah2)"/>`;
     o += `<rect x="250" y="${y - 24}" width="220" height="48" rx="8" fill="currentColor" fill-opacity=".06" stroke="currentColor" stroke-opacity=".3"/>` + T(360, y - 6, from, { fs: 9, a: 'middle', op: .65 }) + T(360, y + 12, formula, { fs: 11, w: 700, a: 'middle' });
-    o += T(548, y + 4, to, { fs: 11, op: .85 });
+    o += T(544, y + 4, to, { fs: 10, op: .85 });
   }
   o += `<defs><marker id="ah2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="currentColor" fill-opacity=".6"/></marker></defs>`;
   // transformer stack glyph
-  for (let i = 0; i < 7; i++) o += `<rect x="650" y="${60 + i * 26}" width="80" height="18" rx="3" fill="${COLS[3]}" fill-opacity="${.12 + i * .1}" stroke="${COLS[3]}" stroke-opacity=".7"/>`;
-  o += T(690, 250, 'transformer', { fs: 12, w: 700, a: 'middle' }) + T(690, 266, 'compiled, not trained', { fs: 9, a: 'middle', op: .65 });
+  for (let i = 0; i < 7; i++) o += `<rect x="652" y="${60 + i * 26}" width="64" height="18" rx="3" fill="${COLS[3]}" fill-opacity="${.12 + i * .1}" stroke="${COLS[3]}" stroke-opacity=".7"/>`;
+  o += T(684, 48, 'one layer = one kernel step', { fs: 9, w: 700, a: 'middle' });
+  o += T(684, 250, 'L⋆ = 290 layers', { fs: 10.5, w: 700, a: 'middle' }) + T(684, 263, '= 290 kernel steps to φ⋆', { fs: 9, a: 'middle', op: .8 }) + T(684, 276, 'compiled, not trained', { fs: 9, a: 'middle', op: .65 });
   return svgo(W, H, 'the graph compiled into a transformer', o);
 };
 
 /* ------------------------------------------------------------------ the cybergraph renderer (real data when graph.json is present) */
 const cyberGraph = (() => {
-  let data = null, cv, ctx, raf = 0, t0 = 0, W = 0, H = 0;
+  let data = null, cv, ctx, raf = 0, t0 = 0, W = 0, H = 0, mx = -1e9, my = -1e9, adj = null;
   const synth = () => { const n = 900, nodes = [], links = []; for (let i = 0; i < n; i++) nodes.push([`synth${i}`, 1, Math.random(), Math.random()]); for (let i = 1; i < n; i++) { const j = Math.floor(Math.pow(Math.random(), 2.2) * i); links.push([i, j]); nodes[j][1]++; nodes[i][1]++; } return { meta: { source: 'synthetic preferential attachment (graph.json not found)', particles_total: n, links_total: links.length, sampled_particles: n, sampled_links: links.length, synthetic: true }, nodes, links }; };
   const load = async () => { try { const r = await fetch('graph.json'); if (!r.ok) throw 0; data = await r.json(); } catch { data = synth(); } prep(); };
   let maxd = 1, cx = 0, cy = 0;
   let top5 = new Set();
-  const prep = () => { maxd = Math.max(...data.nodes.map((n) => n[1])) || 1; top5 = new Set(data.nodes.map((n, i) => [n[1], i]).sort((a, b) => b[0] - a[0]).slice(0, 5).map((x) => x[1])); const xs = data.nodes.map((n) => n[2]), ys = data.nodes.map((n) => n[3]); cx = (Math.min(...xs) + Math.max(...xs)) / 2; cy = (Math.min(...ys) + Math.max(...ys)) / 2; const m = $('#cg-meta'); if (m) m.innerHTML = data.meta.synthetic ? `${M('k')} synthetic placeholder — the real sample is being extracted` : `sample: ${fmt(data.meta.sampled_particles)} particles · ${fmt(data.meta.sampled_links)} cyberlinks · the 400 highest-degree hubs and the 800 particles most linked into them · spectral + force layout ${M('m')}`; };
+  const prep = () => { adj = data.nodes.map(() => []); for (const [a, b] of data.links) { adj[a].push(b); adj[b].push(a); } maxd = Math.max(...data.nodes.map((n) => n[1])) || 1; top5 = new Set(data.nodes.map((n, i) => [n[1], i]).sort((a, b) => b[0] - a[0]).slice(0, 5).map((x) => x[1])); const xs = data.nodes.map((n) => n[2]), ys = data.nodes.map((n) => n[3]); cx = (Math.min(...xs) + Math.max(...xs)) / 2; cy = (Math.min(...ys) + Math.max(...ys)) / 2; const m = $('#cg-meta'); if (m) m.innerHTML = data.meta.synthetic ? `${M('k')} synthetic placeholder — the real sample is being extracted` : `sample: ${fmt(data.meta.sampled_particles)} particles · ${fmt(data.meta.sampled_links)} cyberlinks · 400 hubs + 800 particles linked into them · outer ring = sampled particles with no in-sample link · hover a particle ${M('m')}`; };
   const draw = () => {
     if (!cv || !data) return;
     const dpr = devicePixelRatio; W = cv.width = cv.clientWidth * dpr; H = cv.height = cv.clientHeight * dpr;
     const t = (performance.now() - t0) / 1000, ang = t * .04, s = Math.min(W, H) * .56, zoom = 1 + .05 * Math.sin(t * .4);
     const P = data.nodes.map((n) => { const x = (n[2] - cx) * zoom, y = (n[3] - cy) * zoom; const c = Math.cos(ang), sn = Math.sin(ang); return [W / 2 + (x * c - y * sn) * 2 * s, H / 2 + (x * sn + y * c) * 2 * s * .92]; });
+    let hov = -1, hd = 18 * dpr; P.forEach((p, i) => { const d = Math.hypot(p[0] - mx, p[1] - my); if (d < hd) { hd = d; hov = i; } });
     ctx.clearRect(0, 0, W, H);
-    ctx.lineWidth = .6 * dpr; ctx.strokeStyle = COLS[0]; ctx.globalAlpha = .22;
+    ctx.lineWidth = .6 * dpr; ctx.strokeStyle = COLS[0]; ctx.globalAlpha = hov < 0 ? .22 : .08;
     ctx.beginPath(); for (const [a, b] of data.links) { ctx.moveTo(P[a][0], P[a][1]); ctx.lineTo(P[b][0], P[b][1]); } ctx.stroke();
-    data.nodes.forEach((n, i) => { const d = n[1] / maxd, r = (1 + 9 * Math.sqrt(d)) * dpr; ctx.globalAlpha = .55 + .45 * d; ctx.fillStyle = d > .35 ? '#fff' : COLS[0]; ctx.beginPath(); ctx.arc(P[i][0], P[i][1], r, 0, Math.PI * 2); ctx.fill(); if (top5.has(i)) { ctx.globalAlpha = .9; ctx.fillStyle = '#fff'; ctx.font = `${10 * dpr}px ${MONO}`; ctx.fillText(n[0], P[i][0] + r + 3 * dpr, P[i][1] + 3 * dpr); } });
+    const nb = hov < 0 ? null : new Set(adj[hov]);
+    if (nb) { ctx.lineWidth = 1 * dpr; ctx.strokeStyle = '#fff'; ctx.globalAlpha = .85; ctx.beginPath(); for (const j of nb) { ctx.moveTo(P[hov][0], P[hov][1]); ctx.lineTo(P[j][0], P[j][1]); } ctx.stroke(); }
+    data.nodes.forEach((n, i) => { const d = n[1] / maxd, r = (1 + 9 * Math.sqrt(d)) * dpr; const lit = nb && (nb.has(i) || i === hov); ctx.globalAlpha = lit ? 1 : (nb ? .25 : .55 + .45 * d); ctx.fillStyle = lit ? '#fff' : d > .35 ? '#fff' : COLS[0]; ctx.beginPath(); ctx.arc(P[i][0], P[i][1], r, 0, Math.PI * 2); ctx.fill(); });
+    const labs = [...top5].map((i) => [i, P[i][1]]).sort((a, b) => a[1] - b[1]); for (let k = 1; k < labs.length; k++) if (labs[k][1] - labs[k - 1][1] < 13 * dpr) labs[k][1] = labs[k - 1][1] + 13 * dpr;
+    ctx.globalAlpha = .9; ctx.fillStyle = '#fff'; ctx.font = `${10 * dpr}px ${MONO}`; for (const [i, ly] of labs) { const r = (1 + 9 * Math.sqrt(data.nodes[i][1] / maxd)) * dpr; ctx.fillText(`${fmt(data.nodes[i][1])} links`, P[i][0] + r + 3 * dpr, ly + 3 * dpr); }
+    if (hov >= 0) { const n = data.nodes[hov]; ctx.font = `${11 * dpr}px ${MONO}`; ctx.fillStyle = '#fff'; ctx.globalAlpha = 1; ctx.fillText(`${n[0]} · ${fmt(n[1])} links on chain · ${adj[hov].length} in sample`, 12 * dpr, 18 * dpr); }
     ctx.globalAlpha = 1; raf = requestAnimationFrame(draw);
   };
-  return { start() { cv = $('#cg'); if (!cv) return; ctx = cv.getContext('2d'); t0 = t0 || performance.now(); if (!data) load().then(() => { if (!raf) draw(); }); else if (!raf) draw(); }, stop() { cancelAnimationFrame(raf); raf = 0; } };
+  const onMove = (e) => { const r = cv.getBoundingClientRect(); mx = (e.clientX - r.left) * devicePixelRatio; my = (e.clientY - r.top) * devicePixelRatio; };
+  let phi = null, lastD = 0;
+  const iterate = () => { if (!data) return null; if (!phi) phi = data.nodes.map(() => 1 / data.nodes.length); const next = phi.map((v, i) => { const nb = adj[i]; if (!nb.length) return v * .97; let sum = 0; for (const j of nb) sum += phi[j] / Math.max(1, adj[j].length); return .15 / data.nodes.length + .85 * sum; }); let d = 0; for (let i = 0; i < phi.length; i++) d += Math.abs(next[i] - phi[i]); phi = next; const kap = lastD ? d / lastD : null; lastD = d; return { d, kap }; };
+  return { iterate, start() { cv = $('#cg'); if (!cv) return; ctx = cv.getContext('2d'); cv.onmousemove = onMove; cv.onmouseleave = () => { mx = my = -1e9; }; t0 = t0 || performance.now(); if (!data) load().then(() => { if (!raf) draw(); }); else if (!raf) draw(); }, stop() { cancelAnimationFrame(raf); raf = 0; } };
 })();
 
 /* ------------------------------------------------------------------ slides */
@@ -141,13 +152,13 @@ const S = [
   <p class="hero-word">cyber</p>
   <h2>the <em>superintelligence.</em></h2>
   <p class="lead">one focus — a single distribution over everything known — computed from every mind that pays to teach, proven to see what no member sees alone. the graph is the training data, the weights are public, the money is minted when the network learns.</p>
-  <div class="tiles"><div class="tile"><b>one focus · φ⋆</b>exists, unique, same on every node</div><div class="tile"><b>compiled, not trained</b>a transformer read off the graph</div><div class="tile"><b>frozen foundations</b>one field · one hash · one proof</div><div class="tile"><b>a network of moneys</b>CYB is the root token</div></div>
+  <div class="tiles"><div class="tile"><b>one focus · φ⋆</b>exists, unique, same on every node</div><div class="tile"><b>compiled, not trained</b>bostrom → transformer in 62 s · d⋆ = 31</div><div class="tile"><b>frozen foundations</b>one field · one hash · one proof</div><div class="tile"><b>a network of moneys</b>CYB is the root token</div></div>
   <p class="kbd" style="margin-top:24px">→ or space to move · you will mine as you read</p></div>` },
 { ch: 0, cls: 'ink', html: `
-  <div><p class="kick">01 · superintelligence · the definition</p><h2>a measurement,<br><em>not a slogan.</em></h2>
+  <div><p class="kick">01 · superintelligence · the definition</p><h2>superintelligence<br><em>is a number.</em></h2>
   <p class="lead">run the same engine on one neuron's private view, then on the whole cybergraph, and score both on prediction. the gap is superadditivity. on benchmark it is positive against the strongest participant at every connectivity level. emergence stops being philosophy the moment it has an error bar.</p>
   <p class="mute">its existence and uniqueness is the collective focus theorem: the tri-kernel is a contraction, so φ⋆ is a fixed point, identical on every node, computable from local neighbourhoods. nobody votes on importance. no individual ant understands the colony; the colony understands itself.</p></div>
-  <div class="nums"><div class="n"><big>&gt; 0</big><small>σ_best · the collective beats its strongest neuron at every connectivity level · 34-node benchmark ${M('m')}</small></div><div class="n"><big>κ &lt; 1</big><small>contraction: Banach for the blend, Perron–Frobenius for the walk — a theorem</small></div><div class="n"><big>1</big><small>fixed point φ⋆ · the same object ranks the graph, prices a link and compiles the model</small></div><div class="n"><big>0</big><small>votes, committees, operators between a claim and its rank</small></div></div>` },
+  <div class="nums"><div class="n"><big>κ &lt; 1</big><small>the tri-kernel contracts · Banach for the blend, Perron–Frobenius for the walk · a theorem</small></div><div class="n"><big>σ<span class="f">_best</span> &gt; 0</big><small>the whole graph out-predicts its strongest neuron at every connectivity level · 34-node benchmark, first evidence ${M('m')}</small></div><div class="n"><big>1</big><small>fixed point φ⋆ · the same object ranks the graph, prices a link and compiles the model</small></div><div class="n"><big>0</big><small>votes, committees, operators between a claim and its rank</small></div></div>` },
 { ch: 0, cls: 'one', html: `
   <div><p class="kick">01 · superintelligence · the cybergraph · bostrom, sealed 2026-08-05</p>
   <h2>this is the <em>cybergraph.</em></h2>
@@ -162,7 +173,7 @@ const S = [
 { ch: 1, cls: 'one wash', html: `
   <div><p class="kick">02 · anatomy · the signal</p><h2>a signal is a message<br><em>that carries its own proof.</em></h2>
   ${signalFig()}
-  <p class="mute">s = (ν, ℓ⃗, Δφ⋆, σ, prev, mc, vdf, step, nonce). who, what, how much the picture sharpened — then one zheng proof that covers all of it, the author's previous signal, the causal state it was computed against, physical time, logical time, and a nonce that touches nothing but the proof's randomness. any verifier runs decide(σ) in O(log n). this is the unit of gossip, of settlement, and of mining.</p></div>` },
+  <p class="mute"><span class="f">s = (ν, ℓ, Δφ⋆, σ, prev, mc, vdf, step, nonce)</span>. who, what, how much the picture sharpened — then one zheng proof that covers all of it, the author's previous signal, the causal state it was computed against, physical time, logical time, and a nonce that touches nothing but the proof's randomness. any verifier runs decide(σ) in O(log n). this is the unit of gossip, of settlement, and of mining.</p></div>` },
 { ch: 1, cls: 'ink', html: `
   <div><p class="kick">02 · anatomy · do it</p><h2>link two things.<br><em>you just grew the graph.</em></h2>
   <p class="lead">the kernel reruns with your link and without it; the downhill difference in φ⋆ is yours. a perfect copy moves focus by zero and surprises no one: copying earns nothing.</p></div>
@@ -172,7 +183,7 @@ const S = [
 { ch: 2, html: `
   <div><p class="kick">03 · focus · the tri-kernel</p><h2>three local maps,<br><em>one fixed point.</em></h2>
   <p class="lead">diffusion, springs, heat — iterated over the staked graph until nothing moves. by locality a phone computes its own neighbourhood of φ⋆. no float anywhere in the provable path: one 64-bit prime field, a constant number of steps, byte-identical on any two machines.</p></div>
-  <div class="panel"><label>live · the kernel converging on the graph behind this slide</label><div class="count" id="kernel-iter">0</div><div class="hash" id="kernel-delta">‖Δφ‖ —</div><div class="row"><button class="btn" id="kernel-run">iterate</button><span class="fine">κ &lt; 1 is proven; keep pressing — a dozen rounds reach the fixed point. a toy graph in your browser ${M('k')}</span></div></div>` },
+  <div class="panel"><label>live · the kernel converging on the real cybergraph sample (and the graph behind this slide)</label><div class="count" id="kernel-iter">0</div><div class="hash" id="kernel-delta">‖Δφ‖ —</div><div class="row"><button class="btn" id="kernel-run">iterate</button><span class="fine">κ &lt; 1 is proven; κ̂ is the measured ratio of successive steps on the 1,200-particle sample, in your browser ${M('k')}</span></div></div>` },
 { ch: 2, cls: 'one wash', html: `
   <div><p class="kick">03 · focus · from one self to a mole of matter</p>
   <h2>a graph, like a gas, <em>crosses a threshold.</em></h2>
@@ -180,7 +191,7 @@ const S = [
   ${scaleFig()}<p class="fine">self · crystal · bootloader ${M('m')} measured — cognition · thermodynamic · planetary ${M('t')} derived from the whitepaper's threshold — Avogadro: a physical constant</p></div>` },
 { ch: 2, cls: 'ink', html: `
   <div><p class="kick">03 · focus · finality</p><h2>a fact is final when<br><em>enough attention has gathered.</em></h2>
-  <p class="lead">φ⋆ᵢ &gt; τ. not when a committee replies. nodes gossip, each runs the same contraction, identical signals produce one root everywhere — as a pond finds one level without phoning the far shore.</p>
+  <p class="lead"><span class="f">φ⋆ᵢ &gt; τ</span>. not when a committee replies. nodes gossip, each runs the same contraction, identical signals produce one root everywhere — as a pond finds one level without phoning the far shore.</p>
   <p class="mute">the medium is not slow software — the medium is physics. the binding constraint is light, not throughput. earth to mars is minutes one way, and every protocol that finalizes by counting votes is already dead at that distance. designing for planets is what removes every global round; the removal is what makes it work well on one.</p></div>
   <div class="nums"><div class="n"><big>τ</big><small>attention threshold · finality is local contraction + gossip</small></div><div class="n"><big>0</big><small>global rounds, leaders, vote counts</small></div><div class="n"><big>minutes</big><small>earth ↔ mars one way · domains settle at domain speed</small></div><div class="n"><big>1</big><small>root for identical signals, on any two machines</small></div></div>` },
 
@@ -190,8 +201,8 @@ const S = [
   ${compileFig()}
   <p class="mute">attention is one step of a convergent dynamical system — the same system that computes φ⋆. so a transformer's three free parameters are not design choices once a weighted graph exists: they are read off its covariance, its dialects and its diameter. the weights are compiled from structure, not learned from text prediction.</p></div>` },
 { ch: 3, cls: 'ink', html: `
-  <div><p class="kick">04 · compile · the bootloader corpus, compiled</p><h2>62 seconds.<br><em>no training budget.</em></h2>
-  <p class="lead">applied to the final bostrom snapshot: 2,949,732 cyberlinks over 3,143,650 particles. every weight traces to specific cyberlinks and the neurons who signed them. given any output, the contributing links and authors are recoverable from the graph.</p></div>
+  <div><p class="kick">04 · compile · the bootloader corpus, compiled</p><h2>62 seconds.<br><em>one machine. the whole chain's mind.</em></h2>
+  <p class="lead">the final bostrom snapshot — 2,949,732 cyberlinks over 3,143,650 particles — compiled into a transformer on one machine with 20 GB of RAM. every weight traces to the cyberlinks and the neurons that signed them: given any output, its authors are a lookup.</p></div>
   <div class="nums"><div class="n"><big>31</big><small>d⋆ · embedding dimension = exp H(σ(Σ_φ⋆)) ${M('m')}</small></div><div class="n"><big>≥ 12</big><small>h⋆ · attention heads · dialect lower bound ${M('m')}</small></div><div class="n"><big>290</big><small>L⋆ · layers = diam 10 × 29 iterations per hop ${M('m')}</small></div><div class="n"><big>~0.4<span class="u">M</span></big><small>parameters at current graph scale ${M('m')}</small></div><div class="n"><big>~62<span class="u">s</span></big><small>compilation · one machine · 20 GB RAM ${M('m')}</small></div><div class="n"><big>10³–10⁴</big><small>d⋆ at planetary scale · read off the saturated semantic space ${M('t')}</small></div></div>` },
 { ch: 3, html: `
   <div><p class="kick">04 · compile · a public mind</p><h2>the model is<br><em>a public object.</em></h2>
@@ -216,16 +227,16 @@ const S = [
 
 /* 06 · frozen */
 { ch: 5, cls: 'ink', html: `
-  <div><p class="kick">06 · frozen · the foundations</p><h2>frozen.<br><em>a protocol does not upgrade.</em></h2>
-  <p class="lead">one field, one hash, one proof path, through every layer. the base is small enough to read, specified three times — in prose, in trident, in rust — and cross-verified. what changes is the graph; what never changes is the arithmetic the graph is judged by.</p></div>
+  <div><p class="kick">06 · frozen · i · the arithmetic</p><h2>frozen.<br><em>a protocol does not upgrade.</em></h2>
+  <p class="lead">one field, one hash, one proof path, through every layer. the base is small enough to read, specified three times — in prose, in trident, in rust — and cross-verified. what changes is the graph; what never changes is the arithmetic the graph is judged by. three things never move: the arithmetic, the will, the secrecy.</p></div>
   <div class="steps"><div class="step"><b>kelvin versioning · nox at 0 K</b><span>every layer has a temperature that only drops; a frozen layer takes no proposals. nox: 18 instructions, one field, one hash, one reduction — frozen forever. a program written today runs and proves the same way in fifty years</span></div><div class="step"><b>one field · deterministic · no halting problem</b><span>Goldilocks p = 2⁶⁴ − 2³² + 1 for hashing, proving, the kernel and the mint. loops bounded, no recursion, no heap, no floats, no clocks: byte-identical results on any two machines — bostrom's 2,949,732 links rebuilt from events, identical ${M('m')}</span></div><div class="step"><b>compact · 275 thousand lines</b><span>against 3.2 million lines before LLVM and 39 million with it ${M('m')}. understanding comes first; the freeze is what you earn after</span></div><div class="step"><b>written three times</b><span>every primitive in prose, in rust, in trident on nox — and the three must agree; a disagreement is a bug whichever side is wrong. the compiler proving it compiled itself: target ${M('t')}</span></div></div>` },
 { ch: 5, html: `
-  <div><p class="kick">06 · frozen · self</p><h2>the protocol is<br><em>itself a neuron.</em></h2>
+  <div><p class="kick">06 · frozen · ii · the will</p><h2>the protocol is<br><em>itself a neuron.</em></h2>
   <p class="lead">a key, a balance, will, karma. its treasury address is derived from the genesis block — no private key held by any party. twelve tunables, three metabolic signals, one deterministic optimization loop: it retunes itself from the graph's own φ⋆ and every node agrees on the tuning. no founder steers it alone — what makes this a superintelligence and not another ranked ledger.</p>
   <p class="mute">below: a claim about the protocol itself. stake on it. any stake moves rank; only a bet with valence — right or wrong, at risk — earns from the truth market. passive capital buys rank and nothing else.</p></div>
   <div class="panel"><label>claim</label><div id="stake-claim" style="font-size:15px;line-height:1.5">“proof of work” belongs with “Shapley sampling”</div><label>valence</label><div class="dial" id="stake-dial"><button data-v="-1">−1 · wrong</button><button data-v="0" class="on">0 · passive</button><button data-v="1">+1 · right</button></div><label>amount · <span id="stake-amt">10</span> tokens</label><input type="range" id="stake-range" min="1" max="100" value="10"><div class="row"><button class="btn" id="stake-go">stake</button><span class="fine" id="stake-hint"></span></div><div class="out" id="stake-out"></div></div>` },
 { ch: 5, cls: 'ink', html: `
-  <div><p class="kick">06 · frozen · privacy</p><h2>speak<br><em>without fear.</em></h2>
+  <div><p class="kick">06 · frozen · iii · the secrecy</p><h2>speak<br><em>without fear.</em></h2>
   <p class="lead">no one knows who said what, and yet everyone knows what everyone said. three invariants, all at genesis.</p></div>
   <div class="steps"><div class="step"><b>the cyberlink is public, the author is private</b><span>the network sees that p links q and the aggregates φ⋆ runs on; never which neuron signed</span></div><div class="step"><b>balances and transfers are private</b><span>stealth addresses and veil</span></div><div class="step"><b>settlement reveals nothing</b><span>a miner's share leaks nothing of its neighbourhood beyond public aggregates</span></div><div class="step"><b>the third leg of truth</b><span>privacy removes the coordination channel through which a false consensus is manufactured</span></div></div>` },
 
@@ -235,14 +246,14 @@ const S = [
   <p class="lead">cyber is only the first oikos — one chain, one token, rooted by one name. every other token is born as its own household chain, registered here by name, its value never leaving home. trading is conditions under proofs, so the bridge exploit class — the largest in crypto's history — is made unexpressible.</p></div>
   <div class="nums"><div class="n"><big>1</big><small>root token · CYB · minted only for proven focus shift</small></div><div class="n"><big>∞</big><small>household chains · every token its own oikos, named here · proposal ${M('t')}</small></div><div class="n"><big>18,446,744</big><small>CYB cap · p / 10¹² · arithmetic, not a vote ${M('t')}</small></div><div class="n"><big>187,416</big><small>genesis · ≈ 1% · prior stake continues ${M('t')}</small></div><div class="n"><big>0</big><small>bridges · value never leaves its home chain ${M('t')}</small></div><div class="n"><big>3</big><small>coins today · $CYB hard money · $BOOT kernel · $PUSSY community — one policy cannot hold all three signs of ΔS</small></div></div>` },
 { ch: 6, html: `
-  <div><p class="kick">07 · network of moneys · launch</p><h2>bostrom and space pussy<br><em>come back to life.</em></h2>
-  <p class="lead">on 2026-11-05, five years to the day after the bostrom genesis, both chains relaunch as the first networks on soft3 — same keys, same balances, the burial snapshots as genesis, and the cores the old chains never had. CYB follows in phase 3.</p>
+  <div><p class="kick">07 · network of moneys · the first two households</p><h2>bostrom and space pussy<br><em>come back to life.</em></h2>
+  <p class="lead">on 2026-11-05, five years to the day after the bostrom genesis, $BOOT and $PUSSY relaunch as the first two households in the network — same keys, same balances, the burial snapshots as genesis, and the cores the old chains never had. CYB, the root, follows in phase 3.</p>
   <div class="count-down" id="cd">—</div><p class="fine">until 2026-11-05 13:22:42 UTC — the bostrom genesis block, to the second</p></div>
   <div class="panel"><label>bring a mind · your name</label><input type="text" id="ref-name" placeholder="name" value=""><div class="row"><button class="btn" id="ref-go">make my link</button><span class="fine">mentor's share · 10% of the student's token at birth + fees for life · proposed ${M('t')}</span></div><div class="out" id="ref-out">every neuron that joins through your link is your student. teaching is paid here, for once.</div></div>` },
 { ch: 6, cls: 'one ink', html: `
   <div><p class="kick">07 · network of moneys · you</p><h2>you read the deck.<br><em>you also mined.</em></h2>
   <div class="neuron" id="neuron-card"></div><div class="tally"><div><b id="t-links">0</b>links in the graph<a href="#5" data-k="links">↩ link something</a></div><div><b id="t-samples">0</b>settlement samples<a href="#13" data-k="samples">↩ mine</a></div><div><b id="t-stake">0</b>tokens at risk<a href="#16" data-k="stake">↩ stake</a></div><div><b id="t-invites">0</b>mentor links<a href="#19" data-k="invites">↩ bring a mind</a></div></div>
-  <p class="lead">everything here ran in your browser against a toy graph. on 2026-11-05 the same acts run on bostrom and space pussy, with proofs, for real.</p>
+  <p class="lead">everything here ran in your browser against a toy graph. on 2026-11-05 the same acts run on bostrom and space pussy, with proofs, for real — and every link you make there is a weight in the next compile.</p>
   <div class="ctas"><a class="btn" href="https://cyb.ai" target="_blank" rel="noopener">get the robot</a><a class="btn ghost" href="https://cyber.page/litepaper/">read the litepaper</a><a class="btn ghost" href="https://cyber.page/whitepaper/">the whitepaper</a><a class="btn ghost" href="https://cyber.page/launch/">the launch tracker</a><a class="btn ghost" href="#0" id="restart">start again</a></div>
   <p class="fine" style="margin-top:22px">${M('m')} measured · ${M('t')} target · ${M('k')} mock — every number marked. <a href="https://cyber.page/audit/game-theory/">the game-theory audit</a> · <a href="https://cyber.page/physical-analogies/">the physics audit</a> · <a href="https://soft3.org">soft3.org</a></p></div>` },
 ];
@@ -358,7 +369,7 @@ $('#link-go').onclick = () => {
   $('#stake-claim').textContent = `“${a}” belongs with “${b}”`;
 };
 
-let kIter = 0; $('#kernel-run').onclick = () => { let n = 0; const run = () => { const d = graph.iterate(); kIter++; n++; $('#kernel-iter').textContent = fmt(kIter); $('#kernel-delta').textContent = `‖Δφ‖ = ${d.toExponential(2)}`; if (n < 12 && d > 1e-4) requestAnimationFrame(run); else if (d <= 1e-4) $('#kernel-delta').textContent += ' · fixed point reached'; }; run(); };
+let kIter = 0; $('#kernel-run').onclick = () => { let n = 0; const run = () => { const real = cyberGraph.iterate(); const d = real ? real.d : graph.iterate(); graph.iterate(); kIter++; n++; $('#kernel-iter').textContent = fmt(kIter); $('#kernel-delta').textContent = `‖Δφ‖ = ${d.toExponential(2)}${real && real.kap ? ` · κ̂ ≈ ${Math.min(real.kap, .999).toFixed(3)}` : ''}${real ? ' · on 1,200 real bostrom particles' : ''}`; if (n < 12 && d > 1e-6) requestAnimationFrame(run); else if (d <= 1e-6) $('#kernel-delta').textContent += ' · fixed point reached'; }; run(); };
 
 const NAMES = ['you', 'archivist', 'neuron 0x3f…', 'sensor'];
 const weights = [0, 0, 0, 0]; let samples = 0, tickets = 0;

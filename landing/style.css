@@ -52,7 +52,7 @@ p.mute,.mute{color:var(--mute);font-size:15px;line-height:1.5;max-width:52ch}
 .nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 28px}
 .n{font-family:var(--mono)}
 .n big{display:block;font-size:clamp(26px,2.9vw,44px);white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:700;line-height:1;font-family:var(--sans);letter-spacing:-.02em}
-.n small{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-top:8px}
+.n small{display:block;font-size:12px;letter-spacing:.06em;color:var(--mute);margin-top:8px}
 .n .u{font-size:.55em;color:var(--mute);margin-left:4px}
 
 /* bars */
@@ -171,3 +171,10 @@ p.mute,.mute{color:var(--mute);font-size:15px;line-height:1.5;max-width:52ch}
 .cgcap{position:absolute;left:12px;right:12px;bottom:10px;display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;opacity:.85;flex-wrap:wrap}
 .slide.one .tiles .tile{flex:1 1 180px}
 @media (max-width:900px){.cgwrap{height:46vh}}
+
+.f{font-family:var(--mono);text-transform:none}
+.slide.ink.ch3 .mk.m,body.ink.ch3 .legend .m{background:#000}
+.seg.cur{z-index:1}.seg .lab{font-size:10px;letter-spacing:.08em}
+.slide.one.wash .fig{max-height:40vh}.slide.one.wash .mute{font-size:14px;max-width:62ch}
+#cg{cursor:crosshair}
+@media (max-width:900px){.cgcap #cg-meta{display:none}.cgcap{bottom:8px}}
