@@ -50,6 +50,7 @@ def main [
         cp $"($root)/landing/index.html" $"($out)/index.html"
         cp $"($root)/landing/style.css" $"($out)/style.css"
         cp $"($root)/landing/deck.js" $"($out)/deck.js"
+        if ($"($root)/landing/graph.json" | path exists) { cp $"($root)/landing/graph.json" $"($out)/graph.json" }
         print "landing → /"
     }
 }
