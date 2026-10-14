@@ -162,3 +162,5 @@ p.mute,.mute{color:var(--mute);font-size:15px;line-height:1.5;max-width:52ch}
 .neuron svg{width:56px;height:56px;border-radius:10px;background:#000;flex:none}
 .neuron b{display:block;font-size:13px;letter-spacing:.04em}
 .tally div a{display:block;margin-top:8px;font-size:11px;opacity:.7;text-decoration:none;letter-spacing:.08em}
+
+@media (max-width:900px){.slide .ledgers{grid-template-columns:1fr}.slide .ledger{min-height:0}.slide .ledger .row-l{white-space:normal}}
