@@ -18,7 +18,7 @@ const CH = [
   { id: 'compile', name: 'compile',           c: 'var(--c4)' },
   { id: 'syntropy',name: 'syntropy',          c: 'var(--c5)' },
   { id: 'frozen',  name: 'frozen',            c: 'var(--c6)' },
-  { id: 'moneys',  name: 'moneys', c: 'var(--c7)' },
+  { id: 'moneys',  name: 'money', c: 'var(--c7)' },
 ];
 
 /* ------------------------------------------------------------------ figures */
@@ -154,6 +154,29 @@ const syntropyFig = () => {
   return svgo(W, H, 'surprising syntropy: two filters', o);
 };
 
+
+/* the tri-kernel: three local maps blended into one contraction */
+const triFig = () => {
+  const W = 760, H = 230; let o = '';
+  const maps = [['diffusion', 'D', 'a random walk along links', COLS[2]], ['springs', 'S', 'linked particles pull together', COLS[3]], ['heat', 'H', 'e^{−τL} · smoothing', COLS[1]]];
+  maps.forEach(([n, sym, d, col], k) => {
+    const cx = 110 + k * 200, cy = 90;
+    o += `<circle cx="${cx}" cy="${cy}" r="52" fill="${col}" fill-opacity=".1" stroke="${col}" stroke-width="1.5"/>`;
+    const pts = [[0, -30], [28, -8], [18, 26], [-18, 26], [-28, -8]];
+    pts.forEach(([x, y], i) => { const [x2, y2] = pts[(i + 1) % 5]; o += `<line x1="${cx + x}" y1="${cy + y}" x2="${cx + x2}" y2="${cy + y2}" stroke="${col}" stroke-opacity=".7"/>`; });
+    if (k === 0) pts.forEach(([x, y]) => { o += `<line x1="${cx + x}" y1="${cy + y}" x2="${cx + x * .3}" y2="${cy + y * .3}" stroke="${col}" stroke-opacity=".5" marker-end="url(#ah4)"/>`; });
+    if (k === 1) pts.forEach(([x, y], i) => { const [x2, y2] = pts[(i + 2) % 5]; o += `<line x1="${cx + x}" y1="${cy + y}" x2="${cx + x2}" y2="${cy + y2}" stroke="${col}" stroke-opacity=".35" stroke-dasharray="2 3"/>`; });
+    if (k === 2) for (let r = 10; r <= 40; r += 10) o += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${col}" stroke-opacity="${.5 - r / 100}"/>`;
+    pts.forEach(([x, y]) => { o += `<circle cx="${cx + x}" cy="${cy + y}" r="3.5" fill="${col}"/>`; });
+    o += T(cx, cy + 74, `${n} · ${sym}`, { fs: 13, w: 700, a: 'middle' }) + T(cx, cy + 90, d, { fs: 9, a: 'middle', op: .7 });
+    if (k < 2) o += T(cx + 100, cy + 5, '+', { fs: 22, w: 700, a: 'middle', op: .6 });
+  });
+  o += `<defs><marker id="ah4" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="${COLS[2]}" fill-opacity=".7"/></marker></defs>`;
+  o += T(380, 205, 'φ ← λ_d·D(φ) + λ_s·S(φ) + λ_h·H(φ)      κ = λ_d·α + λ_s·‖L‖/(‖L‖+μ) + λ_h·e^{−τλ₂} < 1', { fs: 11, w: 700, a: 'middle', ff: MONO });
+  o += T(380, 222, 'three local operators, one blend; each step moves at most κ of the way — so the iteration must stop somewhere, and only in one place', { fs: 9, a: 'middle', op: .65 });
+  return svgo(W, H, 'the tri-kernel', o);
+};
+
 /* ------------------------------------------------------------------ the cybergraph renderer (real data when graph.json is present) */
 const cyberGraph = (() => {
   let data = null, cv, ctx, raf = 0, t0 = 0, W = 0, H = 0, mx = -1e9, my = -1e9, adj = null;
@@ -180,9 +203,9 @@ const cyberGraph = (() => {
     ctx.globalAlpha = 1; raf = requestAnimationFrame(draw);
   };
   const onMove = (e) => { const r = cv.getBoundingClientRect(); mx = (e.clientX - r.left) * devicePixelRatio; my = (e.clientY - r.top) * devicePixelRatio; };
-  let phi = null, lastD = 0;
-  const iterate = () => { if (!data) return null; if (!phi) phi = data.nodes.map(() => 1 / data.nodes.length); const next = phi.map((v, i) => { const nb = adj[i]; if (!nb.length) return v * .97; let sum = 0; for (const j of nb) sum += phi[j] / Math.max(1, adj[j].length); return .15 / data.nodes.length + .85 * sum; }); let d = 0; for (let i = 0; i < phi.length; i++) d += Math.abs(next[i] - phi[i]); phi = next; const kap = lastD ? d / lastD : null; lastD = d; return { d, kap }; };
-  return { iterate, start() { cv = $('#cg'); if (!cv) return; ctx = cv.getContext('2d'); cv.onmousemove = onMove; cv.onmouseleave = () => { mx = my = -1e9; }; t0 = t0 || performance.now(); if (!data) load().then(() => { if (!raf) draw(); }); else if (!raf) draw(); }, stop() { cancelAnimationFrame(raf); raf = 0; } };
+  const run = (init) => { let phi = null, lastD = 0; return { step() { if (!data) return null; if (!phi) { phi = data.nodes.map(() => init === 'random' ? Math.random() : 1); const z = phi.reduce((a, b) => a + b, 0); phi = phi.map((v) => v / z); } const next = phi.map((v, i) => { const nb = adj[i]; if (!nb.length) return .15 / data.nodes.length; let sum = 0; for (const j of nb) sum += phi[j] / Math.max(1, adj[j].length); return .15 / data.nodes.length + .85 * sum; }); let d = 0; for (let i = 0; i < phi.length; i++) d += Math.abs(next[i] - phi[i]); phi = next; const kap = lastD ? d / lastD : null; lastD = d; return { d, kap }; }, get phi() { return phi; }, reset() { phi = null; lastD = 0; } }; };
+  const runA = run('uniform'); const iterate = () => runA.step();
+  return { iterate, run, load() { if (!data) load(); }, start() { cv = $('#cg'); if (!cv) return; ctx = cv.getContext('2d'); cv.onmousemove = onMove; cv.onmouseleave = () => { mx = my = -1e9; }; t0 = t0 || performance.now(); if (!data) load().then(() => { if (!raf) draw(); }); else if (!raf) draw(); }, stop() { cancelAnimationFrame(raf); raf = 0; } };
 })();
 
 /* ------------------------------------------------------------------ slides */
@@ -221,15 +244,15 @@ const S = [
   <div class="panel"><label>this</label><input type="text" id="link-a" placeholder="a thing you know" value="proof of work"><div class="chips" id="chips-a"></div><label>belongs with</label><input type="text" id="link-b" placeholder="what it belongs with" value="Shapley sampling"><div class="chips" id="chips-b"></div><div class="row"><button class="btn" id="link-go">link · stake it</button><span class="fine">signed by a throwaway neuron in your browser ${M('k')}</span></div><div class="out" id="link-out">your links land in the graph behind this deck.</div></div>` },
 
 /* 03 · focus */
-{ ch: 2, html: `
-  <div><p class="kick">03 · focus · the tri-kernel</p><h2>three local maps,<br><em>one fixed point.</em></h2>
-  <p class="lead">diffusion, springs, heat — iterated over the staked graph until nothing moves. by locality a phone computes its own neighbourhood of φ⋆. no float anywhere in the provable path: one 64-bit prime field, a constant number of steps, byte-identical on any two machines.</p></div>
-  <div class="panel"><label>live · the kernel converging on the real cybergraph sample (and the graph behind this slide)</label><div class="count" id="kernel-iter">0</div><div class="hash" id="kernel-delta">‖Δφ‖ —</div><div class="row"><button class="btn" id="kernel-run">iterate</button><span class="fine">κ &lt; 1 is proven; κ̂ is the measured ratio of successive steps on the 1,200-particle sample, in your browser ${M('k')}</span></div></div>` },
 { ch: 2, cls: 'one wash', html: `
-  <div><p class="kick">03 · focus · from one self to a mole of matter</p>
-  <h2>a graph, like a gas, <em>crosses a threshold.</em></h2>
-  <p class="mute">past it, individual links stop mattering and only the field describes the system — the graph's own Avogadro number. five years in, nine orders of magnitude early. nobody is late.</p>
-  ${scaleFig()}<p class="fine">self · crystal · bootloader ${M('m')} measured — cognition · thermodynamic · planetary ${M('t')} derived from the whitepaper's threshold — Avogadro: a physical constant</p></div>` },
+  <div><p class="kick">03 · focus · the tri-kernel · here the magic starts</p><h2>three local maps,<br><em>one contraction.</em></h2>
+  ${triFig()}
+  <div class="panel" style="margin-top:10px"><label>live · ‖Δφ‖ per step on the real cybergraph sample · each bar is one iteration</label><div class="cbars" id="kernel-chart"></div><div class="row"><button class="btn" id="kernel-run">iterate ×12</button><span class="hash" id="kernel-delta" style="margin:0">‖Δφ‖ —</span><span class="count" id="kernel-iter" style="font-size:28px;margin-left:auto">0</span></div><p class="fine">the bars shrink by the same ratio every step: that ratio is κ̂, measured here on 1,200 real bostrom particles; κ &lt; 1 is proven for the real kernel ${M('k')}</p></div></div>` },
+{ ch: 2, cls: 'ink', html: `
+  <div><p class="kick">03 · focus · the fixed point</p><h2>any start.<br><em>the same end.</em></h2>
+  <p class="lead">a contraction has exactly one fixed point (Banach), and on a token-weighted graph that point is a positive distribution (Perron–Frobenius). call it φ⋆: collective focus. it is not an opinion about importance — it is the only place the iteration can stop.</p>
+  <p class="mute">three consequences. it is the same number on every node, so nobody votes. it is computable from an O(log 1/ε)-hop neighbourhood, so a phone computes its own slice. and it takes a constant number of steps to reach, so the whole computation can be proven — φ⋆ is what the mint pays against and what the compiler reads.</p></div>
+  <div class="panel"><label>two strangers, one focus · two random starts on the real sample</label><div class="cbars" id="unique-chart"></div><div class="row"><button class="btn" id="unique-run">run both</button><span class="hash" id="unique-out" style="margin:0">distance between the two runs —</span></div><p class="fine">bars = ‖φ_A − φ_B‖₁ per step. from unrelated starting points the two iterations meet to within 10⁻⁶: uniqueness, demonstrated, not asserted ${M('k')}</p></div>` },
 { ch: 2, cls: 'one wash', bridge: 'one focus, on every world. a focus is a distribution — and a distribution can be compiled.', html: `
   <div><p class="kick">03 · focus · interplanetary</p><h2>one mind <em>across worlds.</em></h2>
   ${planetFig()}
@@ -275,27 +298,28 @@ const S = [
   <p class="lead">a key, a balance, will, karma. its treasury address is derived from the genesis block — no private key held by any party. twelve tunables, three metabolic signals, one deterministic optimization loop: it retunes itself from the graph's own φ⋆ and every node agrees on the tuning. no founder steers it alone — what makes this a superintelligence and not another ranked ledger.</p>
   <p class="mute">below: a claim about the protocol itself. stake on it. any stake moves rank; only a bet with valence — right or wrong, at risk — earns from the truth market. passive capital buys rank and nothing else.</p></div>
   <div class="panel"><label>claim</label><div id="stake-claim" style="font-size:15px;line-height:1.5">“proof of work” belongs with “Shapley sampling”</div><label>valence</label><div class="dial" id="stake-dial"><button data-v="-1">−1 · wrong</button><button data-v="0" class="on">0 · passive</button><button data-v="1">+1 · right</button></div><label>amount · <span id="stake-amt">10</span> tokens</label><input type="range" id="stake-range" min="1" max="100" value="10"><div class="row"><button class="btn" id="stake-go">stake</button><span class="fine" id="stake-hint"></span></div><div class="out" id="stake-out"></div></div>` },
-{ ch: 5, cls: 'ink', bridge: 'frozen rules, living economies: many moneys, one root.', html: `
+{ ch: 5, cls: 'ink', bridge: 'frozen rules, a living economy: the money of information, and what it buys.', html: `
   <div><p class="kick">06 · frozen · iii · the secrecy</p><h2>speak<br><em>without fear.</em></h2>
   <p class="lead">no one knows who said what, and yet everyone knows what everyone said. three invariants, all at genesis.</p></div>
   <div class="steps"><div class="step"><b>the cyberlink is public, the author is private</b><span>the network sees that p links q and the aggregates φ⋆ runs on; never which neuron signed</span></div><div class="step"><b>balances and transfers are private</b><span>stealth addresses and veil</span></div><div class="step"><b>settlement reveals nothing</b><span>a miner's share leaks nothing of its neighbourhood beyond public aggregates</span></div><div class="step"><b>the third leg of truth</b><span>privacy removes the coordination channel through which a false consensus is manufactured</span></div></div>` },
 
 /* 07 · network of moneys */
 { ch: 6, cls: 'ink', html: `
-  <div><p class="kick">07 · network of moneys</p><h2>cyber is a network of moneys.<br><em>CYB is the root.</em></h2>
-  <p class="lead">cyber is only the first oikos — one chain, one token, rooted by one name. every other token is born as its own household chain, registered here by name, its value never leaving home. trading is conditions under proofs, so the bridge exploit class — the largest in crypto's history — is made unexpressible.</p></div>
-  <div class="nums"><div class="n"><big>1</big><small>root token · CYB · minted only for proven focus shift</small></div><div class="n"><big>∞</big><small>household chains · every token its own oikos, named here · proposal ${M('t')}</small></div><div class="n"><big>18,446,744</big><small>CYB cap · p / 10¹² · arithmetic, not a vote ${M('t')}</small></div><div class="n"><big>187,416</big><small>genesis · ≈ 1% · prior stake continues ${M('t')}</small></div><div class="n"><big>0</big><small>bridges · value never leaves its home chain ${M('t')}</small></div><div class="n"><big>3</big><small>coins today · $CYB hard money · $BOOT kernel · $PUSSY community — one policy cannot hold all three signs of ΔS</small></div></div>` },
-{ ch: 6, html: `
-  <div><p class="kick">07 · network of moneys · the first two households</p><h2>bostrom and space pussy<br><em>come back to life.</em></h2>
-  <p class="lead">on 2026-11-05, five years to the day after the bostrom genesis, $BOOT and $PUSSY relaunch as the first two households in the network — same keys, same balances, the burial snapshots as genesis, and the cores the old chains never had. CYB, the root, follows in phase 3.</p>
-  <div class="count-down" id="cd">—</div><p class="fine">until 2026-11-05 13:22:42 UTC — the bostrom genesis block, to the second</p></div>
-  <div class="panel"><label>bring a mind · your name</label><input type="text" id="ref-name" placeholder="name" value=""><div class="row"><button class="btn" id="ref-go">make my link</button><span class="fine">mentor's share · 10% of the student's token at birth + fees for life · proposed ${M('t')}</span></div><div class="out" id="ref-out">every neuron that joins through your link is your student. teaching is paid here, for once.</div></div>` },
-{ ch: 6, cls: 'one ink', html: `
-  <div><p class="kick">07 · network of moneys · you</p><h2>you read the deck.<br><em>you also mined.</em></h2>
-  <div class="neuron" id="neuron-card"></div><div class="tally"><div><b id="t-links">0</b>links in the graph<a href="#5" data-k="links">↩ link something</a></div><div><b id="t-samples">0</b>settlement samples<a href="#13" data-k="samples">↩ mine</a></div><div><b id="t-stake">0</b>tokens at risk<a href="#16" data-k="stake">↩ stake</a></div><div><b id="t-invites">0</b>mentor links<a href="#19" data-k="invites">↩ bring a mind</a></div></div>
+  <div><p class="kick">07 · the money of information</p><h2>$CYB.<br><em>the currency of cyberia.</em></h2>
+  <p class="lead">the money of information: born when the network learns — a unit exists because a cyberlink shifted collective focus and the shift was proven — and spent on access to it: inference from the compiled model, storage, bandwidth, on open markets. intelligence has a price; this is the unit it is priced in.</p>
+  <p class="mute">cyber is a network of moneys and CYB is the root. every other token is born as its own household chain, registered here by name, its value never leaving home; trading is conditions under proofs, so the bridge exploit class is made unexpressible.</p></div>
+  <div class="nums"><div class="n"><big>Δφ⁺</big><small>what mints it · proven focus shift, nothing else</small></div><div class="n"><big>inference</big><small>what it buys · answers from the compiled mind, storage, bandwidth</small></div><div class="n"><big>18,446,744</big><small>cap · p / 10¹² · arithmetic, not a vote ${M('t')}</small></div><div class="n"><big>187,416</big><small>genesis · ≈ 1% · prior stake continues ${M('t')}</small></div><div class="n"><big>1 · ∞</big><small>one root · every token its own household chain · proposal ${M('t')}</small></div><div class="n"><big>0</big><small>bridges · value never leaves its home chain ${M('t')}</small></div></div>` },
+{ ch: 6, cls: 'one wash', html: `
+  <div><p class="kick">07 · the money of information · growth</p><h2>a graph, like a gas, <em>crosses a threshold.</em></h2>
+  <p class="mute">with the incentive in place the graph grows, and past a threshold individual links stop mattering: only the field describes the system — the graph's own Avogadro number. five years in, nine orders of magnitude early. nobody is late. on 2026-11-05, five years to the day after the bostrom genesis, $BOOT and $PUSSY relaunch as the first two households in the network — same keys, same balances, the burial snapshots as genesis. CYB, the root, follows in phase 3.</p>
+  ${scaleFig()}<div class="row" style="justify-content:space-between"><span class="fine">self · crystal · bootloader ${M('m')} measured — cognition · thermodynamic · planetary ${M('t')} derived — Avogadro: a physical constant</span><span class="count-down" id="cd" style="font-size:22px">—</span></div><p class="fine">countdown to 2026-11-05 13:22:42 UTC — the bostrom genesis block, to the second</p></div>` },
+{ ch: 6, cls: 'ink', html: `
+  <div><p class="kick">07 · the money of information · you</p><h2>you read the deck.<br><em>you also mined.</em></h2>
+  <div class="neuron" id="neuron-card"></div><div class="tally"><div><b id="t-links">0</b>links in the graph<a href="#5" data-k="links">↩ link something</a></div><div><b id="t-samples">0</b>settlement samples<a href="#13" data-k="samples">↩ mine</a></div><div><b id="t-stake">0</b>tokens at risk<a href="#16" data-k="stake">↩ stake</a></div><div><b id="t-invites">0</b>mentor links<a href="#20" data-k="invites">↩ bring a mind</a></div></div>
   <p class="lead">everything here ran in your browser against a toy graph. on 2026-11-05 the same acts run on bostrom and space pussy, with proofs, for real — and every link you make there is a weight in the next compile.</p>
   <div class="ctas"><a class="btn" href="https://cyb.ai" target="_blank" rel="noopener">get the robot</a><a class="btn ghost" href="https://cyber.page/litepaper/">read the litepaper</a><a class="btn ghost" href="https://cyber.page/whitepaper/">the whitepaper</a><a class="btn ghost" href="https://cyber.page/launch/">the launch tracker</a><a class="btn ghost" href="#0" id="restart">start again</a></div>
-  <p class="fine" style="margin-top:22px">${M('m')} measured · ${M('t')} target · ${M('k')} mock — every number marked. <a href="https://cyber.page/audit/game-theory/">the game-theory audit</a> · <a href="https://cyber.page/physical-analogies/">the physics audit</a> · <a href="https://soft3.org">soft3.org</a></p></div>` },
+  <p class="fine" style="margin-top:18px">${M('m')} measured · ${M('t')} target · ${M('k')} mock — every number marked. <a href="https://cyber.page/audit/game-theory/">the game-theory audit</a> · <a href="https://cyber.page/physical-analogies/">the physics audit</a> · <a href="https://soft3.org">soft3.org</a></p></div>
+  <div class="panel"><label>bring a mind · your name</label><input type="text" id="ref-name" placeholder="name" value=""><div class="row"><button class="btn" id="ref-go">make my link</button><span class="fine">mentor's share · 10% of the student's token at birth + fees for life · proposed ${M('t')}</span></div><div class="out" id="ref-out">every neuron that joins through your link is your student. teaching is paid here, for once.</div></div>` },
 ];
 
 /* ------------------------------------------------------------------ build */
@@ -409,7 +433,9 @@ $('#link-go').onclick = () => {
   $('#stake-claim').textContent = `“${a}” belongs with “${b}”`;
 };
 
-let kIter = 0; $('#kernel-run').onclick = () => { let n = 0; const run = () => { const real = cyberGraph.iterate(); const d = real ? real.d : graph.iterate(); graph.iterate(); kIter++; n++; $('#kernel-iter').textContent = fmt(kIter); $('#kernel-delta').textContent = `‖Δφ‖ = ${d.toExponential(2)}${real && real.kap ? ` · κ̂ ≈ ${Math.min(real.kap, .999).toFixed(3)}` : ''}${real ? ' · on 1,200 real bostrom particles' : ''}`; if (n < 12 && d > 1e-6) requestAnimationFrame(run); else if (d <= 1e-6) $('#kernel-delta').textContent += ' · fixed point reached'; }; run(); };
+const cbar = (chart, v, col) => { const b = el(`<i title="${v.toExponential(2)}"></i>`); b.dataset.v = v; if (col) b.style.background = col; chart.appendChild(b); while (chart.children.length > 36) chart.firstChild.remove(); const mx = Math.max(...[...chart.children].map((x) => +x.dataset.v)) || 1; [...chart.children].forEach((x) => { x.style.height = Math.max(2, 100 * (+x.dataset.v) / mx) + '%'; }); };
+let kIter = 0; $('#kernel-run').onclick = () => { let n = 0; const chart = $('#kernel-chart'); const run = () => { const real = cyberGraph.iterate(); const d = real ? real.d : graph.iterate(); graph.iterate(); kIter++; n++; cbar(chart, d); $('#kernel-iter').textContent = fmt(kIter); $('#kernel-delta').textContent = `‖Δφ‖ = ${d.toExponential(2)}${real && real.kap ? ` · κ̂ ≈ ${Math.min(real.kap, .999).toFixed(3)}` : ''}`; if (n < 12 && d > 1e-7) requestAnimationFrame(run); else if (d <= 1e-7) $('#kernel-delta').textContent += ' · fixed point'; }; run(); };
+$('#unique-run').onclick = () => { const chart = $('#unique-chart'); chart.innerHTML = ''; const A = cyberGraph.run('random'), B = cyberGraph.run('random'); let n = 0; const step = () => { const ra = A.step(), rb = B.step(); if (!ra) { $('#unique-out').textContent = 'sample still loading — open the cybergraph slide first'; return; } let dist = 0; const pa = A.phi, pb = B.phi; for (let i = 0; i < pa.length; i++) dist += Math.abs(pa[i] - pb[i]); n++; cbar(chart, dist, n % 2 ? COLS[4] : '#fff'); $('#unique-out').textContent = `step ${n} · ‖φ_A − φ_B‖₁ = ${dist.toExponential(2)}`; if (n < 80 && dist > 1e-6) requestAnimationFrame(step); else $('#unique-out').textContent += dist <= 1e-6 ? ' · one focus' : ''; }; step(); };
 
 const NAMES = ['you', 'archivist', 'neuron 0x3f…', 'sensor'];
 const weights = [0, 0, 0, 0]; let samples = 0, tickets = 0;
@@ -458,7 +484,7 @@ document.querySelectorAll('.tally a').forEach((a) => { a.addEventListener('click
 const cd = () => { const t = Date.parse('2026-11-05T13:22:42Z') - Date.now(); if (t < 0) { $('#cd').textContent = 'live'; return; } const d = Math.floor(t / 864e5), h = Math.floor(t % 864e5 / 36e5), m = Math.floor(t % 36e5 / 6e4), s = Math.floor(t % 6e4 / 1e3); $('#cd').textContent = `${d}d ${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`; };
 setInterval(cd, 1000); cd();
 
-const onEnter = (i) => { if (i === 2) cyberGraph.start(); else cyberGraph.stop(); if (i === S.length - 1) ['links', 'samples', 'stake', 'invites'].forEach((k) => { const t = $('#t-' + k); if (t) t.textContent = fmt(Y[k]); const a = $(`.tally a[data-k=${k}]`); if (a) a.style.display = Y[k] ? 'none' : 'block'; }); };
+const onEnter = (i) => { if (i === 2) cyberGraph.start(); else cyberGraph.stop(); if (i === 6 || i === 7) cyberGraph.load(); if (i === S.length - 1) ['links', 'samples', 'stake', 'invites'].forEach((k) => { const t = $('#t-' + k); if (t) t.textContent = fmt(Y[k]); const a = $(`.tally a[data-k=${k}]`); if (a) a.style.display = Y[k] ? 'none' : 'block'; }); };
 
 /* mentor param → greet */
 const m = new URLSearchParams(location.search).get('m'); if (m) { $('.kick', deck).textContent = `cyber · ${m} sent you · a frozen protocol for collective lifeforms`; $('#link-out').textContent = `${m} sent you here. link something they do not know yet.`; }
