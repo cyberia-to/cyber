@@ -173,8 +173,8 @@ fn signed_signal(network: [u8; 32], amount: u64) -> neuron_model::action::Signed
         action::{statement_bytes, ActionRequest, SignedAction},
         identity::{ActionContext, NetworkRef, SubjectRef},
     };
-    let key = mudra::SigningKey::from_bytes((&[7; 32]).into()).unwrap();
-    let subject = mudra::claim::neuron_of(&mudra::cosmos::compressed(key.verifying_key()));
+    let key = neuron_auth::SigningKey::from_bytes((&[7; 32]).into()).unwrap();
+    let subject = neuron_auth::claim::neuron_of(&neuron_auth::cosmos::compressed(key.verifying_key()));
     let signal = cybergraph::Signal {
         neuron: subject,
         network,
@@ -212,7 +212,7 @@ fn signed_signal(network: [u8; 32], amount: u64) -> neuron_model::action::Signed
     let statement = *hemera::hash(&statement_bytes(&action).unwrap()).as_bytes();
     SignedAction::new(
         action,
-        mudra::neuron::sign_statement(&key, subject, statement).unwrap(),
+        neuron_auth::neuron::sign_statement(&key, subject, statement).unwrap(),
     )
     .unwrap()
 }

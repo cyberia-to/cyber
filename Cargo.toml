@@ -26,7 +26,7 @@ tempfile = "3"
 cybergraph = { path = "../cybergraph", features = ["local-storage"] }
 foculus = { path = "../foculus", default-features = false }
 hemera = { package = "cyber-hemera", path = "../hemera/rs" }
-mudra = { package = "cyber-mudra", path = "../mudra", default-features = false }
+neuron-auth = { path = "../neuron/auth", default-features = false }
 neuron-model = { path = "../neuron/model", default-features = false, features = ["serde"] }
 
 [workspace]

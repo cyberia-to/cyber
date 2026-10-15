@@ -341,19 +341,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "cyber-mudra"
-version = "0.1.0"
-dependencies = [
- "base64",
- "bech32",
- "cyber-hemera",
- "k256",
- "neuron-id",
- "ripemd",
- "sha2",
-]
-
-[[package]]
 name = "cyber-nox"
 version = "0.3.0"
 dependencies = [
@@ -963,6 +950,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "neuron-auth"
+version = "0.1.0"
+dependencies = [
+ "base64",
+ "bech32",
+ "cyber-hemera",
+ "k256",
+ "neuron-id",
+ "ripemd",
+ "sha2",
+]
+
+[[package]]
 name = "neuron-id"
 version = "0.1.0"
 
@@ -1368,9 +1368,9 @@ name = "soft3"
 version = "0.10.0"
 dependencies = [
  "cyber-hemera",
- "cyber-mudra",
  "cybergraph",
  "foculus",
+ "neuron-auth",
  "neuron-model",
  "serde",
  "serde_json",
@@ -1609,10 +1609,10 @@ version = "0.8.0"
 dependencies = [
  "clap",
  "cyber-hemera",
- "cyber-mudra",
  "cybergraph",
  "foculus",
  "fs2",
+ "neuron-auth",
  "neuron-model",
  "serde",
  "serde_json",
