@@ -3,7 +3,7 @@ use crate::Config;
 use serde_json::{json, Value};
 use std::{io::Read, path::Path, time::Duration};
 
-pub const SIGNED_PROFILE: &str = "neuron/signed-native/1";
+const SIGNED_PROFILE: &str = "neuron/signed-native/1";
 const UNSIGNED_PROFILE: &str = "soft3/unsigned-local/1";
 const RECEIPT: &str = "/v3/receipt/{subject}/{request}";
 const MAX_OBSERVATION: u64 = 64 * 1024;
