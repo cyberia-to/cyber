@@ -49,27 +49,12 @@ enum Command {
         #[command(subcommand)]
         command: StorageCommand,
     },
-    /// Explicit offline activation of authenticated native publication.
-    Auth {
-        #[command(subcommand)]
-        command: AuthCommand,
-    },
 }
 
 #[derive(Subcommand)]
 enum StorageCommand {
     /// Import exact retained legacy log bytes into BBG; exact retries resume safely.
     ImportLegacy,
-}
-
-#[derive(Subcommand)]
-enum AuthCommand {
-    /// Require signed native writes and retire old writers. This upgrade is permanent.
-    Enable {
-        /// Import the retained legacy log first, under the same home lock.
-        #[arg(long)]
-        import_legacy: bool,
-    },
 }
 
 #[derive(Clone, Serialize, Deserialize)]
@@ -156,25 +141,6 @@ fn run(cli: Cli) -> Result<(), Box<dyn std::error::Error>> {
         } => {
             let _locks = lock_home(&home)?;
             println!("{}", serde_json::to_string_pretty(&run_import(&home)?)?);
-        }
-        Command::Auth {
-            command: AuthCommand::Enable { import_legacy },
-        } => {
-            let _locks = lock_home(&home)?;
-            let imported = if import_legacy {
-                Some(run_import(&home)?)
-            } else {
-                None
-            };
-            let network = soft3::node::Node::open(home, config.moniker)?.enable_authentication()?;
-            println!(
-                "{}",
-                serde_json::to_string_pretty(&serde_json::json!({
-                    "schema": "cyber/authentication/1", "network": hex(&network),
-                    "profile": connection::SIGNED_PROFILE, "authenticated": true,
-                    "import": imported, "consensus_finality": false,
-                }))?
-            );
         }
         Command::Status { json } => {
             let body = connection::read_endpoint(&format!("{}/status", config.rpc()))?;
