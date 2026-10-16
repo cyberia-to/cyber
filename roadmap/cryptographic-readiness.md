@@ -26,6 +26,8 @@ Owner: Hemera.
   and streaming behavior with versioned vectors and migration rules.
 
 Evidence starts in [Hemera research](../../hemera/research/inverse-sbox-assessment.md).
+The public campaign that gates the private pool (G3), with the margins of the
+shipped and proposed profiles and the bounty, is [[hemera cryptanalysis]].
 The earlier local witness and degree findings retain their stated scope.
 
 ## H2: structural commitments and the .cyb adapter

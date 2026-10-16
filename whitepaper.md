@@ -224,7 +224,7 @@ Hemera = Poseidon2(
 
 Every parameter that appears as a code-level quantity is a power of 2. The only exception is $d = 7$, which is the minimum invertible S-box exponent over Goldilocks — a mathematical constraint.
 
-Security properties: the 32-byte (4-limb) identity digest gives 128-bit classical collision resistance (birthday on $p^2$) and ~85-bit quantum collision resistance (BHT), per the zheng soundness ledger (specs/soundness.md); hemera profile v2 (hemera#15) proposes longer identity digests. Algebraic degree $7^{64} \approx 2^{1046}$.
+Security properties: the 32-byte (4-limb) identity digest gives 128-bit classical collision resistance (birthday on $p^2$) and ~85-bit quantum collision resistance (BHT), per the zheng soundness ledger (specs/soundness.md); hemera profile v2 (hemera#15) proposes longer identity digests. The algebraic margin is a measured quantity: the public cryptanalysis campaign, its bounty, and the margins of the shipped and proposed profiles side by side are in [[hemera cryptanalysis]].
 
 ### 4.3 Self-Bootstrapping
 [[Hemera]] generates her own round constants. The permutation with all 144 constants set to zero (Hemera₀) is already a well-defined nonlinear function — the S-box and MDS matrices provide all the mixing. Feed the bytes `[0x63, 0x79, 0x62, 0x65, 0x72]` through Hemera₀ as a sponge and squeeze 144 field elements. These become the round constants. Hemera = Hemera₀ + these constants. Freeze forever.
