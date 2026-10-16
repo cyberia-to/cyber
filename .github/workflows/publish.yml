@@ -11,6 +11,11 @@ on:
       - 'landing/**'
       - '.github/workflows/publish.yml'
   workflow_dispatch:
+    inputs:
+      draft:
+        description: 'Preview deploy only (production untouched)'
+        type: boolean
+        default: false
   repository_dispatch:
     types: [content-changed]
 
@@ -25,7 +30,7 @@ jobs:
       - name: Clone cyber
         run: |
           mkdir -p "$HOME/cyber"
-          git clone --depth 1 https://github.com/cyberia-to/cyber.git "$HOME/cyber/cyber"
+          git clone --depth 1 --branch "${GITHUB_REF_NAME}" https://github.com/cyberia-to/cyber.git "$HOME/cyber/cyber"
 
       - name: Clone the census (cyberia-blog/subgraphs.toml)
         run: |
@@ -114,21 +119,23 @@ jobs:
           test "$count" -eq 0
 
       # File-digest deploy: 14k files / ~440 MB is past the zip API's comfort
-      # zone (25,000-file cap, 30 s request limit); the CLI uploads only files
-      # whose digest changed since the last deploy.
+      # zone (25,000-file cap, 30 s request limit); the deploy uploads only
+      # files whose digest changed since the last deploy. Python stdlib —
+      # Node is banned from the project (root CLAUDE.md).
       - name: Deploy to Netlify
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          DRAFT: ${{ inputs.draft && '--draft' || '' }}
         run: |
           cd "$HOME/cyber/cyber"
           echo "files: $(find build -type f | wc -l)  size: $(du -sh build | cut -f1)"
-          npx -y netlify-cli@27.12.0 deploy --prod --no-build \
-            --dir "$HOME/cyber/cyber/build" \
+          python3 scripts/netlify_deploy.py "$HOME/cyber/cyber/build" \
             --message "cyber ${GITHUB_SHA::8}" \
-            --timeout 1800
+            --timeout 1800 $DRAFT
 
       - name: Dispatch cyberia-blog rebuild
+        if: ${{ !inputs.draft }}
         continue-on-error: true
         uses: peter-evans/repository-dispatch@v3
         with:
