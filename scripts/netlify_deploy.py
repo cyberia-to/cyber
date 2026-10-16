@@ -49,19 +49,65 @@ def manifest(root):
 
 
 class Client:
-    def __init__(self, token):
+    """Netlify API client shared by the upload threads.
+
+    Requests are paced (one start per `interval` seconds across all threads)
+    and a 429 pauses every thread: the pause doubles on consecutive 429s up
+    to two minutes and resets after a success. 429s retry until the deploy
+    deadline; 5xx and network errors retry `attempts` times.
+    """
+
+    def __init__(self, token, deadline, interval=0.15):
         self.token = token
+        self.deadline = deadline
+        self.interval = interval
         self.lock = threading.Lock()
+        self.next_start = 0.0
         self.pause_until = 0.0
+        self.backoff = 2.0
+        self.limited = 0
+        self.shown_headers = False
+
+    def _slot(self):
+        with self.lock:
+            now = time.time()
+            start = max(now, self.next_start, self.pause_until)
+            self.next_start = start + self.interval
+        if start > now:
+            time.sleep(start - now)
+
+    def _rate_limited(self, headers):
+        delay = None
+        retry = headers.get("Retry-After")
+        reset = headers.get("X-RateLimit-Reset")
+        try:
+            if retry:
+                delay = float(retry)
+            elif reset:
+                r = float(reset)
+                delay = r - time.time() if r > 1e9 else r
+        except ValueError:
+            pass
+        with self.lock:
+            self.limited += 1
+            if not self.shown_headers:
+                self.shown_headers = True
+                rl = {k: v for k, v in headers.items() if "rate" in k.lower() or k.lower() == "retry-after"}
+                print(f"  rate limited (headers: {rl or 'none'})", file=sys.stderr)
+            if time.time() >= self.pause_until:
+                wait = delay if delay and delay > 0 else self.backoff
+                self.backoff = min(120.0, self.backoff * 2)
+                self.pause_until = time.time() + wait + 0.5
+                print(f"  429: all requests pause {wait:.0f}s", file=sys.stderr)
 
     def request(self, method, path, body=None, content_type="application/json", attempts=8):
         url = path if path.startswith("http") else API + path
         data = json.dumps(body).encode() if content_type == "application/json" and body is not None else body
-        for attempt in range(attempts):
-            with self.lock:
-                wait = self.pause_until - time.time()
-            if wait > 0:
-                time.sleep(wait)
+        failures = 0
+        while True:
+            if time.time() > self.deadline:
+                raise RuntimeError(f"{method} {path}: deadline passed")
+            self._slot()
             req = urllib.request.Request(url, data=data, method=method, headers={
                 "Authorization": f"Bearer {self.token}",
                 "Content-Type": content_type,
@@ -70,25 +116,25 @@ class Client:
             try:
                 with urllib.request.urlopen(req, timeout=300) as r:
                     raw = r.read()
-                    return json.loads(raw) if raw else {}
+                with self.lock:
+                    self.backoff = 2.0
+                return json.loads(raw) if raw else {}
             except urllib.error.HTTPError as e:
                 detail = e.read()[:300].decode(errors="replace")
-                if e.code == 429 or e.code >= 500:
-                    reset = e.headers.get("X-RateLimit-Reset")
-                    retry = e.headers.get("Retry-After")
-                    delay = float(retry) if retry and retry.isdigit() else min(60.0, 2.0 ** attempt)
-                    if reset and reset.isdigit():
-                        delay = max(delay, int(reset) - time.time() + 1)
-                    with self.lock:
-                        self.pause_until = max(self.pause_until, time.time() + delay)
-                    print(f"  {method} {path[:80]}: HTTP {e.code}, retry in {delay:.0f}s", file=sys.stderr)
+                if e.code == 429:
+                    self._rate_limited(e.headers)
                     continue
-                raise RuntimeError(f"{method} {path}: HTTP {e.code} {detail}") from None
+                if e.code < 500:
+                    raise RuntimeError(f"{method} {path}: HTTP {e.code} {detail}") from None
+                reason = f"HTTP {e.code}"
             except (urllib.error.URLError, TimeoutError, ConnectionError) as e:
-                delay = min(60.0, 2.0 ** attempt)
-                print(f"  {method} {path[:80]}: {e}, retry in {delay:.0f}s", file=sys.stderr)
-                time.sleep(delay)
-        raise RuntimeError(f"{method} {path}: gave up after {attempts} attempts")
+                reason = str(e)
+            failures += 1
+            if failures >= attempts:
+                raise RuntimeError(f"{method} {path}: gave up after {attempts} attempts ({reason})")
+            delay = min(60.0, 2.0 ** failures)
+            print(f"  {method} {path[:80]}: {reason}, retry in {delay:.0f}s", file=sys.stderr)
+            time.sleep(delay)
 
 
 def wait_state(client, deploy_id, states, deadline):
@@ -110,7 +156,7 @@ def main():
     ap.add_argument("--draft", action="store_true", help="preview deploy, production untouched")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--timeout", type=int, default=1800, help="seconds for the whole deploy")
-    ap.add_argument("--jobs", type=int, default=12, help="parallel uploads")
+    ap.add_argument("--jobs", type=int, default=6, help="parallel uploads")
     a = ap.parse_args()
 
     started = time.time()
@@ -124,8 +170,8 @@ def main():
     token, site = os.environ.get("NETLIFY_AUTH_TOKEN"), os.environ.get("NETLIFY_SITE_ID")
     if not token or not site:
         sys.exit("NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID are required")
-    client = Client(token)
     deadline = started + a.timeout
+    client = Client(token, deadline)
 
     body = {"files": files, "async": True, "draft": a.draft}
     if a.message:
@@ -157,9 +203,9 @@ def main():
 
     deploy = wait_state(client, deploy_id, {"ready"}, deadline)
     url = deploy.get("deploy_ssl_url") or deploy.get("deploy_url")
-    print(f"ready: {url}  ({time.time() - started:.0f}s)")
+    print(f"ready: {url}  ({time.time() - started:.0f}s, {client.limited} rate-limited requests retried)")
     if not a.draft:
-        print(f"production: {deploy.get('ssl_url') or deploy.get('url')}")
+        print(f"production: {deploy.get('ssl_url') or deploy.get('url') or '(site url)'}")
     return 0
 
 
