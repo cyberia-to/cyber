@@ -89,7 +89,9 @@ two pays, two risks. [[staking]] a link is a bet on truth: capital at risk, rewa
 
 ## the best money
 
-you hold money because it lasts. you send it because it moves. you trust it because you know how it is born. [[cyber/$CYB|$CYB]] is born when the network learns — proven growth of [[knowledge]], never a treasury — and is spent on intelligence: compute, storage, the pipe, [[inference]]. three jobs, and every other money leaves one undone.
+quality tree for development: [[specs/best-money]].
+
+you hold money because it lasts. you send it because it moves. you trust it because you know how it is born. [[$CYB]] is born when the network learns — proven growth of [[knowledge]], never a treasury — and is spent on intelligence: compute, storage, the pipe, [[inference]]. three jobs, and every other money leaves one undone.
 
 | | safe | easy | smart |
 |---|---|---|---|
@@ -98,7 +100,7 @@ you hold money because it lasts. you send it because it moves. you trust it beca
 | bitcoin | public, not post-quantum | slow | no |
 | ether | public, not post-quantum | partly | contracts, minted for capital |
 | zcash · monero | private, not post-quantum | limited | no |
-| [[cyber/$CYB\|$CYB]] | private and post-quantum | anyone, instantly | minted by knowledge |
+| [[$CYB]] | private and post-quantum | anyone, instantly | minted by knowledge |
 
 what creates a money is what it measures. gold is dug, the dollar is borrowed, bitcoin is burned electricity, ether is capital. $CYB is knowledge: a unit exists because a [[cyberlink]] shifted collective focus and the shift was proven.
 
@@ -188,7 +190,7 @@ the tracker, with every gate and decision: [[launch]].
 | phase | what | gate |
 |---|---|---|
 | 2 | canary: real use and weekly red team, 2026-11 → 2027-02 | 90 days, every economic invariant holds, no critical bug under attack |
-| 3 | [[cyber/$CYB\|$CYB]] mainnet: the full law, born from both chains | implementations in several languages agree on 10⁶ blocks; the formal spine green; the six mainnet questions answered |
+| 3 | [[$CYB]] mainnet: the full law, born from both chains | implementations in several languages agree on 10⁶ blocks; the formal spine green; the six mainnet questions answered |
 | ∞ | the ladder above: 10⁸ particles and concepts no one holds, 10¹² the thermodynamic regime, 10¹⁵ the planetary mind, then [[interplanetary superintelligence]] | one focus that light-delay cannot split and no platform can unpublish |
 
 ---

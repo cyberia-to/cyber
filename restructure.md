@@ -223,7 +223,7 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
             - [[cyberculture]] · [[cybersophy]] · [[cybersphere]] · [[cyberverse]]
     - [[cyber/cybergraph|contract]] — **what must hold**, whoever implements it
         - [[cyber/cybergraph|cybergraph contract]] · *cyber/proofs* · *cyber/epistemology* (from [[epistemology]]) · *cyber/identity* (from [[identity]])
-        - [[cyber/$CYB|$CYB]] — the money contract
+        - [[$CYB]] — the money contract
         - [[cyber/launch]] — the genesis contract
     - [[cybernomics]] — **the money**, from law to plumbing
         - [[nomics]] · [[netics]] · [[cap]] · [[delegation]] · [[automated market maker]] · [[cyberlink market protocol]]
@@ -256,7 +256,7 @@ Census additions recorded on 2026-09-08: oikos carried the monetary proposal and
 | [[luminosity|luminosity]] | 485 | stays · cips | deep protocol article |
 | [[network|network]] | 2362 | stays · cips | deep protocol article |
 | [[security|security]] | 363 | stays · cips | deep protocol article |
-| [[cyber/$CYB|$CYB]] | 5512 | stays · contract | protocol invariants |
+| [[$CYB]] | 5512 | stays · contract | protocol invariants |
 | [[cyber/cybergraph|cybergraph]] | 515 | stays · contract | protocol invariants |
 | [[cyber/launch|launch]] | 3381 | stays · contract | protocol invariants |
 | [[attention|attention]] | 19 | stays · core | atom of the phenomenon |

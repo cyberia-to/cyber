@@ -100,7 +100,7 @@ physics forbids cloning; content addressing makes it free. the entire honesty la
 
 conservation — $\sum_\nu \text{mint}(\nu) \le \Delta\phi^+$ — is energy bookkeeping. nowhere in [[tru]] is it written **where the entropy goes.** syntropy rising locally must be paid by entropy rising globally; the [[landauer limit]] fixes the minimum at $k_BT\ln 2$ per bit and has been measured.
 
-the encyclopedia carries this (see [[dissipative structures]]); the normative spec does not. concretely missing: an entropy account stating $\Delta S_{\text{env}} \ge \Delta J$ per epoch, and a declared exchange rate — so many bits of proven syntropy per unit of [[cyber/$CYB|$CYB]] at a declared temperature. **with that rate fixed, inflation becomes a dimensional physical quantity rather than a policy number**, which is what the reward law claims to be.
+the encyclopedia carries this (see [[dissipative structures]]); the normative spec does not. concretely missing: an entropy account stating $\Delta S_{\text{env}} \ge \Delta J$ per epoch, and a declared exchange rate — so many bits of proven syntropy per unit of [[$CYB]] at a declared temperature. **with that rate fixed, inflation becomes a dimensional physical quantity rather than a policy number**, which is what the reward law claims to be.
 
 **severity: medium. a missing section, not a broken mechanism.**
 
@@ -191,7 +191,7 @@ the first two are the interesting ones: they test whether five years of human li
 
 changes this audit implies, in order of force:
 
-1. **[[rewards]]** — add the entropy account: $\Delta S_{\text{env}} \ge \Delta J$ per epoch, and a declared bits-per-[[cyber/$CYB|$CYB]] rate at a stated temperature, so inflation is dimensional.
+1. **[[rewards]]** — add the entropy account: $\Delta S_{\text{env}} \ge \Delta J$ per epoch, and a declared bits-per-[[$CYB]] rate at a stated temperature, so inflation is dimensional.
 2. **[[focusing]]** — express normalization as a continuity equation with boundary flux; the global sum survives as the single-planet special case.
 3. **[[tri-kernel]]** — derive $\beta$ and $Z$, or rename $\mathcal{F}$ to what it is: a Lyapunov functional.
 4. **[[tri-kernel]]** — state the positivity bound explicitly: Perron–Frobenius means no interference, which is a correctness argument for consensus and a limit on cosmological claims.

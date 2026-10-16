@@ -25,6 +25,7 @@ the protocol contains at least twelve tunables that are parameters in every mean
 | β_R, γ_R, ε_R | reward function coefficients (Δφ*, ΔJ, DAG, alignment) | unspecified |
 | E(t) | emission curve in [[cyber/tokenomics]] | PID-controlled |
 | F | fee distribution | unspecified |
+| tax on diffusion | share of every [[$CYB]] transfer | starts at 0.1%; RL-tuned |
 
 the blend weights λ_d, λ_s, λ_h are genuinely emergent — this is a real result, not rhetoric. but α, μ, and τ are free parameters that determine what each kernel computes before the variational optimization blends them. the screening strength μ determines how rigid the springs are. the temperature τ determines how much heat smoothing occurs. the teleport α determines how much random exploration diffusion performs. these are design choices, not physics.
 
@@ -119,7 +120,7 @@ parameters operate at different timescales and carry different risks:
 | epoch-level | κ (foculus threshold scaling) | every epoch | low — self-regulating by design |
 | seasonal | α, τ (exploration/smoothing) | every 10³-10⁴ blocks | medium — affects convergence rate |
 | structural | μ (screening strength) | every 10⁵+ blocks | high — affects fixed point location |
-| economic | reward coefficients (α_R, β_R, γ_R) | governance cycles | high — affects incentive equilibrium |
+| economic | reward coefficients (α_R, β_R, γ_R); tax on diffusion | seasonal / RL | high — affects incentive equilibrium |
 | permanent | [[Hemera]] hash parameters | never | irreversible |
 
 the RL agent operates differently at each tier. fast parameters use online learning with short evaluation windows. slow parameters use batched evaluation with long lookback. permanent parameters are outside the optimization loop.
@@ -188,6 +189,7 @@ learned by the parameter agent:
 - α, τ: adapted to current graph topology and spectral properties
 - κ bounds: adapted to observed variance patterns
 - reward blend coefficients: adapted to observed incentive outcomes
+- tax on diffusion of [[$CYB]]: starts at 0.1%; adapted to observed velocity, cheapness and metabolic health
 
 fixed by protocol design:
 - λ_d, λ_s, λ_h: emergent from [[free energy]] minimization — the "no parameters, only physics" claim holds here

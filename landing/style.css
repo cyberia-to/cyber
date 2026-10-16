@@ -27,7 +27,7 @@ body.ink .hud{color:#000}body.ink .legend{color:rgba(0,0,0,.6)}body.ink .brand .
 #deck{position:fixed;inset:0;z-index:1}
 .slide{position:absolute;inset:0;display:grid;grid-template-rows:var(--hud) 1fr var(--rail);opacity:0;pointer-events:none;transition:opacity .45s ease;--c:var(--c4)}
 .slide.on{opacity:1;pointer-events:auto}
-.slide .body{grid-row:2;max-height:calc(100vh - var(--hud) - var(--rail));overflow:auto;padding:3vh 6vw;display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:center;max-width:1500px;width:100%;margin:0 auto}
+.slide .body{grid-row:2;max-height:calc(100vh - var(--hud) - var(--rail));overflow:hidden;padding:3vh 6vw;display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:center;max-width:1500px;width:100%;margin:0 auto}
 .slide.one .body{grid-template-columns:1fr;max-width:1100px}
 .slide.ink{background:var(--c);color:#000}
 .slide.ink .mute,.slide.ink .kick,.slide.ink .n small{color:rgba(0,0,0,.6)}
@@ -135,7 +135,7 @@ p.mute,.mute{color:var(--mute);font-size:15px;line-height:1.5;max-width:52ch}
 .fine{font-family:var(--mono);font-size:11px;opacity:.6;letter-spacing:.06em;line-height:1.6}
 
 @media (max-width:900px){
-  .slide .body{grid-template-columns:minmax(0,1fr);gap:18px;padding:2vh 6vw;overflow:auto;align-content:start}
+  .slide .body{grid-template-columns:minmax(0,1fr);gap:14px;padding:2vh 5vw;overflow:hidden;align-content:center}
   .ledgers{grid-template-columns:1fr}.ledger{min-height:0}.ledger .row-l{white-space:normal}
   .matrix{font-size:12px}.matrix td{padding:10px 6px}
   .chips{display:none}.kbd{display:none}
@@ -248,3 +248,18 @@ p.lead{max-width:44ch}
 .tally b{font-size:34px}.tally div{padding:14px}
 @media (max-width:900px){.slide:not(.one) .body{grid-template-columns:minmax(0,1fr)}}
 .slide.one .nums{max-width:960px}
+
+/* ---------- fluid, never scrolls ---------- */
+html{font-size:clamp(13px,1.05vmin + 8px,17px)}
+h1{font-size:clamp(34px,6.2vmin + 1vw,118px)}
+h2{font-size:clamp(26px,3.4vmin + 1.6vw,74px)}
+.hero-word{font-size:clamp(72px,16vmin + 4vw,300px)}
+p.lead{font-size:clamp(14px,1.1vmin + .5vw,22px)}
+.n big{font-size:clamp(22px,2.4vmin + .9vw,44px)}
+.count{font-size:clamp(28px,5vmin,96px)}
+.slide.one.wash .fig{max-height:min(44vh,60vmin)}
+.cgwrap{height:min(56vh,520px,70vmin)}
+.slide.tight .mute,.slide.tight .kbd,.slide.tight .chips,.slide.tight .bridge,.slide.tight .fine{display:none}
+.slide.tighter p.lead{display:none}.slide.tighter .fig{max-height:34vh}.slide.tighter .cgwrap{height:40vh}.slide.tighter .tiles{display:none}
+@media (max-height:620px){.slide .body{padding:1.5vh 5vw}.kick{margin-bottom:6px}h2{margin-bottom:8px}.slide::after{display:none}}
+.slide.scaled .body{transform-origin:0 0;justify-self:start;align-self:start}

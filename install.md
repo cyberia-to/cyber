@@ -3,89 +3,53 @@ title: install
 tags: cyber, soft3, cyb, install
 crystal-type: guide
 crystal-domain: cyber
+alias: install cyber
 ---
 # install
 
-one crate. one binary. default network: **spacepussy-test** (soft3 chaosnet).
+two doors. this page is the terminal. the robot is [[cyb]] at [cyb.ai](https://cyb.ai).
 
 ```bash
-rustup update stable         # soft3 needs ≥ 1.85
-export PATH="$HOME/.cargo/bin:$PATH"
-
-cargo install soft3 --force    # real node + operator CLI
-cargo install true-cyber --force
-
-cyber version                  # cyber … (true-cyber)
-cyber sync
-soft3 sync                     # same network via soft3
+cd ~/cyber/cyber
+cargo build --release --locked
+./target/release/cyber init
+./target/release/cyber auth enable
+./target/release/cyber node
 ```
 
-| | |
-|--|--|
-| network | **spacepussy-test** (soft3 chaosnet) |
-| engine | cybergraph + bbg |
-| public rpc | `https://cyb.ai/spacepussy-test` |
-| node crate | [soft3](https://crates.io/crates/soft3) `soft3 node` |
-| product face | [true-cyber](https://crates.io/crates/true-cyber) binary `cyber` |
+`auth enable` activates signed native publication for this home. it creates no subject key. a new genesis is its own local network; the native network id is not the spacepussy-test display label. http receipts report endpoint acceptance; peer replication and validator consensus have their own gates.
+
+in another terminal:
 
 ```bash
-cyber sync
-#   engine           cybergraph+bbg
-#   chain_id         spacepussy-test
-#   moniker          cyberproxy-spt
-#   latest_height    …
-#   bbg_root         …
-#   signals / particles / axons
+./target/release/cyber status --json
+./target/release/cyber cyb --live
 ```
 
-run your own node: see [[soft3/docs/launch|launch spacepussy-test]].
+`cyber cyb` prints the offline descriptor. `--live` asks the endpoint and prints the actual native network id and profile.
 
-```bash
-soft3 node --home ~/.spacepussy-test --bind 127.0.0.1:7780
-curl -sS -X POST http://127.0.0.1:7780/v1/link \
-  -H 'content-type: application/json' \
-  -d '{"neuron":"01","from":"0a","to":"0b","amount":1}'
+## pin in cyb
+
+```
+net add local http://127.0.0.1:7780
+net probe local
+net pin local NETWORK_HEX
 ```
 
-```bash
-cyber network
-cyber manifesto
-cyber help
-```
+use the 64-digit network id the local node reports. `net set local URL` changes an existing endpoint. a name/url without a pin stays read-only; ordering cannot choose a destination. submission needs an explicitly controlled neuron on that network. the robot attaches keys, networks and devices; progs run under those neurons with their own work ids.
 
-## two different "space pussy" names
+cyb's default public endpoint is spacepussy-test — the [[soft3]] chaosnet on cybernode (`https://cyb.ai/spacepussy-test`). a name/url stays read-only until its native network/profile is pinned. the local node above serves loopback. tokens and state are test. mainnet arrives at [[launch]].
 
-| name | substrate | role |
-|------|-----------|------|
-| **spacepussy-test** | soft3 | product chaosnet — default after install |
-| **space-pussy** | cosmos-sdk / [[go-cyber]] on cybernode | bootloader experimental chain — migration source |
+## existing home
 
-`cyber sync` never points at cybernode cosmos RPC. typing `-n space-pussy` or `-n bostrom` is rejected with a clear error.
+stop all writers, then `cyber --home PATH storage import-legacy` before activation, or one shot: `cyber --home PATH auth enable --import-legacy`. both reuse the shared storage owner and keep the original source bytes. existing configuration stays; activation is a permanent reader-generation upgrade.
 
-[[bostrom]] and cosmos [[space pussy]] remain live bootloader history — see [[bootloader]]. they are not the soft3 product network.
-
-## optional faces
-
-| face | install | role |
-|------|---------|------|
-| [[soft3]] | `cargo install soft3` | stack CLI |
-| [[cyb]] | `cargo install cyb` | robot · binary `cy` |
-
-day-one is `true-cyber` alone.
-
-## why not `cargo install cyber`?
-
-crates.io [`cyber`](https://crates.io/crates/cyber) is an unrelated crate. product package is **true-cyber**; binary is **cyber**.
-
-## launch the network
-
-product chaosnet is **spacepussy-test**. operator manual: [[soft3/docs/launch|launch spacepussy-test]].
-
-```bash
-cyber network
-cyber sync                 # public spacepussy-test on cybernode
-```
+bounds, exact reports, recovery: [[specs/cli]] · [[specs/cyb-node]].
 
 ## more
 
-- [cyber.page](https://cyber.page) · [[soft3]] · [[cyb]] · [[bootloader]] · [[cyber/launch|launch plan]] · [[soft3/docs/launch|launch guide]]
+this repo is the `cyber` product binary, its configuration, and the protocol graph. source builds use sibling [[soft3]] checkouts. [[specs/node-product]] maps the components. [[specs/node-sources]] assembles a pinned checkout. [[roadmap]] is local cyb reliability → joy → verified network participation.
+
+`nu scripts/release.nu --locked-sources` writes a host binary, checksum, provenance and the soft3 inventory into `dist/`. friday draft candidates land in [GitHub Releases](https://github.com/cyberia-to/cyber/releases). the [release contract](specs/releases.md) is [[specs/releases]].
+
+crates.io [`cyber`](https://crates.io/crates/cyber) is a different crate. the product binary is `cyber` from this repo.

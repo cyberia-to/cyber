@@ -427,6 +427,7 @@ const go = (i) => {
   if (navigator.vibrate) navigator.vibrate(8);
   graph.pulse();
   countUp(document.querySelectorAll('.slide')[i]);
+  requestAnimationFrame(() => requestAnimationFrame(fit));
   $('#pos').textContent = `${String(i + 1).padStart(2, '0')} / ${S.length}`;
   document.body.classList.toggle('ink', (S[i].cls || '').includes('ink'));
   document.body.className = document.body.className.replace(/\bch\d\b/g, '').trim() + ' ch' + S[i].ch;
@@ -437,7 +438,28 @@ const go = (i) => {
   graph.chapter(ch);
   onEnter(i);
 };
-window.deckGo = go; window.deckCount = () => S.length;
+/* no scrolling, ever: measure the active slide and scale it to the viewport; drop optional text first */
+const fit = () => {
+  const sl = document.querySelectorAll('.slide')[cur]; if (!sl) return;
+  const body = sl.querySelector('.body');
+  Object.assign(body.style, { transform: '', width: '', height: '', maxHeight: '', margin: '' }); sl.classList.remove('tight', 'tighter', 'scaled');
+  const availW = body.clientWidth, availH = body.clientHeight;
+  const over = () => body.scrollHeight > availH + 1 || body.scrollWidth > availW + 1;
+  if (!over()) return;
+  sl.classList.add('tight'); if (!over()) return;
+  sl.classList.add('tighter'); if (!over()) return;
+  let z = Math.min(availH / body.scrollHeight, availW / body.scrollWidth);
+  sl.classList.add('scaled');
+  for (let k = 0; k < 5; k++) {
+    z = Math.max(.4, Math.floor(z * 100) / 100);
+    Object.assign(body.style, { width: availW / z + 'px', height: availH / z + 'px', maxHeight: 'none', margin: '0', transform: `scale(${z})` });
+    if (body.scrollHeight <= availH / z + 1 && body.scrollWidth <= availW / z + 1) break;
+    z *= .96;
+  }
+};
+let fitT = 0; const refit = () => { clearTimeout(fitT); fitT = setTimeout(fit, 40); };
+addEventListener('resize', refit); addEventListener('orientationchange', refit); document.fonts?.ready.then(refit);
+window.deckGo = go; window.deckCount = () => S.length; window.deckFit = fit;
 $('#prev').onclick = () => go(cur - 1); $('#next').onclick = () => go(cur + 1);
 document.addEventListener('keydown', (e) => {
   if (e.target.tagName === 'INPUT' || (e.target.tagName === 'BUTTON' && [' ', 'Enter'].includes(e.key))) return;

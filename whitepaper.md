@@ -91,7 +91,7 @@ We propose cyber.
 
 [[Tru]] runs the [[tri-kernel]] — diffusion, springs, heat — to a unique fixed point $\phi^*$: collective focus. The [[collective focus theorem]] states that under ordinary connectivity the root exists, is unique, and can be approached locally.
 
-The same engine does three jobs that today sit in three closed industries. It ranks what matters. It compiles a model measured from the graph. It prices knowledge so [[cyber/$CYB|$CYB]] can mint where focus actually sharpened.
+The same engine does three jobs that today sit in three closed industries. It ranks what matters. It compiles a model measured from the graph. It prices knowledge so [[$CYB]] can mint where focus actually sharpened.
 
 Two pays, two risks. [[Staking]] a link is a bet on truth: capital at risk, influence and reward if you were early and right. [[Mining]] is capital-free: compute the fair [[Shapley value|division]] of that proven shift and [[fold mining|fold]] the proofs — you earn for settling credit, not for guessing the future.
 
@@ -162,7 +162,7 @@ Locality. At planetary scale ($10^{15}$ nodes), any algorithm requiring global r
 
 Field-first arithmetic. A single decision unifies six research threads that developed independently over four decades: prime [[field]] arithmetic as primitive rather than derived. The Goldilocks field ($p = 2^{64} - 2^{32} + 1$) makes this concrete. A field multiplication is a single CPU instruction. Hashing is field operations. Proofs are field polynomials. Reduction preserves field structure. Flow is conserved across field-valued edges. Every operation in the system — content addressing, proof verification, neural inference — reduces to additions and multiplications in the same field.
 
-One token, one chain. The [[oikos|oikos]] principle: a book is the complete balance sheet of one issuer — one non-fungible name roots it, one fungible token is its monetary state, nested sub-names are its chart of accounts. Each book issues one token, and every token settles on its home ledger; trading programs the conditions of movement against proofs of foreign state ([[3c]]), so wrapped-token relocation leaves the model entirely. The cyber book applies these rules to [[cyber/$CYB|$CYB]]; books, services, and [[shards]] register their typed names and state roots in the [[cybergraph]] under the [[specs/domain-ladder|domain roles]]. Oikos is a proposed monetary profile; the runtime and publication contracts declare their implemented validation separately.
+One token, one chain. The [[oikos|oikos]] principle: a book is the complete balance sheet of one issuer — one non-fungible name roots it, one fungible token is its monetary state, nested sub-names are its chart of accounts. Each book issues one token, and every token settles on its home ledger; trading programs the conditions of movement against proofs of foreign state ([[3c]]), so wrapped-token relocation leaves the model entirely. The cyber book applies these rules to [[$CYB]]; books, services, and [[shards]] register their typed names and state roots in the [[cybergraph]] under the [[specs/domain-ladder|domain roles]]. Oikos is a proposed monetary profile; the runtime and publication contracts declare their implemented validation separately.
 
 ## 3. The Cybergraph
 
@@ -822,7 +822,7 @@ The graph also expresses what no formal [[language]] can: collective confidence 
 
 ### 13.1 Tokens
 
-Under the [[oikos|oikos]] principle (§2.4) the chain of [[cyber/$CYB|$CYB]] is constitutionally single-token: every other token is born as its own chain and registers here by name. Emission-for-knowledge is prohibition one read as monetary policy.
+Under the [[oikos|oikos]] principle (§2.4) the chain of [[$CYB]] is constitutionally single-token: every other token is born as its own chain and registers here by name. Emission-for-knowledge is prohibition one read as monetary policy.
 
 [[$CYB]] has two operational modes: circulating (tradeable, stakeable, spendable as fees) and locked as [[will]] — committed for a defined duration in exchange for bandwidth and link-weight influence, with the locked balance provably unspendable for the lock period.
 [[Learning tokens]] serve as feedback signals to [[superintelligence]]: [[will]] ([[bandwidth]] and link weight), [[attention]] (rank influence), [[karma]] (reputation and trust weight). These are not tradeable assets — they are measurements of a [[neuron]]'s contribution to collective [[focus]]. [[karma|Karma]] is computed from accumulated [[Bayesian Truth Serum|BTS]] scoring history; [[attention]] tracks stake-weighted participation; [[will]] reflects commitment duration.
@@ -1414,13 +1414,13 @@ The launch is a sequence of phases, each a network that must hold before the nex
 | 0 | foundations: field, hash, commitments, VM, proofs, state | complete | done |
 | 1 | the bootloader reborn: [[bostrom]] and [[space pussy|pussy]] on soft3 with settlement mining, fold, foculus consensus, and privacy | the property registry green or explicitly deferred; two chains live from the burial snapshots | 2026-11-05 |
 | 2 | canary: the two chains under real use and weekly red team | 90 days, all economic invariants hold, no critical bug under attack | 2026-11-05 → 2027-02 |
-| 3 | [[cyber/$CYB|$CYB]] mainnet | implementations in several languages agree on 10⁶ blocks; the formal spine green; the gates of §21.4 answered | after phase 2 |
+| 3 | [[$CYB]] mainnet | implementations in several languages agree on 10⁶ blocks; the formal spine green; the gates of §21.4 answered | after phase 2 |
 
 Phase 1 ships four cores, none cut and none faked: the mint by Shapley and settlement mining (§14.3); the accumulation of winning tickets into one accumulator per cluster (ARC-style, §14.3); consensus by convergence on independent nodes (§11); and the hybrid economics of truth markets and two-axis staking (§13.2, §14.4). Personal chains under [[oikos]] and the three privacy invariants (§10) ship with them. Cut from phase 1 and returned in later phases: general programmability on chain, the viewing economy, paid inference, and [[cyber/$CYB|$CYB]] itself. A milestone is code that passes its gate. The date exists for phase 1 only, and what does not fit the date is cut, never squeezed.
 
 ### 21.4 Mainnet Gates
 
-No patch relay exists between stars. What launches must be correct. Before [[cyber/$CYB|$CYB]] mainnet, five questions answered with machine-checked evidence:
+No patch relay exists between stars. What launches must be correct. Before [[$CYB]] mainnet, five questions answered with machine-checked evidence:
 
 | # | Question | Evidence |
 |---|----------|----------|
@@ -1678,7 +1678,7 @@ Work and stake share one budget, and idle capital earns nothing. Emission flows 
 
 Provability closes the trust gap under all of it. [[zheng|Zheng]] proofs — hash-based, post-quantum, no trusted setup, recursively composable — make every state transition, every ranking computation, every mint, and every privacy claim checkable by anyone. The verifier is itself a [[nox]] program. The system closes on itself.
 
-What remains open is named rather than hidden (§14.8), and it is economic rather than mathematical. What remains to build is tracked in [[cyber/launch]]: two chains reborn on 2026-11-05, a canary of ninety days, then [[cyber/$CYB|$CYB]] mainnet behind five machine-checked gates.
+What remains open is named rather than hidden (§14.8), and it is economic rather than mathematical. What remains to build is tracked in [[cyber/launch]]: two chains reborn on 2026-11-05, a canary of ninety days, then [[$CYB]] mainnet behind five machine-checked gates.
 
 Three million [[particles]] and 2,949,732 [[cyberlinks]], signed by 1,240 hands over five years and audited to the last block, are the first syllables of a language that will, at sufficient scale, generate concepts no individual mind can hold and discover truths no derivation can reach.
 

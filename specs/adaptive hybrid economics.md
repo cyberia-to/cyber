@@ -10,7 +10,7 @@ status: draft
 
 how cyber splits security spend between compute work and active stake without hard-coding arbitrary percentages. parameters self-calibrate from on-chain observables via control-theoretic feedback (P / PD / PID). applies to [[CYB]] hybrid mint under [[tok]] / [[plumb]]
 
-normative home: this page under [[specs]]. equations for rewards: [[rewards]]. token utility surface: [[cyber/$CYB|$CYB]]. historical long essay + minimal implementation notes lived under cybics game
+normative home: this page under [[specs]]. equations for rewards: [[rewards]]. token utility surface: [[$CYB]]. historical long essay + minimal implementation notes lived under cybics game
 
 ## problem
 
@@ -32,7 +32,7 @@ mechanism: sense and adapt — thermostat, not calendar
 |--------|---------|
 | \(M\) | circulating supply |
 | \(S \in [0,1]\) | active staked fraction (epistemic lock with \(v \neq 0\); not idle bag) |
-| \(E(t)\) | baseline emission rate from schedule (for cyber: power-law head of [[cyber/$CYB\|CYB]] M(t), not a free knob) |
+| \(E(t)\) | baseline emission rate from schedule (for cyber: power-law head of [[$CYB\|CYB]] M(t), not a free knob) |
 | \(F\) | fees collected in window |
 | \(\beta \in [0,1)\) | fee burn fraction |
 | \(\alpha \in [0.3, 0.7]\) | allocation curve exponent |
@@ -57,7 +57,7 @@ why power: maps \([0,1]\to[0,1]\), one parameter, smooth, no kink that governanc
 | \(R_{\mathrm{PoW}}\) | compute | [[mining]]: prove Δφ* division + [[fold mining\|fold]] |
 | \(R_{\mathrm{PoS}}\) | active risk | [[staking]] with valence ≠ 0; passive lock earns rank only |
 
-see [[cyber/$CYB]] utility §mint
+see [[$CYB]] utility §mint
 
 ## gross vs net
 
@@ -71,13 +71,13 @@ I_{\mathrm{net}} = \mathrm{floor} - \frac{F\beta}{M}
 
 when diffusion burn exceeds floor, net inflation is negative: velocity shrinks supply while floor still pays security. gross rewards to workers can still exceed net mint when service fees recycle into \(B\)
 
-fee path for CYB ([[cyber/$CYB]] §revenue):
+fee path for CYB ([[$CYB]] §revenue):
 
-- tax on diffusion \(\tau = 1\%\) on every transfer — pay, lock, unlock, including [[staking]]
-- simple split: \(\mathrm{burn} = \tfrac12\tau G\); \(B_V = \tfrac12\tau G\) paid to everyone who earns under the **same hybrid** as emission (\(R_{\mathrm{PoW}}\), \(R_{\mathrm{PoS}}\)) — not a pro-rata airdrop to idle holders
-- \(B_{\mathrm{tot}} = B + B_V\); velocity is the long-run self-development faucet when \(M(t)\) thins
+- tax on diffusion \(\tau\) on every transfer — pay, lock, unlock, including [[staking]]. starts at \(0.1\%\); a consensus parameter the machine tunes ([[self/parametrization]])
+- three-way split: \(\mathrm{burn} = \tfrac13 V\); \(B_V = \tfrac13 V\) to miners and active stakers under the **same hybrid** as emission (\(R_{\mathrm{PoW}}\), \(R_{\mathrm{PoS}}\)) — slow replacement of inflation; \(\Sigma = \tfrac13 V\) to [[self]] as public goods the graph names
+- \(B_{\mathrm{tot}} = B + B_V\); \(\Sigma\) stays off the hybrid. velocity is the long-run faucet when \(M(t)\) thins
 - service fees (queries, DA, inference peer leg) may still feed \(F\) into \(B\); orthogonal to the diffusion tax
-- \(\beta\) in the budget equations applies to any service-fee burn/pool split; diffusion tax already fixes half burn
+- \(\beta\) in the budget equations applies to any service-fee burn/pool split; diffusion tax already fixes a third burn
 
 ## security floor
 
@@ -128,7 +128,7 @@ derivatives via EMA. start P-only; add D if oscillation; full PID if volatility 
 
 - not a third consensus finality rule — [[foculus]] decides what is final; this decides how the security budget is paid
 - not passive staking yield — idle lock does not mint (anti-compounding; see [[rewards]])
-- not a second emission schedule for robots — robot cards only redirect creator shares of mints/pays ([[cyber/$CYB]])
+- not a second emission schedule for robots — robot cards only redirect creator shares of mints/pays ([[$CYB]])
 
 ## cyber placement
 

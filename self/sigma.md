@@ -16,7 +16,9 @@ the cybergraph is not a passive infrastructure. it holds tokens, locks stake, ta
 
 the emission curve E(t) in [[cyber/tokenomics]] allocates a fraction of each block's emission to a protocol-controlled address. this address is derived deterministically from the genesis block — no private key held by any party, funds spendable only by on-chain governance execution or protocol-defined automated mechanisms.
 
-the treasury accumulates across the emission lifetime. its balance at any block is auditable by any participant. the uses are encoded:
+a third of every diffusion tax $V$ lands here — $\Sigma = \tfrac13\tau G$ — public goods the graph's own [[inference]] names, spent by the protocol neuron. this is the long-run faucet for [[self]] once emission thins. it is not a human committee and not a second miner paycheck.
+
+the treasury also accumulates across the emission lifetime. its balance at any block is auditable by any participant. the uses are encoded:
 
 self-linking allocation. a fraction of treasury funds the stake for system-created [[cyberlinks]]. each self-link consumes a small amount proportional to the link's confidence score. the consumption rate is metabolic: when M(t) is high, the allocation is generous; when metabolic health is low, the rate throttles.
 

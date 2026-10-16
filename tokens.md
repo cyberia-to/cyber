@@ -17,7 +17,7 @@ figures marked *proposed* are the 2026-09-27 proposal for the 2026-11-05 launch 
 
 | | [[cyber]] | [[bostrom]] | [[space pussy]] |
 |---|---|---|---|
-| token | [[cyber/cyber/$CYB|$CYB]] | [[bootloader/tokens/$BOOT|$BOOT]] | [[bootloader/tokens/$PUSSY|$PUSSY]] |
+| token | [[$CYB]] | [[bootloader/tokens/$BOOT|$BOOT]] | [[bootloader/tokens/$PUSSY|$PUSSY]] |
 | purpose ¹ | hard money | small kernel | fast growth |
 | launch | phase 3 | 11-05 13:22:42 UTC | 11-05 13:37 UTC |
 | job | root money | bootloader | community |

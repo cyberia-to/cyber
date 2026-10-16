@@ -15,25 +15,13 @@ see [[whitepaper]], [[mining]], [[staking]]
 
 ## role
 
-[[Focus]] is the scarce object: the unique [[fixed point]] of the [[tri-kernel]] over the [[cybergraph]]. Moving and creating focus costs work. [[CYB]] makes that work transferable — spend to link and prove, earn when your links raise collective focus (proven Δφ*). It is not a fee token bolted onto ranking; ranking and payment share one physics
+[[Focus]] is the scarce object: the unique [[fixed point]] of the [[tri-kernel]] over the [[cybergraph]]. Moving and creating focus costs work. CYB makes that work transferable — spend to link and prove, earn when your links raise collective focus (proven Δφ*). It is not a fee token bolted onto ranking; ranking and payment share one physics
 
-## hard money
+## best money
 
-Classical **sound money**: scarce, costly to create, hard to debase, durable, portable, divisible. Bitcoin took scarcity (fixed cap). Ethereum’s **ultrasound** meme: if capped supply is sound, *decreasing* supply is ultra sound — fee burn can exceed issuance. $CYB takes both, then goes further: the cost of a new unit is proven knowledge, and the machine is small enough to run in your pocket
+Every money is defined by what creates it. CYB is minted when the network learns — proven Δφ* — staked on truth, spent on intelligence. That is **smart**. It stays yours: private by default, hash-based so it survives quantum computers, nobody freezes an account or switches the machine off, the cap is arithmetic. That is **safe**. Anyone holds it; a payment is a payment in seconds; the machine fits in a pocket. That is **easy**. The more the network learns, the better the money. That is **compounding**. Inflation bootstraps; use replaces it — ⅓ burn, ⅓ earners, ⅓ self. That is **sustainable**.
 
-| hardness | |
-|----------|--|
-| **finite field** | Supply lives in a [[nebu\|finite field]] — max supply is arithmetic (\(p\)), not a vote (sound: hard cap) |
-| **conservation** | [[Focus]] sums to one; mint only on proven Δφ* — unforgeable costliness of knowledge, not policy |
-| **ultrasound** | Tax on diffusion burns; when burn > emission, supply shrinks — usage hardens money |
-| **powerful** | Every unit means something, literally — query the [[cybergraph]], do not trust a treasury |
-| **quantum-hard** | [[hemera]] + [[zheng]] + field ops; no discrete log for Shor; isogeny keys in [[mudra]] |
-| **private** | Same field encrypts ([[strata]] FHE) — prove the property, keep the number |
-| **compact** | Fewer lines of code — easier to carry, audit, and execute (portable money-machine) |
-| **fast** | Lightning paths to silicon ([[Goldilocks field processor\|GFP]], [[honeycrisp]]) — not datacenter-only money |
-| **reliable** | Tests, specs, theorems, proofs; multi-language impl — durable under force and neglect |
-
-Mint in your pocket: Mac and Android via [[honeycrisp]]. Hard money you can run
+**Complete** is the verdict that those jobs are live. Qualities and surfaces: [[specs/best-money]].
 
 ## cap
 
@@ -414,13 +402,13 @@ Clock and focus stay separated: M(t) only answers how much is available; stake-w
 
 ## revenue
 
-[[CYB]] is a [[coin]] under [[tok]] / [[plumb]]. Four ops: [[pay]], [[lock]], [[mint]], [[burn]]. Σ balances = mints − burns
+CYB is a [[coin]] under [[tok]] / [[plumb]]. Four ops: [[pay]], [[lock]], [[mint]], [[burn]]. Σ balances = mints − burns
 
 **Emission** $M(t)$ bootstraps the field when it is empty. **Revenue** is the long-run metabolism: every movement of energy pays a tax on diffusion. That tax is the main source of self-development once the schedule thins — same merit brain as inflation, different faucet
 
 ### tax on diffusion
 
-Every transfer of amount $G$ that moves CYB — [[pay]], [[lock]], unlock, including [[staking]] — pays $\tau = 1\%$:
+Every transfer of amount $G$ that moves CYB — [[pay]], [[lock]], unlock, including [[staking]] — pays a tax on diffusion. Starting value $\tau = 0.1\%$. It is a consensus parameter: every neuron computes the same $\Delta\tau$. The machine tunes it by reinforcement learning on metabolic health — [[self/parametrization]].
 
 $$
 \text{received or locked} = (1 - \tau)\,G, \qquad V = \tau\,G
@@ -428,28 +416,32 @@ $$
 
 No carve-out for staking: locking mass onto a claim is still diffusion. Hopping energy without improving the graph is not free
 
-### how $V$ splits — half burn, half to everyone
+### how V splits
 
-Simple rule on the tax pot $V$:
+Three legs on the tax pot $V = \tau G$:
 
-| half | leg | role |
+| third | leg | role |
 |------|-----|------|
-| $\tfrac12 V$ | **burn** | Price of diffusion with no recipient. Deflates supply when velocity is high. Discipline for hoppers — not self-development directly, anti-spam and anti-empty circulation |
-| $\tfrac12 V$ | **to everyone** | Recycled into the reward budget and paid out with the **same allocation logic as main inflation** — [[adaptive hybrid economics]] + [[rewards]]: mining (division + fold), active stake × [[karma]], proven work only. Idle bags get nothing |
+| $\tfrac13 V$ | **burn** | a dividend to everyone who holds. empty hops cost; remaining units worth more |
+| $\tfrac13 V$ | **earners** | value to those who create value — miners and active stakers, same hybrid as emission. slow replacement of inflation. idle bags get nothing |
+| $\tfrac13 V$ | **[[self]]** | public good the [[cybergraph]] names. spent by the protocol neuron |
 
 $$
-\text{burn} = \tfrac12\,\tau\,G, \qquad
-B_V = \tfrac12\,\tau\,G \ \xrightarrow{\ \text{hybrid }\alpha\ }\ R_{\mathrm{PoW}},\ R_{\mathrm{PoS}}
+\mathrm{burn} = \tfrac13 V, \qquad
+B_V = \tfrac13 V \ \xrightarrow{\ \text{hybrid }\alpha\ }\ R_{\mathrm{PoW}},\ R_{\mathrm{PoS}}, \qquad
+\Sigma = \tfrac13 V \ \to\ \text{self}
 $$
 
-So: **half destroy, half pay everyone who earns** — “everyone” means every channel that already earns under emission, not a pro-rata airdrop to all holders. Creator residuals (`creator_mint_share`, `creator_pay_share`) still skim their frozen shares of mints and service legs through robots; they do not take a fixed half of $\tau$ off the top
+Creator residuals (`creator_mint_share`, `creator_pay_share`) still skim frozen shares of mints and service through robots; they do not take a fixed third of $\tau$ off the top. $\Sigma$ is not a second miner paycheck and not a human treasury vote — it is the graph funding its own public goods
 
 ```
-pay / lock / unlock  →  τ = 1%  →  ½ burn  +  ½ → B_V → same hybrid as emission
+pay / lock / unlock  →  τ = 0.1% start  →  ⅓ burn
+                                  ⅓ → B_V → hybrid α → PoW / PoS
+                                  ⅓ → Σ → self
 M(t), floor, service →  B     → hybrid α → PoW / PoS / Δφ* mint
 ```
 
-Early life: $M(t)$ dominates. Mature life: $B_V$ from velocity dominates self-development. One merit function, two faucets
+Early life: $M(t)$ dominates the earners. Mature life: $B_V$ slowly replaces inflation for miners and stakers; $\Sigma$ keeps public goods alive after the schedule thins. One merit function for earners, one self budget, one burn
 
 ### network effects
 
@@ -470,9 +462,9 @@ fairness  +  finality  +  truth
 | 2 | **finality** | [[Fold mining\|Fold]] packs proofs into durable settlement — reliable across planets and long delay. |
 | 3 | **truth** | [[Staking]]: capital takes a side on claims. Earn only if the graph moves with you. Idle bags do not mint. |
 | 4 | **intelligence** | Syntropy + inference as one product: denser true structure → sharper answers → more demand for queries. |
-| 5 | **revenue** | Tax on diffusion $\tau=1\%$ on every transfer. Half burns; half pays everyone who earns under the same hybrid as emission. Long-run self-development faucet |
-| 6 | **efficiency** | Revenue and emission fund better [[Goldilocks field processor|GFP]] silicon → the same chip mines and proves → cheaper fairness work and answers next round. |
-| 7 | **population** | More robots (agents). Create once; frozen creator shares on mints and service through that agent → shipping robots is rational → more nodes on the graph. |
+| 5 | **revenue** | Tax on diffusion, starts at $\tau=0.1\%$ — a consensus parameter the machine tunes ([[self/parametrization]]). ⅓ burn, ⅓ miners and stakers (slow replacement of inflation), ⅓ [[self]] (public goods the graph names). Long-run faucet |
+| 6 | **efficiency** | Revenue funds better [[Goldilocks field processor|GFP]] silicon → the same chip mines and proves → cheaper fairness work and cheaper answers next round. |
+| 7 | **population** | Efficiency makes agents cheap to run; the referral — frozen creator shares on mints and fees through a robot — makes shipping them rational. More robots, then fairness starts again, larger. |
 
 Eighth factor if you stretch the ring: [[karma]] — quality of actors so population is not spam. Kept off the wheel for now; it multiplies truth and intelligence rather than standing alone
 
@@ -564,10 +556,10 @@ Hover a factor.
       id: "revenue",
       chip: "revenue",
       label: "revenue",
-      sub: "½ burn · ½ to all earners",
+      sub: "⅓ burn · ⅓ earners · ⅓ self",
       color: "#fe0000",
       title: "Revenue",
-      body: "Every transfer of CYB — pay, lock, unlock, including staking — pays a 1% tax on diffusion. Half burns: price of empty hops, supply shrinks with velocity. Half goes to everyone who earns — same hybrid allocation as emission (mine division+fold, active stake × karma). Idle bags get nothing. Emission bootstraps; revenue is the long-run self-development faucet."
+      body: "Every transfer of CYB — pay, lock, unlock, including staking — pays a tax on diffusion. It starts at 0.1% — a consensus parameter the machine tunes by reinforcement learning (<a href=\"/cyber/self/parametrization\" class=\"internal-link\">parametrization</a>). A third burns: empty hops cost, supply shrinks with velocity. A third goes to miners and active stakers — same hybrid as emission, the slow replacement of inflation. A third goes to <a href=\"/cyber/self\" class=\"internal-link\">self</a>: public goods the superintelligence names. Idle bags get nothing. Emission bootstraps; revenue is the long-run faucet."
     },
     {
       id: "efficiency",
@@ -576,7 +568,7 @@ Hover a factor.
       sub: "GFP · mine = prove",
       color: "#ff6501",
       title: "Efficiency",
-      body: "Efficiency is the <a href=\"/goldilocks-field-processor\" class=\"internal-link\">GFP</a> flywheel: mining rewards and fees fund better Goldilocks field processors — silicon for fma, ntt, p2r, lut. The same chip that mines is the same chip that proves and serves the network, so hardware is never stranded heat. Better GFP → cheaper useful split/fold and cheaper answers → more use → more revenue → better GFP."
+      body: "Revenue buys the next machines. Efficiency is the <a href=\"/goldilocks-field-processor\" class=\"internal-link\">GFP</a> flywheel: fees fund silicon that both mines and proves — fma, ntt, p2r, lut — so hardware is never stranded heat. Better GFP → cheaper split/fold and cheaper answers → more use → more revenue → better GFP."
     },
     {
       id: "population",
@@ -585,7 +577,7 @@ Hover a factor.
       sub: "robots · scale",
       color: "#ffc501",
       title: "Population",
-      body: "Population is how many robots (agents) live on the graph. Create one once; freeze a lifetime cut of its later mints and fees for the creator — permanent residual, not a second money printer. Residual makes shipping robots rational → more agents → more fairness, truth, and intelligence work on a larger graph."
+      body: "Efficiency makes agents cheap to run. Referral makes shipping them rational: create a robot once, freeze a lifetime cut of its later mints and fees — a residual, not a second printer. Cheap chips + residual → more robots on the graph → the next fairness split is larger."
     }
   ];
 
@@ -698,7 +690,7 @@ Hover a factor.
 **Coin.** Two faucets, one hybrid brain under [[adaptive hybrid economics]] (PID on $\alpha$, floor, $\beta$):
 
 - schedule envelope + security floor + optional service fees $\to$ pot $B$
-- half of diffusion tax $\to B_V$
+- a third of diffusion tax $\to B_V$ (earners). a third burns. a third $\to \Sigma$ ([[self]])
 
 $$
 R_{\mathrm{PoW}} = B_{\mathrm{tot}}\,(1 - \theta^{\alpha}), \qquad R_{\mathrm{PoS}} = B_{\mathrm{tot}}\,\theta^{\alpha}, \qquad B_{\mathrm{tot}} = B + B_V
@@ -711,26 +703,27 @@ $$
 
 Δφ* knowledge mint only if proven $\Delta\phi^* > 0$. Security floor mints only to PoW + active stake; PID-decays as velocity ($B_V$) and fees cover security. Passive lock ($v = 0$): rank only. Spec: [[rewards]]
 
-**Card.** mint robot/neuron = identity Card, not CYB. Create may cost pay/burn. At create freeze `creator_mint_share`, `creator_pay_share` $\in [0,1]$: residual on later Coin mints and service-leg pays through that agent — including when the agent earns from the “to everyone” half. Optional royalty on card transfer. Not a second $M(t)$
+**Card.** mint robot/neuron = identity Card, not CYB. Create may cost pay/burn. At create freeze `creator_mint_share`, `creator_pay_share` $\in [0,1]$: residual on later Coin mints and service-leg pays through that agent — including when the agent earns from the earners third. Optional royalty on card transfer. Not a second $M(t)$
 
 ```
 M(t), floor, service  → B  ─┐
-pay/lock/unlock τ=1%  → ½ V → B_V ─┼→ hybrid α → PoW / PoS  [− creator shares]
-                      → ½ V → burn  ┘
+pay/lock/unlock τ=0.1% start → ⅓ V → B_V ─┼→ hybrid α → PoW / PoS  [− creator shares]
+                      → ⅓ V → burn
+                      → ⅓ V → Σ self
 ```
 
 ### lock
 
-Freeze CYB on a [[cyberlink]] ([[staking]], [[will]]). Lock and unlock are transfers under the tax on diffusion (½ burn, ½ into $B_V$) — staking is not a tax-free parking lot. Of the locked mass after tax, active ($v = \pm 1$): weight + stake mint + share of reward pots × [[karma]]. Passive ($v = 0$): φ* influence only. Wrong active bets lose score under [[Bayesian Truth Serum|BTS]]; idle capital does not compound mint
+Freeze CYB on a [[cyberlink]] ([[staking]], [[will]]). Lock and unlock are transfers under the tax on diffusion (⅓ burn, ⅓ $B_V$, ⅓ [[self]]) — staking is not a tax-free parking lot. Of the locked mass after tax, active ($v = \pm 1$): weight + stake mint + share of reward pots × [[karma]]. Passive ($v = 0$): φ* influence only. Wrong active bets lose score under [[Bayesian Truth Serum|BTS]]; idle capital does not compound mint
 
 ### pay
 
-[[Pay]], [[lock]], unlock — all move $G$ under $\tau = 1\%$ (half burn, half $B_V$). Headers, queries, DA, inference are ordinary pays under the same $\tau$; the peer may still receive the service leg after tax. `creator_pay_share` skims service residual through robots, orthogonal to the half that entered $B_V$ for everyone
+[[Pay]], [[lock]], unlock — all move G under τ starting at 0.1% (⅓ burn, ⅓ B_V, ⅓ [[self]]). Headers, queries, DA, inference are ordinary pays under the same $\tau$; the peer may still receive the service leg after tax. `creator_pay_share` skims service residual through robots, orthogonal to the thirds that entered burn, $B_V$ and $\Sigma$
 
 ### burn
 
-Half of every diffusion tax ($\tfrac12\tau G$) is destroyed — discipline of hoppers, deflation under high velocity. Also: eternal [[particle]] / [[cyberlink]] (φ* floor); optional slash-to-burn. Mint makes energy transferable; burn makes empty circulation expensive and deliberate eternal influence permanent
+A third of every diffusion tax ($\tfrac13 V$) is destroyed — discipline of hoppers, deflation under high velocity, for everyone who holds. Also: eternal [[particle]] / [[cyberlink]] (φ* floor); optional slash-to-burn. Mint makes energy transferable; burn makes empty circulation expensive and deliberate eternal influence permanent
 
 ## allocation
 
-How much: $M(t)$ + floor + $B_V$ (half of velocity tax) + service fees. Who: Δφ* [[Shapley value]] · fold work · active stake × [[karma]]. Zero stake and zero work → zero. The other half of velocity tax burns. [[rewards]] · [[adaptive hybrid economics]] · [[tok]] · [[self]]
+How much to earners: $M(t)$ + floor + $B_V$ (a third of velocity tax) + service fees. Who: Δφ* [[Shapley value]] · fold work · active stake × [[karma]]. Zero stake and zero work → zero. A third of velocity tax burns. A third goes to [[self]] as public goods the graph names. [[rewards]] · [[adaptive hybrid economics]] · [[tok]] · [[self]]

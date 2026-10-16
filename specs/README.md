@@ -44,6 +44,7 @@ background; a target latency alone establishes no security guarantee.
 | [[specs/node-product]] | implementation | Composition, local supported profile and remaining network gates |
 | [[specs/releases]] | implementation | Shared soft3 qualification, draft candidates and exact dependency inventories |
 | [[specs/cyb-node]] | implementation | Launcher configuration, live capability checks and signed-native client connection |
+| [[specs/best-money]] | draft | Quality tree for CYB as money; smart / safe / easy decomposed for development |
 | [[specs/money-loop]] | draft | Balance, send/receive, multi-payee reward, events and certainty grades |
 | [[specs/node-modes]] | draft | Full, partial and light state/validation/availability/finality duties |
 | [[specs/light-money]] | draft | Folded-tip trust, openings and money on thin devices |
@@ -71,7 +72,7 @@ parameter tables remain with their component/domain owners.
 1. [Cyb architecture](../../cyb/specs/architecture.md) and [[specs/domain-ladder]].
 2. [[specs/component-ownership]] and [[specs/node-product]].
 3. [[specs/node-modes]] for the profile being implemented.
-4. [[specs/money-loop]] and [[specs/light-money]] for money-grade behavior.
+4. [[specs/best-money]] for the quality tree; [[specs/money-loop]] and [[specs/light-money]] for money-grade behavior.
 5. Component specifications for exact codecs, proofs, bounds and recovery.
 
 ## implementation map
