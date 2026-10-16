@@ -97,7 +97,7 @@ to compute $M^\top \phi^*$, the circuit must access every edge weight $w_{ij}$ a
 each edge read = NMT inclusion proof = O(log n) [[Hemera]] hashes in-circuit.
 
 ```
-per edge:    32 hemera calls × 736 constraints = 23,552 constraints
+per edge:    32 hemera calls × 1,440 constraints = 46,080 constraints
 2.7M edges:  2.7M × 23,552 = 63.6 BILLION constraints
 
 zheng capacity: 4.3B constraints

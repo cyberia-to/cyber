@@ -114,7 +114,7 @@ algebraic:  axis(noun, path) = evaluate polynomial at binary(path), O(1)
 for a deep noun (depth 32, e.g., a particle index with $2^{32}$ entries):
 
 ```
-current:    axis costs 32 tree hops × hemera = 32 × 736 = ~23,500 constraints
+current:    axis costs 32 tree hops × hemera = 32 × 1,440 = ~46,000 constraints
 algebraic:  axis costs 1 Lens opening (WHIR verifier: sumcheck rounds + hemera Merkle paths)
 ```
 
@@ -263,8 +263,8 @@ the Lens overhead for small content is NEGLIGIBLE. Brakedown encoding is O(d×N)
 
 ```
 "cat" = 1 field element:
-  lens path:    Brakedown.commit(1 element) ≈ 6 field ops + hemera wrap = ~736 constraints
-  hemera path: hemera("cat") = 1 permutation = ~736 constraints
+  lens path:    Brakedown.commit(1 element) ≈ 6 field ops + hemera wrap = ~1,440 constraints
+  hemera path: hemera("cat") = 1 permutation = ~1,440 constraints
   IDENTICAL COST.
 
 sentence = 10 field elements (80 bytes):
@@ -273,7 +273,7 @@ sentence = 10 field elements (80 bytes):
   lens IS CHEAPER. (hemera needs 2 absorption blocks; Brakedown encoding is trivial.)
 
 document = 1000 field elements (8 KiB):
-  lens path:    Brakedown.commit(1000) ≈ 6,000 field ops + hemera wrap = ~6,736 constraints
+  lens path:    Brakedown.commit(1000) ≈ 6,000 field ops + hemera wrap = ~7,440 constraints
   hemera path: hemera(8 KiB) = ~143 permutations = ~105K constraints
   lens IS 15× CHEAPER.
 
@@ -313,7 +313,7 @@ one Lens. one field ([[Goldilocks field|Goldilocks]]). one hash ([[hemera]], dom
 
 ## open questions
 
-1. **~~small noun overhead.~~** RESOLVED. Brakedown encoding of small content is negligible (~6 field ops for 1 element). the hemera wrap dominates either way (~736 constraints). use `hemera(Lens.commit(content) ‖ tag)` for everything. zero threshold. the shortest particles ("cat") have the most links — uniformity of identity scheme benefits the hottest nodes most.
+1. **~~small noun overhead.~~** RESOLVED. Brakedown encoding of small content is negligible (~6 field ops for 1 element). the hemera wrap dominates either way (~1,440 constraints). use `hemera(Lens.commit(content) ‖ tag)` for everything. zero threshold. the shortest particles ("cat") have the most links — uniformity of identity scheme benefits the hottest nodes most.
 
 2. **cons homomorphism.** can Brakedown.commit(cons(a,b)) be computed from commit(a) and commit(b) without re-encoding? Brakedown's linearity suggests yes: $\text{commit}(g) = (1-r) \cdot \text{commit}(a) + r \cdot \text{commit}(b)$ for a challenge $r$. needs formal verification.
 

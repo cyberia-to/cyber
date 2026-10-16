@@ -125,7 +125,7 @@ the compression ratio is exponential: $N$ instances in $O(N)$ work, verified in 
 
 ### [[Hemera]] algebraic degree
 
-the $x^{-1}$ S-box achieves algebraic degree $2^{1046}$ over 24 rounds. each round multiplies the algebraic degree — exponential growth in algebraic complexity with linear cost in rounds. the security margin grows exponentially while the constraint count grows linearly. this is the universal law applied to cryptographic hardness: the optimal S-box maximises algebraic degree (security) per constraint (cost).
+the $x^7$ S-box multiplies the algebraic degree sevenfold per round — over hemera 0.4's 60 rounds, exponential growth in algebraic complexity with linear cost in rounds (the earlier $2^{1046}$ figure for the inverse S-box of hemera 0.3 is withdrawn: an unreduced degree an attacker never meets). the security margin grows exponentially while the constraint count grows linearly. this is the universal law applied to cryptographic hardness: the optimal S-box maximises algebraic degree (security) per constraint (cost).
 
 ### [[VDF]] rate limiting
 
@@ -179,7 +179,7 @@ the three traditions are not analogies. they are the same functional with differ
 ## conclusion
 
 exponential optimality under constraint is the thread connecting:
-- why [[Hemera]]'s S-box degree grows as $2^{1046}$ (security per round)
+- why [[Hemera]]'s algebraic degree grows sevenfold per round (security per round)
 - why [[tri-kernel]] $\phi^*$ converges exponentially (mixing time)
 - why [[DAS]] gives $1 - 2^{-k}$ confidence (evidence per sample)
 - why [[sumcheck]] is O(N) (halving per round)
