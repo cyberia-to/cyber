@@ -16,8 +16,10 @@ experimental profiles; production acceptance requires the evidence below.
 
 Owner: Hemera.
 
-- [ ] Resolve the exact mixed x^7/inverse RF=8/RP=16 candidate against explicit
-  collision, preimage, second-preimage and transcript-use requirements.
+- [x] Resolve the profile: hemera 0.4 (x⁷ every round, RF=12, RP=48, Poseidon2
+  reference matrices) frozen 2026-10-16; the mixed x^7/inverse RF=8/RP=16
+  candidate (0.3) is the record. Open: the campaign's collision, preimage,
+  second-preimage and transcript-use requirements (hemera/audit/campaign.md).
 - [ ] Validate attack candidates against the real implementation; distinguish
   complete-profile results from local S-box properties and reduced models.
 - [ ] If a requirement fails, carry a justified replacement through matched

@@ -163,7 +163,7 @@ Confluence. The patterns form an orthogonal rewrite system — each has a unique
 
 Cost determinism. The cost of a computation depends only on its syntactic structure, never on runtime values, cache state, or execution environment. If two nodes compute the same function on the same input, they spend the same focus. This enables global memoization: results cached forever, verified by hash, reused by anyone.
 
-Field-first arithmetic. Every value is a field element. Cryptography is not an expensive library call — it is a native instruction. A field multiplication is a single CPU operation. Hashing is ~2800 field ops expressible in pure patterns. [[zheng]] proofs verify computations using the same field arithmetic that performs them. There is no impedance mismatch between computation and verification.
+Field-first arithmetic. Every value is a field element. Cryptography is not an expensive library call — it is a native instruction. A field multiplication is a single CPU operation. Hashing is ~3,000 field ops (1,728 multiplications) expressible in pure patterns. [[zheng]] proofs verify computations using the same field arithmetic that performs them. There is no impedance mismatch between computation and verification.
 
 Hash-universal identity. Identity equals hash. Two values are the same if and only if they hash to the same digest. This makes content-addressing intrinsic rather than bolted on. Every particle in the knowledge graph is identified by the hash of its content. Every edge is authenticated by the hashes of its endpoints. Deduplication is automatic. References are unforgeable.
 

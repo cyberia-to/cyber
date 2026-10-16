@@ -96,13 +96,13 @@ replace [[Hemera]] hashes at NMT internal nodes with lens node commitments:
 
 ```
 NMT node:      H(left_hash ‖ right_hash ‖ ns_min ‖ ns_max)
-               → 1 Hemera permutation = 736 constraints
+               → 1 Hemera permutation = ~1,440 constraints
 
 Verkle node:   Lens.commit([child_0, child_1, ..., child_{b-1}])
                → ~100 field operations (for arity b)
 
 with binary tree (b=2):
-  Verkle: ~100 constraints/node vs NMT: 736 constraints/node → 7.4×
+  Verkle: ~100 constraints/node vs NMT: ~1,440 constraints/node → 14×
   path of 32 nodes: 3,200 vs 23,552 → 7.4×
 
 with arity-256 tree (b=256):
@@ -131,7 +131,7 @@ update(tree, leaf_index, new_value):
 
 # cost per update: O(depth) × O(1) recommits = O(log n) field ops
 # vs NMT: O(depth) × O(1) Hemera = O(log n) hash ops
-# field op ~100 constraints vs Hemera ~736 constraints → 7.4× cheaper
+# field op ~100 constraints vs Hemera ~1,440 constraints → 14× cheaper
 ```
 
 ### batch update (deduplication)

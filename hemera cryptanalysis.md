@@ -8,23 +8,27 @@ date: 2026-10-16
 ---
 # hemera cryptanalysis
 
-[[hemera]] is the one material [[cyber]] consensus rests on: proof of work, block and transaction Merkle trees, every [[particle]], record commitments, nullifiers and every [[zheng]] Fiat–Shamir transcript. the private pool switches on only after a public cryptanalysis campaign on hemera has run at least 90 days with no result below 128 bits classical — gate G3 of the frozen-privacy proposal (`soft3/proposals/privacy-frozen.md` §5). this page is the public summary. the full campaign, with every derivation, the instance tables and the reproducible scripts, is [hemera/audit/campaign.md](https://github.com/cyberia-to/hemera/blob/main/audit/campaign.md).
+[[hemera]] is the one material [[cyber]] consensus rests on: proof of work, block and transaction Merkle trees, every [[particle]], record commitments, nullifiers and every [[zheng]] Fiat–Shamir transcript. the private pool switches on only after a public cryptanalysis campaign on hemera has run at least 90 days with no result below 128 bits classical — gate G3 of the frozen-privacy proposal (`soft3/proposals/privacy-frozen.md` §5). this page is the public summary. the full campaign, with every derivation, the instance tables and the reproducible scripts, is [hemera/audit/campaign.md](https://github.com/cyberia-to/hemera/blob/release/0.4/audit/campaign.md); the receipt of the frozen profile is [hemera/audit/profile-0.4-2026-10.md](https://github.com/cyberia-to/hemera/blob/release/0.4/audit/profile-0.4-2026-10.md).
 
 ## the object
 
 hemera is a Poseidon2-family permutation over the Goldilocks field p = 2^64 − 2^32 + 1, width 16 (rate 8, capacity 8 = 512 bits), used as a sponge with a 32-byte (4-limb) digest, a binary Merkle node of one permutation, and truncated-permutation nodes and a duplex transcript inside zheng. round constants are self-generated from the five bytes 63 79 62 65 72.
 
-two parameter sets are on the table, and the owner picks one before genesis on 2026-11-05:
+the object is hemera 0.4 — the hemera#15 permutation, decided on 2026-10-16 (delegated by the owner, on the measured finding below) and merged on hemera `release/0.4`. hemera 0.3 is the record.
 
-| | 0.3 — shipped | v2 — proposed (hemera#15) |
+| | 0.3 — the record | 0.4 — the object (hemera#15) |
 |---|---|---|
 | full rounds | 4 + 4, x⁷ | 6 + 6, x⁷ |
 | partial rounds | 16, x⁻¹ (field inversion) | 48, x⁷ |
-| linear layers | Plonky3-form Poseidon2 | Poseidon2 reference |
-| digest | 32 bytes | 48 bytes (t = 16) or 64 bytes (t = 24) — a separate decision |
-| native cost | ~2 224 multiplications | ~2 304 multiplications |
+| linear layers | Plonky3-form Poseidon2 | Poseidon2 reference (M4 of Appendix B, reference diagonal) |
+| round constants | 144, self-generated from the seed | 240, self-generated from the seed through the 0.4 Hemera₀ |
+| digest | 32 bytes | 32 bytes, kept; 48- and 64-byte options stay recorded in hemera's specs |
+| multiplications per permutation | ~2 224 | 1 728 |
+| single permutation, M4 Max | 2.97 µs | 1.35 µs (2.2× faster) |
+| batched permutation, M4 Max | 0.73 µs | 1.23 µs (1.7× slower: no shared inversion to amortise) |
+| zheng constraints per permutation | ~736 | ~1 440 |
 
-the campaign measures the chosen set; choosing a different set restarts the 90 days.
+the campaign measures 0.4 from 2026-10-16; changing the set restarts the 90 days.
 
 ## the claims
 
@@ -41,7 +45,7 @@ the earlier claim of "algebraic degree 2^1046, 2^918 margin" is withdrawn: it is
 
 computed on 2026-10-16 with the Poseidon2 round-number rules (reproduced exactly for this field) and against the published attacks; details and sources on the campaign page.
 
-| attack line | 0.3 | v2 |
+| attack line | 0.3 — the record | 0.4 — the object |
 |---|---|---|
 | interpolation rule of Poseidon2 (26 x⁷-round equivalents needed) | 13.7: short by 12.3 rounds; would need 51 inverse rounds | 60: +34 rounds |
 | Gröbner rules of Poseidon2, incl. ePrint 2023/537 | written for x^α only; no bound exists for the hybrid | all hold; needs 14 partial rounds, has 48 |
@@ -55,9 +59,9 @@ computed on 2026-10-16 with the Poseidon2 round-number rules (reproduced exactly
 
 the inverse layer, measured: with the outer layers cut to one full round each and all sixteen inverse rounds kept, a one-limb CICO solution of hemera 0.3 was found by rational interpolation and checked on the real permutation in 92 seconds on one laptop core. the degree of the problem doubles per inverse round and grows sevenfold per x⁷ round, exactly as predicted on ten reduced instances. the full 0.3 permutation extrapolates to roughly 0.35–3.5 core-years and about 10 TB of memory, against about 470 000 core-years for the generic attack. this is a full-round distinguisher of the 0.3 permutation; it breaks neither collision nor preimage of the 32-byte digest, and it misses the chain's proof of work, whose header passes through two permutations.
 
-## the recommendation
+## the decision
 
-freeze the v2 permutation — x⁷ in every round, 6 + 6 full rounds, 48 partial rounds, Poseidon2 reference matrices, constants that pass the Poseidon2 checks — and run the campaign on it. the 0.3 profile's one argument (degree p − 2 per inverse round) is refuted by a measured attack on its partial layer; its hybrid S-box sits outside every published bound and every bounty, so 90 quiet days would measure only how few people looked; v2 costs the same natively and about 76 % more S-box constraints in-circuit; and rounds are the one parameter that cannot be raised after genesis without rehashing the [[cybergraph]].
+frozen on 2026-10-16: the 0.4 permutation — x⁷ in every round, 6 + 6 full rounds, 48 partial rounds, Poseidon2 reference matrices, 240 constants that pass the Poseidon2 checks — and the campaign runs on it. the 0.3 profile's one argument (degree p − 2 per inverse round) is refuted by a measured attack on its partial layer; its hybrid S-box sits outside every published bound and every bounty, so 90 quiet days would have measured only how few people looked; 0.4 is faster natively for a single permutation (1.35 µs against 2.97 µs), slower batched (1.23 against 0.73 µs), and about twice the constraints in-circuit (~1 440 against ~736); and rounds are the one parameter that cannot be raised after genesis without rehashing the [[cybergraph]].
 
 ## the bounty
 

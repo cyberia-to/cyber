@@ -214,20 +214,21 @@ Hemera = Poseidon2(
     p  = 2⁶⁴ − 2³² + 1,   -- Goldilocks
     d  = 7,                 -- S-box: x → x⁷
     t  = 16,                -- state width
-    Rꜰ = 8,                 -- full rounds (4 + 4)
-    Rₚ = 16,                -- partial rounds
+    Rꜰ = 12,                -- full rounds (6 + 6)
+    Rₚ = 48,                -- partial rounds
+    S   = x⁷ in every round -- 240 self-generated constants
     r  = 8,                 -- rate (64 bytes)
     c  = 8,                 -- capacity (64 bytes)
     out = 4 elements        -- 32 bytes
 )
 ```
 
-Every parameter that appears as a code-level quantity is a power of 2. The only exception is $d = 7$, which is the minimum invertible S-box exponent over Goldilocks — a mathematical constraint.
+Width, rate, capacity and output are powers of 2. The S-box exponent $d = 7$ is the minimum invertible exponent over Goldilocks — a mathematical constraint — and the round counts 6 + 6 and 48 are the Poseidon2 rules for this field and width with margin above every published attack line. This is hemera 0.4 (profile hemera#15), frozen on 2026-10-16; hemera 0.3 (4 + 4 full rounds, 16 inverse partial rounds, 144 constants) is the record.
 
-Security properties: the 32-byte (4-limb) identity digest gives 128-bit classical collision resistance (birthday on $p^2$) and ~85-bit quantum collision resistance (BHT), per the zheng soundness ledger (specs/soundness.md); hemera profile v2 (hemera#15) proposes longer identity digests. The algebraic margin is a measured quantity: the public cryptanalysis campaign, its bounty, and the margins of the shipped and proposed profiles side by side are in [[hemera cryptanalysis]].
+Security properties: the 32-byte (4-limb) identity digest gives 128-bit classical collision resistance (birthday on $p^2$) and ~85-bit quantum collision resistance (BHT), per the zheng soundness ledger (specs/soundness.md); preimage resistance is $2^{256}$. The 32-byte digest is kept in 0.4; longer digests remain an option recorded in hemera's specs. The algebraic margin is a measured quantity: the public cryptanalysis campaign, its bounty, and the margins of hemera 0.4 against the 0.3 record side by side are in [[hemera cryptanalysis]].
 
 ### 4.3 Self-Bootstrapping
-[[Hemera]] generates her own round constants. The permutation with all 144 constants set to zero (Hemera₀) is already a well-defined nonlinear function — the S-box and MDS matrices provide all the mixing. Feed the bytes `[0x63, 0x79, 0x62, 0x65, 0x72]` through Hemera₀ as a sponge and squeeze 144 field elements. These become the round constants. Hemera = Hemera₀ + these constants. Freeze forever.
+[[Hemera]] generates her own round constants. The permutation with all 240 constants set to zero (Hemera₀) is already a well-defined nonlinear function — the S-box and MDS matrices provide all the mixing. Feed the bytes `[0x63, 0x79, 0x62, 0x65, 0x72]` through Hemera₀ as a sponge and squeeze 240 field elements (192 for the full rounds, 48 for the partial rounds). These become the round constants. Hemera = Hemera₀ + these constants. Freeze forever.
 
 No external primitives. No SHA-256 in the construction. No foreign dependencies. The security of the constants reduces to the security of the structure itself. If Hemera₀ cannot produce pseudorandom output from a non-trivial input, then the S-box and MDS layers relied on by the final Hemera are already broken.
 
@@ -236,9 +237,9 @@ The seed — five bytes that happen to spell "cyber" in ASCII — is specified a
 ### 4.4 One Function, One Mode
 [[Hemera]] has exactly one entry point: `hash(bytes) → [GoldilocksField; 4]`. No compression mode, no domain separation flags, no version prefix. The same function hashes [[file]] content, [[cyberlink]] identity, Merkle nodes, and polynomial commitments. A Hemera output is 32 raw bytes — no header, no escape hatch.
 
-One profile, too. A tempting refinement is two round counts of the same permutation — a heavy one for permanent identities, a light one for the ephemeral hashing inside proofs. It is rejected, for four reasons. A second profile is mode variance by another name: two permutations to analyse, two bounties to fund, two attack surfaces, and a domain tag that is a version byte through the back door. The saving is confined to the hashing share of ephemeral proofs, and the architecture drives that share toward a handful of calls per execution — bulk commitment is the polynomial commitment's job, not the hash's. Native cost is identical either way, since the chain that makes the inverse profile cheap in-circuit makes it expensive natively. And anything ephemeral enough to deserve a lighter hash is ephemeral enough to need no Hemera at all. So the permanent profile is the only profile, its margin is paid everywhere, and the price is bounded by the hash share of a proof. The parameter set itself — S-box, round counts, digest length for post-quantum collision resistance — is under decision as [[hemera]] profile v2 before genesis; the figures in §4.2 describe the current experimental profile.
+One profile, too. A tempting refinement is two round counts of the same permutation — a heavy one for permanent identities, a light one for the ephemeral hashing inside proofs. It is rejected, for four reasons. A second profile is mode variance by another name: two permutations to analyse, two bounties to fund, two attack surfaces, and a domain tag that is a version byte through the back door. The saving is confined to the hashing share of ephemeral proofs, and the architecture drives that share toward a handful of calls per execution — bulk commitment is the polynomial commitment's job, not the hash's. Native cost is small either way — one permutation runs in 1.35 µs on an M4 Max. And anything ephemeral enough to deserve a lighter hash is ephemeral enough to need no Hemera at all. So the permanent profile is the only profile, its margin is paid everywhere, and the price is bounded by the hash share of a proof. The parameter set — x⁷ in every round, 6 + 6 full and 48 partial rounds, Poseidon2 reference matrices, 32-byte digest — was frozen as [[hemera]] 0.4 (hemera#15) on 2026-10-16 and is the object of the public cryptanalysis campaign; the figures in §4.2 describe it.
 
-This is field-native computation. [[Hemera]] input and output are [[Goldilocks field]] elements. Inside a [[zheng]] proof, calling Hemera is just more field arithmetic in the same trace — no bit decomposition, no range checks, no gadgets. Cost: ~736 [[zheng]] constraints per permutation, versus ~25,000 for SHA-256.
+This is field-native computation. [[Hemera]] input and output are [[Goldilocks field]] elements. Inside a [[zheng]] proof, calling Hemera is just more field arithmetic in the same trace — no bit decomposition, no range checks, no gadgets. Cost: ~1,440 [[zheng]] constraints per permutation (240 S-boxes), versus ~25,000 for SHA-256.
 
 ### 4.5 No Algorithm Agility
 
@@ -258,7 +259,7 @@ Stwo/Starknet  M31           16         14          124-bit   Production
 Hemera         Goldilocks    16         16          256-bit   Genesis
 ```
 
-The combination of Goldilocks + $t=16$ + $R_P=16$ is novel. The individual components are battle-tested across billions of proofs. The 3.2× proving cost increase over Plonky3 baseline is the price of permanent-grade security — acceptable because hash proving is a minority of total system proving cost. See [[hemera/spec]] for the full decision record.
+Goldilocks + $t=16$ with the Poseidon2 reference matrices is the audited construction; hemera runs it at $R_F=12$, $R_P=48$ — 240 S-boxes against the reference's 150 (8 + 22 rounds), 1.6× the in-circuit cost. The individual components are battle-tested across billions of proofs. The margin is the price of permanent-grade security — acceptable because hash proving is a minority of total system proving cost. See [[hemera/spec]] and [[hemera cryptanalysis]] for the full decision record.
 
 ## 5. The Tri-Kernel
 
@@ -495,7 +496,7 @@ $$p = 2^{64} - 2^{32} + 1 = 18446744069414584321$$
 
 Efficient reduction: $a \bmod p = a_{\text{lo}} - a_{\text{hi}} \times (2^{32} - 1) + \text{correction}$. A field multiplication is a single CPU instruction. The primitive root is 7. The $2^{32}$-th root of unity exists, enabling NTT-based polynomial multiplication for proofs.
 
-Hash function: [[Hemera]] (Poseidon2-Goldilocks, $t=16$, $R_P=16$). State: 16 field elements. Rate: 8 elements. Cost: ~736 zheng constraints per permutation. See §4.
+Hash function: [[Hemera]] 0.4 (Poseidon2-Goldilocks, $t=16$, $R_F=12$, $R_P=48$, x⁷ every round). State: 16 field elements. Rate: 8 elements. Cost: ~1,440 zheng constraints per permutation. See §4.
 
 ### 7.2 Value Tower
 
@@ -544,9 +545,9 @@ Layer 3 — five jets for recursive verification: hash, poly_eval, merkle_verify
 | 1 | xor, and, not, shl | 1 | ~64 each |
 | 2 | call | 1 + constraint | constraint rows |
 | 2 | look | 1 + proof | BBG proof rows |
-| 3 | hash | 736 | ~736 |
+| 3 | hash | 1,440 | ~1,440 |
 | 3 | poly_eval(N) | N | ~N |
-| 3 | merkle_verify(d) | d × 736 | ~d × 736 |
+| 3 | merkle_verify(d) | d × 1,440 | ~d × 1,440 |
 | 3 | fri_fold(N) | N/2 | ~N/2 |
 | 3 | ntt(N) | N·log(N) | ~N·log(N) |
 
@@ -721,7 +722,7 @@ The nullifier cannot be derived from the commitment (needs secret), cannot revea
 
 ### 10.3 Transaction Circuit
 
-The UTXO set is represented as a polynomial rather than a Merkle tree. Polynomial inclusion proofs cost ~1,000 constraints vs ~9,600 for Merkle — a 10× improvement, because field operations cost 1 constraint each while hash operations cost ~736.
+The UTXO set is represented as a polynomial rather than a Merkle tree. Polynomial inclusion proofs cost ~1,000 constraints vs ~18,700 for Merkle — an 18× improvement, because field operations cost 1 constraint each while hash operations cost ~1,440.
 
 Total circuit: ~10,000 constraints. With zheng optimizations: ~7,000 gates. Proof generation: ~0.3-0.8 seconds. Proof size: ~50-80 KB. Verification: ~1-3 ms.
 

@@ -296,7 +296,7 @@ see [[structural sync]] for the five-layer framework. see [[cyber/research/struc
 
 ```
 per sample:      NMT inclusion proof → O(log n) Hemera hashes
-                 at n = 2³²: 32 × 736 = 23,552 constraints per sample
+                 at n = 2³²: 32 × 1,440 = 46,080 constraints per sample
 20 samples:      20 × 23,552 = 471,040 constraints
 bandwidth:       20 × 1 KiB = 20 KiB per verification
 ```

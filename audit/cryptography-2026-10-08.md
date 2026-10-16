@@ -9,6 +9,8 @@ date: 2026-10-08
 
 # cryptographic assumptions audit
 
+superseded by hemera 0.4 (2026-10-16): the hemera rows below describe the 0.3 profile (x⁻¹ partial rounds, R_F = 8, R_P = 16), replaced by profile hemera#15 — x⁷ in every round, 6 + 6 + 48 rounds, Poseidon2 reference matrices; see [[hemera cryptanalysis]] and `hemera/audit/profile-0.4-2026-10.md`. kept as the record of 2026-10-08.
+
 prompted by the october 2026 debate: AI-assisted mathematics may erode structured assumptions (curves, lattices) faster than expected, and hash-based constructions are the conservative refuge. question asked: how does mudra, and the stack under it, stand against that view.
 
 ## 1. the external picture, as of 2026-10-08
