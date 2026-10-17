@@ -678,7 +678,7 @@ the nation as a navigation tree: six shelves, each with a contract README.
     - land/ — **where** *(promoted from research/cyb-land; 42 pages move in, 23 empty die)*
         - visit · stay · activities · attractions · community · flora
     - [[cyberia/community|community]] — **who**: talents · chronicle *(receives 22 valley entries from cyber's blog)*
-    - [[cyberia/courses/README|courses]] — **teaching**: [[cyberia/courses/edge-city-patagonia-2025|edge-city-patagonia-2025]] (6 lessons)
+    - courses — **teaching**: index in the blog ([[courses]]), content in cyber valley ([[edge city patagonia 2025]], 6 lessons)
     - [[cyberia/research/README|research]] — **the workbench**, explicitly unfinished
         - [[cyberia/research/mimi/README|mimi]] · [[cyberia/research/migration-market/README|migration-market]] · [[cyberia/research/genome-protocol/README|genome-protocol]] · [[cyberia/research/oxytocin/README|oxytocin]] · [[cyberia/research/cyber-sheep/README|cyber-sheep]] · [[cyberia/research/cyberia-my/README|cyberia-my]] · [[cyberia/research/tech/README|tech]] *(16 seeds keep pages, 26 fold to its table)*
         - incoming: [[smart capital]]
@@ -688,8 +688,8 @@ the nation as a navigation tree: six shelves, each with a contract README.
 
 | page | words | verdict | why |
 |---|---|---|---|
-| [[cyberia/courses/README|courses/README README]] | 51 | stays · courses | teaching |
-| [[cyberia/courses/edge-city-patagonia-2025|edge-city-patagonia-2025]] | 373 | stays · courses | teaching |
+| [[courses|courses index]] | 51 | moved → cyberia-blog/courses.md 2026-10-08 | the index of field intensives |
+| [[edge city patagonia 2025]] | 373 | moved → cyber-valley/courses/ 2026-10-08 | the course content, six lessons |
 | [[cyberia/courses/edge-city-patagonia-2025/biome engineering|biome engineering]] | 886 | stays · courses | teaching |
 | [[cyberia/courses/edge-city-patagonia-2025/bostrom story|bostrom story]] | 294 | stays · courses | teaching |
 | [[cyberia/courses/edge-city-patagonia-2025/collective intelligence|collective intelligence]] | 239 | stays · courses | teaching |
@@ -703,7 +703,7 @@ the nation as a navigation tree: six shelves, each with a contract README.
 | [[cyberia/foundation/org|org]] | 475 | stays · foundation | why the nation |
 | [[cyberia/foundation/space doctrine|space doctrine]] | 1252 | stays · foundation | why the nation |
 | [[cyberia/foundation/strategy|strategy]] | 771 | stays · foundation | why the nation |
-| [[cyberia/foundation/vision|vision]] | 3287 | stays · foundation | why the nation |
+| [[cyber valley vision|vision]] | 3287 | moved → cyber-valley/vision.md 2026-10-07 | the valley's 2025 pitch |
 | [[cyberia/foundation/whitepaper|whitepaper]] | 1860 | stays · foundation | why the nation |
 | [[cyberia/README|cyberia README]] | 93 | stays · index | the nation face |
 | [[cyberia/community|community]] | 36 | stays · index | the nation face |
