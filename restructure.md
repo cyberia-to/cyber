@@ -673,7 +673,7 @@ four claims on the table, each a separate yes/no:
 the nation as a navigation tree: six shelves, each with a contract README.
 
 - [[cyberia/README|README]] — **the nation**
-    - [[cyberia/foundation/README|foundation]] — **why**: [[cyberia/foundation/vision|vision]] · [[cyberia/foundation/manifesto|manifesto]] · [[cyberia/foundation/whitepaper|whitepaper]] · [[cyberia/foundation/architecture|architecture]] · [[cyberia/foundation/strategy|strategy]] · [[cyberia/foundation/space doctrine|space doctrine]] · [[cyberia/foundation/org|org]] · [[cyberia/foundation/cyberian|cyberian]] · [[cyberia/explanation/your share of the sun|your share of the sun]] *(moves in)*
+    - [[cyberia/README|foundation]] — **why**: [[cyberia/vision|vision]] · [[cyberia/manifesto|manifesto]] · [[cyberia/whitepaper|whitepaper]] · [[cyberia/architecture|architecture]] · [[cyberia/strategy|strategy]] · [[cyberia/space doctrine|space doctrine]] · [[cyberia/org|org]] · [[cyberia/cyberian|cyberian]] · [[cyberia/explanation/your share of the sun|your share of the sun]] *(moves in)*
     - [[cyberia/protocol/README|protocol]] — **how the state runs**: [[cyberia/protocol/century-index|century index]] · [[cyberia/protocol/bank-above-banks|bank above banks]] · [[cyberia/protocol/location proof|location proof]] · [[cyberia/protocol/space-accounting|space accounting]] · [[cyberia/protocol/services|services]] · [[cyberia/protocol/system|system]] · [[cyberia/protocol/marketplace|marketplace]] · [[cyberia/protocol/marketplace-spec|marketplace spec]] · [[cyberia/protocol/ladder|ladder]] · [[cyberia/protocol/orgs|orgs]] · [[cyberia/protocol/ephemeris|ephemeris]] · [[cyberia/protocol/dyson sphere|dyson sphere]] · [[cyberia/protocol/maps|maps]] *(absorbs its 7 one-liners)*
     - land/ — **where** *(promoted from research/cyb-land; 42 pages move in, 23 empty die)*
         - visit · stay · activities · attractions · community · flora
@@ -701,15 +701,15 @@ the nation as a navigation tree: six shelves, each with a contract README.
 | [[cyberia/courses/edge-city-patagonia-2025/cyber valley story|cyber valley story]] | 813 | stays · courses | teaching |
 | [[cyberia/courses/edge-city-patagonia-2025/energy and water system|energy and water system]] | 893 | stays · courses | teaching |
 | [[cyberia/courses/edge-city-patagonia-2025/soil, heat and carbon|soil, heat and carbon]] | 450 | stays · courses | teaching |
-| [[cyberia/foundation/README|foundation/README README]] | 52 | stays · foundation | why the nation |
-| [[cyberia/foundation/architecture|architecture]] | 3083 | stays · foundation | why the nation |
-| [[cyberia/foundation/cyberian|cyberian]] | 480 | stays · foundation | why the nation |
-| [[cyberia/foundation/manifesto|manifesto]] | 329 | stays · foundation | why the nation |
-| [[cyberia/foundation/org|org]] | 475 | stays · foundation | why the nation |
-| [[cyberia/foundation/space doctrine|space doctrine]] | 1252 | stays · foundation | why the nation |
-| [[cyberia/foundation/strategy|strategy]] | 771 | stays · foundation | why the nation |
+| [[cyberia/README|foundation/README README]] | 52 | stays · foundation | why the nation |
+| [[cyberia/architecture|architecture]] | 3083 | stays · foundation | why the nation |
+| [[cyberia/cyberian|cyberian]] | 480 | stays · foundation | why the nation |
+| [[cyberia/manifesto|manifesto]] | 329 | stays · foundation | why the nation |
+| [[cyberia/org|org]] | 475 | stays · foundation | why the nation |
+| [[cyberia/space doctrine|space doctrine]] | 1252 | stays · foundation | why the nation |
+| [[cyberia/strategy|strategy]] | 771 | stays · foundation | why the nation |
 | [[cyber valley vision|vision]] | 3287 | moved → cyber-valley/vision.md 2026-10-07 | the valley's 2025 pitch |
-| [[cyberia/foundation/whitepaper|whitepaper]] | 1860 | stays · foundation | why the nation |
+| [[cyberia/whitepaper|whitepaper]] | 1860 | stays · foundation | why the nation |
 | [[cyberia/README|cyberia README]] | 93 | stays · index | the nation face |
 | [[cyberia/community|community]] | 36 | stays · index | the nation face |
 | [[cyberia/protocol/README|protocol/README README]] | 874 | stays · protocol | how the state runs |
