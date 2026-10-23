@@ -688,6 +688,10 @@ the nation as a navigation tree: six shelves, each with a contract README.
 
 | page | words | verdict | why |
 |---|---|---|---|
+| [[cyberia/land/README\|land]] | 24 | moved → cve/land.md 2026-10-23 | the estate is cve; cve/land/ had 22 pages and no index — this is it, alias `land` kept |
+| [[cyberia/land/flora\|flora]] | 20 | deleted 2026-10-23 | a two-row shelf; its rows are organiq pages now |
+| [[nitrogener]] | 96 | moved → organiq/nitrogener.md 2026-10-23 | a plant-use category; the species that carry `:nitrogener` are organiq's |
+| [[landscape]] | 30 | moved → organiq/landscape.md 2026-10-23 | a plant-use category, beside cover, firewood, phytominers |
 | [[courses|courses index]] | 51 | moved → cyberia-blog/courses.md 2026-10-08 | the index of field intensives |
 | [[edge city patagonia 2025]] | 373 | moved → cyber-valley/courses/ 2026-10-08 | the course content, six lessons |
 | [[cyberia/courses/edge-city-patagonia-2025/biome engineering|biome engineering]] | 886 | stays · courses | teaching |
