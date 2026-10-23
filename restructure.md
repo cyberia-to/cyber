@@ -688,6 +688,7 @@ the nation as a navigation tree: six shelves, each with a contract README.
 
 | page | words | verdict | why |
 |---|---|---|---|
+| research/ (every row below marked `stays · research`) | — | moved → cyberia/projects/ 2026-10-23 | the research packs are projects; one folder, one table ([[cyberia/projects/README\|projects]]); `research/README` deleted, its rows merged |
 | [[cyberia/land/README\|land]] | 24 | moved → cve/land.md 2026-10-23 | the estate is cve; cve/land/ had 22 pages and no index — this is it, alias `land` kept |
 | [[cyberia/land/flora\|flora]] | 20 | deleted 2026-10-23 | a two-row shelf; its rows are organiq pages now |
 | [[nitrogener]] | 96 | moved → organiq/nitrogener.md 2026-10-23 | a plant-use category; the species that carry `:nitrogener` are organiq's |
