@@ -1,73 +1,214 @@
-# AGENTS.md — rules for every coding agent in this repository
+# AGENTS.md — cyber
 
-This file is read by Codex, Kimi Code, Grok Build, Cursor and any tool that
-honours AGENTS.md. Claude reads CLAUDE.md in the same directory; both say the
-same thing, and the doctrine behind both is `~/cyber/cyberia/dev.md`
-(published as the [[cyberia/dev]] page). Read that page first when in doubt.
+> the doctrine of the home is `~/cyber/AGENTS.md`; it applies here first. Claude Code receives both files at session start through `~/.config/cyber/agents-md.nu`; other agents read them in order.
 
-## release train (cyb, cyber, soft3)
+## Git Workflow
+- **Commit by default.** After completing a change, commit it. Don't wait
+  for the user to say "commit". Only stage without committing when the user
+  explicitly asks to stage.
+- **Atomic commits.** One logical change per commit. Never combine two
+  independent features, fixes, or refactors in a single commit. If you
+  made two separate changes, make two separate commits. Don't commit
+  half-finished work either — if unsure whether the change is complete,
+  ask before committing.
+- **Conventional commits.** Use prefixes: `feat:`, `fix:`, `refactor:`,
+  `docs:`, `test:`, `chore:`.
+## Knowledge Graph Purpose
 
-- Truth is origin. A release candidate is built only from committed, pushed
-  inputs on the default branch of every repository it closes over. A working
-  tree is never an input; a dirty or unpushed input makes a candidate local,
-  and a local candidate can never become a release.
-- One candidate every friday 12:00 UTC, cut by an agent from origin:
-  `candidate-YYYYMMDD.N`, a draft pre-release on GitHub with binaries per
-  platform (macOS arm64/x64, Linux arm64/x64; cyb adds the Android apk; no
-  Windows, no iOS), `SHA256SUMS`, `sources.json`, `candidate.json`,
-  `release-validation.json`.
-- Gates are executable and named in each repository's CLAUDE.md / AGENTS.md.
-  A red gate ships as a red candidate with its evidence; never hide it, never
-  fix the artifact by hand.
-- Versions are semver. One bump is one pull request `chore: <component>
-  <version>` touching `Cargo.toml`, `CHANGELOG.md` and the sibling pins in the
-  other two repositories, nothing else. Tags are `v<version>` on the default
-  branch. `soft3/release/phase1.toml` pins the sibling revisions; drift from a
-  pin is a red gate and is fixed by a bump PR, never by editing a path.
-- Freeze from the cut until the verdict: nothing merges into the three default
-  branches; candidate fixes go to `release/<date>` as `fix:` commits.
-- Roles: agents cut candidates, run gates, write receipts to
-  `audit/release-<date>/` and open bump PRs. Only the owner merges a bump,
-  promotes a candidate to a release, publishes to crates.io, pushes a tag or
-  runs `make ship`. An agent never does any of those.
+This repository owns the cyber product binary and the seed knowledge base
+for planetary superintelligence. `src/` contains product orchestration;
+component algorithms remain in sibling repositories. `Cargo.toml` consumes
+the soft3 assembly library. `specs/node-product.md` and `specs/cyb-node.md`
+describe the current runtime boundary and integration contract. Pages
+are pure markdown with YAML frontmatter. The publisher is
+[optica](https://github.com/cyberia-to/optica) — a standalone knowledge
+graph publisher.
 
-## git
+## Page Format
 
-- Commit after every logical unit of work, one change per commit, conventional
-  prefixes (`feat:`, `fix:`, `refactor:`, `docs:`, `test:`, `chore:`), message
-  says why.
-- Stage by explicit paths. Never `git add -A`. Never amend, rebase, reset,
-  stash, checkout files or force-push on shared branches; never rewrite
-  history. No AI co-authorship trailers.
-- Zero warnings and green tests before a commit; if red, prefix `wip:` and
-  quote the first error in the message.
-- Other people's working trees under `~/cyber/<repo>` may be dirty with
-  their own work: never edit, stage or discard it; work in a worktree.
+Pages use YAML frontmatter for metadata and standard markdown for content:
+```yaml
+---
+tags: cyber, menu
+crystal-type: entity
+crystal-domain: cyber
+icon: "\U0001F535"
+---
+```
+Wiki-links (`[[page]]`) and query expressions (`{{query (...)}}`,
+`{{embed [[page]]}}`) are the graph's own syntax, evaluated by the
+publisher.
 
-## moving a page out of cyber
+Namespaced pages live in directories: `root/bostrom/infrastructure/servers.md`
 
-Nothing is thrown away by default. Settled and implemented → the owner's spec
-or an existing explainer, with measured numbers. A projection with a named
-assumption and an open question → the owner's `roadmap/`, one file per
-question, with the registry's status words. A cross-component argument →
-`soft3/docs/` as an explainer with each projection marked measured, refuted
-or open. Delete only duplicates and refuted-and-rewritten claims. Remove the
-ledger row of a deleted page; keep old wiki-links resolving via `alias:`.
+## Building cyber
 
-## reports
+Binary: `cargo build --release --locked`. Tests: `cargo test --locked`.
+Configuration: `./target/release/cyber init`; server:
+`./target/release/cyber node`. `nu scripts/release.nu` builds a local
+artifact and records sibling-source provenance in `dist/`.
 
-Audits, benchmarks and release validation go to `<repo>/audit/`; contracts
-to `specs/`; observed results never in a spec. Every number in a report
-names the command and the revision it came from.
+## Release train
 
-## vocabulary
+Rules: `~/cyber/cyberia/dev.md` § release train. A candidate is cut every
+friday 12:00 UTC by an agent from `origin/master` only; a working tree is
+never an input. Gates: `cargo build --release --locked`, `cargo test --locked`,
+`nu scripts/release.nu --locked-sources` (dist/ + SHA256SUMS + sibling
+provenance), and the graph builds with optica. A red gate ships as a red
+candidate with its evidence. One bump is one PR `chore: cyber <version>`
+(Cargo.toml, CHANGELOG, sibling pins in cyb and soft3). Receipts go to
+`audit/release-<date>/`; the launch page work log gets one row per
+candidate. Agents cut, gate and open bump PRs; only the owner merges a
+bump, promotes a candidate, publishes or tags.
 
-Root terms of the cybergraph: file (the thing), particle (its 32-byte hemera
-identity), cyberlink, neuron, token, focus. Never CID, user, edge. Cyber
-graph pages: no bold, no definitions by negation, wiki-links for concepts.
+The protocol site has a separate build:
 
-## platform
+this repo is the protocol. [cyber.page](https://cyber.page) publishes
+these pages at the root, with every public subgraph of the census mounted
+beside them (`soft3/zheng`, `cybics/crystal`, `bootloader/bostrom`, …) so
+each wiki-link resolves exactly as on localhost. The census is
+`~/cyber/cyberia-blog/subgraphs.toml`, read by `scripts/build.nu --census`;
+the chronicle lives in `~/cyber/cyberia-blog` → [cyberia.blog](https://cyberia.blog).
+The publish workflow gates on the litepaper: any yellow (unresolved)
+link there fails the build. Never cut the subgraphs out of
+the build again — that is what made most protocol links yellow between
+2026-09-07 and 2026-10-13.
 
-macOS dev machine: BSD `sed` has no `\b` (use `[[:<:]]w[[:>:]]`); zsh does
-not word-split unquoted `$var`; `~/.cargo/bin` and `/opt/homebrew/bin` are
-on PATH; sibling repositories resolve by relative path from `~/cyber`.
+Local workflow:
+
+```
+cd ~/cyber/cyber
+nu scripts/build.nu --census ~/cyber/cyberia-blog/subgraphs.toml --public-only   # what cyber.page ships
+nu scripts/build.nu       # protocol pages alone (fast, links to siblings stay yellow)
+nu scripts/serve.nu       # protocol-only serve
+nu scripts/dev.nu         # rebuild optica + restart serve
+```
+
+standalone:
+
+```
+optica build ~/cyber/cyber
+optica serve ~/cyber/cyber --open
+```
+
+full project graph (subgraphs + blog):
+
+```
+cd ~/cyber/cyberia-blog
+nu scripts/sync.nu
+nu scripts/serve.nu
+```
+
+Port 8888 (from `publish.toml` base_url). Port 8080 is reserved.
+## Tagging Conventions
+
+Every page should have a `tags:` field in frontmatter. Key project tags (lenses):
+- `cyber` — the superintelligence protocol
+- `cyb` — the browser/interface
+- `cyberia` — the cyber network state
+- `bostrom` — the bootloader chain
+- `cyber valley` — the physical city/estate
+
+Domain tags: `article`, `cybernomics`, `compound`, `ticker`, `person`,
+`ui`, `recipe`. Biology pages use `species`, `genus`. Body pages use
+`muscle`. Ops pages use `operation`.
+## Writing Style
+- **Never define by negation.** Do not write "this is not X" or "not a Y
+  but a Z". Say what something IS. Negation is a crutch — state the
+  positive identity directly.
+- **Never use bold (`**text**`).** Bold is banned from the graph. For
+  emphasis use: YAML frontmatter for key-value pairs, `# heading` for
+  section titles, `[[wiki-link]]` for inline emphasis on concepts. If a
+  term does not deserve its own page, it does not need emphasis — just
+  write it plain.
+## Wiki-Link Plurals
+
+Never write `[[term]]s` with a floating `s` outside the link. Every
+concept page that has a meaningful plural must include both forms in its
+`alias:` line (e.g. `alias: isomorphisms` on the `isomorphism` page).
+Then link the plural directly: `[[isomorphisms]]` instead of
+`[[isomorphism]]s`. This keeps links clean and resolvable.
+## Shell: Nushell
+
+Use `nu -c '...'` or `nu script.nu` for all scripting. Nushell has
+structured data pipelines, built-in dataframes, and powerful search/filter
+commands — use them instead of bash+sed+awk+grep chains. Examples:
+- list pages: `ls root/*.md | get name`
+- find untagged: `glob root/**/*.md | where {|f| not ((open --raw $f) | str starts-with "---\n") }`
+- count by tag: `glob root/**/*.md | each {|f| open --raw $f | lines | where $it =~ 'tags:' | first } | where $it =~ 'species' | length`
+- dataframe ops: `dfr open`, `dfr filter`, `dfr group-by` for bulk analysis
+
+Reserve bash only for git commands and system tools that have no nu equivalent.
+### Nushell input/output formatting
+- **Input**: for non-trivial analysis (>3 lines), write a `.nu` script
+  into `analizer/` in this repo (cyber) and run via `nu analizer/script.nu <graph-path>`.
+  One-liners are fine as `nu -c '...'`.
+- **Chat display**: always use ` ```nu ` fenced code blocks when showing
+  nushell code in conversation so syntax highlighting works in Zed.
+- **Output in scripts**: wrap table pipelines in `print (... | table)`
+  so all sections render. Bare `| table` at end of pipeline only works
+  for the last expression — intermediate tables need explicit `print`.
+### Nushell script library (`analizer/`)
+
+All nushell scripts live in `~/cyber/cyber/analizer/`. Scripts are graph-agnostic:
+they take the graph path as an argument via `def main [graph_path: string]`.
+
+Usage from any directory:
+```
+nu ~/cyber/cyber/analizer/stats.nu ~/git/cloud-forest
+nu ~/cyber/cyber/analizer/analyze.nu ~/cyber/cyber
+```
+
+Scripts:
+- `analizer/node-sources.nu` — capture, check, inventory and independently check out the exact repository revisions for the Cyber node build
+- `analizer/node-sources-test.nu` — test dirty sources, wrong revisions, Cargo lock drift, missing pins and package drift in disposable checkouts
+- `analizer/node-release.nu` — package qualified native binaries and collect matching platform inventories for GitHub Releases
+- `analizer/node-release-test.nu` — reject unqualified builds, missing or altered inventories, wrong source locks and mismatched release tags
+- `analizer/analyze.nu` — general analytics (files, tags, categories, links, IPFS)
+- `analizer/stats.nu` — graph statistics (orphans, broken links, content types)
+- `analizer/migrate.nu` — migrate Logseq format to pure markdown (YAML frontmatter, directories)
+- `analizer/ipfs.nu` — pre-commit hook: upload media/ to Pinata IPFS, rewrite URLs in markdown (credentials from `~/.config/cyber/env`)
+- `analizer/crosslink_topology.nu` — crosslink topology analysis for semantic core (wiki-link classification, hub/island detection, statistics)
+- `analizer/concat.nu` — concatenate entire graph into single file for LLM context loading
+- `analizer/context.nu` — smart context packer: scores pages by gravity/density, greedy knapsack into token budget. `--pinned [rel/path.md ...]` forces specific pages in before the greedy loop
+- `analizer/trikernel.nu` — compute tri-kernel (diffusion, springs, heat) over wiki-link graph, write focus + gravity + density to frontmatter. Runs on new moon only (±1 day); use `--force` to override, `--dry-run` to preview
+
+- `analizer/dangling.nu` — alias-aware dangling wiki-link detector (basenames, paths, alias: frontmatter; case-insensitive; top 50 + stats)
+- `analizer/local-links.nu` — filesystem Markdown link checker; graph path plus optional explicit JSON `--files` list
+- `analizer/add-footer.nu` — append `discover all [[concepts]]` footer to core-tagged pages missing it
+- `analizer/codematter.nu` — add comment-frontmatter to code files (.rs, .nu, .toml, .py, .sh, .yml), integrating source into cybergraph as particles
+
+When adding a new script: place it in `analizer/`, accept `graph_path` as first
+arg, and update this list.
+## Tri-Kernel Weight Updates (Lunar Cycle)
+
+Frontmatter weights (diffusion, springs, heat, focus, gravity, density)
+are updated once per lunar cycle on the new moon (±1 day). This prevents
+constant git noise from auto-computed fields across all repos.
+
+- `trikernel.nu` enforces this with a date guard; `--force` overrides
+- `--dry-run` computes and prints without writing (always allowed)
+- After a new moon run: commit all weight changes in one atomic commit
+  per repo with prefix `chore: new moon weights YYYY-MM-DD`
+- Between moons: never run trikernel without `--dry-run` or `--force`
+
+2026 new moons: Jan 18, Feb 17, Mar 19, Apr 17, May 16, Jun 15,
+Jul 14, Aug 12, Sep 11, Oct 10, Nov 9, Dec 8.
+
+## Parallel Agents for Graph-Wide Tasks
+
+When a task touches many pages across the graph (bulk tagging, renaming,
+formatting fixes), split the work into non-overlapping scopes by filename
+or other criteria, then launch several agents in parallel. Before
+splitting: enumerate the full file list, partition it into disjoint sets
+(e.g. by alphabetical range, by tag, by namespace), and assign each set
+to a separate agent. No two agents should ever touch the same file.
+## License
+
+Cyber License: Don't trust. Don't fear. Don't beg.
+
+The shared candidate engine is pinned by `release/soft3.toml` and
+`.github/workflows/release-train.yml`. Soft3 runs shared stack gates; Cyber adds
+`cyber-tests`, `cyber-release`, `optica-build`, `protocol-graph`, and
+`soft3-dependency`. `specs/releases.md` defines the evidence contract. Node CI
+artifacts retain their development status until the shared train passes.
