@@ -118,7 +118,7 @@ Private notes, task continuations and history retain their owning graph/custody
 contracts. Runtime commit index, SignalChain step, native operation position and
 network finality remain distinct.
 
-[Native adapter](../../soft3/specs/native-node.md) and
+[Native adapter](../../cybernode/specs/native-node.md) and
 [signed profile](../../soft3/specs/signed-native-adapter.md) own exact wire,
 limits, generation guards and recovery. Source-level checks are indexed in
 [convergence evidence](../../soft3/audit/neuron-cell/implementation.md).
