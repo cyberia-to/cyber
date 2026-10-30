@@ -15,7 +15,7 @@ the owner (2026-10-30): pussy attempts 2026-11-05; bostrom launches by readiness
 
 ## for
 
-the landings of the release lines and the proof stack leave pussy's critical path; bostrom's open allocation decisions lose their deadline; the holes become a public table with a fix lane each.
+bostrom's open decisions lose their deadline; the holes become a public table with a fix lane each; proposed, not decided: the landings of the release lines and the proof stack leave pussy's critical path.
 
 ## against
 
