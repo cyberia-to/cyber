@@ -12,7 +12,7 @@ one crate. one binary. default network: **spacepussy-test** (soft3 chaosnet).
 rustup update stable         # soft3 needs ≥ 1.85
 export PATH="$HOME/.cargo/bin:$PATH"
 
-cargo install cybernode --force  # the node + operator CLI
+cargo install --git https://github.com/cyberia-to/cybernode cybernode --force  # the node + operator CLI; the crates.io name is not published yet
 cargo install true-cyber --force
 
 cyber version                  # cyber … (true-cyber)
@@ -68,7 +68,7 @@ cyber help
 
 | face | install | role |
 |------|---------|------|
-| [[cybernode]] | `cargo install cybernode` | the node |
+| [[cybernode]] | `cargo install --git https://github.com/cyberia-to/cybernode cybernode` | the node; crates.io name not published yet |
 | [[cyb]] | `cargo install cyb` | robot · binary `cy` |
 
 day-one is `true-cyber` alone.
