@@ -103,7 +103,7 @@ finality and release-platform acceptance.
 
 and the robot: [[cyb]] — one binary that carries the graph, a terminal, and a local mind on macOS and Android; it paints the [[cybergraph]] at 100+ fps and answers from a model running on your own silicon. get it at [cyb.ai](https://cyb.ai)
 
-cyb retains a default public endpoint for spacepussy-test — the [[soft3]] chaosnet on cybernode (`https://cyb.ai/spacepussy-test`). a legacy name/URL entry is read-only until its native network/profile is explicitly pinned. the local node above serves its own state at loopback. tokens and state are test. mainnet arrives at [[launch]]
+cyb retains a default public endpoint for spacepussy-test — the [[soft3]] chaosnet on apparatus hosts (`https://cyb.ai/spacepussy-test`). a legacy name/URL entry is read-only until its native network/profile is explicitly pinned. the local node above serves its own state at loopback. tokens and state are test. mainnet arrives at [[launch]]
 
 [[litepaper]] · [[whitepaper]] · [[cyb]] · [[cyber/$CYB|$CYB]]
 
