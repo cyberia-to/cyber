@@ -27,9 +27,9 @@ the chronicle, the subgraph census, and the full project graph live at [cyberia.
 run as a [[neuron]] on **spacepussy-test** (soft3 chaosnet). tokens are test; the graph is real
 
 ```bash
-cargo install soft3 true-cyber --force
+cargo install cybernode true-cyber --force
 cyber sync
-soft3 node --home ~/.spacepussy-test --bind 127.0.0.1:7780
+cybernode node --home ~/.spacepussy-test --bind 127.0.0.1:7780
 ```
 
 public rpc: `https://cyb.ai/spacepussy-test` · engine cybergraph + bbg · guide [[install]] · [[soft3/docs/launch|launch]]
