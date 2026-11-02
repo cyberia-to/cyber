@@ -9,8 +9,8 @@ a ~3MB installer for [[cyb]]: `boot.dat` carries a mnemonic and a referrer, fetc
 
 this is the mechanics behind visibility as growth: every install already carries who sent it, so distribution needs no separate tracking layer — the referral graph is a byproduct of onboarding, not bolted onto it after the fact
 
-wiring: `cyb-boot-server` serves patched installer artifacts (encrypted wallet data baked in per referrer) behind [[cybernode]]'s proxy, auto-deployed on push via a GitHub webhook
+wiring: `cyb-boot-server` serves patched installer artifacts (encrypted wallet data baked in per referrer) behind [[apparatus]]'s proxy, auto-deployed on push via a GitHub webhook
 
-see [[referral]], [[cyb]], [[cybernode]]
+see [[referral]], [[cyb]], [[apparatus]]
 
 discover all [[concepts]]
