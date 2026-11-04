@@ -15,6 +15,8 @@ the owner (2026-11-04, this session; no other link exists): phase 1 is pussy alo
 
 2026-11-04 · intake is late. the page edit landed first, commit 64ec84ea on `launch/public-stack-2026-11-04`, before this task page. the first sentence above is the task.
 
+2026-11-04 · the pull request: [cyber#157](https://github.com/cyberia-to/cyber/pull/157), base `launch/pussy-first-2026-11-01`, stacked on [cyber#155](https://github.com/cyberia-to/cyber/pull/155). review requested from `cyberia-apparatus`. labels `wide`, `queue`.
+
 ## lane
 
 wide, computed. the diff is one repository and one contract, `launch.md`, which the phase-1 specifications are ordered to follow. contained needs a test on the part; this page has none. the production chain, keys and money stay as they are, so the lane stays wide.
