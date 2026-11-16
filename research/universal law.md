@@ -119,7 +119,7 @@ each step folds one claim into a running accumulator. after $N$ steps:
 - computational cost: $O(N)$
 - verification: one decider
 
-the per-fold cost and decider size of the retired fold over hemera do not hold; see [[soft3/proposals/proof-system-repair|the proof-system repair]].
+the per-fold cost and decider size of the retired fold over hemera do not hold; see [[soft3/projects/proof-system-repair|the proof-system repair]].
 
 the compression ratio is exponential: $N$ instances in $O(N)$ work, verified in $O(1)$. the universal law appears as the gap between linear cost and exponential compression — the same gap that makes entropy encoding efficient.
 

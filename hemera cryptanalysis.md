@@ -8,7 +8,7 @@ date: 2026-10-16
 ---
 # hemera cryptanalysis
 
-[[hemera]] is the one material [[cyber]] consensus rests on: proof of work, block and transaction Merkle trees, every [[particle]], record commitments, nullifiers and every [[zheng]] Fiat–Shamir transcript. the private pool switches on only after a public cryptanalysis campaign on hemera has run at least 90 days with no result below 128 bits classical — gate G3 of the frozen-privacy proposal (`soft3/proposals/privacy-frozen.md` §5). this page is the public summary. the full campaign, with every derivation, the instance tables and the reproducible scripts, is [hemera/audit/campaign.md](https://github.com/cyberia-to/hemera/blob/release/0.4/audit/campaign.md); the receipt of the frozen profile is [hemera/audit/profile-0.4-2026-10.md](https://github.com/cyberia-to/hemera/blob/release/0.4/audit/profile-0.4-2026-10.md).
+[[hemera]] is the one material [[cyber]] consensus rests on: proof of work, block and transaction Merkle trees, every [[particle]], record commitments, nullifiers and every [[zheng]] Fiat–Shamir transcript. the private pool switches on only after a public cryptanalysis campaign on hemera has run at least 90 days with no result below 128 bits classical — gate G3 of the frozen-privacy proposal (`soft3/projects/privacy-frozen.md` §5). this page is the public summary. the full campaign, with every derivation, the instance tables and the reproducible scripts, is [hemera/audit/campaign.md](https://github.com/cyberia-to/hemera/blob/release/0.4/audit/campaign.md); the receipt of the frozen profile is [hemera/audit/profile-0.4-2026-10.md](https://github.com/cyberia-to/hemera/blob/release/0.4/audit/profile-0.4-2026-10.md).
 
 ## the object
 

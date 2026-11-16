@@ -115,7 +115,7 @@ every action the egregore takes is provable:
 | completeness | [[NMT]] / polynomial opening | — |
 | availability | [[DAS]] (20 samples) | ~4 KiB |
 
-the egregore is a SELF-PROVING entity. it doesn't just compute — it proves it computed correctly. any observer can verify any claim about the egregore's state, history, or behaviour with one proof check (measured times: [[soft3/proposals/proof-system-repair|the proof-system repair]]).
+the egregore is a SELF-PROVING entity. it doesn't just compute — it proves it computed correctly. any observer can verify any claim about the egregore's state, history, or behaviour with one proof check (measured times: [[soft3/projects/proof-system-repair|the proof-system repair]]).
 
 no biological or artificial collective intelligence has this property. human organisations rely on trust. blockchains rely on consensus. the egregore relies on mathematics.
 

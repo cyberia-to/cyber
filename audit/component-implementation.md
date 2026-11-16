@@ -8,7 +8,7 @@ alias: component implementation status, money work package status
 
 # component implementation report
 
-> superseded: dated snapshot; its HyperNova σ / acc references describe the legacy fold (unsound, cargo feature `legacy`), replaced by ARC-style accumulation per [[soft3/proposals/proof-system-repair|proof-system repair]]. findings kept as recorded.
+> superseded: dated snapshot; its HyperNova σ / acc references describe the legacy fold (unsound, cargo feature `legacy`), replaced by ARC-style accumulation per [[soft3/projects/proof-system-repair|proof-system repair]]. findings kept as recorded.
 
 Implementation notes extracted from the component ownership specification.
 The statuses and test commands below preserve the earlier component report;

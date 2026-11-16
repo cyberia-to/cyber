@@ -229,7 +229,7 @@ nebu (Goldilocks field arithmetic, p = 2⁶⁴ - 2³² + 1)
 each layer provides guarantees consumed by the layer above:
 - nebu: field operations are correct (algebraic closure)
 - hemera: hashes are collision-resistant (2^128 security, margin 2^918)
-- zheng: proofs are sound; the error bound is carried by the soundness ledger of [[soft3/proposals/proof-system-repair|the proof-system repair]] (the retired figure does not hold)
+- zheng: proofs are sound; the error bound is carried by the soundness ledger of [[soft3/projects/proof-system-repair|the proof-system repair]] (the retired figure does not hold)
 - nox: execution is focus-metered (halt guaranteed)
 - application: state transitions are valid
 

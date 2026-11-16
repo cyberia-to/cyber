@@ -670,7 +670,7 @@ The world state $W = (\text{BBG}, \text{edge\_store}, \text{privacy\_state})$. F
 Validity conditions: authorization (signature or ZK proof), sufficient balance, sufficient [[focus]], conservation ($\sum \text{focus}' = 1$, $\sum \text{balance}' = B_{\text{total}}$), index consistency, content availability, no double-spend.
 
 ### 9.3 zheng Verification
-[[zheng]] provides the proof system: a SuperSpartan IOP over CCS with sumcheck and a hash-only polynomial commitment; the commitment and the accumulation scheme are set by [[soft3/proposals/proof-system-repair|the proof-system repair]]. The choice aligns with [[nox]]'s design: no trusted setup, hash-only security (post-quantum), native compatibility with Goldilocks field arithmetic.
+[[zheng]] provides the proof system: a SuperSpartan IOP over CCS with sumcheck and a hash-only polynomial commitment; the commitment and the accumulation scheme are set by [[soft3/projects/proof-system-repair|the proof-system repair]]. The choice aligns with [[nox]]'s design: no trusted setup, hash-only security (post-quantum), native compatibility with Goldilocks field arithmetic.
 
 | Property | SNARK | zheng |
 |----------|-------|-------|
