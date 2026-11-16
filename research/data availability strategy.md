@@ -5,7 +5,7 @@ crystal-domain: cyber
 date: 2026-03-23
 ---
 
-> superseded: this page describes the retired zheng design (Merkle-free Brakedown, unchecked HyperNova fold, ~2 KiB / ~5 μs figures). It is unsound and its numbers do not hold. The repair and the measured numbers live in [[soft3/projects/proof-system-repair|soft3 proposals/proof-system-repair]].
+> superseded: this page describes the retired zheng design (Merkle-free Brakedown, unchecked HyperNova fold, ~2 KiB / ~5 μs figures). It is unsound and its numbers do not hold. The repair and the measured numbers live in [[soft3/projects/proof-system-repair|soft3 projects/proof-system-repair]].
 
 # data availability: from sampling to algebraic proofs
 
