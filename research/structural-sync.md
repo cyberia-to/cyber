@@ -165,7 +165,7 @@ A signal is a self-certifying batch of state transitions. During creation:
 3. The accumulator is one hemera Merkle root plus a fixed number of claims, independent of the number of steps
 4. At computation end, one decider — a single WHIR opening of the final accumulator — yields the proof (goal ≤ 64 KB, verify ≤ 1 ms; measured TODO(F-numbers))
 
-The earlier design used a CCS folding scheme [10] over hemera; it was unsound (hemera is a hash, not a homomorphic commitment), and its per-step costs do not hold. Accumulation lands in zheng phase 3; see [[soft3/proposals/proof-system-repair|the proof-system repair]].
+The earlier design used a CCS folding scheme [10] over hemera; it was unsound (hemera is a hash, not a homomorphic commitment), and its per-step costs do not hold. Accumulation lands in zheng phase 3; see [[soft3/projects/proof-system-repair|the proof-system repair]].
 
 This is *proof-carrying computation*: the proof accumulates during execution rather than being generated afterward.
 

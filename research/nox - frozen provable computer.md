@@ -53,7 +53,7 @@ the arguments ARE the [[cyberlink]] 5-tuple. evaluating IS creating an edge. bef
 
 ## trace = proof
 
-every reduce() produces rows in the execution trace. this trace IS the [[zheng]] witness — no separate proof generation. [[SuperSpartan]] checks constraints via [[sumcheck]]. [[Brakedown]] commits with O(N) field ops. the rows accumulate during execution (the accumulation scheme is set by [[soft3/proposals/proof-system-repair|the proof-system repair]]). the boundary between execution and proving dissolves.
+every reduce() produces rows in the execution trace. this trace IS the [[zheng]] witness — no separate proof generation. [[SuperSpartan]] checks constraints via [[sumcheck]]. [[Brakedown]] commits with O(N) field ops. the rows accumulate during execution (the accumulation scheme is set by [[soft3/projects/proof-system-repair|the proof-system repair]]). the boundary between execution and proving dissolves.
 
 ## five execution regimes
 

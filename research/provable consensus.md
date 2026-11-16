@@ -205,7 +205,7 @@ with GPU acceleration (SuperSpartan's SpMV is embarrassingly parallel): ~2-3 min
 
 ### proof verification
 
-verifier time: the figure derived from the retired zheng design does not hold; the measured verifier lives in [[soft3/proposals/proof-system-repair|the proof-system repair]].
+verifier time: the figure derived from the retired zheng design does not hold; the measured verifier lives in [[soft3/projects/proof-system-repair|the proof-system repair]].
 
 one proof to verify that the complete tri-kernel (diffusion + springs + heat) over 2.9 million particles converged to the correct φ*. on a phone. without downloading the graph.
 

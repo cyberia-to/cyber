@@ -176,8 +176,8 @@ the ground: math ([[strata]]) · accelerate ([[honeycrisp]]) — beneath every s
 | [[soft3/docs/diagrams/README|docs/diagrams/README]] | 171 |
 | [[soft3/cli/README|cli/README]] | 232 |
 | [[soft3/schema/README|schema/README]] | 216 |
-| [[soft3/proposals/component-page-canon|proposals/component-page-canon]] | 509 |
-| [[soft3/proposals/cybergraph-sync-tade-architecture|proposals/cybergraph-sync-tade-architecture]] | 1739 |
+| [[soft3/projects/component-page-canon|projects/component-page-canon]] | 509 |
+| [[soft3/projects/cybergraph-sync-tade-architecture|projects/cybergraph-sync-tade-architecture]] | 1739 |
 | [[soft3/conformance/README|conformance/README]] | 194 |
 | [[soft3/conformance/specs/README|conformance/specs/README]] | 591 |
 | [[soft3/conformance/docs/README|conformance/docs/README]] | 477 |
@@ -232,7 +232,7 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
     - [[network]] — **the machine room**: the deep protocol articles (cips)
         - [[3c]] · [[channel]] · [[communication]] · [[hierarchy]] · [[light]] · [[gravity]] · [[luminosity]] · [[security]]
     - [[research]] — **the papers**: what is argued, not yet law
-        - [[research/physical analogies|physical analogies]] · [[research/algorithmic essence of superintelligence|algorithmic essence]] · [[research/knowledge capacity|knowledge capacity]] · [[research/link production|link production]] · [[research/universal law|universal law]] · [[research/egregore properties|egregore properties]] · [[research/future of computation|future of computation]] · [[research/neuroscience principles for machine mind|neuroscience principles]] · [[research/unified mining|unified mining]] · [[research/knowledge economy|knowledge economy]] · [[research/theoretical foundations|theoretical foundations]] · [[research/bootstrap|bootstrap]] · [[research/32-byte tokens|32-byte tokens]] · [[research/energy market|energy market]] · [[research/gradient descent|gradient descent]] · [[research/cybergraph model architecture|cybergraph model architecture]] · [[research/focus flow computation|focus flow computation]] · [[research/adaptive hybrid economics|adaptive hybrid economics]] · [[analizer]] · [[seer]] · [[research/privacy trilateral|privacy trilateral]] · **[[oikos|oikos]]** *(proposal: one token, one chain — the architecture; carries its own adoption map over ~/cyber and soft3)* · [[research/spectral cell division|spectral shard division]] *(proposal: graph partitioning and split/merge obligations; old research path retained for provenance)*
+        - [[research/physical analogies|physical analogies]] · [[research/algorithmic essence of superintelligence|algorithmic essence]] · [[research/knowledge capacity|knowledge capacity]] · [[research/link production|link production]] · [[research/universal law|universal law]] · [[research/egregore properties|egregore properties]] · [[research/future of computation|future of computation]] · [[research/neuroscience principles for machine mind|neuroscience principles]] · [[research/unified mining|unified mining]] · [[research/knowledge economy|knowledge economy]] · [[research/theoretical foundations|theoretical foundations]] · [[research/bootstrap|bootstrap]] · [[research/32-byte tokens|32-byte tokens]] · [[research/energy market|energy market]] · [[research/gradient descent|gradient descent]] · [[research/cybergraph model architecture|cybergraph model architecture]] · [[research/focus flow computation|focus flow computation]] · [[research/adaptive hybrid economics|adaptive hybrid economics]] · [[analizer]] · [[seer]] · [[research/privacy trilateral|privacy trilateral]] · **[[oikos|oikos]]** *(project: one token, one chain — the architecture; carries its own adoption map over ~/cyber and soft3)* · [[research/spectral cell division|spectral shard division]] *(project: graph partitioning and split/merge obligations; old research path retained for provenance)*
     - [[cyber/specs|specs]] — **the engineering contracts**
         - [[specs/component-ownership|component ownership]] · [[audit/full-flow-claims|full-flow claims]] · [[specs/node-modes|node modes]] · [[audit/rewards-completeness|rewards completeness]]
     - [[self]] — **the protocol's own agency**
@@ -243,7 +243,7 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 
 ## the ledger — cyber (156 pages, 0 undecided)
 
-Census additions recorded on 2026-09-08: oikos carried the monetary proposal and its adoption map until 2026-09-27, when it moved to soft3/docs as a cross-component explainer ([[oikos]]); [[research/spectral cell division|spectral shard division]] carries the partitioning proposal originally extracted from the [[cell|old cell ladder]]. Both preserve their research status and outstanding design obligations.
+Census additions recorded on 2026-09-08: oikos carried the monetary project and its adoption map until 2026-09-27, when it moved to soft3/docs as a cross-component explainer ([[oikos]]); [[research/spectral cell division|spectral shard division]] carries the partitioning project originally extracted from the [[cell|old cell ladder]]. Both preserve their research status and outstanding design obligations.
 
 | page | words | verdict | why |
 |---|---|---|---|
@@ -478,7 +478,7 @@ token overlap of body text (frontmatter stripped), 2026-09-08:
 | `research/structural-sync.md` title: "verified convergence without consensus"; comparison table "Consensus: None" | foculus *is* consensus at layer 5; CRDT is local merge only | substrate + layer-5 split in `specs/structural-sync.md` |
 | `research/vec formalization.md`: "four properties" then lists six; P5 = 16 nox patterns; P2/P3 = NMT | `specs/vec.md`: six properties from the start; P5 = 18 patterns (16 compute + call + look); P2 still NMT pending Lens | spec. NMT→Lens is bbg work, not a new foculus page |
 | research BBG_root / algebraic NMT as if still proposed; "replaces 9 independent hash trees" | bbg already committed to polynomial + Lens; chaosnet public dimensions are six | cite bbg spec, do not re-propose |
-| continuous fold / constant-size accumulator as foculus content | already specified in `foculus/specs/fold-mining.md` (accumulation scheme: ARC, per [[soft3/proposals/proof-system-repair|the proof-system repair]]) | fold-mining spec |
+| continuous fold / constant-size accumulator as foculus content | already specified in `foculus/specs/fold-mining.md` (accumulation scheme: ARC, per [[soft3/projects/proof-system-repair|the proof-system repair]]) | fold-mining spec |
 
 living-spec bug, fix if the file is touched: `specs/provable-consensus.md` circuit totals 1,420M constraints; the closing paragraph still says "624 million" (copied from the research draft).
 

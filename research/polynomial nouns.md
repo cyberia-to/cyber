@@ -5,7 +5,7 @@ crystal-domain: cyber
 status: draft
 date: 2026-03-24
 ---
-> superseded: this page describes the retired zheng design (Merkle-free Brakedown, unchecked HyperNova fold, ~2 KiB / ~5 μs figures). It is unsound and its numbers do not hold. The repair and the measured numbers live in [[soft3/proposals/proof-system-repair|soft3 proposals/proof-system-repair]].
+> superseded: this page describes the retired zheng design (Merkle-free Brakedown, unchecked HyperNova fold, ~2 KiB / ~5 μs figures). It is unsound and its numbers do not hold. The repair and the measured numbers live in [[soft3/projects/proof-system-repair|soft3 projects/proof-system-repair]].
 
 # polynomial nouns: all-algebraic computation and state
 
@@ -170,7 +170,7 @@ role                          hemera calls     was
 3. PCS Merkle hashing         per committed codeword and per opened query (WHIR / tensor-RS commit with hemera Merkle trees)
 ```
 
-the earlier claim that hemera collapses to a handful of calls per execution assumed a lens without Merkle trees; that lens does not exist. every hash-only PCS commits with a Merkle tree, and its leaves and query paths are hemera calls — a lower bound for a hash-only, post-quantum system. hemera stays on the hot path of proving and verifying (hemera speed in the opening is a main cause of the succinct profile's verify time, see [[soft3/proposals/proof-system-repair|proof-system repair]]).
+the earlier claim that hemera collapses to a handful of calls per execution assumed a lens without Merkle trees; that lens does not exist. every hash-only PCS commits with a Merkle tree, and its leaves and query paths are hemera calls — a lower bound for a hash-only, post-quantum system. hemera stays on the hot path of proving and verifying (hemera speed in the opening is a main cause of the succinct profile's verify time, see [[soft3/projects/proof-system-repair|proof-system repair]]).
 
 what polynomial nouns do remove is the recursive tree hash for noun identity: domain separation becomes one call per noun. hemera throughput work (batched proving, sponge optimisations) stays relevant.
 

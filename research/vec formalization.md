@@ -229,7 +229,7 @@ nebu (Goldilocks field arithmetic, p = 2⁶⁴ - 2³² + 1)
 each layer provides guarantees consumed by the layer above:
 - nebu: field operations are correct (algebraic closure)
 - hemera: hashes are collision-resistant (2^128 security, margin 2^918)
-- zheng: proofs are sound; the error bound is carried by the soundness ledger of [[soft3/proposals/proof-system-repair|the proof-system repair]] (the retired figure does not hold)
+- zheng: proofs are sound; the error bound is carried by the soundness ledger of [[soft3/projects/proof-system-repair|the proof-system repair]] (the retired figure does not hold)
 - nox: execution is focus-metered (halt guaranteed)
 - application: state transitions are valid
 
@@ -262,4 +262,4 @@ the complete optimization path: nebu provides fast field ops → hemera uses the
 
 this bidirectional optimization is why the stack exists as separate repos — each layer can be improved independently while the interfaces remain stable. a 2× improvement in [[Hemera]] permutation speed cascades to 2× faster NMT updates, 2× faster proof generation, 2× faster state transitions. a 33× reduction in NMT constraints (algebraic NMT) cascades to 33× cheaper cyberlinks, 33× more throughput, 33× lower per-signal cost.
 
-see [[structural sync]] for the five-layer theory. see [[cyb/fs/sync]] for the unified patch+sync specification. see [[bostrom-to-onnx-pipeline]] for how graph structure compiles into transformer parameters. see [[algebraic-nmt]] for the polynomial NMT proposal. see [[cyber/research/spectral gap from convergence]] for the empirical observation that convergence is faster than predicted
+see [[structural sync]] for the five-layer theory. see [[cyb/fs/sync]] for the unified patch+sync specification. see [[bostrom-to-onnx-pipeline]] for how graph structure compiles into transformer parameters. see [[algebraic-nmt]] for the polynomial NMT project. see [[cyber/research/spectral gap from convergence]] for the empirical observation that convergence is faster than predicted
