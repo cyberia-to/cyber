@@ -15,6 +15,8 @@ the owner (2026-11-04, this session; no other link exists): phase 1 is pussy alo
 
 2026-11-04 · intake is late. the page edit landed first, commit 64ec84ea on `launch/public-stack-2026-11-04`, before this task page. the first sentence above is the task.
 
+2026-11-04 · later the same day the owner withdrew the date: "for genesis tomorrow we are not ready … a completely finished rewards specification, without notes about what is undone." the shape above is unchanged; genesis moves to readiness, gated on [[rewards]] §7–§8 finished and running as the chain's proof of work. the task gains one output: `launch.md` carries that word and no fixed date (project page [[cyberia/projects/pussy|pussy]], director D20).
+
 2026-11-04 · the pull request: [cyber#157](https://github.com/cyberia-to/cyber/pull/157), base `launch/pussy-first-2026-11-01`, stacked on [cyber#155](https://github.com/cyberia-to/cyber/pull/155). review requested from `cyberia-apparatus`. labels `wide`, `queue`.
 
 ## lane
