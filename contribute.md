@@ -27,7 +27,7 @@ the chronicle, the subgraph census, and the full project graph live at [cyberia.
 run as a [[neuron]] on **spacepussy-test** (soft3 chaosnet). tokens are test; the graph is real
 
 ```bash
-cargo install --git https://github.com/cyberia-to/cybernode cybernode --force   # the node; the crates.io name is not published yet
+cargo install --git https://github.com/cyberia-to/cybernode cybernode --force   # the node; not on crates.io, and it does not build from origin yet
 cargo install true-cyber --force
 cyber sync
 cybernode node --home ~/.spacepussy-test --bind 127.0.0.1:7780

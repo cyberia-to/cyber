@@ -12,20 +12,22 @@ one crate. one binary. default network: **spacepussy-test** (soft3 chaosnet).
 rustup update stable         # soft3 needs ≥ 1.85
 export PATH="$HOME/.cargo/bin:$PATH"
 
-cargo install --git https://github.com/cyberia-to/cybernode cybernode --force  # the node + operator CLI; the crates.io name is not published yet
+cargo install --git https://github.com/cyberia-to/cybernode cybernode --force  # the node + operator CLI; not on crates.io, and it does not build from origin yet
 cargo install true-cyber --force
 
 cyber version                  # cyber … (true-cyber)
 cyber sync
-cybernode status               # same network, from the node binary
+cybernode status               # same network, from the node binary — once it builds
 ```
+
+the two `cybernode` lines do not work yet: the crates.io name is unpublished, and no sibling set on origin resolves the node's dependencies, so the `--git` install fails to build until the stack's integration set lands (`cybernode/audit/move-2026-10-27.md`).
 
 | | |
 |--|--|
 | network | **spacepussy-test** (soft3 chaosnet) |
 | engine | cybergraph + bbg |
 | public rpc | `https://cyb.ai/spacepussy-test` |
-| node crate | cybernode `cybernode node` — the crates.io name is not published yet |
+| node crate | cybernode `cybernode node` — not on crates.io, and it does not build from origin yet |
 | product face | [true-cyber](https://crates.io/crates/true-cyber) binary `cyber` |
 
 ```bash
@@ -68,7 +70,7 @@ cyber help
 
 | face | install | role |
 |------|---------|------|
-| [[cybernode]] | `cargo install --git https://github.com/cyberia-to/cybernode cybernode` | the node; crates.io name not published yet |
+| [[cybernode]] | `cargo install --git https://github.com/cyberia-to/cybernode cybernode` | the node; not on crates.io, and it does not build from origin yet |
 | [[cyb]] | `cargo install cyb` | robot · binary `cy` |
 
 day-one is `true-cyber` alone.
