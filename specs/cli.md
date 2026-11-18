@@ -124,7 +124,8 @@ GraphSession/Registry/Host: explicit neuron attachment, `sync`, `link`, `relay`,
 observations and reports no consensus verification. It does not start this
 product's node. See [the native client contract](../../true-cyber/specs/native-client.md).
 
-`soft3 node` remains a developer entry point to the same native coordinator.
+`cybernode node` is the developer entry point to the same native coordinator;
+the `soft3` facade forwards its old node verb there for one release.
 BBG fences the database writer; each home has one active state owner. Offline
 activation and import preserve exact legacy source and native network genesis.
 Product wrappers reuse the shared owner's migration boundary.

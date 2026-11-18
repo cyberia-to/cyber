@@ -57,7 +57,7 @@ the stack was built bottom-up. the cryptographic floor is implemented and tested
 | nu | nushell fork, 24 crates, cyb's console | 387K | 5228 | the terminal world | a local checkout without a git remote; a reproducibility gap for the release train |
 | [[fs]] | edit, patch, sovereign sync | spec | — | none; bytes move over radio | target design only |
 | [[bootloader/bostrom|bostrom]] | burial scripts, snapshot, claim checker | py/js | — | genesis pipeline, claim page | complete for the old chain |
-| [[cybernode]] | cyberproxy, deimos, jupiter, io | ops | — | three nodes, file store, blockstore | io overloaded |
+| apparatus | cyberproxy, deimos, jupiter, io | ops | — | three nodes, file store, blockstore | io overloaded |
 
 the dependency closure above is computed from the path dependencies of the phase-1 binaries (soft3 node, cyb, cy, true-cyber, foculus, neuron, tok, tru) on 2026-09-18, plus the non-code owners. radio and fs are listed because the cores need them, not because a binary depends on them yet.
 

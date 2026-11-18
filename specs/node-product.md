@@ -58,7 +58,7 @@ library alone cannot establish verification at an ingress boundary.
 | soma | Task/context/tool/delegation/schedule orchestration over neuron execution |
 | warrior / worker | Reusable target capability / running bounded placement |
 | joy | Nox warrior integrating Trident, nox and Zheng; product scheduling integration remains a target |
-| cybernode | Server deployment and operations for selected products and bootloader chains |
+| apparatus | Server deployment and operations for selected products and bootloader chains |
 | true-cyber sibling | Current headless native client, sharing GraphSession/Registry/Host and signed-native retry/migration |
 
 The node and a personal graph apply shared cybergraph transitions at their
