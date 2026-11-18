@@ -1,7 +1,7 @@
 name: Release train
 on:
-  schedule:
-    - cron: '0 12 * * 5'
+  schedule:            # daily at 12:00 UTC (the owner, 2026-10-24); was fridays
+    - cron: '0 12 * * *'
   workflow_dispatch:
     inputs:
       candidate:
