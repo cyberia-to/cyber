@@ -17,7 +17,7 @@ cargo install true-cyber --force
 
 cyber version                  # cyber … (true-cyber)
 cyber sync
-cybernode status               # same network via the node
+cybernode status               # same network, from the node binary
 ```
 
 | | |
@@ -25,7 +25,7 @@ cybernode status               # same network via the node
 | network | **spacepussy-test** (soft3 chaosnet) |
 | engine | cybergraph + bbg |
 | public rpc | `https://cyb.ai/spacepussy-test` |
-| node crate | [cybernode](https://crates.io/crates/cybernode) `cybernode node` |
+| node crate | cybernode `cybernode node` — the crates.io name is not published yet |
 | product face | [true-cyber](https://crates.io/crates/true-cyber) binary `cyber` |
 
 ```bash
