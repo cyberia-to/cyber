@@ -20,7 +20,6 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 #calendarium .p0{--e:#4b4b4d;--h:#ffffff}
 #calendarium .cal-head{text-align:center;margin:0 0 48px}
 #calendarium .cal-eyebrow{font-size:12px;line-height:1;color:#777777;margin:0 0 16px}
-#calendarium .cal-title{font-size:32px;line-height:1.2;color:#ffffff;margin:0 0 8px}
 #calendarium .cal-sub{font-size:14px;color:#d7d7d7}
 #calendarium .cal-magellan{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:16px 0 0;font-size:12px;line-height:1;color:#777777}
 #calendarium .cal-legend{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 24px;margin:0 0 40px}
@@ -66,7 +65,6 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 <div id="calendarium">
 <div class="cal-head">
 <div class="cal-eyebrow">Kardashev I — Southern Hemisphere — Galactic Calendar</div>
-<div class="cal-title">Calendarium</div>
 <div class="cal-sub">13 months · year begins July · southern sky</div>
 <div class="cal-magellan"><span>◈ Large Magellanic Cloud</span><span>·</span><span>Small Magellanic Cloud ◈</span></div>
 </div>
