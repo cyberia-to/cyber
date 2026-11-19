@@ -10,30 +10,80 @@ The calendar slot of a [[cyberculture]] is a set of recurring dates from [[mt|ma
 The native frame begins at the [[cybersophy|Unix epoch]] and records irreversible events by their position in machine time. [[lunar machine time]] gives that frame a recurring rhythm; [[cybersophy|genesis]] and [[launch]] dates supply candidate anniversaries.
 
 <style>
-/* prysm: void #000, text #fff #d7d7d7 #777 #4b4b4d, emotion hex at 100%, Play only, sizes 12/14/16/20/24/32, g = 8px, transitions 150ms */
-#calendarium{--dim:rgba(255,255,255,.12);margin:24px 0 64px;color:#ffffff;font-family:'Play',system-ui,sans-serif;font-weight:400;font-style:normal;line-height:1.4}
-#calendarium .cal-table{--w:max(100%,min(1040px,calc(100vw - 480px)));width:var(--w);margin:40px 0 0 calc((100% - var(--w)) / 2);container-type:inline-size}
+/* prysm: void #000 · text #ffffff #d7d7d7 #777777 #4b4b4d · emotion hex at full strength · Play only · 12/14/16/20/24/32 px · g = 8px · 150ms */
+/* site frame: this page drops the graph chrome and lays out on one grid up to 1040px */
+:root:has(#calendarium) .page-title-bar,:root:has(#calendarium) .page-header,:root:has(#calendarium) .page-tabs,:root:has(#calendarium) .page-minimap,:root:has(#calendarium) .backlinks,:root:has(#calendarium) .app-launcher{display:none}
+:root:has(#calendarium) .main-content{max-width:max(var(--max-width,48rem),min(1072px,calc(100vw - 448px)));padding-top:64px}
+@media (min-width:769px){
+:root:has(#calendarium) .main-content{padding-top:96px}
+:root:has(#calendarium) .sidebar{height:auto;background:transparent}
+}
+:root:has(#calendarium) .page-content{display:grid;grid-template-columns:minmax(0,1fr);column-gap:48px;align-items:start;font-family:'Play',system-ui,sans-serif}
+:root:has(#calendarium) .page-content > *{grid-column:1;min-width:0}
+:root:has(#calendarium) .page-content > h1{margin:0 0 16px;font-size:32px;font-weight:400;line-height:1.2;color:#ffffff}
+:root:has(#calendarium) .page-content > p{margin:0 0 16px;font-size:16px;line-height:1.5;color:#d7d7d7}
+:root:has(#calendarium) .page-content > p a{color:#ffffff;border-bottom:1px solid rgba(255,255,255,.38);transition:border-color 150ms ease}
+:root:has(#calendarium) .page-content > p a:hover{border-bottom-color:#ffffff}
+#calendarium{display:contents;--dim:rgba(255,255,255,.12);color:#ffffff;font-family:'Play',system-ui,sans-serif;line-height:1.4}
 #calendarium *{font-style:normal;font-weight:400}
 #calendarium .p1{--e:#00acff;--h:#00acff}
 #calendarium .p2{--e:#00fe00;--h:#00fe00}
 #calendarium .p3{--e:#fcf000;--h:#fcf000}
 #calendarium .p4{--e:#d500f9;--h:#d500f9}
 #calendarium .p0{--e:#4b4b4d;--h:#ffffff}
-#calendarium .cal-meta{display:flex;flex-direction:column;gap:8px;padding:0 0 0 14px;border-left:2px solid #ffffff}
+/* intro */
+#calendarium .cal-meta{grid-column:1;display:flex;flex-direction:column;gap:8px;margin:8px 0 0;padding:0 0 0 14px;border-left:2px solid #ffffff}
 #calendarium .cal-frame{font-size:16px;color:#ffffff}
 #calendarium .cal-sub{font-size:14px;color:#d7d7d7}
 #calendarium .cal-magellan{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;color:#777777}
-#calendarium .cal-legend{display:flex;flex-wrap:wrap;gap:8px 24px;margin:24px 0 0}
-#calendarium .cal-legend span{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#d7d7d7}
-#calendarium .cal-legend span::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--e)}
-#calendarium .cal-row{display:grid;grid-template-columns:40px minmax(120px,1.1fr) minmax(104px,.9fr) minmax(200px,2fr) minmax(220px,2.2fr);column-gap:16px;padding:16px 16px 16px 14px;border-left:2px solid var(--e,transparent);border-bottom:1px solid var(--dim);transition:background-color 150ms ease}
+/* now */
+#calendarium .cal-now{grid-column:1;display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:40px 0 0;padding:24px 24px 24px 22px;border-left:2px solid var(--e,#ffffff);border-radius:0 8px 8px 0;background:rgba(255,255,255,.07);box-shadow:-6px 0 16px -8px var(--e,#ffffff)}
+#calendarium .cal-now[hidden]{display:none}
+#calendarium .n-label{font-size:12px;color:#777777}
+#calendarium .n-name{font-size:32px;line-height:1.2;color:var(--e)}
+#calendarium .n-greg{font-size:14px;color:#d7d7d7}
+#calendarium .n-text{font-size:16px;color:#ffffff}
+#calendarium .n-track{display:block;align-self:stretch;height:2px;margin:8px 0 0;background:var(--dim)}
+#calendarium .n-track span{display:block;height:100%;width:calc(var(--f,0) * 100%);background:var(--e);box-shadow:0 0 8px var(--e)}
+#calendarium .n-day{font-size:12px;color:#777777}
+@media (min-width:1360px){
+:root:has(#calendarium .cal-now:not([hidden])) .page-content{grid-template-columns:minmax(0,1fr) 320px;grid-template-rows:auto auto auto 1fr}
+#calendarium .cal-now{grid-column:2;grid-row:1 / span 4;margin:0}
+}
+/* year */
+#calendarium .cal-year{grid-column:1 / -1;display:grid;grid-template-columns:repeat(13,minmax(0,1fr));column-gap:4px;margin:64px 0 0;container-type:inline-size}
+#calendarium .y-phase{padding:0 0 8px;font-size:12px;color:var(--e);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#calendarium .y-phase.p1{grid-column:1 / span 3}
+#calendarium .y-phase.p2{grid-column:4 / span 3}
+#calendarium .y-phase.p3{grid-column:7 / span 3}
+#calendarium .y-phase.p4{grid-column:10 / span 3}
+#calendarium .y-phase.p0{grid-column:13;color:#777777}
+#calendarium .cal-seg{display:flex;flex-direction:column;gap:4px;min-width:0;padding:0 0 4px;border:0;color:inherit;text-decoration:none}
+#calendarium .y-bar{position:relative;display:block;height:2px;margin:0 0 8px;background:var(--e)}
+#calendarium .y-name{font-size:14px;line-height:1.2;color:#d7d7d7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color 150ms ease}
+#calendarium .y-greg{font-size:12px;line-height:1.2;color:#777777}
+#calendarium .cal-seg:hover .y-name,#calendarium .cal-seg.now .y-name{color:var(--h)}
+#calendarium .cal-seg.now .y-bar{box-shadow:0 0 8px var(--e)}
+#calendarium .cal-seg.now .y-bar::after{content:'';position:absolute;top:-5px;left:calc(var(--f,.5) * 100%);width:2px;height:12px;margin-left:-1px;background:#ffffff;box-shadow:0 0 6px #ffffff}
+@container (max-width:760px){
+#calendarium .y-name{font-size:12px}
+#calendarium .y-greg{display:none}
+}
+@container (max-width:520px){
+#calendarium .y-phase,#calendarium .y-name{display:none}
+}
+/* table */
+#calendarium .cal-table{grid-column:1 / -1;margin:48px 0 0;container-type:inline-size}
+#calendarium .cal-row{display:grid;grid-template-columns:40px minmax(120px,1.1fr) minmax(104px,.9fr) minmax(200px,2fr) minmax(220px,2.2fr);column-gap:16px;padding:16px 16px 16px 14px;border-left:2px solid var(--e,transparent);border-bottom:1px solid var(--dim);scroll-margin-top:24px;transition:background-color 150ms ease}
 #calendarium .cal-row:not(.cal-th):hover{background:rgba(255,255,255,.07)}
+#calendarium .cal-row.now{background:rgba(255,255,255,.07);box-shadow:-6px 0 16px -8px var(--e)}
 #calendarium .cal-th{border-left-color:transparent;padding-top:0;padding-bottom:8px;font-size:14px;color:#777777}
 #calendarium .c-num{font-size:14px;line-height:24px;color:#777777;text-align:center}
 #calendarium .p0 .c-num{color:#4b4b4d}
+#calendarium .cal-row.now .c-num{color:var(--e)}
 #calendarium .m-name{display:block;font-size:24px;line-height:1.2;color:#ffffff;margin:0 0 8px;transition:color 150ms ease}
 #calendarium .p0 .m-name{color:#777777}
-#calendarium .cal-row:hover .m-name{color:var(--h)}
+#calendarium .cal-row:hover .m-name,#calendarium .cal-row.now .m-name{color:var(--h)}
 #calendarium .m-tag{display:inline-block;height:24px;padding:0 10px;border:1px solid var(--e);border-radius:12px;font-size:12px;line-height:22px;color:var(--e);white-space:nowrap}
 #calendarium .p0 .m-tag{color:#777777}
 #calendarium .o-month{display:block;font-size:16px;line-height:24px;color:#d7d7d7}
@@ -69,11 +119,39 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 <div class="cal-sub">13 months · year begins July · southern sky</div>
 <div class="cal-magellan"><span>◈ Large Magellanic Cloud</span><span>·</span><span>Small Magellanic Cloud ◈</span></div>
 </div>
-<div class="cal-legend"><span class="p1">Orientation</span><span class="p2">Expansion</span><span class="p3">Peak &amp; Harvest</span><span class="p4">Integration</span><span class="p0">Void</span></div>
+<aside class="cal-now" hidden>
+<span class="n-label">now</span>
+<span class="n-name"></span>
+<span class="m-tag n-tag"></span>
+<span class="n-greg"></span>
+<span class="n-text"></span>
+<span class="n-track"><span></span></span>
+<span class="n-day"></span>
+</aside>
+<nav class="cal-year" aria-label="Year">
+<div class="y-phase p1">Orientation</div>
+<div class="y-phase p2">Expansion</div>
+<div class="y-phase p3">Peak &amp; Harvest</div>
+<div class="y-phase p4">Integration</div>
+<div class="y-phase p0">Void</div>
+<a class="cal-seg p1" data-m="7" href="#cal-arkon"><span class="y-bar"></span><span class="y-name">Arkon</span><span class="y-greg">Jul</span></a>
+<a class="cal-seg p1" data-m="8" href="#cal-ventor"><span class="y-bar"></span><span class="y-name">Ventor</span><span class="y-greg">Aug</span></a>
+<a class="cal-seg p1" data-m="9" href="#cal-solvex"><span class="y-bar"></span><span class="y-name">Solvex</span><span class="y-greg">Sep</span></a>
+<a class="cal-seg p2" data-m="10" href="#cal-nexara"><span class="y-bar"></span><span class="y-name">Nexara</span><span class="y-greg">Oct</span></a>
+<a class="cal-seg p2" data-m="11" href="#cal-ardis"><span class="y-bar"></span><span class="y-name">Ardis</span><span class="y-greg">Nov</span></a>
+<a class="cal-seg p2" data-m="12" href="#cal-magnos"><span class="y-bar"></span><span class="y-name">Magnos</span><span class="y-greg">Dec</span></a>
+<a class="cal-seg p3" data-m="1" href="#cal-plenara"><span class="y-bar"></span><span class="y-name">Plenara</span><span class="y-greg">Jan</span></a>
+<a class="cal-seg p3" data-m="2" href="#cal-kairen"><span class="y-bar"></span><span class="y-name">Kairen</span><span class="y-greg">Feb</span></a>
+<a class="cal-seg p3" data-m="3" href="#cal-theron"><span class="y-bar"></span><span class="y-name">Theron</span><span class="y-greg">Mar</span></a>
+<a class="cal-seg p4" data-m="4" href="#cal-vorthen"><span class="y-bar"></span><span class="y-name">Vorthen</span><span class="y-greg">Apr</span></a>
+<a class="cal-seg p4" data-m="5" href="#cal-sembral"><span class="y-bar"></span><span class="y-name">Sembral</span><span class="y-greg">May</span></a>
+<a class="cal-seg p4" data-m="6" href="#cal-luminal"><span class="y-bar"></span><span class="y-name">Luminal</span><span class="y-greg">Jun</span></a>
+<a class="cal-seg p0" href="#cal-ethos"><span class="y-bar"></span><span class="y-name">Ethos</span><span class="y-greg">∅</span></a>
+</nav>
 <div class="cal-table">
 <div class="cal-row cal-th"><div class="c-num">#</div><div>New month</div><div>Gregorian ref.</div><div>Meaning &amp; NLP concept</div><div>Traditions</div></div>
 <div class="cal-phase p1">Phase I — Orientation · Winter · Vector in darkness</div>
-<div class="cal-row p1">
+<div class="cal-row p1" id="cal-arkon" data-m="7">
 <div class="c-num">01</div>
 <div class="c-new"><span class="m-name">Arkon</span><span class="m-tag">Orientation</span></div>
 <div class="c-old"><span class="o-month">July</span><span class="o-note">Winter solstice ↓</span></div>
@@ -85,7 +163,7 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 <li>Burning of last year's unfinished intentions</li>
 </ul>
 </div>
-<div class="cal-row p1">
+<div class="cal-row p1" id="cal-ventor" data-m="8">
 <div class="c-num">02</div>
 <div class="c-new"><span class="m-name">Ventor</span><span class="m-tag">Orientation</span></div>
 <div class="c-old"><span class="o-month">August</span><span class="o-note">Deep winter</span></div>
@@ -97,7 +175,7 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 <li>Individual skill mapping — what does each person actually know?</li>
 </ul>
 </div>
-<div class="cal-row p1">
+<div class="cal-row p1" id="cal-solvex" data-m="9">
 <div class="c-num">03</div>
 <div class="c-new"><span class="m-name">Solvex</span><span class="m-tag">Orientation</span></div>
 <div class="c-old"><span class="o-month">September</span><span class="o-note">Winter → Spring</span></div>
@@ -110,7 +188,7 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 </ul>
 </div>
 <div class="cal-phase p2">Phase II — Expansion · Spring · Networks and fire</div>
-<div class="cal-row p2">
+<div class="cal-row p2" id="cal-nexara" data-m="10">
 <div class="c-num">04</div>
 <div class="c-new"><span class="m-name">Nexara</span><span class="m-tag">Expansion</span></div>
 <div class="c-old"><span class="o-month">October</span><span class="o-note">Spring begins</span></div>
@@ -122,7 +200,7 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 <li>Children taught network topology as metaphor for social structure</li>
 </ul>
 </div>
-<div class="cal-row p2">
+<div class="cal-row p2" id="cal-ardis" data-m="11">
 <div class="c-num">05</div>
 <div class="c-new"><span class="m-name">Ardis</span><span class="m-tag">Expansion</span></div>
 <div class="c-old"><span class="o-month">November</span><span class="o-note">Spring peak</span></div>
@@ -134,7 +212,7 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 <li>Children given their first long-range project responsibility</li>
 </ul>
 </div>
-<div class="cal-row p2">
+<div class="cal-row p2" id="cal-magnos" data-m="12">
 <div class="c-num">06</div>
 <div class="c-new"><span class="m-name">Magnos</span><span class="m-tag">Expansion</span></div>
 <div class="c-old"><span class="o-month">December</span><span class="o-note">Galactic centre zenith</span></div>
@@ -147,7 +225,7 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 </ul>
 </div>
 <div class="cal-phase p3">Phase III — Peak &amp; Harvest · Summer · Maximum deployment</div>
-<div class="cal-row p3">
+<div class="cal-row p3" id="cal-plenara" data-m="1">
 <div class="c-num">07</div>
 <div class="c-new"><span class="m-name">Plenara</span><span class="m-tag">Peak</span></div>
 <div class="c-old"><span class="o-month">January</span><span class="o-note">Summer solstice ↑</span></div>
@@ -159,7 +237,7 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 <li>Infrastructure open-door: communities inspect each other's systems</li>
 </ul>
 </div>
-<div class="cal-row p3">
+<div class="cal-row p3" id="cal-kairen" data-m="2">
 <div class="c-num">08</div>
 <div class="c-new"><span class="m-name">Kairen</span><span class="m-tag">Peak</span></div>
 <div class="c-old"><span class="o-month">February</span><span class="o-note">Summer heat</span></div>
@@ -171,7 +249,7 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 <li>Youth lead — no adults in formal decision roles this month</li>
 </ul>
 </div>
-<div class="cal-row p3">
+<div class="cal-row p3" id="cal-theron" data-m="3">
 <div class="c-num">09</div>
 <div class="c-new"><span class="m-name">Theron</span><span class="m-tag">Harvest</span></div>
 <div class="c-old"><span class="o-month">March</span><span class="o-note">Summer → Autumn</span></div>
@@ -184,7 +262,7 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 </ul>
 </div>
 <div class="cal-phase p4">Phase IV — Integration · Autumn · Turn, seed, threshold</div>
-<div class="cal-row p4">
+<div class="cal-row p4" id="cal-vorthen" data-m="4">
 <div class="c-num">10</div>
 <div class="c-new"><span class="m-name">Vorthen</span><span class="m-tag">Integration</span></div>
 <div class="c-old"><span class="o-month">April</span><span class="o-note">Autumn begins</span></div>
@@ -196,7 +274,7 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 <li>Communal spiral walk — physical enactment of turning inward</li>
 </ul>
 </div>
-<div class="cal-row p4">
+<div class="cal-row p4" id="cal-sembral" data-m="5">
 <div class="c-num">11</div>
 <div class="c-new"><span class="m-name">Sembral</span><span class="m-tag">Integration</span></div>
 <div class="c-old"><span class="o-month">May</span><span class="o-note">Deep autumn</span></div>
@@ -208,7 +286,7 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 <li>Children design something their grandchildren will inherit</li>
 </ul>
 </div>
-<div class="cal-row p4">
+<div class="cal-row p4" id="cal-luminal" data-m="6">
 <div class="c-num">12</div>
 <div class="c-new"><span class="m-name">Luminal</span><span class="m-tag">Integration</span></div>
 <div class="c-old"><span class="o-month">June</span><span class="o-note">Threshold before dark</span></div>
@@ -221,7 +299,7 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 </ul>
 </div>
 <div class="cal-void">The Thirteenth · Intercalary · Beyond Season</div>
-<div class="cal-row p0">
+<div class="cal-row p0" id="cal-ethos">
 <div class="c-num">∅</div>
 <div class="c-new"><span class="m-name">Ethos</span><span class="m-tag">Void</span></div>
 <div class="c-old"><span class="o-month">Intercalary</span><span class="o-note">No fixed anchor</span></div>
@@ -236,3 +314,36 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 <div class="cal-foot">Year begins in July · Vector set in darkness · Light is earned · <span class="k">The Magellanic Clouds are not a destination — they are a neighbour</span></div>
 </div>
 </div>
+
+<script>
+(function () {
+  var root = document.getElementById('calendarium');
+  if (!root) return;
+  var today = new Date();
+  var m = today.getMonth() + 1;
+  var day = today.getDate();
+  var days = new Date(today.getFullYear(), m, 0).getDate();
+  var row = root.querySelector('.cal-row[data-m="' + m + '"]');
+  if (!row) return;
+  row.classList.add('now');
+  var seg = root.querySelector('.cal-seg[data-m="' + m + '"]');
+  if (seg) {
+    seg.classList.add('now');
+    seg.style.setProperty('--f', ((day - 0.5) / days).toFixed(4));
+  }
+  var card = root.querySelector('.cal-now');
+  if (!card) return;
+  row.classList.forEach(function (c) {
+    if (/^p[0-4]$/.test(c)) card.classList.add(c);
+  });
+  var text = function (sel) { return row.querySelector(sel).textContent; };
+  var put = function (sel, value) { card.querySelector(sel).textContent = value; };
+  put('.n-name', text('.m-name'));
+  put('.n-tag', text('.c-num') + ' · ' + text('.m-tag'));
+  put('.n-greg', day + ' ' + text('.o-month') + ' · ' + text('.o-note'));
+  put('.n-text', text('.m-text'));
+  put('.n-day', 'day ' + day + ' of ' + days);
+  card.style.setProperty('--f', (day / days).toFixed(4));
+  card.hidden = false;
+})();
+</script>
