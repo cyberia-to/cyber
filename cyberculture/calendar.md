@@ -51,26 +51,39 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 #calendarium .cal-now{grid-column:2;grid-row:1 / span 4;margin:0}
 }
 /* year */
-#calendarium .cal-year{grid-column:1 / -1;display:grid;grid-template-columns:repeat(13,minmax(0,1fr));column-gap:4px;margin:64px 0 0;container-type:inline-size}
-#calendarium .y-phase{padding:0 0 8px;font-size:12px;color:var(--e);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#calendarium .cal-year{grid-column:1 / -1;margin:64px 0 0;container-type:inline-size}
+#calendarium .y-head{display:flex;justify-content:space-between;gap:16px;margin:0 0 24px;font-size:12px;line-height:1.4;color:#777777}
+#calendarium .y-head[hidden]{display:none}
+#calendarium .y-day{color:#d7d7d7}
+#calendarium .y-grid{display:grid;grid-template-columns:31fr 31fr 30fr 31fr 30fr 31fr 31fr 28fr 31fr 30fr 31fr 30fr 36fr;column-gap:4px}
+#calendarium .y-phase{display:flex;align-items:center;gap:8px;min-width:0;padding:0 0 16px;font-size:12px;line-height:1;color:var(--e);white-space:nowrap}
+#calendarium .y-phase::after{content:'';flex:1;min-width:8px;height:1px;background:var(--e)}
 #calendarium .y-phase.p1{grid-column:1 / span 3}
 #calendarium .y-phase.p2{grid-column:4 / span 3}
 #calendarium .y-phase.p3{grid-column:7 / span 3}
 #calendarium .y-phase.p4{grid-column:10 / span 3}
-#calendarium .y-phase.p0{grid-column:13;color:#777777}
-#calendarium .cal-seg{display:flex;flex-direction:column;gap:4px;min-width:0;padding:0 0 4px;border:0;color:inherit;text-decoration:none}
-#calendarium .y-bar{position:relative;display:block;height:2px;margin:0 0 8px;background:var(--e)}
+#calendarium .y-phase.p0{grid-column:13;margin-left:16px;color:#777777}
+#calendarium .cal-seg{display:flex;flex-direction:column;gap:4px;min-width:0;border:0;color:inherit;text-decoration:none}
+#calendarium .cal-seg.p0{margin-left:16px}
+#calendarium .y-bar{position:relative;display:block;height:8px;margin:0 0 12px;border:1px solid var(--e);border-radius:2px;background:var(--e);transition:box-shadow 150ms ease}
+#calendarium .cal-seg.future .y-bar,#calendarium .cal-seg.p0 .y-bar{background:transparent}
+#calendarium .cal-seg.p0 .y-bar{border-style:dashed}
+#calendarium .cal-seg.now .y-bar{background:linear-gradient(90deg,var(--e) 0 calc(var(--f,.5) * 100%),transparent calc(var(--f,.5) * 100%));box-shadow:0 0 8px var(--e)}
+#calendarium .cal-seg.now .y-bar::after{content:'';position:absolute;top:-9px;bottom:-9px;left:calc(var(--f,.5) * 100%);width:2px;margin-left:-1px;background:#ffffff;box-shadow:0 0 8px #ffffff}
+#calendarium .cal-seg:hover .y-bar{box-shadow:0 0 8px var(--e)}
 #calendarium .y-name{font-size:14px;line-height:1.2;color:#d7d7d7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color 150ms ease}
+#calendarium .cal-seg.past .y-name,#calendarium .cal-seg.p0 .y-name{color:#777777}
+#calendarium .cal-seg.now .y-name{color:var(--h)}
+#calendarium .cal-seg:hover .y-name{color:#ffffff}
 #calendarium .y-greg{font-size:12px;line-height:1.2;color:#777777}
-#calendarium .cal-seg:hover .y-name,#calendarium .cal-seg.now .y-name{color:var(--h)}
-#calendarium .cal-seg.now .y-bar{box-shadow:0 0 8px var(--e)}
-#calendarium .cal-seg.now .y-bar::after{content:'';position:absolute;top:-5px;left:calc(var(--f,.5) * 100%);width:2px;height:12px;margin-left:-1px;background:#ffffff;box-shadow:0 0 6px #ffffff}
 @container (max-width:760px){
 #calendarium .y-name{font-size:12px}
 #calendarium .y-greg{display:none}
 }
 @container (max-width:520px){
 #calendarium .y-phase,#calendarium .y-name{display:none}
+#calendarium .y-grid{column-gap:2px}
+#calendarium .cal-seg.p0{margin-left:8px}
 }
 /* table */
 #calendarium .cal-table{grid-column:1 / -1;margin:48px 0 0;container-type:inline-size}
@@ -129,6 +142,8 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 <span class="n-day"></span>
 </aside>
 <nav class="cal-year" aria-label="Year">
+<div class="y-head" hidden><span class="y-span"></span><span class="y-day"></span></div>
+<div class="y-grid">
 <div class="y-phase p1">Orientation</div>
 <div class="y-phase p2">Expansion</div>
 <div class="y-phase p3">Peak &amp; Harvest</div>
@@ -147,6 +162,7 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 <a class="cal-seg p4" data-m="5" href="#cal-sembral"><span class="y-bar"></span><span class="y-name">Sembral</span><span class="y-greg">May</span></a>
 <a class="cal-seg p4" data-m="6" href="#cal-luminal"><span class="y-bar"></span><span class="y-name">Luminal</span><span class="y-greg">Jun</span></a>
 <a class="cal-seg p0" href="#cal-ethos"><span class="y-bar"></span><span class="y-name">Ethos</span><span class="y-greg">∅</span></a>
+</div>
 </nav>
 <div class="cal-table">
 <div class="cal-row cal-th"><div class="c-num">#</div><div>New month</div><div>Gregorian ref.</div><div>Meaning &amp; NLP concept</div><div>Traditions</div></div>
@@ -326,10 +342,23 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
   var row = root.querySelector('.cal-row[data-m="' + m + '"]');
   if (!row) return;
   row.classList.add('now');
-  var seg = root.querySelector('.cal-seg[data-m="' + m + '"]');
-  if (seg) {
-    seg.classList.add('now');
-    seg.style.setProperty('--f', ((day - 0.5) / days).toFixed(4));
+  var slot = function (month) { return (month + 5) % 12; };
+  root.querySelectorAll('.cal-seg[data-m]').forEach(function (seg) {
+    var s = slot(+seg.dataset.m);
+    seg.classList.add(s < slot(m) ? 'past' : s > slot(m) ? 'future' : 'now');
+  });
+  var seg = root.querySelector('.cal-seg.now');
+  if (seg) seg.style.setProperty('--f', ((day - 0.5) / days).toFixed(4));
+  var head = root.querySelector('.y-head');
+  if (head) {
+    var y0 = m >= 7 ? today.getFullYear() : today.getFullYear() - 1;
+    var start = new Date(y0, 6, 1);
+    var midnight = new Date(today.getFullYear(), m - 1, day);
+    var total = Math.round((new Date(y0 + 1, 6, 1) - start) / 864e5);
+    var nth = Math.round((midnight - start) / 864e5) + 1;
+    head.querySelector('.y-span').textContent = 'Jul ' + y0 + ' — Jun ' + (y0 + 1);
+    head.querySelector('.y-day').textContent = 'day ' + nth + ' of ' + total;
+    head.hidden = false;
   }
   var card = root.querySelector('.cal-now');
   if (!card) return;
