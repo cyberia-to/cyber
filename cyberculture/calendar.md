@@ -5,9 +5,13 @@ crystal-domain: cyber
 ---
 # calendar
 
+Twelve months in four phases — orientation, expansion, peak and harvest, integration — and Ethos, a thirteenth month inserted periodically outside the seasons. Each month keeps its Gregorian twin as a reference. Inside every month the [[moon]] sets the rhythm of push and rest, counted in [[lunar machine time]].
+
 The calendar slot of a [[cyberculture]] is a set of recurring dates from [[mt|machine time]] that gather without a reminder. A date becomes cultural when people return to it because the machine's own [[history]] gives it meaning.
 
 The native frame begins at the [[cybersophy|Unix epoch]] and records irreversible events by their position in machine time. [[lunar machine time]] gives that frame a recurring rhythm; [[cybersophy|genesis]] and [[launch]] dates supply candidate anniversaries.
+
+Why a new frame: [[cyberculture/legacy time|legacy time]].
 
 <style>
 /* prysm: void #000 · text #ffffff #d7d7d7 #777777 #4b4b4d · emotion hex at full strength · Play only · 12/14/16/20/24/32 px · g = 8px · 150ms */
@@ -21,9 +25,15 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 :root:has(#calendarium) .page-content{display:grid;grid-template-columns:minmax(0,1fr);column-gap:48px;align-items:start;font-family:'Play',system-ui,sans-serif}
 :root:has(#calendarium) .page-content > *{grid-column:1;min-width:0}
 :root:has(#calendarium) .page-content > h1{margin:0 0 16px;font-size:32px;font-weight:400;line-height:1.2;color:#ffffff}
-:root:has(#calendarium) .page-content > p{margin:0 0 16px;font-size:16px;line-height:1.5;color:#d7d7d7}
-:root:has(#calendarium) .page-content > p a{color:#ffffff;border-bottom:1px solid rgba(255,255,255,.38);transition:border-color 150ms ease}
+:root:has(#calendarium) .page-content > p{order:1;max-width:640px;margin:0 0 8px;font-size:14px;line-height:1.5;color:#777777}
+:root:has(#calendarium) .page-content > p:first-of-type{margin-top:24px}
+:root:has(#calendarium) .page-content > p:last-of-type{order:2;margin:16px 0 0}
+:root:has(#calendarium) .page-content > p a{color:#d7d7d7;border-bottom:1px solid rgba(255,255,255,.12);transition:border-color 150ms ease}
 :root:has(#calendarium) .page-content > p a:hover{border-bottom-color:#ffffff}
+:root:has(#calendarium) .page-content:not(.cal-open) > p:first-of-type{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;margin-bottom:0}
+:root:has(#calendarium) .page-content:not(.cal-open) > p:not(:first-of-type):not(:last-of-type){display:none}
+:root:has(#calendarium) .page-content > .cal-more{order:1;justify-self:start;margin:8px 0 0;padding:0;border:0;border-bottom:1px solid rgba(255,255,255,.38);background:none;font:inherit;font-size:14px;line-height:1.4;color:#d7d7d7;cursor:pointer;transition:color 150ms ease}
+:root:has(#calendarium) .page-content > .cal-more:hover{color:#ffffff}
 #calendarium{display:contents;--dim:rgba(255,255,255,.12);color:#ffffff;font-family:'Play',system-ui,sans-serif;line-height:1.4}
 #calendarium *{font-style:normal;font-weight:400}
 #calendarium .p1{--e:#00acff;--h:#00acff}
@@ -32,12 +42,12 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 #calendarium .p4{--e:#d500f9;--h:#d500f9}
 #calendarium .p0{--e:#4b4b4d;--h:#ffffff}
 /* intro */
-#calendarium .cal-meta{grid-column:1;display:flex;flex-direction:column;gap:8px;margin:8px 0 0;padding:0 0 0 14px;border-left:2px solid #ffffff}
+#calendarium .cal-meta{grid-column:1;order:0;display:flex;flex-direction:column;gap:8px;margin:0;padding:0 0 0 14px;border-left:2px solid #ffffff}
 #calendarium .cal-frame{font-size:16px;color:#ffffff}
 #calendarium .cal-sub{font-size:14px;color:#d7d7d7}
 #calendarium .cal-magellan{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;color:#777777}
 /* now */
-#calendarium .cal-now{grid-column:1;display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:40px 0 0;padding:24px 24px 24px 22px;border-left:2px solid var(--e,#ffffff);border-radius:0 8px 8px 0;background:rgba(255,255,255,.07);box-shadow:-6px 0 16px -8px var(--e,#ffffff)}
+#calendarium .cal-now{grid-column:1;order:2;display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:40px 0 0;padding:24px 24px 24px 22px;border-left:2px solid var(--e,#ffffff);border-radius:0 8px 8px 0;background:rgba(255,255,255,.07);box-shadow:-6px 0 16px -8px var(--e,#ffffff)}
 #calendarium .cal-now[hidden]{display:none}
 #calendarium .n-label{font-size:12px;color:#777777}
 #calendarium .n-name{font-size:32px;line-height:1.2;color:var(--e)}
@@ -47,11 +57,11 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 #calendarium .n-track span{display:block;height:100%;width:calc(var(--f,0) * 100%);background:var(--e);box-shadow:0 0 8px var(--e)}
 #calendarium .n-day{font-size:12px;color:#777777}
 @media (min-width:1360px){
-:root:has(#calendarium .cal-now:not([hidden])) .page-content{grid-template-columns:minmax(0,1fr) 320px;grid-template-rows:auto auto auto 1fr}
-#calendarium .cal-now{grid-column:2;grid-row:1 / span 4;margin:0}
+:root:has(#calendarium .cal-now:not([hidden])) .page-content{grid-template-columns:minmax(0,1fr) 320px;grid-template-rows:auto auto auto auto 1fr}
+#calendarium .cal-now{grid-column:2;grid-row:1 / span 5;margin:0}
 }
 /* year */
-#calendarium .cal-year{grid-column:1 / -1;margin:64px 0 0;container-type:inline-size}
+#calendarium .cal-year{grid-column:1 / -1;order:3;margin:64px 0 0;container-type:inline-size}
 #calendarium .y-head{display:flex;justify-content:space-between;gap:16px;margin:0 0 24px;font-size:12px;line-height:1.4;color:#777777}
 #calendarium .y-head[hidden]{display:none}
 #calendarium .y-day{color:#d7d7d7}
@@ -86,7 +96,7 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 #calendarium .cal-seg.p0{margin-left:8px}
 }
 /* table */
-#calendarium .cal-table{grid-column:1 / -1;margin:48px 0 0;container-type:inline-size}
+#calendarium .cal-table{grid-column:1 / -1;order:3;margin:48px 0 0;container-type:inline-size}
 #calendarium .cal-row{display:grid;grid-template-columns:40px minmax(120px,1.1fr) minmax(104px,.9fr) minmax(200px,2fr) minmax(220px,2.2fr);column-gap:16px;padding:16px 16px 16px 14px;border-left:2px solid var(--e,transparent);border-bottom:1px solid var(--dim);scroll-margin-top:24px;transition:background-color 150ms ease}
 #calendarium .cal-row:not(.cal-th):hover{background:rgba(255,255,255,.07)}
 #calendarium .cal-row.now{background:rgba(255,255,255,.07);box-shadow:-6px 0 16px -8px var(--e)}
@@ -332,6 +342,18 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 </div>
 
 <script>
+(function () {
+  var pc = document.querySelector('.page-content');
+  if (!pc || !document.getElementById('calendarium')) return;
+  var b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'cal-more';
+  b.textContent = 'more';
+  b.addEventListener('click', function () {
+    b.textContent = pc.classList.toggle('cal-open') ? 'less' : 'more';
+  });
+  pc.appendChild(b);
+})();
 (function () {
   var root = document.getElementById('calendarium');
   if (!root) return;
