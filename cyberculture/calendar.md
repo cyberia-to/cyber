@@ -49,8 +49,8 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 /* now */
 #calendarium .cal-now{grid-column:1;order:2;display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:40px 0 0;padding:24px 24px 24px 22px;border-left:2px solid var(--e,#ffffff);border-radius:0 8px 8px 0;background:rgba(255,255,255,.07);box-shadow:-6px 0 16px -8px var(--e,#ffffff)}
 #calendarium .cal-now[hidden]{display:none}
-#calendarium .cal-now .z-push,#calendarium .cal-now.m-push{--z:#00fe00;--e:#00fe00}
-#calendarium .cal-now .z-rest,#calendarium .cal-now.m-rest{--z:#304ffe;--e:#304ffe}
+#calendarium .z-push,#calendarium .cal-now.m-push{--z:#00fe00;--e:#00fe00}
+#calendarium .z-rest,#calendarium .cal-now.m-rest{--z:#304ffe;--e:#304ffe}
 #calendarium .n-top{display:flex;justify-content:space-between;align-self:stretch;font-size:12px;color:#777777}
 #calendarium .n-lmt{color:#d7d7d7}
 #calendarium .n-moonrow{display:flex;align-items:center;gap:16px;margin:8px 0 0}
@@ -110,6 +110,73 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 #calendarium .y-grid{column-gap:2px}
 #calendarium .y-grid{grid-template-columns:31fr 31fr 30fr 31fr 30fr 31fr 31fr 28fr 31fr 30fr 31fr 20fr 10fr}
 #calendarium .y-len{display:none}
+}
+/* deck: the current month as slides on one stage that never scrolls; the rail switches them */
+#calendarium .cal-deck{grid-column:1 / -1;order:3;margin:40px 0 0;border-left:2px solid var(--e);border-radius:0 8px 8px 0;background:rgba(255,255,255,.07);box-shadow:-6px 0 16px -8px var(--e);container-type:inline-size;outline:none}
+#calendarium .cal-deck[hidden]{display:none}
+#calendarium .cal-deck:focus-visible{box-shadow:-6px 0 16px -8px var(--e),inset 0 0 0 1px rgba(255,255,255,.12)}
+#calendarium .d-stage{position:relative;height:280px;overflow:hidden;touch-action:pan-y}
+#calendarium .d-slide{position:absolute;inset:0;display:flex;align-items:center;padding:32px 32px 24px 30px;opacity:0;visibility:hidden;transform:translateX(16px);transition:opacity 150ms ease,transform 150ms ease,visibility 0s linear 150ms}
+#calendarium .d-slide.left{transform:translateX(-16px)}
+#calendarium .d-slide.on{opacity:1;visibility:visible;transform:none;transition:opacity 150ms ease,transform 150ms ease}
+#calendarium .d-body{flex:none;width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:48px;row-gap:24px;align-items:center;transform-origin:0 50%}
+#calendarium .d-slide.one .d-body{grid-template-columns:minmax(0,1fr)}
+#calendarium .d-col{display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0}
+#calendarium .d-kick{display:block;font-size:12px;line-height:1.4;color:var(--e)}
+#calendarium .cal-deck.p0 .d-kick{color:#777777}
+#calendarium .d-name{display:block;font-size:32px;line-height:1.2;color:var(--h);text-shadow:0 0 16px var(--e)}
+#calendarium .d-line{display:block;font-size:20px;line-height:1.4;color:#ffffff}
+#calendarium .d-greg{display:block;font-size:14px;color:#777777}
+#calendarium .d-count{display:flex;align-items:baseline;gap:8px;font-size:16px;color:#777777}
+#calendarium .d-big{font-size:32px;line-height:1.2;color:var(--h)}
+#calendarium .d-track{position:relative;display:block;align-self:stretch;height:8px;margin:8px 0;border:1px solid var(--e);border-radius:2px;background:linear-gradient(90deg,var(--e) 0 calc(var(--f,.5) * 100%),transparent calc(var(--f,.5) * 100%));box-shadow:0 0 8px var(--e)}
+#calendarium .d-track::after{content:'';position:absolute;top:-9px;bottom:-9px;left:calc(var(--f,.5) * 100%);width:2px;margin-left:-1px;background:#ffffff;box-shadow:0 0 8px #ffffff}
+#calendarium .d-left{display:block;font-size:14px;color:#d7d7d7}
+#calendarium .d-root{display:block;margin:0 0 8px;font-size:24px;line-height:1.2;color:var(--h)}
+#calendarium .d-text{display:block;max-width:720px;font-size:16px;line-height:1.5;color:#d7d7d7}
+#calendarium .d-text .k{color:#ffffff}
+#calendarium .d-trad{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px 48px;margin:8px 0 0}
+#calendarium .d-item{display:flex;gap:16px;padding:12px 0 0;border-top:1px solid var(--dim);font-size:16px;line-height:1.4;color:#ffffff}
+#calendarium .d-n{flex:none;font-size:12px;line-height:22px;color:var(--e)}
+#calendarium .d-days{display:grid;grid-template-columns:repeat(var(--cols,15),minmax(0,1fr));gap:16px 4px;margin:8px 0 0}
+#calendarium .d-day{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:0}
+#calendarium .d-dn{font-size:14px;line-height:1;color:#d7d7d7}
+#calendarium .d-day.past .d-dn{color:#777777}
+#calendarium .d-day.today .d-dn{color:#ffffff}
+#calendarium .d-zb{position:relative;align-self:stretch;height:8px;border:1px solid var(--z);border-radius:2px}
+#calendarium .d-day.past .d-zb{background:var(--z)}
+#calendarium .d-day.today .d-zb{background:var(--z);box-shadow:0 0 8px var(--z)}
+#calendarium .d-day.today .d-zb::after{content:'';position:absolute;top:-9px;bottom:-9px;left:50%;width:2px;margin-left:-1px;background:#ffffff;box-shadow:0 0 8px #ffffff}
+#calendarium .d-mo{width:8px;height:8px;border-radius:50%}
+#calendarium .d-mo.full,#calendarium .n-key .d-k-full::before{background:#ffffff;box-shadow:0 0 6px #ffffff}
+#calendarium .d-mo.new,#calendarium .n-key .d-k-new::before{box-sizing:border-box;border:1px solid #777777;background:transparent}
+#calendarium .d-foot{display:flex;flex-wrap:wrap;align-items:center;gap:8px 32px;margin:8px 0 0}
+#calendarium .d-sum{font-size:14px;color:#d7d7d7}
+#calendarium .d-foot .n-key{margin:0;flex-wrap:wrap}
+#calendarium .d-rail{display:flex;align-items:center;gap:16px;padding:16px 24px 20px 22px;border-top:1px solid var(--dim)}
+#calendarium .d-segs{flex:1;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);column-gap:4px}
+#calendarium .d-seg{display:flex;flex-direction:column;gap:8px;min-width:0;margin:0;padding:8px 0 0;border:0;background:none;font:inherit;text-align:left;cursor:pointer}
+#calendarium .d-bar{display:block;height:8px;border:1px solid var(--e);border-radius:2px;transition:box-shadow 150ms ease}
+#calendarium .d-seg.done .d-bar{background:var(--e)}
+#calendarium .d-seg.cur .d-bar{background:var(--e);box-shadow:0 0 8px var(--e)}
+#calendarium .d-seg:hover .d-bar{box-shadow:0 0 8px var(--e)}
+#calendarium .d-lab{font-size:12px;line-height:1.2;color:#777777;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color 150ms ease}
+#calendarium .d-seg.cur .d-lab{color:var(--h)}
+#calendarium .d-seg:hover .d-lab{color:#ffffff}
+#calendarium .d-pos{flex:none;font-size:12px;color:#777777;font-variant-numeric:tabular-nums}
+#calendarium .d-arrow{flex:none;height:32px;margin:0;padding:0 12px;border:0;border-left:2px solid #ffffff;border-right:2px solid #ffffff;background:none;box-shadow:inset 8px 0 12px -10px #ffffff,inset -8px 0 12px -10px #ffffff;font:inherit;font-size:16px;line-height:1;color:#ffffff;cursor:pointer;transition:box-shadow 150ms ease,transform 150ms ease}
+#calendarium .d-arrow:hover{box-shadow:inset 12px 0 16px -12px #ffffff,inset -12px 0 16px -12px #ffffff}
+#calendarium .d-arrow:active{transform:scale(.95)}
+#calendarium .d-arrow:disabled{border-color:#4b4b4d;box-shadow:none;color:#4b4b4d;cursor:default;transform:none}
+@container (max-width:720px){
+#calendarium .d-stage{height:400px}
+#calendarium .d-slide{padding:24px 16px 16px 14px}
+#calendarium .d-body,#calendarium .d-trad{grid-template-columns:minmax(0,1fr)}
+#calendarium .d-trad{gap:12px}
+#calendarium .d-item{font-size:14px}
+#calendarium .d-days{grid-template-columns:repeat(8,minmax(0,1fr));gap:12px 2px}
+#calendarium .d-rail{gap:8px;padding:12px 12px 16px 10px}
+#calendarium .d-pos{display:none}
 }
 /* table */
 #calendarium .cal-table{grid-column:1 / -1;order:3;margin:48px 0 0;container-type:inline-size}
@@ -194,6 +261,15 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 <a class="cal-seg p0" href="#cal-ethos"><span class="y-bar"></span><span class="y-name">Ethos</span><span class="y-greg">Jun 21–30</span><span class="y-len">10 days</span></a>
 </div>
 </nav>
+<section class="cal-deck" tabindex="0" aria-roledescription="carousel" aria-label="This month" hidden>
+<div class="d-stage" aria-live="polite"></div>
+<div class="d-rail">
+<button class="d-arrow" type="button" data-step="-1" aria-label="Previous slide">←</button>
+<div class="d-segs"></div>
+<span class="d-pos"></span>
+<button class="d-arrow" type="button" data-step="1" aria-label="Next slide">→</button>
+</div>
+</section>
 <div class="cal-table">
 <div class="cal-row cal-th"><div class="c-num">#</div><div>New month</div><div>Gregorian ref.</div><div>Meaning &amp; NLP concept</div><div>Traditions</div></div>
 <div class="cal-phase p1">Phase I — Orientation · Winter · Vector in darkness</div>
@@ -478,5 +554,135 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
   var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   put('.n-month', text('.m-name') + ' · ' + text('.c-num') + ' · ' + text('.m-tag') + ' · ' + day + ' ' + monthNames[m - 1]);
   card.hidden = false;
+  // deck: the current month as slides, built from its table row; the stage never scrolls, the rail switches
+  var deck = root.querySelector('.cal-deck');
+  if (!deck) return;
+  var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); };
+  var pad = function (n) { return ('0' + n).slice(-2); };
+  var name = text('.m-name');
+  var phaseClass = [].filter.call(row.classList, function (c) { return /^p\d$/.test(c); })[0];
+  if (phaseClass) deck.classList.add(phaseClass);
+  var head2 = row.previousElementSibling;
+  while (head2 && !/cal-(phase|void)/.test(head2.className)) head2 = head2.previousElementSibling;
+  var rows = [].slice.call(root.querySelectorAll('.cal-row[id]'));
+  var nextName = rows[(rows.indexOf(row) + 1) % rows.length].querySelector('.m-name').textContent;
+  var first = now === 12 ? sd : 1;
+  var last = now === 12 ? 30 : now === 11 ? sd - 1 : days;
+  var count = last - first + 1;
+  var nth = day - first + 1;
+  var rest = count - nth;
+  var kick = function (s) { return '<span class="d-kick">' + s + '</span>'; };
+  var month = '<div class="d-col">' + kick(esc(text('.c-num')) + ' · ' + esc(head2 ? head2.textContent : text('.m-tag'))) +
+    '<span class="d-name">' + esc(name) + '</span><span class="d-line">' + esc(text('.m-text')) + '</span>' +
+    '<span class="d-greg">' + esc(text('.o-month')) + ' · ' + esc(text('.o-note')) + '</span></div>' +
+    '<div class="d-col"><span class="d-count">day <span class="d-big">' + nth + '</span>of ' + count + '</span>' +
+    '<span class="d-track" style="--f:' + ((nth - 0.5) / count).toFixed(4) + '"></span>' +
+    '<span class="d-left">' + (rest === 0 ? 'last day' : rest === 1 ? '1 day left' : rest + ' days left') + ' · then ' + esc(nextName) + '</span></div>';
+  var rootWord = row.querySelector('.m-detail .k');
+  var meaning = kick(esc(name) + ' · meaning') + '<span class="d-root">' + esc(rootWord ? rootWord.textContent : text('.m-text')) + '</span>' +
+    '<span class="d-text">' + row.querySelector('.m-detail').innerHTML + '</span>';
+  var trad = kick(esc(name) + ' · traditions') + '<div class="d-trad">' + [].map.call(row.querySelectorAll('.c-trad li'), function (li, k) {
+    return '<div class="d-item"><span class="d-n">' + pad(k + 1) + '</span><span>' + esc(li.textContent) + '</span></div>';
+  }).join('') + '</div>';
+  // every day of the month by the lunar rhythm: the day rule of the site clock, moon events on the day they happen (UTC)
+  var cells = '', ahead = { push: 0, rest: 0 }, events = [], short = monthNames[m - 1].slice(0, 3);
+  for (var dn = first; dn <= last; dn++) {
+    var a0 = ((Date.UTC(today.getFullYear(), m - 1, dn) / 864e5 + 2440587.5 - REF) % SYNODIC + SYNODIC) % SYNODIC;
+    var ld = Math.min(Math.floor(a0), 29) + 1;
+    var z = 0;
+    while (ld > rhythm[z].to) z++;
+    var mode = rhythm[z].mode;
+    var mark = a0 + 1 > SYNODIC ? 'new' : a0 <= SYNODIC / 2 && a0 + 1 > SYNODIC / 2 ? 'full' : '';
+    if (dn >= day) ahead[mode]++;
+    if (mark) events.push('<span class="d-k-' + mark + '">' + mark + ' moon ' + short + ' ' + dn + '</span>');
+    cells += '<div class="d-day z-' + mode + ' ' + (dn < day ? 'past' : dn === day ? 'today' : 'future') + '" title="' + short + ' ' + dn + ' · lunar day ' + ld + ' · ' + mode + '">' +
+      '<span class="d-dn">' + dn + '</span><span class="d-zb"></span><span class="d-mo' + (mark ? ' ' + mark : '') + '"></span></div>';
+  }
+  var daysSlide = kick(esc(name) + ' · days by the moon') +
+    '<div class="d-days" style="--cols:' + Math.ceil(count / Math.ceil(count / 16)) + '">' + cells + '</div>' +
+    '<div class="d-foot"><span class="d-sum">left in ' + esc(name) + ', today included: ' + ahead.push + ' push · ' + ahead.rest + ' rest</span>' +
+    '<div class="n-key"><span class="z-push">push</span><span class="z-rest">rest</span>' + events.join('') + '</div></div>';
+  var slides = [
+    { lab: 'month', html: month },
+    { lab: 'meaning', html: meaning, one: true },
+    { lab: 'traditions', html: trad, one: true },
+    { lab: 'days', html: daysSlide, one: true }
+  ];
+  var stage = deck.querySelector('.d-stage');
+  var segs = deck.querySelector('.d-segs');
+  stage.innerHTML = slides.map(function (s, k) {
+    return '<div class="d-slide' + (s.one ? ' one' : '') + '" role="group" aria-roledescription="slide" aria-label="' + (k + 1) + ' of ' + slides.length + ': ' + s.lab + '"><div class="d-body">' + s.html + '</div></div>';
+  }).join('');
+  segs.innerHTML = slides.map(function (s) {
+    return '<button class="d-seg" type="button"><span class="d-bar"></span><span class="d-lab">' + s.lab + '</span></button>';
+  }).join('');
+  var slideEls = stage.querySelectorAll('.d-slide');
+  var segEls = segs.querySelectorAll('.d-seg');
+  var prevBtn = deck.querySelector('[data-step="-1"]');
+  var nextBtn = deck.querySelector('[data-step="1"]');
+  var cur = -1;
+  // no scrolling: a slide taller than the stage is scaled down to fit, the way cyber.page fits its slides
+  var fit = function () {
+    var el = slideEls[cur];
+    var body = el.querySelector('.d-body');
+    body.style.width = '';
+    body.style.transform = '';
+    var cs = getComputedStyle(el);
+    var avail = el.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+    var h = body.scrollHeight;
+    if (h <= avail + 1) return;
+    var k = Math.max(0.5, Math.floor(avail / h * 100) / 100);
+    body.style.width = 100 / k + '%';
+    body.style.transform = 'scale(' + k + ')';
+  };
+  var go = function (i) {
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    if (i === cur) return;
+    cur = i;
+    slideEls.forEach(function (el, k) {
+      el.classList.toggle('on', k === i);
+      el.classList.toggle('left', k < i);
+      el.setAttribute('aria-hidden', k === i ? 'false' : 'true');
+    });
+    segEls.forEach(function (el, k) {
+      el.classList.toggle('done', k < i);
+      el.classList.toggle('cur', k === i);
+      el.setAttribute('aria-current', k === i ? 'step' : 'false');
+    });
+    deck.querySelector('.d-pos').textContent = pad(i + 1) + ' / ' + pad(slides.length);
+    prevBtn.disabled = i === 0;
+    nextBtn.disabled = i === slides.length - 1;
+    fit();
+  };
+  segEls.forEach(function (el, k) { el.addEventListener('click', function () { go(k); }); });
+  prevBtn.addEventListener('click', function () { go(cur - 1); });
+  nextBtn.addEventListener('click', function () { go(cur + 1); });
+  deck.addEventListener('keydown', function (e) {
+    var to = { ArrowRight: cur + 1, ArrowLeft: cur - 1, Home: 0, End: slides.length - 1 }[e.key];
+    if (to === undefined) return;
+    e.preventDefault();
+    go(to);
+  });
+  var tx = null, ty = 0, lock = 0;
+  stage.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
+  stage.addEventListener('touchend', function (e) {
+    if (tx === null) return;
+    var dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
+    if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy)) go(cur + (dx < 0 ? 1 : -1));
+    tx = null;
+  });
+  stage.addEventListener('wheel', function (e) {
+    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+    e.preventDefault();
+    var t = Date.now();
+    if (Math.abs(e.deltaX) < 24 || t - lock < 600) return;
+    lock = t;
+    go(cur + (e.deltaX > 0 ? 1 : -1));
+  }, { passive: false });
+  var fitTimer = 0;
+  window.addEventListener('resize', function () { clearTimeout(fitTimer); fitTimer = setTimeout(fit, 60); });
+  deck.hidden = false;
+  go(0);
+  if (document.fonts) document.fonts.ready.then(fit);
 })();
 </script>
