@@ -15,13 +15,16 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 
 <style>
 /* prysm: void #000 · text #ffffff #d7d7d7 #777777 #4b4b4d · emotion hex at full strength · Play only · 12/14/16/20/24/32 px · g = 8px · 150ms */
-/* site frame: this page drops the graph chrome and lays out on one grid up to 1040px */
-:root:has(#calendarium) .page-title-bar,:root:has(#calendarium) .page-header,:root:has(#calendarium) .page-tabs,:root:has(#calendarium) .page-minimap,:root:has(#calendarium) .backlinks,:root:has(#calendarium) .app-launcher{display:none}
-:root:has(#calendarium) .main-content{max-width:max(var(--max-width,48rem),min(1072px,calc(100vw - 448px)));padding-top:64px}
-@media (min-width:769px){
-:root:has(#calendarium) .main-content{padding-top:96px}
-:root:has(#calendarium) .sidebar{height:auto;background:transparent}
-}
+/* site frame: one grid up to 1040px inside the graph navigation — path, tags, folder, graph, mentions, launcher */
+:root:has(#calendarium) .main-content{max-width:max(var(--max-width,48rem),min(1072px,calc(100vw - 448px)))}
+/* the path leads back to the namespace; the page name stays the one heading below it */
+:root:has(#calendarium) .page-title-bar{position:static;margin:0;padding-top:0;padding-bottom:8px}
+:root:has(#calendarium) .page-title-bar h1{margin:0;font-size:0;line-height:1}
+:root:has(#calendarium) .page-title-bar .ns-path,:root:has(#calendarium) .page-title-bar .ns-sep{font-family:'Play',system-ui,sans-serif;font-size:14px;line-height:1.4;font-weight:400;opacity:1}
+:root:has(#calendarium) .page-title-bar .ns-path{color:#d7d7d7;border-bottom:1px solid rgba(255,255,255,.12);transition:color 150ms ease,border-color 150ms ease}
+:root:has(#calendarium) .page-title-bar .ns-path:hover{color:#ffffff;border-bottom-color:#ffffff;text-decoration:none}
+:root:has(#calendarium) .page-title-bar .ns-sep{margin:0 0 0 8px;color:#4b4b4d}
+:root:has(#calendarium) .page-tabs{top:0}
 :root:has(#calendarium) .page-content{display:grid;grid-template-columns:minmax(0,1fr);column-gap:48px;align-items:start;font-family:'Play',system-ui,sans-serif}
 :root:has(#calendarium) .page-content > *{grid-column:1;min-width:0}
 :root:has(#calendarium) .page-content > h1{margin:0 0 16px;font-size:32px;font-weight:400;line-height:1.2;color:#ffffff}
