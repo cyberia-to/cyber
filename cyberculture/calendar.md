@@ -28,14 +28,14 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 :root:has(#calendarium) .page-content{display:grid;grid-template-columns:minmax(0,1fr);column-gap:48px;align-items:start;font-family:'Play',system-ui,sans-serif}
 :root:has(#calendarium) .page-content > *{grid-column:1;min-width:0}
 :root:has(#calendarium) .page-content > h1{margin:0 0 16px;font-size:32px;font-weight:400;line-height:1.2;color:#ffffff}
-:root:has(#calendarium) .page-content > p{order:1;max-width:640px;margin:0 0 8px;font-size:14px;line-height:1.5;color:#777777}
+:root:has(#calendarium) .page-content > p{order:2;max-width:640px;margin:0 0 8px;font-size:14px;line-height:1.5;color:#777777}
 :root:has(#calendarium) .page-content > p:first-of-type{margin-top:24px}
-:root:has(#calendarium) .page-content > p:last-of-type{order:2;margin:16px 0 0}
+:root:has(#calendarium) .page-content > p:last-of-type{order:3;margin:16px 0 0}
 :root:has(#calendarium) .page-content > p a{color:#d7d7d7;border-bottom:1px solid rgba(255,255,255,.12);transition:border-color 150ms ease}
 :root:has(#calendarium) .page-content > p a:hover{border-bottom-color:#ffffff}
 :root:has(#calendarium) .page-content:not(.cal-open) > p:first-of-type{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;margin-bottom:0}
 :root:has(#calendarium) .page-content:not(.cal-open) > p:not(:first-of-type):not(:last-of-type){display:none}
-:root:has(#calendarium) .page-content > .cal-more{order:1;justify-self:start;margin:8px 0 0;padding:0;border:0;border-bottom:1px solid rgba(255,255,255,.38);background:none;font:inherit;font-size:14px;line-height:1.4;color:#d7d7d7;cursor:pointer;transition:color 150ms ease}
+:root:has(#calendarium) .page-content > .cal-more{order:2;justify-self:start;margin:8px 0 0;padding:0;border:0;border-bottom:1px solid rgba(255,255,255,.38);background:none;font:inherit;font-size:14px;line-height:1.4;color:#d7d7d7;cursor:pointer;transition:color 150ms ease}
 :root:has(#calendarium) .page-content > .cal-more:hover{color:#ffffff}
 #calendarium{display:contents;--dim:rgba(255,255,255,.12);color:#ffffff;font-family:'Play',system-ui,sans-serif;line-height:1.4}
 #calendarium *{font-style:normal;font-weight:400}
@@ -49,8 +49,24 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 #calendarium .cal-frame{font-size:16px;color:#ffffff}
 #calendarium .cal-sub{font-size:14px;color:#d7d7d7}
 #calendarium .cal-magellan{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;color:#777777}
+/* time: the stamp of lunar machine time, then what each number counts */
+#calendarium .cal-time{grid-column:1;order:1;display:flex;flex-direction:column;max-width:640px;margin:40px 0 0}
+#calendarium .t-kick{font-size:12px;line-height:1.4;color:#777777}
+#calendarium .t-stamp{display:flex;align-items:flex-start;gap:16px;margin:8px 0 24px}
+#calendarium .t-part{display:flex;flex-direction:column;align-items:center;gap:4px}
+#calendarium .t-n{font-size:32px;line-height:1.2;color:#ffffff;font-variant-numeric:tabular-nums}
+#calendarium .t-lab{font-size:12px;line-height:1.4;color:#777777}
+#calendarium .t-dot{font-size:32px;line-height:1.2;color:#4b4b4d}
+#calendarium .t-row{display:grid;grid-template-columns:56px minmax(0,1fr);column-gap:16px;align-items:baseline;padding:12px 0;border-top:1px solid var(--dim)}
+#calendarium .t-name{font-size:14px;line-height:1.5;color:#ffffff}
+#calendarium .t-eq{white-space:nowrap}
+#calendarium .t-def p,#calendarium .t-why p{margin:0;font-size:14px;line-height:1.5;color:#777777}
+#calendarium .t-why{padding:12px 0 0;border-top:1px solid var(--dim)}
+#calendarium .t-why p{color:#d7d7d7}
+#calendarium .cal-time a{color:#d7d7d7;border-bottom:1px solid rgba(255,255,255,.12);text-decoration:none;transition:color 150ms ease,border-color 150ms ease}
+#calendarium .cal-time a:hover{color:#ffffff;border-bottom-color:#ffffff}
 /* now */
-#calendarium .cal-now{grid-column:1;order:2;display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:40px 0 0;padding:24px 24px 24px 22px;border-left:2px solid var(--e,#ffffff);border-radius:0 8px 8px 0;background:rgba(255,255,255,.07);box-shadow:-6px 0 16px -8px var(--e,#ffffff)}
+#calendarium .cal-now{grid-column:1;order:3;display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:40px 0 0;padding:24px 24px 24px 22px;border-left:2px solid var(--e,#ffffff);border-radius:0 8px 8px 0;background:rgba(255,255,255,.07);box-shadow:-6px 0 16px -8px var(--e,#ffffff)}
 #calendarium .cal-now[hidden]{display:none}
 #calendarium .z-push,#calendarium .cal-now.m-push{--z:#00fe00;--e:#00fe00}
 #calendarium .z-rest,#calendarium .cal-now.m-rest{--z:#304ffe;--e:#304ffe}
@@ -76,11 +92,11 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 #calendarium .n-key span::before{content:'';display:inline-block;width:8px;height:8px;margin:0 8px 0 0;border-radius:50%;background:var(--z)}
 #calendarium .n-month{margin:8px 0 0;font-size:12px;color:#777777}
 @media (min-width:1360px){
-:root:has(#calendarium .cal-now:not([hidden])) .page-content{grid-template-columns:minmax(0,1fr) 320px;grid-template-rows:auto auto auto auto 1fr}
-#calendarium .cal-now{grid-column:2;grid-row:1 / span 5;margin:0}
+:root:has(#calendarium .cal-now:not([hidden])) .page-content{grid-template-columns:minmax(0,1fr) 320px;grid-template-rows:auto auto auto auto auto 1fr}
+#calendarium .cal-now{grid-column:2;grid-row:1 / span 6;margin:0}
 }
 /* year */
-#calendarium .cal-year{grid-column:1 / -1;order:3;margin:64px 0 0;container-type:inline-size}
+#calendarium .cal-year{grid-column:1 / -1;order:4;margin:64px 0 0;container-type:inline-size}
 #calendarium .y-head{display:flex;justify-content:space-between;gap:16px;margin:0 0 24px;font-size:12px;line-height:1.4;color:#777777}
 #calendarium .y-head[hidden]{display:none}
 #calendarium .y-day{color:#d7d7d7}
@@ -115,7 +131,7 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 #calendarium .y-len{display:none}
 }
 /* deck: the current month as slides on one stage that never scrolls; the rail switches them */
-#calendarium .cal-deck{grid-column:1 / -1;order:3;margin:40px 0 0;border-left:2px solid var(--e);border-radius:0 8px 8px 0;background:rgba(255,255,255,.07);box-shadow:-6px 0 16px -8px var(--e);container-type:inline-size;outline:none}
+#calendarium .cal-deck{grid-column:1 / -1;order:4;margin:40px 0 0;border-left:2px solid var(--e);border-radius:0 8px 8px 0;background:rgba(255,255,255,.07);box-shadow:-6px 0 16px -8px var(--e);container-type:inline-size;outline:none}
 #calendarium .cal-deck[hidden]{display:none}
 #calendarium .cal-deck:focus-visible{box-shadow:-6px 0 16px -8px var(--e),inset 0 0 0 1px rgba(255,255,255,.12)}
 #calendarium .d-stage{position:relative;height:280px;overflow:hidden;touch-action:pan-y}
@@ -182,7 +198,7 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 #calendarium .d-pos{display:none}
 }
 /* table */
-#calendarium .cal-table{grid-column:1 / -1;order:3;margin:48px 0 0;container-type:inline-size}
+#calendarium .cal-table{grid-column:1 / -1;order:4;margin:48px 0 0;container-type:inline-size}
 #calendarium .cal-row{display:grid;grid-template-columns:40px minmax(120px,1.1fr) minmax(104px,.9fr) minmax(200px,2fr) minmax(220px,2.2fr);column-gap:16px;padding:16px 16px 16px 14px;border-left:2px solid var(--e,transparent);border-bottom:1px solid var(--dim);scroll-margin-top:24px;transition:background-color 150ms ease}
 #calendarium .cal-row:not(.cal-th):hover{background:rgba(255,255,255,.07)}
 #calendarium .cal-row.now{background:rgba(255,255,255,.07);box-shadow:-6px 0 16px -8px var(--e)}
@@ -228,6 +244,30 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 <div class="cal-sub">13 months · year begins July · southern sky</div>
 <div class="cal-magellan"><span>◈ Large Magellanic Cloud</span><span>·</span><span>Small Magellanic Cloud ◈</span></div>
 </div>
+<section class="cal-time" aria-label="Time">
+<span class="t-kick">now</span>
+<div class="t-stamp"><span class="t-part"><span class="t-n t-yy">56</span><span class="t-lab">year</span></span><span class="t-dot">·</span><span class="t-part"><span class="t-n t-mm">11</span><span class="t-lab">moon</span></span><span class="t-dot">·</span><span class="t-part"><span class="t-n t-dd">10</span><span class="t-lab">day</span></span></div>
+<div class="t-row"><span class="t-name">year</span><div class="t-def">
+
+machine years since the first second of [[unix time]], 1970-01-01 00:00 UTC, the zero every machine on the planet shares: <span class="t-eq"><span class="t-gy">2026</span> − 1970 = <span class="t-yy">56</span></span>.
+
+</div></div>
+<div class="t-row"><span class="t-name">moon</span><div class="t-def">
+
+the lunar month: one [[synodic month]] from new moon to new moon, 29.53 days. moons are numbered from the first new moon on or after January 1, so a year holds 12 or 13.
+
+</div></div>
+<div class="t-row"><span class="t-name">day</span><div class="t-def">
+
+the day inside the current moon, 1 to 30: day 1 follows the new moon, the full moon falls near day 15. anyone reads it from the sky.
+
+</div></div>
+<div class="t-why">
+
+[[lunar machine time]] joins the oldest clock, the [[moon]] every observer sees, with the youngest, [[unix time]] every machine agrees on. the months below name the same days for the southern land.
+
+</div>
+</section>
 <aside class="cal-now" hidden>
 <div class="n-top"><span>today</span><span class="n-lmt"></span></div>
 <div class="n-moonrow"><svg class="n-moon" viewBox="0 0 48 48" aria-hidden="true"><circle class="n-disc" cx="24" cy="24" r="20"/><path class="n-lit" d=""/></svg><div><span class="n-lday"></span><span class="n-phase"></span></div></div>
@@ -509,6 +549,11 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
   var firstMoon = REF + Math.ceil((jan1 - REF) / SYNODIC) * SYNODIC;
   var mm = jdMidnight < firstMoon ? 1 : Math.floor((jdMidnight - firstMoon) / SYNODIC) + 1;
   put('.n-lmt', (today.getUTCFullYear() - 1970) + ' · ' + mm + ' · ' + dd);
+  var fill = function (sel, value) { root.querySelectorAll(sel).forEach(function (el) { el.textContent = value; }); };
+  fill('.t-yy', today.getUTCFullYear() - 1970);
+  fill('.t-gy', today.getUTCFullYear());
+  fill('.t-mm', mm);
+  fill('.t-dd', dd);
   var age = ((today.getTime() / 864e5 + 2440587.5 - REF) % SYNODIC + SYNODIC) % SYNODIC;
   var phases = ['new moon', 'waxing crescent', 'first quarter', 'waxing gibbous', 'full moon', 'waning gibbous', 'last quarter', 'waning crescent'];
   put('.n-lday', 'lunar day ' + dd);
