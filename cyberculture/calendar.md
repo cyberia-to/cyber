@@ -49,13 +49,29 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 /* now */
 #calendarium .cal-now{grid-column:1;order:2;display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:40px 0 0;padding:24px 24px 24px 22px;border-left:2px solid var(--e,#ffffff);border-radius:0 8px 8px 0;background:rgba(255,255,255,.07);box-shadow:-6px 0 16px -8px var(--e,#ffffff)}
 #calendarium .cal-now[hidden]{display:none}
-#calendarium .n-label{font-size:12px;color:#777777}
-#calendarium .n-name{font-size:32px;line-height:1.2;color:var(--e)}
-#calendarium .n-greg{font-size:14px;color:#d7d7d7}
-#calendarium .n-text{font-size:16px;color:#ffffff}
-#calendarium .n-track{display:block;align-self:stretch;height:2px;margin:8px 0 0;background:var(--dim)}
-#calendarium .n-track span{display:block;height:100%;width:calc(var(--f,0) * 100%);background:var(--e);box-shadow:0 0 8px var(--e)}
-#calendarium .n-day{font-size:12px;color:#777777}
+#calendarium .cal-now .z-push,#calendarium .cal-now.m-push{--z:#00fe00;--e:#00fe00}
+#calendarium .cal-now .z-rest,#calendarium .cal-now.m-rest{--z:#304ffe;--e:#304ffe}
+#calendarium .n-top{display:flex;justify-content:space-between;align-self:stretch;font-size:12px;color:#777777}
+#calendarium .n-lmt{color:#d7d7d7}
+#calendarium .n-moonrow{display:flex;align-items:center;gap:16px;margin:8px 0 0}
+#calendarium .n-moon{flex:none;width:48px;height:48px;transform:scaleX(-1)}
+#calendarium .n-disc{fill:none;stroke:#4b4b4d;stroke-width:1}
+#calendarium .n-lit{fill:#ffffff;filter:drop-shadow(0 0 6px rgba(255,255,255,.5))}
+#calendarium .n-lday{display:block;font-size:20px;line-height:1.2;color:#ffffff}
+#calendarium .n-phase{display:block;font-size:14px;color:#d7d7d7}
+#calendarium .n-mode{margin:8px 0 0;font-size:32px;line-height:1.2;color:var(--e)}
+#calendarium .n-do{font-size:16px;color:#ffffff}
+#calendarium .n-next{font-size:14px;color:#d7d7d7}
+#calendarium .n-cycle{align-self:stretch;margin:8px 0 0}
+#calendarium .n-zones{display:grid;grid-template-columns:2fr 11fr 3fr 11fr 3fr;gap:2px}
+#calendarium .n-zone{position:relative;height:8px;border:1px solid var(--z);border-radius:2px}
+#calendarium .n-zone.past{background:var(--z)}
+#calendarium .n-zone.now{background:linear-gradient(90deg,var(--z) 0 calc(var(--f,.5) * 100%),transparent calc(var(--f,.5) * 100%));box-shadow:0 0 8px var(--z)}
+#calendarium .n-zone.now::after{content:'';position:absolute;top:-9px;bottom:-9px;left:calc(var(--f,.5) * 100%);width:2px;margin-left:-1px;background:#ffffff;box-shadow:0 0 8px #ffffff}
+#calendarium .n-ticks{display:flex;justify-content:space-between;margin:12px 0 0;font-size:12px;color:#777777}
+#calendarium .n-key{display:flex;gap:16px;margin:8px 0 0;font-size:12px;color:#d7d7d7}
+#calendarium .n-key span::before{content:'';display:inline-block;width:8px;height:8px;margin:0 8px 0 0;border-radius:50%;background:var(--z)}
+#calendarium .n-month{margin:8px 0 0;font-size:12px;color:#777777}
 @media (min-width:1360px){
 :root:has(#calendarium .cal-now:not([hidden])) .page-content{grid-template-columns:minmax(0,1fr) 320px;grid-template-rows:auto auto auto auto 1fr}
 #calendarium .cal-now{grid-column:2;grid-row:1 / span 5;margin:0}
@@ -143,13 +159,17 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 <div class="cal-magellan"><span>◈ Large Magellanic Cloud</span><span>·</span><span>Small Magellanic Cloud ◈</span></div>
 </div>
 <aside class="cal-now" hidden>
-<span class="n-label">now</span>
-<span class="n-name"></span>
-<span class="m-tag n-tag"></span>
-<span class="n-greg"></span>
-<span class="n-text"></span>
-<span class="n-track"><span></span></span>
-<span class="n-day"></span>
+<div class="n-top"><span>today</span><span class="n-lmt"></span></div>
+<div class="n-moonrow"><svg class="n-moon" viewBox="0 0 48 48" aria-hidden="true"><circle class="n-disc" cx="24" cy="24" r="20"/><path class="n-lit" d=""/></svg><div><span class="n-lday"></span><span class="n-phase"></span></div></div>
+<span class="n-mode"></span>
+<span class="n-do"></span>
+<span class="n-next"></span>
+<div class="n-cycle">
+<div class="n-zones"><span class="n-zone z-rest" data-to="2"></span><span class="n-zone z-push" data-to="13"></span><span class="n-zone z-rest" data-to="16"></span><span class="n-zone z-push" data-to="27"></span><span class="n-zone z-rest" data-to="30"></span></div>
+<div class="n-ticks"><span>new moon</span><span>full moon</span><span>new moon</span></div>
+<div class="n-key"><span class="z-push">push</span><span class="z-rest">rest</span></div>
+</div>
+<span class="n-month"></span>
 </aside>
 <nav class="cal-year" aria-label="Year">
 <div class="y-head" hidden><span class="y-span"></span><span class="y-day"></span></div>
@@ -384,17 +404,63 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
   }
   var card = root.querySelector('.cal-now');
   if (!card) return;
-  row.classList.forEach(function (c) {
-    if (/^p[0-4]$/.test(c)) card.classList.add(c);
-  });
-  var text = function (sel) { return row.querySelector(sel).textContent; };
   var put = function (sel, value) { card.querySelector(sel).textContent = value; };
-  put('.n-name', text('.m-name'));
-  put('.n-tag', text('.c-num') + ' · ' + text('.m-tag'));
-  put('.n-greg', day + ' ' + text('.o-month') + ' · ' + text('.o-note'));
-  put('.n-text', text('.m-text'));
-  put('.n-day', 'day ' + day + ' of ' + days);
-  card.style.setProperty('--f', (day / days).toFixed(4));
+  var text = function (sel) { return row.querySelector(sel).textContent; };
+  // lunar machine time: the constants and the day rule of the site clock (crystal/lunar machine time)
+  var SYNODIC = 29.53059;
+  var REF = 2451550.26;
+  var jdMidnight = Math.floor(today.getTime() / 864e5) + 2440587.5;
+  var dd = Math.min(Math.floor(((jdMidnight - REF) % SYNODIC + SYNODIC) % SYNODIC), 29) + 1;
+  var jan1 = Date.UTC(today.getUTCFullYear(), 0, 1) / 864e5 + 2440587.5;
+  var firstMoon = REF + Math.ceil((jan1 - REF) / SYNODIC) * SYNODIC;
+  var mm = jdMidnight < firstMoon ? 1 : Math.floor((jdMidnight - firstMoon) / SYNODIC) + 1;
+  put('.n-lmt', (today.getUTCFullYear() - 1970) + ' · ' + mm + ' · ' + dd);
+  var age = ((today.getTime() / 864e5 + 2440587.5 - REF) % SYNODIC + SYNODIC) % SYNODIC;
+  var phases = ['new moon', 'waxing crescent', 'first quarter', 'waxing gibbous', 'full moon', 'waning gibbous', 'last quarter', 'waning crescent'];
+  put('.n-lday', 'lunar day ' + dd);
+  put('.n-phase', phases[Math.floor(age / SYNODIC * 8 + 0.5) % 8]);
+  // the moon as seen from the southern sky: the svg is mirrored in css
+  var theta = age / SYNODIC * 2 * Math.PI;
+  var c = Math.cos(theta);
+  var rx = (Math.abs(c) * 20).toFixed(2);
+  var waxing = theta < Math.PI;
+  var d = waxing
+    ? 'M24 4 A20 20 0 0 1 24 44 A' + rx + ' 20 0 0 ' + (c > 0 ? 0 : 1) + ' 24 4 Z'
+    : 'M24 4 A20 20 0 0 0 24 44 A' + rx + ' 20 0 0 ' + (c > 0 ? 1 : 0) + ' 24 4 Z';
+  card.querySelector('.n-lit').setAttribute('d', d);
+  // rhythm of the lunar month: proposal, see the zones in the card
+  var rhythm = [
+    { to: 2, mode: 'rest', act: 'new moon — reflect, close the cycle, set intentions' },
+    { to: 13, mode: 'push', act: 'waxing moon — build, ship, launch' },
+    { to: 16, mode: 'rest', act: 'full moon — release, celebrate what is done' },
+    { to: 27, mode: 'push', act: 'waning moon — finish, close loops, clean up' },
+    { to: 30, mode: 'rest', act: 'dark moon — slow down, prepare the next cycle' }
+  ];
+  var i = 0;
+  while (dd > rhythm[i].to) i++;
+  var zone = rhythm[i];
+  var left = zone.to - dd + 1;
+  var j = (i + 1) % rhythm.length;
+  while (rhythm[j].mode === zone.mode) {
+    left += rhythm[j].to - (j === 0 ? 0 : rhythm[j - 1].to);
+    j = (j + 1) % rhythm.length;
+  }
+  var next = rhythm[j];
+  card.classList.add('m-' + zone.mode);
+  put('.n-mode', zone.mode);
+  put('.n-do', zone.act);
+  var toFull = (SYNODIC / 2 - age + SYNODIC) % SYNODIC;
+  var toNew = SYNODIC - age;
+  var moon = toFull < toNew ? ['full moon', toFull] : ['new moon', toNew];
+  var inDays = function (n) { n = Math.round(n); return n < 1 ? 'today' : n === 1 ? 'in 1 day' : 'in ' + n + ' days'; };
+  put('.n-next', (left === 1 ? 'last day' : left + ' days') + ', then ' + next.mode + ' · ' + moon[0] + ' ' + inDays(moon[1]));
+  var start = i === 0 ? 0 : rhythm[i - 1].to;
+  card.querySelectorAll('.n-zone').forEach(function (z, k) {
+    z.classList.add(k < i ? 'past' : k > i ? 'future' : 'now');
+  });
+  var span = Math.min(zone.to, SYNODIC) - start;
+  card.querySelector('.n-zone.now').style.setProperty('--f', Math.max(0, Math.min(1, (age - start) / span)).toFixed(4));
+  put('.n-month', text('.m-name') + ' · ' + text('.c-num') + ' · ' + text('.m-tag') + ' · ' + day + ' ' + text('.o-month'));
   card.hidden = false;
 })();
 </script>
