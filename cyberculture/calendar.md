@@ -11,18 +11,19 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 
 <style>
 /* prysm: void #000, text #fff #d7d7d7 #777 #4b4b4d, emotion hex at 100%, Play only, sizes 12/14/16/20/24/32, g = 8px, transitions 150ms */
-#calendarium{--w:max(100%,min(1040px,calc(100vw - 480px)));--dim:rgba(255,255,255,.12);width:var(--w);margin:48px 0 64px calc((100% - var(--w)) / 2);container-type:inline-size;background:#000;color:#ffffff;font-family:'Play',system-ui,sans-serif;font-weight:400;font-style:normal;line-height:1.4}
+#calendarium{--dim:rgba(255,255,255,.12);margin:24px 0 64px;color:#ffffff;font-family:'Play',system-ui,sans-serif;font-weight:400;font-style:normal;line-height:1.4}
+#calendarium .cal-table{--w:max(100%,min(1040px,calc(100vw - 480px)));width:var(--w);margin:40px 0 0 calc((100% - var(--w)) / 2);container-type:inline-size}
 #calendarium *{font-style:normal;font-weight:400}
 #calendarium .p1{--e:#00acff;--h:#00acff}
 #calendarium .p2{--e:#00fe00;--h:#00fe00}
 #calendarium .p3{--e:#fcf000;--h:#fcf000}
 #calendarium .p4{--e:#d500f9;--h:#d500f9}
 #calendarium .p0{--e:#4b4b4d;--h:#ffffff}
-#calendarium .cal-head{text-align:center;margin:0 0 48px}
-#calendarium .cal-eyebrow{font-size:12px;line-height:1;color:#777777;margin:0 0 16px}
+#calendarium .cal-meta{display:flex;flex-direction:column;gap:8px;padding:0 0 0 14px;border-left:2px solid #ffffff}
+#calendarium .cal-frame{font-size:16px;color:#ffffff}
 #calendarium .cal-sub{font-size:14px;color:#d7d7d7}
-#calendarium .cal-magellan{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:16px 0 0;font-size:12px;line-height:1;color:#777777}
-#calendarium .cal-legend{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 24px;margin:0 0 40px}
+#calendarium .cal-magellan{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;color:#777777}
+#calendarium .cal-legend{display:flex;flex-wrap:wrap;gap:8px 24px;margin:24px 0 0}
 #calendarium .cal-legend span{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#d7d7d7}
 #calendarium .cal-legend span::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--e)}
 #calendarium .cal-row{display:grid;grid-template-columns:40px minmax(120px,1.1fr) minmax(104px,.9fr) minmax(200px,2fr) minmax(220px,2.2fr);column-gap:16px;padding:16px 16px 16px 14px;border-left:2px solid var(--e,transparent);border-bottom:1px solid var(--dim);transition:background-color 150ms ease}
@@ -63,12 +64,13 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 </style>
 
 <div id="calendarium">
-<div class="cal-head">
-<div class="cal-eyebrow">Kardashev I — Southern Hemisphere — Galactic Calendar</div>
+<div class="cal-meta">
+<div class="cal-frame">Kardashev I — Southern Hemisphere — Galactic Calendar</div>
 <div class="cal-sub">13 months · year begins July · southern sky</div>
 <div class="cal-magellan"><span>◈ Large Magellanic Cloud</span><span>·</span><span>Small Magellanic Cloud ◈</span></div>
 </div>
 <div class="cal-legend"><span class="p1">Orientation</span><span class="p2">Expansion</span><span class="p3">Peak &amp; Harvest</span><span class="p4">Integration</span><span class="p0">Void</span></div>
+<div class="cal-table">
 <div class="cal-row cal-th"><div class="c-num">#</div><div>New month</div><div>Gregorian ref.</div><div>Meaning &amp; NLP concept</div><div>Traditions</div></div>
 <div class="cal-phase p1">Phase I — Orientation · Winter · Vector in darkness</div>
 <div class="cal-row p1">
@@ -232,4 +234,5 @@ The native frame begins at the [[cybersophy|Unix epoch]] and records irreversibl
 </ul>
 </div>
 <div class="cal-foot">Year begins in July · Vector set in darkness · Light is earned · <span class="k">The Magellanic Clouds are not a destination — they are a neighbour</span></div>
+</div>
 </div>
