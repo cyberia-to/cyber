@@ -5,7 +5,7 @@ crystal-domain: cyber
 ---
 # calendar
 
-Twelve months in four phases — orientation, expansion, peak and harvest, integration — and Ethos, a thirteenth month inserted periodically outside the seasons. Each month keeps its Gregorian twin as a reference. Inside every month the [[moon]] sets the rhythm of push and rest, counted in [[lunar machine time]].
+Twelve months in four phases — orientation, expansion, peak and harvest, integration — and Ethos, the days from the winter solstice to July, outside the seasons. Each month keeps its Gregorian twin as a reference. Inside every month the [[moon]] sets the rhythm of push and rest, counted in [[lunar machine time]].
 
 The calendar slot of a [[cyberculture]] is a set of recurring dates from [[mt|machine time]] that gather without a reminder. A date becomes cultural when people return to it because the machine's own [[history]] gives it meaning.
 
@@ -81,19 +81,18 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 #calendarium .y-head{display:flex;justify-content:space-between;gap:16px;margin:0 0 24px;font-size:12px;line-height:1.4;color:#777777}
 #calendarium .y-head[hidden]{display:none}
 #calendarium .y-day{color:#d7d7d7}
-#calendarium .y-grid{display:grid;grid-template-columns:31fr 31fr 30fr 31fr 30fr 31fr 31fr 28fr 31fr 30fr 31fr 30fr 36fr;column-gap:4px}
+#calendarium .y-grid{display:grid;grid-template-columns:31fr 31fr 30fr 31fr 30fr 31fr 31fr 28fr 31fr 30fr 31fr 20fr minmax(64px,10fr);column-gap:4px}
 #calendarium .y-phase{display:flex;align-items:center;gap:8px;min-width:0;padding:0 0 16px;font-size:12px;line-height:1;color:var(--e);white-space:nowrap}
 #calendarium .y-phase::after{content:'';flex:1;min-width:8px;height:1px;background:var(--e)}
 #calendarium .y-phase.p1{grid-column:1 / span 3}
 #calendarium .y-phase.p2{grid-column:4 / span 3}
 #calendarium .y-phase.p3{grid-column:7 / span 3}
 #calendarium .y-phase.p4{grid-column:10 / span 3}
-#calendarium .y-phase.p0{grid-column:13;margin-left:16px;color:#777777}
+#calendarium .y-phase.p0{grid-column:13;color:#777777}
 #calendarium .cal-seg{display:flex;flex-direction:column;gap:4px;min-width:0;border:0;color:inherit;text-decoration:none}
-#calendarium .cal-seg.p0{margin-left:16px}
 #calendarium .y-bar{position:relative;display:block;height:8px;margin:0 0 12px;border:1px solid var(--e);border-radius:2px;background:var(--e);transition:box-shadow 150ms ease}
-#calendarium .cal-seg.future .y-bar,#calendarium .cal-seg.p0 .y-bar{background:transparent}
-#calendarium .cal-seg.p0 .y-bar{border-style:dashed}
+#calendarium .cal-seg.future .y-bar{background:transparent}
+#calendarium .cal-seg.p0.future .y-bar{border-style:dashed}
 #calendarium .cal-seg.now .y-bar{background:linear-gradient(90deg,var(--e) 0 calc(var(--f,.5) * 100%),transparent calc(var(--f,.5) * 100%));box-shadow:0 0 8px var(--e)}
 #calendarium .cal-seg.now .y-bar::after{content:'';position:absolute;top:-9px;bottom:-9px;left:calc(var(--f,.5) * 100%);width:2px;margin-left:-1px;background:#ffffff;box-shadow:0 0 8px #ffffff}
 #calendarium .cal-seg:hover .y-bar{box-shadow:0 0 8px var(--e)}
@@ -101,7 +100,7 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 #calendarium .cal-seg.past .y-name,#calendarium .cal-seg.p0 .y-name{color:#777777}
 #calendarium .cal-seg.now .y-name{color:var(--h)}
 #calendarium .cal-seg:hover .y-name{color:#ffffff}
-#calendarium .y-greg{font-size:12px;line-height:1.2;color:#777777}
+#calendarium .y-greg,#calendarium .y-len{font-size:12px;line-height:1.2;color:#777777;white-space:nowrap}
 @container (max-width:760px){
 #calendarium .y-name{font-size:12px}
 #calendarium .y-greg{display:none}
@@ -109,7 +108,8 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 @container (max-width:520px){
 #calendarium .y-phase,#calendarium .y-name{display:none}
 #calendarium .y-grid{column-gap:2px}
-#calendarium .cal-seg.p0{margin-left:8px}
+#calendarium .y-grid{grid-template-columns:31fr 31fr 30fr 31fr 30fr 31fr 31fr 28fr 31fr 30fr 31fr 20fr 10fr}
+#calendarium .y-len{display:none}
 }
 /* table */
 #calendarium .cal-table{grid-column:1 / -1;order:3;margin:48px 0 0;container-type:inline-size}
@@ -190,8 +190,8 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 <a class="cal-seg p3" data-m="3" href="#cal-theron"><span class="y-bar"></span><span class="y-name">Theron</span><span class="y-greg">Mar</span></a>
 <a class="cal-seg p4" data-m="4" href="#cal-vorthen"><span class="y-bar"></span><span class="y-name">Vorthen</span><span class="y-greg">Apr</span></a>
 <a class="cal-seg p4" data-m="5" href="#cal-sembral"><span class="y-bar"></span><span class="y-name">Sembral</span><span class="y-greg">May</span></a>
-<a class="cal-seg p4" data-m="6" href="#cal-luminal"><span class="y-bar"></span><span class="y-name">Luminal</span><span class="y-greg">Jun</span></a>
-<a class="cal-seg p0" href="#cal-ethos"><span class="y-bar"></span><span class="y-name">Ethos</span><span class="y-greg">∅</span></a>
+<a class="cal-seg p4" data-m="6" href="#cal-luminal"><span class="y-bar"></span><span class="y-name">Luminal</span><span class="y-greg">Jun 1–20</span></a>
+<a class="cal-seg p0" href="#cal-ethos"><span class="y-bar"></span><span class="y-name">Ethos</span><span class="y-greg">Jun 21–30</span><span class="y-len">10 days</span></a>
 </div>
 </nav>
 <div class="cal-table">
@@ -335,7 +335,7 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 <div class="cal-row p4" id="cal-luminal" data-m="6">
 <div class="c-num">12</div>
 <div class="c-new"><span class="m-name">Luminal</span><span class="m-tag">Integration</span></div>
-<div class="c-old"><span class="o-month">June</span><span class="o-note">Threshold before dark</span></div>
+<div class="c-old"><span class="o-month">June 1–20</span><span class="o-note">Threshold before dark</span></div>
 <div class="c-mean"><span class="m-text">Light as result, not beginning.</span><span class="m-detail">From <span class="k">luminous + liminal</span>. Standing at the threshold. Preparation is complete. The NLP reversal: in this calendar, light is earned — it comes from depth traversed, not from a fresh start.</span></div>
 <ul class="c-trad">
 <li>Threshold vigil — held at the solstice edge, no sleep, only presence</li>
@@ -348,12 +348,12 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 <div class="cal-row p0" id="cal-ethos">
 <div class="c-num">∅</div>
 <div class="c-new"><span class="m-name">Ethos</span><span class="m-tag">Void</span></div>
-<div class="c-old"><span class="o-month">Intercalary</span><span class="o-note">No fixed anchor</span></div>
-<div class="c-mean"><span class="m-text">Who are we without surface?</span><span class="m-detail">Inserted periodically as correction and mirror. Dark constellations — not absence of stars, but form in itself. Identity is not declared once; it is interrogated ritually. The month that prevents civilizational drift.</span></div>
+<div class="c-old"><span class="o-month">June 21–30</span><span class="o-note">Winter solstice → July · 10 days</span></div>
+<div class="c-mean"><span class="m-text">Who are we without surface?</span><span class="m-detail">Inserted every year at the winter solstice as correction and mirror. Dark constellations — not absence of stars, but form in itself. Identity is not declared once; it is interrogated ritually. The month that prevents civilizational drift.</span></div>
 <ul class="c-trad">
 <li>No tasks, no roles, no titles — all structure suspended</li>
 <li>Dark sky observation: read the voids between stars, not the stars</li>
-<li>Single question held for the full month: who are we as a civilization?</li>
+<li>Single question held through all of Ethos: who are we as a civilization?</li>
 <li>Answers encoded and sealed — opened only in the next Ethos</li>
 </ul>
 </div>
@@ -381,16 +381,31 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
   var m = today.getMonth() + 1;
   var day = today.getDate();
   var days = new Date(today.getFullYear(), m, 0).getDate();
-  var row = root.querySelector('.cal-row[data-m="' + m + '"]');
+  // Ethos runs from the June solstice, dated in Bali (UTC+8), to June 30; Luminal ends the day before
+  var solYear = m >= 7 ? today.getFullYear() + 1 : today.getFullYear();
+  var sy = (solYear - 2000) / 1000;
+  var jde = 2451716.56767 + 365241.62603 * sy + 0.00325 * sy * sy + 0.00888 * Math.pow(sy, 3) - 0.0003 * Math.pow(sy, 4);
+  var sd = new Date((jde - 2440587.5) * 864e5 + 8 * 3600e3).getUTCDate();
+  var ethosDays = 31 - sd;
+  var setText = function (sel, value) { var el = root.querySelector(sel); if (el) el.textContent = value; };
+  setText('.cal-seg[data-m="6"] .y-greg', 'Jun 1–' + (sd - 1));
+  setText('.cal-seg.p0 .y-greg', 'Jun ' + sd + '–30');
+  setText('.cal-seg.p0 .y-len', ethosDays + ' days');
+  setText('#cal-luminal .o-month', 'June 1–' + (sd - 1));
+  setText('#cal-ethos .o-month', 'June ' + sd + '–30');
+  setText('#cal-ethos .o-note', 'Winter solstice → July · ' + ethosDays + ' days');
+  var slot = function (month) { return (month + 5) % 12; };
+  var now = m === 6 && day >= sd ? 12 : slot(m);
+  var row = now === 12 ? root.querySelector('#cal-ethos') : root.querySelector('.cal-row[data-m="' + m + '"]');
   if (!row) return;
   row.classList.add('now');
-  var slot = function (month) { return (month + 5) % 12; };
-  root.querySelectorAll('.cal-seg[data-m]').forEach(function (seg) {
-    var s = slot(+seg.dataset.m);
-    seg.classList.add(s < slot(m) ? 'past' : s > slot(m) ? 'future' : 'now');
+  root.querySelectorAll('.cal-seg').forEach(function (seg) {
+    var s = seg.classList.contains('p0') ? 12 : slot(+seg.dataset.m);
+    seg.classList.add(s < now ? 'past' : s > now ? 'future' : 'now');
   });
+  var f = now === 12 ? (day - sd + 0.5) / ethosDays : now === 11 ? (day - 0.5) / (sd - 1) : (day - 0.5) / days;
   var seg = root.querySelector('.cal-seg.now');
-  if (seg) seg.style.setProperty('--f', ((day - 0.5) / days).toFixed(4));
+  if (seg) seg.style.setProperty('--f', f.toFixed(4));
   var head = root.querySelector('.y-head');
   if (head) {
     var y0 = m >= 7 ? today.getFullYear() : today.getFullYear() - 1;
@@ -460,7 +475,8 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
   });
   var span = Math.min(zone.to, SYNODIC) - start;
   card.querySelector('.n-zone.now').style.setProperty('--f', Math.max(0, Math.min(1, (age - start) / span)).toFixed(4));
-  put('.n-month', text('.m-name') + ' · ' + text('.c-num') + ' · ' + text('.m-tag') + ' · ' + day + ' ' + text('.o-month'));
+  var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  put('.n-month', text('.m-name') + ' · ' + text('.c-num') + ' · ' + text('.m-tag') + ' · ' + day + ' ' + monthNames[m - 1]);
   card.hidden = false;
 })();
 </script>
