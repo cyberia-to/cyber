@@ -57,12 +57,25 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 #calendarium .t-n{font-size:32px;line-height:1.2;color:#ffffff;font-variant-numeric:tabular-nums}
 #calendarium .t-lab{font-size:12px;line-height:1.4;color:#777777}
 #calendarium .t-dot{font-size:32px;line-height:1.2;color:#4b4b4d}
-#calendarium .t-row{display:grid;grid-template-columns:56px minmax(0,1fr);column-gap:16px;align-items:baseline;padding:12px 0;border-top:1px solid var(--dim)}
+#calendarium .t-lead p{margin:0 0 16px;font-size:14px;line-height:1.5;color:#d7d7d7}
+#calendarium .t-row{display:grid;grid-template-columns:112px minmax(0,1fr);column-gap:16px;align-items:baseline;padding:12px 0;border-top:1px solid var(--dim)}
 #calendarium .t-name{font-size:14px;line-height:1.5;color:#ffffff}
 #calendarium .t-eq{white-space:nowrap}
-#calendarium .t-def p,#calendarium .t-why p{margin:0;font-size:14px;line-height:1.5;color:#777777}
-#calendarium .t-why{padding:12px 0 0;border-top:1px solid var(--dim)}
-#calendarium .t-why p{color:#d7d7d7}
+#calendarium .t-def p{margin:0;font-size:14px;line-height:1.5;color:#777777}
+#calendarium .t-sub{margin:24px 0 16px}
+#calendarium .t-ages{display:grid;grid-template-columns:minmax(96px,1fr) 39fr 17fr;column-gap:4px;margin:0 0 16px}
+#calendarium .t-age{display:flex;flex-direction:column;gap:4px;min-width:0}
+#calendarium .t-bar{position:relative;display:block;height:8px;margin:0 0 8px;border:1px solid #777777;border-radius:2px}
+#calendarium .a-pre .t-bar{border:1px dashed #4b4b4d}
+#calendarium .a-ins .t-bar{border-color:#ffffff;background:#ffffff;box-shadow:0 0 8px #ffffff}
+#calendarium .a-ins .t-bar::after{content:'';position:absolute;top:-9px;bottom:-9px;right:-1px;width:2px;background:#ffffff;box-shadow:0 0 8px #ffffff}
+#calendarium .t-an{font-size:14px;line-height:1.2;color:#d7d7d7}
+#calendarium .a-pre .t-an{color:#777777}
+#calendarium .a-ins .t-an{color:#ffffff}
+#calendarium .t-ar{font-size:12px;line-height:1.2;color:#777777;white-space:nowrap}
+@media (max-width:600px){
+#calendarium .t-row{grid-template-columns:minmax(0,1fr);row-gap:4px}
+}
 #calendarium .cal-time a{color:#d7d7d7;border-bottom:1px solid rgba(255,255,255,.12);text-decoration:none;transition:color 150ms ease,border-color 150ms ease}
 #calendarium .cal-time a:hover{color:#ffffff;border-bottom-color:#ffffff}
 /* now */
@@ -247,14 +260,19 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 <section class="cal-time" aria-label="Time">
 <span class="t-kick">now</span>
 <div class="t-stamp"><span class="t-part"><span class="t-n t-yy">56</span><span class="t-lab">year</span></span><span class="t-dot">·</span><span class="t-part"><span class="t-n t-mm">11</span><span class="t-lab">moon</span></span><span class="t-dot">·</span><span class="t-part"><span class="t-n t-dd">10</span><span class="t-lab">day</span></span></div>
+<div class="t-lead">
+
+[[unix time]] is the clock of the solar system: one count of seconds that every machine shares, on Earth or on Mars. years and moons fit that count to Earth, and together they make [[lunar machine time]].
+
+</div>
 <div class="t-row"><span class="t-name">year</span><div class="t-def">
 
-machine years since the first second of [[unix time]], 1970-01-01 00:00 UTC, the zero every machine on the planet shares: <span class="t-eq"><span class="t-gy">2026</span> − 1970 = <span class="t-yy">56</span></span>.
+machine years since second 0 of [[unix time]], 1970-01-01 00:00 UTC: <span class="t-eq"><span class="t-gy">2026</span> − 1970 = <span class="t-yy">56</span></span>.
 
 </div></div>
 <div class="t-row"><span class="t-name">moon</span><div class="t-def">
 
-the lunar month: one [[synodic month]] from new moon to new moon, 29.53 days. moons are numbered from the first new moon on or after January 1, so a year holds 12 or 13.
+the lunar month: one [[synodic month]] of the [[moon]], new moon to new moon, 29.53 days. moons are numbered from the first new moon on or after January 1, so a year holds 12 or 13.
 
 </div></div>
 <div class="t-row"><span class="t-name">day</span><div class="t-def">
@@ -262,11 +280,23 @@ the lunar month: one [[synodic month]] from new moon to new moon, 29.53 days. mo
 the day inside the current moon, 1 to 30: day 1 follows the new moon, the full moon falls near day 15. anyone reads it from the sky.
 
 </div></div>
-<div class="t-why">
+<span class="t-kick t-sub">ages of machine time</span>
+<div class="t-ages" aria-hidden="true"><div class="t-age a-pre"><span class="t-bar"></span><span class="t-an">prehistory</span><span class="t-ar">→ 0</span></div><div class="t-age a-dark"><span class="t-bar"></span><span class="t-an">dark times</span><span class="t-ar">0 – 39</span></div><div class="t-age a-ins"><span class="t-bar"></span><span class="t-an">inscribed time</span><span class="t-ar">39 – <span class="t-yy">56</span> now</span></div></div>
+<div class="t-row"><span class="t-name">prehistory</span><div class="t-def">
 
-[[lunar machine time]] joins the oldest clock, the [[moon]] every observer sees, with the youngest, [[unix time]] every machine agrees on. the months below name the same days for the southern land.
+from the start of the simulation to second 0: the world runs before the first machine second. dates of this age carry a minus, [[before machines]].
 
-</div>
+</div></div>
+<div class="t-row"><span class="t-name">dark times</span><div class="t-def">
+
+years 0 to 39: machines count the seconds on trust. time is known to have passed and stays unproven.
+
+</div></div>
+<div class="t-row"><span class="t-name">inscribed time</span><div class="t-def">
+
+from second 1231006505, the genesis block of [[bitcoin]] in year 39: every block proves the time behind it. the ages follow [[cybersophy]].
+
+</div></div>
 </section>
 <aside class="cal-now" hidden>
 <div class="n-top"><span>today</span><span class="n-lmt"></span></div>
@@ -554,6 +584,8 @@ the day inside the current moon, 1 to 30: day 1 follows the new moon, the full m
   fill('.t-gy', today.getUTCFullYear());
   fill('.t-mm', mm);
   fill('.t-dd', dd);
+  var ages = root.querySelector('.t-ages');
+  if (ages) ages.style.gridTemplateColumns = 'minmax(96px,1fr) 39fr ' + Math.max(1, today.getUTCFullYear() - 2009) + 'fr';
   var age = ((today.getTime() / 864e5 + 2440587.5 - REF) % SYNODIC + SYNODIC) % SYNODIC;
   var phases = ['new moon', 'waxing crescent', 'first quarter', 'waxing gibbous', 'full moon', 'waning gibbous', 'last quarter', 'waning crescent'];
   put('.n-lday', 'lunar day ' + dd);
