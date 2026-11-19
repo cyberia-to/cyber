@@ -12,7 +12,7 @@ Cyber consumes the [soft3 release contract](https://github.com/cyberia-to/soft3/
 workflow uses the same revision. Soft3 owns stack qualification and dependency
 pins. Cyber adds executable acceptance and protocol graph compilation.
 
-Friday 12:00 UTC, or manual dispatch, captures default-branch origin inputs and
+Daily at 12:00 UTC, or manual dispatch, captures default-branch origin inputs and
 creates `candidate-YYYYMMDD.N` as a GitHub draft prerelease. A rehearsal uses
 `cut=false`. Native runners target macOS and Linux, ARM64 and x64. Failed gates
 retain available artifacts and red receipts. The owner decides promotion and

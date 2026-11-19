@@ -79,7 +79,7 @@ stays intact; activation is a permanent reader-generation upgrade. See
 
 `nu scripts/release.nu --locked-sources` produces a host binary, checksum,
 build provenance and the exact soft3 dependency inventory in `dist/` from a
-pinned checkout. The shared soft3 release train creates Friday draft candidates in
+pinned checkout. The shared soft3 release train creates daily draft candidates in
 [GitHub Releases](https://github.com/cyberia-to/cyber/releases), with that inventory,
 gate receipts and available binaries for macOS and Linux on ARM64/x64. The owner
 promotes a candidate after reviewing its verdict. [Node workflow runs](https://github.com/cyberia-to/cyber/actions/workflows/node.yml)

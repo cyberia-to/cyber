@@ -48,8 +48,9 @@ artifact and records sibling-source provenance in `dist/`.
 ## Release train
 
 Rules: `~/cyber/cyberia/dev.md` § release train. A candidate is cut every
-friday 12:00 UTC by an agent from `origin/master` only; a working tree is
-never an input. Gates: `cargo build --release --locked`, `cargo test --locked`,
+day at 12:00 UTC (the owner, 2026-10-24; fridays before that) by an agent
+from `origin/master` only; a working tree is never an input. Gates:
+`cargo build --release --locked`, `cargo test --locked`,
 `nu scripts/release.nu --locked-sources` (dist/ + SHA256SUMS + sibling
 provenance), and the graph builds with optica. A red gate ships as a red
 candidate with its evidence. One bump is one PR `chore: cyber <version>`

@@ -11,7 +11,9 @@ same thing, and the doctrine behind both is `~/cyber/cyberia/dev.md`
   inputs on the default branch of every repository it closes over. A working
   tree is never an input; a dirty or unpushed input makes a candidate local,
   and a local candidate can never become a release.
-- One candidate every friday 12:00 UTC, cut by an agent from origin:
+- One candidate every day at 12:00 UTC (the owner, 2026-10-24; fridays before
+  that — soft3 main still carries the friday cron until `release/phase1`
+  lands), cut by an agent from origin:
   `candidate-YYYYMMDD.N`, a draft pre-release on GitHub with binaries per
   platform (macOS arm64/x64, Linux arm64/x64; cyb adds the Android apk; no
   Windows, no iOS), `SHA256SUMS`, `sources.json`, `candidate.json`,

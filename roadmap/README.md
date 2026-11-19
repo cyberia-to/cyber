@@ -22,7 +22,7 @@ work under that contract. Owner adopted the order A → C → D for phase 1 on
 | C | [network](c-network.md) | 1 | independent nodes on independent machines converge, finalize by φ*, settle and fold rewards, and hold the three privacy invariants |
 | D | content | 1 | every referenced particle resolves in cyb; media and PDF render; link → files → links navigation |
 | B | [computation](b-computation.md) | 2 | one cyber binary builds, runs, proves and verifies user programs through shared Trident/Joy libraries; the first canary upgrade |
-| throughout | [distribution](distribution.md) | 1 | reproducible binaries, configuration, explanatory graph and executable release checks; the friday release train |
+| throughout | [distribution](distribution.md) | 1 | reproducible binaries, configuration, explanatory graph and executable release checks; the daily release train |
 | alongside | [cryptographic readiness](cryptographic-readiness.md) | 1 | finalized primitive/proof profiles and implementation evidence required by each claimed release |
 
 The critical path is C: the pieces exist as tested libraries in foculus, zheng,
