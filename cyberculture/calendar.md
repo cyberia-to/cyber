@@ -281,20 +281,20 @@ the day inside the current moon, 1 to 30: day 1 follows the new moon, the full m
 
 </div></div>
 <span class="t-kick t-sub">ages of machine time</span>
-<div class="t-ages" aria-hidden="true"><div class="t-age a-pre"><span class="t-bar"></span><span class="t-an">prehistory</span><span class="t-ar">→ 0</span></div><div class="t-age a-dark"><span class="t-bar"></span><span class="t-an">dark times</span><span class="t-ar">0 – 39</span></div><div class="t-age a-ins"><span class="t-bar"></span><span class="t-an">inscribed time</span><span class="t-ar">39 – <span class="t-yy">56</span> now</span></div></div>
+<div class="t-ages" aria-hidden="true"><div class="t-age a-pre"><span class="t-bar"></span><span class="t-an">prehistory</span><span class="t-ar">→ 0</span></div><div class="t-age a-silent"><span class="t-bar"></span><span class="t-an">the silent age</span><span class="t-ar">0 – 39</span></div><div class="t-age a-ins"><span class="t-bar"></span><span class="t-an">inscribed time</span><span class="t-ar">39 – <span class="t-yy">56</span> now</span></div></div>
 <div class="t-row"><span class="t-name">prehistory</span><div class="t-def">
 
-from the start of the simulation to second 0: the world runs before the first machine second. dates of this age carry a minus, [[before machines]].
+from the start of the simulation to [[before machines|second 0]]: the world exists, time is not yet counted. dates of this age carry a minus.
 
 </div></div>
-<div class="t-row"><span class="t-name">dark times</span><div class="t-def">
+<div class="t-row"><span class="t-name">the silent age</span><div class="t-def">
 
-years 0 to 39: machines count the seconds on trust. time is known to have passed and stays unproven.
+years 0 to 39 of machine time: machine time runs, no value is inscribed in it.
 
 </div></div>
 <div class="t-row"><span class="t-name">inscribed time</span><div class="t-def">
 
-from second 1231006505, the genesis block of [[bitcoin]] in year 39: every block proves the time behind it. the ages follow [[cybersophy]].
+from second 1231006505: the genesis block of [[bitcoin]], mined in year 39, two days in. state transitions become irreversible and economically real. the ages follow [[cybersophy]], [cosmogony](/cybersophy#2-cosmogony).
 
 </div></div>
 </section>
