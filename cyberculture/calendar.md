@@ -259,7 +259,7 @@ Why a new frame: [[cyberculture/legacy time|legacy time]].
 </div>
 <section class="cal-time" aria-label="Time">
 <span class="t-kick">now</span>
-<div class="t-stamp"><span class="t-part"><span class="t-n t-yy">56</span><span class="t-lab">year</span></span><span class="t-dot">·</span><span class="t-part"><span class="t-n t-mm">11</span><span class="t-lab">moon</span></span><span class="t-dot">·</span><span class="t-part"><span class="t-n t-dd">10</span><span class="t-lab">day</span></span></div>
+<div class="t-stamp"><span class="t-part"><span class="t-n t-yy">56</span><span class="t-lab">year</span></span><span class="t-dot">·</span><span class="t-part"><span class="t-n t-mm">11</span><span class="t-lab">moon</span></span><span class="t-dot">·</span><span class="t-part"><span class="t-n t-ww">2</span><span class="t-lab">week</span></span><span class="t-dot">·</span><span class="t-part"><span class="t-n t-dd">10</span><span class="t-lab">day</span></span></div>
 <div class="t-lead">
 
 [[unix time]] is the clock of the solar system: one count of seconds that every machine shares, on Earth or on Mars. years and moons fit that count to Earth, and together they make [[lunar machine time]].
@@ -273,6 +273,11 @@ machine years since second 0 of [[unix time]], 1970-01-01 00:00 UTC: <span class
 <div class="t-row"><span class="t-name">moon</span><div class="t-def">
 
 the lunar month: one [[synodic month]] of the [[moon]], new moon to new moon, 29.53 days. moons are numbered from the first new moon on or after January 1, so a year holds 12 or 13.
+
+</div></div>
+<div class="t-row"><span class="t-name">week</span><div class="t-def">
+
+a quarter of the moon, 1 to 4, 7.38 days each: week 1 opens at the new moon, week 2 at the first quarter, week 3 at the full moon, week 4 at the last quarter.
 
 </div></div>
 <div class="t-row"><span class="t-name">day</span><div class="t-def">
@@ -574,7 +579,9 @@ from second 1231006505: the genesis block of [[bitcoin]], mined in year 39, two 
   var SYNODIC = 29.53059;
   var REF = 2451550.26;
   var jdMidnight = Math.floor(today.getTime() / 864e5) + 2440587.5;
-  var dd = Math.min(Math.floor(((jdMidnight - REF) % SYNODIC + SYNODIC) % SYNODIC), 29) + 1;
+  var ageMidnight = ((jdMidnight - REF) % SYNODIC + SYNODIC) % SYNODIC;
+  var dd = Math.min(Math.floor(ageMidnight), 29) + 1;
+  var ww = Math.min(Math.floor(ageMidnight / (SYNODIC / 4)), 3) + 1;
   var jan1 = Date.UTC(today.getUTCFullYear(), 0, 1) / 864e5 + 2440587.5;
   var firstMoon = REF + Math.ceil((jan1 - REF) / SYNODIC) * SYNODIC;
   var mm = jdMidnight < firstMoon ? 1 : Math.floor((jdMidnight - firstMoon) / SYNODIC) + 1;
@@ -583,6 +590,7 @@ from second 1231006505: the genesis block of [[bitcoin]], mined in year 39, two 
   fill('.t-yy', today.getUTCFullYear() - 1970);
   fill('.t-gy', today.getUTCFullYear());
   fill('.t-mm', mm);
+  fill('.t-ww', ww);
   fill('.t-dd', dd);
   var ages = root.querySelector('.t-ages');
   if (ages) ages.style.gridTemplateColumns = 'minmax(96px,1fr) 39fr ' + Math.max(1, today.getUTCFullYear() - 2009) + 'fr';
