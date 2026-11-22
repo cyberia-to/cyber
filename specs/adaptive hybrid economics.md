@@ -10,7 +10,7 @@ status: draft
 
 how cyber splits security spend between compute work and active stake without hard-coding arbitrary percentages. parameters self-calibrate from on-chain observables via control-theoretic feedback (P / PD / PID). applies to [[CYB]] hybrid mint under [[tok]] / [[plumb]]
 
-normative home: this page under [[specs]]. equations for rewards: [[rewards]]. token utility surface: [[cyber/$CYB|$CYB]]. the derivation, the proofs, the bootstrapping protocol and the simulation results: [[adaptive hybrid consensus economics]]
+normative home: this page under [[specs]]. equations for rewards: [[rewards]]. token utility surface: [[cyber/$CYB|$CYB]]. the derivation as it was first written — the proofs, the bootstrapping protocol and the simulation results: [[adaptive hybrid consensus economics]]; its burn-rate loop diverges from the one below (it drives β from the security margin, which needs a price oracle) and this page holds
 
 ## problem
 
