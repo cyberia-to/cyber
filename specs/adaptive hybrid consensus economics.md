@@ -8,9 +8,9 @@ status: draft
 ---
 # adaptive hybrid consensus economics
 
-the long form of [[adaptive hybrid economics]]: the argument, the theorems with their proofs, the control rules, the bootstrapping protocol and the simulation results. this is the derivation as it was written in june 2026, not a statement of the rule in force: the short page is normative, and where the two differ the short page holds. [[rewards]] §10 cites this page by this name.
+the long form of [[adaptive hybrid economics]]: the argument, the theorems with their proofs, the control rules, the bootstrapping protocol and the simulation results. this is the derivation as it was written in june 2026, not a statement of the rule in force: the short page is normative, and where the two differ the short page holds. [[reward specification|tru/specs/rewards]] §10 cites this page by this name.
 
-restored on 2026-11-22 from cybics `game/adaptive hybrid consensus economics.md` at `87059a2` (2026-06-05): 69245 bytes, sha256 `c18b26b7a50fd294b27878845be9b1c4169f6e8af3e942d72e90a39136b9f70d`. the text below is that text unchanged; the logseq outline it was exported in has been flattened to markdown, its twenty tables reassembled as markdown rows, and the two repeated copies of the title block dropped in favour of the page heading above. the page was reduced to a pointer on 2026-08-15 when the short specification was written, and the long form left every working tree; the owner, 2026-11-22: "return the long work into scope".
+restored on 2026-11-22 from cybics `game/adaptive hybrid consensus economics.md` at `87059a2` (2026-06-05): 69245 bytes, sha256 `c18b26b7a50fd294b27878845be9b1c4169f6e8af3e942d72e90a39136b9f70d`. the text below is that text unchanged; the logseq outline it was exported in has been flattened to markdown, its twenty tables reassembled as markdown rows, the thirteen formulas the same export damaged repaired (ten lost a subscript underscore to an asterisk, three lost the second backslash of a cases row break), and the two repeated copies of the title block dropped in favour of the page heading above. the page was reduced to a pointer on 2026-08-15 when the short specification was written, and the long form left every working tree; the owner, 2026-11-22: "return the long work into scope".
 
 where this page diverges from the short one: section 7.3 drives the burn rate β from the security margin error, and the margin (definition 4.1, with the state variables of section 1.1) is built from TVL and market capitalisation = price × supply, so that loop needs a price oracle. the short page drives β from fee coverage and states that its core loop needs none. the short page is the rule in force.
 
@@ -303,7 +303,7 @@ Consider a scenario: TVL is rising (increasing attack profit), but staking is ri
 Another metric enabled by relative dynamics: coherence.
 
 Define:
-$$C = \text{corr}(\dot{S}, \dot{F}) \times \text{corr}(\dot{R}*{\text{PoS}}, \dot{R}*{\text{PoW}})$$
+$$C = \text{corr}(\dot{S}, \dot{F}) \times \text{corr}(\dot{R}_{\text{PoS}}, \dot{R}_{\text{PoW}})$$
 
 Where:
 
@@ -368,14 +368,14 @@ $$\text{floor} \leftarrow \text{floor} - \eta_f \cdot (\text{coverage} - 1) \cdo
 ##### Smoothing
 
 All derivatives are computed via exponential moving averages to reduce noise:
-$$\dot{X}*{t} = \beta \cdot (X_t - X*{t-1}) + (1-\beta) \cdot \dot{X}_{t-1}$$
+$$\dot{X}_{t} = \beta \cdot (X_t - X_{t-1}) + (1-\beta) \cdot \dot{X}_{t-1}$$
 
 #### Chapter 14: Why This Works — The Gradient Ascent Interpretation
 
 The update rules might seem ad hoc, but they have a deep foundation: they are gradient ascent on a social welfare function.
 
 Define welfare:
-$$W = \underbrace{S(M, \alpha, \text{floor})}*{\text{Security}} - \underbrace{C(\alpha, H, S)}*{\text{Cost}} - \underbrace{D(\text{floor}, \text{burn}, F)}_{\text{Dilution}}$$
+$$W = \underbrace{S(M, \alpha, \text{floor})}_{\text{Security}} - \underbrace{C(\alpha, H, S)}_{\text{Cost}} - \underbrace{D(\text{floor}, \text{burn}, F)}_{\text{Dilution}}$$
 
 Where:
 
@@ -643,8 +643,8 @@ $$\alpha \cdot 0.5^{\alpha - 1} = 1 \implies \alpha = 0.5$$
 checks: $0.5 \cdot 0.5^{-0.5} = 0.5 \cdot \sqrt{2} \approx 0.707 \neq 1$.
 
 *Revised proof*: The neutral prior emerges from symmetry. When we have no information preferring PoW or PoS, the allocation should treat a marginal dollar equally. The square root function $S^{0.5}$ has the property that:
-$$\frac{d(S^{0.5})}{dS} \bigg|*{S=0.5} = \frac{0.5}{0.5^{0.5}} = \frac{1}{\sqrt{2}}$$
-$$\frac{d(1-S^{0.5})}{dS} \bigg|*{S=0.5} = -\frac{1}{\sqrt{2}}$$
+$$\frac{d(S^{0.5})}{dS} \bigg|_{S=0.5} = \frac{0.5}{0.5^{0.5}} = \frac{1}{\sqrt{2}}$$
+$$\frac{d(1-S^{0.5})}{dS} \bigg|_{S=0.5} = -\frac{1}{\sqrt{2}}$$
 
 The magnitudes are equal, meaning marginal changes in staking affect both pools symmetrically at the midpoint. ∎
 
@@ -802,8 +802,8 @@ Proposition 5.1: Gross rewards and net inflation can move independently:
 
 Theorem 5.2 (Burn Rate Optimization): The welfare-maximizing burn rate satisfies:
 $$\beta^* = \begin{cases}
-\beta_{\max} & \text{if } \mathcal{M} > k + \epsilon \
-0 & \text{if } \mathcal{M} < k - \epsilon \
+\beta_{\max} & \text{if } \mathcal{M} > k + \epsilon \\
+0 & \text{if } \mathcal{M} < k - \epsilon \\
 \beta_{\text{interior}} & \text{otherwise}
 \end{cases}$$
 
@@ -847,7 +847,7 @@ At equilibrium $(\mathbf{x}^*, \mathbf{u}^*)$:
 $$\dot{\mathbf{x}} \approx A(\mathbf{x} - \mathbf{x}^*) + B(\mathbf{u} - \mathbf{u}^*) + \mathbf{w}$$
 
 where:
-$$A = \frac{\partial f}{\partial \mathbf{x}}\bigg|*{\mathbf{x}^*, \mathbf{u}^*}, \quad B = \frac{\partial f}{\partial \mathbf{u}}\bigg|*{\mathbf{x}^*, \mathbf{u}^*}$$
+$$A = \frac{\partial f}{\partial \mathbf{x}}\bigg|_{\mathbf{x}^*, \mathbf{u}^*}, \quad B = \frac{\partial f}{\partial \mathbf{u}}\bigg|_{\mathbf{x}^*, \mathbf{u}^*}$$
 
 ##### 6.3 Stability Analysis
 
@@ -889,7 +889,7 @@ $$\eta_{\text{PoW}} = \frac{H}{\text{Mining Rewards}}, \quad \eta_{\text{PoS}} =
 
 For any parameter $\theta \in {\alpha, \phi, \beta}$ with associated error $e_\theta$:
 
-$$\Delta \theta = K_P \cdot e_\theta + K_D \cdot \dot{e}*\theta + K_I \cdot \int_0^t e*\theta(\tau) d\tau$$
+$$\Delta \theta = K_P \cdot e_\theta + K_D \cdot \dot{e}_\theta + K_I \cdot \int_0^t e_\theta(\tau) d\tau$$
 
 Discrete-time approximation (per epoch):
 $$\theta_{t+1} = \theta_t + K_P \cdot e_t + K_D \cdot (e_t - e_{t-1}) + K_I \cdot \sum_{\tau=0}^{t} e_\tau$$
@@ -923,7 +923,7 @@ $$\phi_{t+1} = \phi_t - K_{P\phi} \cdot e_F \cdot \mathbb{1}[\mathcal{M} > k + \
 
 Derivatives are estimated via exponential moving average:
 
-$$\dot{e}*t^{\text{est}} = \lambda_D \cdot (e_t - e*{t-1}) + (1 - \lambda_D) \cdot \dot{e}_{t-1}^{\text{est}}$$
+$$\dot{e}_t^{\text{est}} = \lambda_D \cdot (e_t - e_{t-1}) + (1 - \lambda_D) \cdot \dot{e}_{t-1}^{\text{est}}$$
 
 Typical $\lambda_D \in [0.2, 0.4]$ balances responsiveness with noise rejection.
 
@@ -1013,7 +1013,7 @@ $$\Delta t = \int_{\mathcal{M}}^{k} \frac{d\mathcal{M}}{\dot{\mathcal{M}}} = \fr
 ##### 9.2 Coherence Score
 
 Definition 9.2:
-$$C(t) = \text{corr}(\dot{S}*{[t-w,t]}, \dot{F}*{[t-w,t]}) \times \text{corr}(\dot{R}*{\text{PoS},[t-w,t]}, \dot{R}*{\text{PoW},[t-w,t]})$$
+$$C(t) = \text{corr}(\dot{S}_{[t-w,t]}, \dot{F}_{[t-w,t]}) \times \text{corr}(\dot{R}_{\text{PoS},[t-w,t]}, \dot{R}_{\text{PoW},[t-w,t]})$$
 
 where $w$ is the window size.
 
@@ -1056,7 +1056,7 @@ where:
 
 Security utility:
 $$U(\mathcal{M}) = \begin{cases}
--\infty & \mathcal{M} < 1 \
+-\infty & \mathcal{M} < 1 \\
 \log(\mathcal{M}) & \mathcal{M} \geq 1
 \end{cases}$$
 
@@ -1260,7 +1260,7 @@ After warmup:
 
 | Metric | Computation | Alert Threshold |
 | --- | --- | --- |
-| $\rho$ | $\dot{C}*{\text{attack}} / \dot{\Pi}*{\text{attack}}$ | $< 0.8$ sustained |
+| $\rho$ | $\dot{C}_{\text{attack}} / \dot{\Pi}_{\text{attack}}$ | $< 0.8$ sustained |
 | Coherence $C$ | Correlation product | $< 0.3$ |
 | Margin velocity $\dot{\mathcal{M}}$ | EMA derivative | $< -0.1$ per epoch |
 
