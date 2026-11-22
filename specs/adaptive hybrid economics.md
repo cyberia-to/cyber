@@ -1,6 +1,6 @@
 ---
 tags: cyber, cybernomics, design, specs
-alias: adaptive hybrid economics, adaptive hybrid consensus economics, hybrid PoW PoS, hybrid emission, self-calibrating emission
+alias: adaptive hybrid economics, hybrid PoW PoS, hybrid emission, self-calibrating emission
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: deep
@@ -10,7 +10,7 @@ status: draft
 
 how cyber splits security spend between compute work and active stake without hard-coding arbitrary percentages. parameters self-calibrate from on-chain observables via control-theoretic feedback (P / PD / PID). applies to [[CYB]] hybrid mint under [[tok]] / [[plumb]]
 
-normative home: this page under [[specs]]. equations for rewards: [[rewards]]. token utility surface: [[cyber/$CYB|$CYB]]. historical long essay + minimal implementation notes lived under cybics game
+normative home: this page under [[specs]]. equations for rewards: [[rewards]]. token utility surface: [[cyber/$CYB|$CYB]]. the derivation as it was first written — the proofs, the bootstrapping protocol and the simulation results: [[adaptive hybrid consensus economics]]; its burn-rate loop diverges from the one below (it drives β from the security margin, which needs a price oracle) and this page holds
 
 ## problem
 
@@ -143,7 +143,7 @@ derivatives via EMA. start P-only; add D if oscillation; full PID if volatility 
 
 consolidated from:
 
-- long form motivation + PID thesis (formerly cybics game adaptive hybrid consensus economics)
+- long form motivation + PID thesis: [[adaptive hybrid consensus economics]], restored beside this page on 2026-11-22
 - minimal implementation notes (sliding window difficulty, on-proof handler) — formerly cybics game adaptive hybrid economics
 
 implementation detail and simulation notebooks stay optional attachments; normative reward equations remain in [[rewards]]
