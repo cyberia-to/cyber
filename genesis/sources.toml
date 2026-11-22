@@ -1,0 +1,12 @@
+# what the genesis of cyber is built from: no burial. cyber reads the proven states of the two
+# networks that came before it, and every balance enters by a claim against them.
+
+[states]
+# the networks whose states are read, by chain id. These are the ids of the genesis files pinned
+# for the first attempt (space-pussy and bostrom, genesis/genesis.lock); they move when those
+# locks move.
+networks = [
+  "bae85f40d9f508664b5214107551be95d3f188d9585a899178c23e80886720e5", # pussy
+  "f78c60edd6aea30af0da261233334e7549e63ece912a82c8d5b9e4df3cadb425", # bostrom
+]
+proof = "not specified yet: the claim program's relation against a proven state (soft3 projects/proven-present.md §2.9)"

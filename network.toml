@@ -1,0 +1,28 @@
+# cyber — the network's identity and rules. A draft.
+#
+# cyber is the third network and arrives last, after pussy and bostrom have proven the machine
+# (soft3 projects/network-repos.md, phase N4). This file states only what is decided. The tables
+# the standard requires and this file lacks — work, blocks, finality, epoch, focus, rewards, ports
+# — are not decided: they take the values the two networks prove. So `cybernode network check`
+# would refuse this file today, and that is the honest state. Standard: cybernode specs/network.md.
+
+[network]
+name = "cyber"
+token = "cyb"                    # the native token, CYB
+# hrp: none. cyber has no legacy addresses: a balance enters only by a claim.
+# genesis_time: not set. The network launches in phase 3.
+
+[rules]
+rule_set = 1                     # rule set 1 carries claims only
+activations = [[1, 0]]
+
+[authorization]
+scheme = "hash"                  # hash-based only (soft3 projects/network-repos.md, N4)
+
+[emission]
+# the cap is arithmetic: the order of the Goldilocks field. The schedule is a function of the
+# network's age alone; who receives it is a function of focus. Proposed: https://cyber.page/cyber/$cyb/
+cap = "18446744069414584321"     # p = 2^64 - 2^32 + 1
+schedule = "M(t) = p * (1 - (1 + t / tau)^(-k))"
+tau_years = "0.33"
+k = "0.5"

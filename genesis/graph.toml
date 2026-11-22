@@ -1,0 +1,8 @@
+# the graph cyber starts with: none. Its knowledge is carried by the two networks it reads.
+# The vocabulary of rules is cybernode specs/network.md §4.
+
+[links]
+empty = true
+
+[result]
+link_frames = 0

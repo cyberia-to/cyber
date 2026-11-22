@@ -1,0 +1,15 @@
+# who holds what at block 0 of cyber: nobody. Block 0 carries no balance; CYB is minted by claims.
+# The vocabulary of rules is cybernode specs/network.md §4. Integers only.
+
+[claims]
+from = "the tocyb balance of an owner in the proven state of bostrom"
+rate = 666                                    # every tocyb becomes 666 CYB
+once = true                                   # a balance is claimed once
+
+[supply]
+genesis_supply = "the sum of all claims"
+value = "187416084623451570"                  # 281,405,532,467,645 tocyb at the halt of bostrom, times 666: about 1 % of the cap
+cap = "18446744069414584321"                  # the order of the Goldilocks field
+
+[result]
+balance_frames = 0

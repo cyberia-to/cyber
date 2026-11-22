@@ -1,0 +1,22 @@
+# the lock: what the rules of this repository build, by digest. The particle of the genesis file
+# is the chain id.
+#
+# Not built. The genesis of cyber cannot be built until the claim program is specified and the
+# node reads a network from its repository (soft3 projects/network-repos.md, phase N4). The lock
+# is written by the first build, with a receipt in audit/ of two independent builds.
+
+[genesis]
+particle = ""
+file_sha256 = ""
+file_bytes = 0
+time = 0
+block0_id = ""
+state_root = ""
+
+[contents]
+genesis_supply = "0"             # block 0 carries no balance; 187416084623451570 CYB is claimable
+balance_frames = 0
+link_frames = 0
+
+[built_with]
+pipeline = "none yet"

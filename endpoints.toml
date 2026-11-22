@@ -1,0 +1,12 @@
+# where cyber is met.
+
+[public]
+site = "https://cyb.money"
+explorer = ""                    # none: the network is not launched
+explorer_api = ""
+
+[node]
+# no defaults yet: the node knows no network named cyber.
+
+[peers]
+bootstrap = []

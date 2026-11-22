@@ -212,3 +212,15 @@ The shared candidate engine is pinned by `release/soft3.toml` and
 `cyber-tests`, `cyber-release`, `optica-build`, `protocol-graph`, and
 `soft3-dependency`. `specs/releases.md` defines the evidence contract. Node CI
 artifacts retain their development status until the shared train passes.
+
+## The network of CYB
+
+This repository is also the network repository of cyber, in the layout of cybernode `specs/network.md`; the twins are `BOOT` and `PUSSY`.
+
+- `network.toml` — the identity and rules of cyber, a draft that states only what is decided
+- `genesis/` — the sources (the proven states of pussy and bostrom), the claims, the empty graph, the lock (not built)
+- `endpoints.toml` — the site
+- `site/` — cyb.money: static files, no build, no Node. `landing/` is cyber.page and is another thing
+- `docs/history.md`, `docs/economics.md`, `docs/run-a-node.md` — the three pages every network repository carries
+
+Nothing of cyber runs. A file here never says otherwise: a value is decided, proposed or open, and says which. `docs/economics.md` follows `cyber/$CYB.md`; a figure changes there first. `genesis/genesis.lock` is written by the first build, with a receipt in `audit/` of two independent builds.

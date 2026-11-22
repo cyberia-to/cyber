@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>CYB — the best money</title>
+  <meta name="description" content="Smart, safe, easy, useful, alive, growing, scarce. The more the network learns, the better the money.">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://cyb.money">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cyb.money">
+  <meta property="og:title" content="CYB — the best money">
+  <meta property="og:description" content="The more the network learns, the better the money.">
+  <meta property="og:image" content="https://cyb.money/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CYB — the best money">
+  <meta name="twitter:description" content="The more the network learns, the better the money.">
+  <meta name="twitter:image" content="https://cyb.money/og.jpg">
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="gf" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="%23b6ffcc"/><stop offset=".45" stop-color="%2300ff41"/><stop offset="1" stop-color="%23007a1f"/></radialGradient></defs><circle cx="20" cy="20" r="18" fill="url(%23gf)"/></svg>'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --void: #000;
+      --ink: #f2f2f2;
+      --mute: #8a8a8a;
+      --green: #00ff01;
+      --cyan: #00b4ff;
+      --indigo: #1700fe;
+      --violet: #6b00fe;
+      --red: #fe0000;
+      --orange: #ff6501;
+      --yellow: #ffc501;
+      --app-height: 100dvh;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%; height: 100%; overflow: hidden;
+      background: var(--void); color: var(--ink);
+      font-family: 'Play', system-ui, sans-serif;
+    }
+    button, a { font: inherit; color: inherit; }
+    button { background: none; border: 0; cursor: pointer; }
+    ::selection { background: var(--green); color: #000; }
+
+    .app {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      height: var(--app-height, 100dvh);
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: 1fr auto;
+    }
+
+    .chapters {
+      position: relative;
+      min-height: 0;
+      overflow: hidden;
+      isolation: isolate;
+      z-index: 0;
+    }
+    .chapter {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      overflow: hidden;
+      overscroll-behavior: contain;
+      background: #000;
+      transition: opacity .4s ease, visibility .58s step-end;
+      z-index: 0;
+    }
+    .chapter.no-anim,
+    .chapter.no-anim .sheet h2,
+    .chapter.no-anim .stage {
+      transition: none !important;
+    }
+    .chapter.to-up, .chapter.to-down { z-index: 1; }
+    .chapter.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition: opacity .4s ease, visibility 0s;
+      z-index: 2;
+    }
+
+    .belong {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      font-size: clamp(1.2rem, 2.4vw, 1.85rem);
+      font-weight: 700;
+      letter-spacing: -.035em;
+      color: #fff;
+      line-height: 1.1;
+    }
+    .supply .gen-line { margin: .5rem auto 0; font-size: clamp(.85rem, 1.3vw, 1rem); line-height: 1.4; color: #c8c8c8; max-width: 44ch; text-align: center; }
+    .supply .gen-line strong { color: var(--hl, var(--accent)); font-family: 'JetBrains Mono', monospace; letter-spacing: -.03em; }
+    .caption .belong {
+      max-width: none;
+      font-size: clamp(1.2rem, 2.4vw, 1.85rem);
+      font-weight: 700;
+      color: #fff;
+    }
+    .belong .flag {
+      width: 1.28em;
+      height: 1.28em;
+      display: block;
+      flex-shrink: 0;
+    }
+    .ticker {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .12em;
+      font-size: clamp(5.4rem, 22vw, 13.5rem);
+      font-weight: 700;
+      line-height: .76;
+      color: var(--green);
+    }
+    .ticker .ico.globe svg { width: .78em; height: .78em; display: block; filter: drop-shadow(0 0 18px rgba(0,255,65,.45)); }
+    .ticker .ico {
+      font-size: .58em;
+      line-height: 1;
+      font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+      transform: translateY(.04em);
+    }
+    .ticker .name { letter-spacing: -.08em; }
+
+
+    .chapter { --accent: var(--green); --hl: var(--accent); }
+    .tone-g { --accent: var(--green); }
+    .tone-c { --accent: var(--cyan); }
+    .tone-i { --accent: var(--indigo); --hl: #8b9cff; }
+    .tone-p { --accent: var(--violet); --hl: #c090ff; }
+    .tone-r { --accent: var(--red); }
+    .tone-o { --accent: var(--orange); }
+    .tone-y { --accent: var(--yellow); }
+    .tone-w { --accent: #fff; }
+
+    .sheet {
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-template-rows: minmax(0, 19fr) minmax(0, 62fr) minmax(0, 19fr);
+    }
+    .phrase {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 0;
+      overflow: hidden;
+      position: relative;
+      padding: calc(2.4rem + env(safe-area-inset-top)) 24px 4px;
+    }
+    .stage {
+      display: grid;
+      grid-template-columns: 2.6rem minmax(0, 1fr) 2.6rem;
+      align-items: center;
+      min-height: 0;
+      overflow: hidden;
+      padding: 0 4px;
+      opacity: 0;
+      transition: opacity .5s ease;
+    }
+    .chapter.active .stage { opacity: 1; }
+    .pane {
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+      min-height: 0;
+      height: 100%;
+      width: 100%;
+    }
+    .pane-btn {
+      display: grid;
+      place-items: center;
+      width: 2.4rem;
+      height: 2.4rem;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: #fff;
+      opacity: .3;
+      cursor: pointer;
+    }
+    .pane-btn svg { width: 1.15rem; height: 1.15rem; display: block; }
+    .pane-btn:hover { opacity: 1; }
+    .pane-btn:disabled { opacity: .22; cursor: default; }
+    .pane-btn:disabled:hover { opacity: .22; }
+    .chapter:not([data-deck]) .pane-l,
+    .chapter:not([data-deck]) .pane-r {
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .pane-u, .pane-d {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+    }
+    .pane-u { top: calc(4px + env(safe-area-inset-top)); }
+    .pane-d { bottom: 2px; }
+    @keyframes next-hint {
+      0%, 100% { opacity: .85; }
+      50% { opacity: .22; }
+    }
+    .app[data-current-step="0"] .pane-d.hint:not(:disabled) {
+      animation: next-hint 2.6s ease-in-out infinite;
+    }
+    .caption {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 0;
+      overflow: hidden;
+      position: relative;
+      padding: 6px 24px 2.6rem;
+      gap: .5rem;
+    }
+    .caption p {
+      margin: 0;
+      max-width: 46ch;
+      font-size: clamp(1.15rem, 2vw, 1.5rem);
+      line-height: 1.3;
+      letter-spacing: -.01em;
+      color: var(--ink);
+    }
+    .caption .subdots { margin-bottom: .5rem; }
+    .subdots {
+      display: flex;
+      gap: 7px;
+      justify-content: center;
+      min-height: 8px;
+    }
+    .subdots button {
+      width: 7px;
+      height: 7px;
+      border: 0;
+      padding: 0;
+      border-radius: 50%;
+      background: #333;
+      cursor: pointer;
+    }
+    .subdots button.on { background: var(--hl); }
+    .prop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .7rem;
+      text-align: center;
+    }
+    .prop i {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: block;
+    }
+    .prop kbd {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(.72rem, 1.4vw, .9rem);
+      letter-spacing: .16em;
+      color: var(--mute);
+      font-weight: 500;
+    }
+    .prop b {
+      font-size: clamp(2.3rem, 6.2vw, 4.4rem);
+      font-weight: 700;
+      letter-spacing: -.045em;
+      line-height: .95;
+      color: #fff;
+    }
+    .sheet h2 {
+      font-size: clamp(1.75rem, 3.4vw, 2.8rem);
+      letter-spacing: -.04em;
+      line-height: 1.08;
+      margin: 0;
+      text-wrap: balance;
+      transition: transform .58s cubic-bezier(.22, .82, .16, 1);
+    }
+    .chapter.from-down .sheet h2,
+    .chapter.to-down .sheet h2 { transform: translate3d(0, 13vh, 0); }
+    .chapter.from-up .sheet h2,
+    .chapter.to-up .sheet h2 { transform: translate3d(0, -13vh, 0); }
+    .chapter.active .sheet h2 { transform: none; }
+    .sheet h2 .hl { color: var(--hl); font-style: normal; }
+    .sheet .note {
+      margin-top: 1.4rem;
+      color: var(--mute);
+      font-size: 1rem;
+      line-height: 1.4;
+      max-width: 46ch;
+      text-align: center;
+    }
+    .explain {
+      margin: 0;
+      max-width: 44ch;
+      min-height: 4.4rem;
+      flex: 0 0 auto;
+      text-align: center;
+    }
+    .explain kbd {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .78rem;
+      letter-spacing: .14em;
+      color: var(--hl);
+      margin-bottom: .35rem;
+    }
+    .explain p {
+      font-size: 1.12rem;
+      line-height: 1.4;
+      color: var(--ink);
+    }
+    .sheet .note b { color: #fff; font-weight: 700; }
+    .sheet .cap {
+      margin-top: 1.1rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--green);
+      font-size: clamp(1.15rem, 2.4vw, 1.8rem);
+      letter-spacing: -.04em;
+    }
+    .sheet .cap kbd {
+      display: block;
+      color: var(--mute);
+      font-size: .62rem;
+      letter-spacing: .14em;
+      margin-bottom: .25rem;
+    }
+
+    .rows {
+      display: grid;
+      gap: 0;
+      width: min(34rem, 100%);
+    }
+    .row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 10px minmax(0, 1fr);
+      grid-template-areas: "k t v";
+      align-items: baseline;
+      column-gap: .9rem;
+      padding: .55rem 0;
+      border-bottom: 1px solid #1a1a1a;
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      letter-spacing: -.03em;
+      line-height: 1.15;
+    }
+    .row:last-child { border-bottom: 0; }
+    .row i {
+      grid-area: t;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      align-self: center;
+      justify-self: center;
+      display: block;
+      font-style: normal;
+    }
+    .row kbd {
+      grid-area: k;
+      justify-self: end;
+      text-align: right;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .62rem;
+      letter-spacing: .12em;
+      color: var(--mute);
+      font-weight: 500;
+    }
+    .row b {
+      grid-area: v;
+      justify-self: start;
+      text-align: left;
+      font-weight: 700;
+    }
+    .row.on kbd, .row.on b { color: var(--hl); }
+    .chapter[data-deck] .row {
+      cursor: pointer;
+      opacity: .4;
+      transition: opacity .2s ease;
+    }
+    .chapter[data-deck] .row.on,
+    .chapter[data-deck] .row:hover { opacity: 1; }
+    .rows.pack .row {
+      padding: .32rem 0;
+      font-size: clamp(1.02rem, 1.7vw, 1.28rem);
+    }
+    a.row { color: inherit; text-decoration: none; }
+    .get .row {
+      cursor: pointer;
+      opacity: .4;
+      transition: opacity .2s ease;
+    }
+    .get .row:hover { opacity: 1; }
+    .row .y, .prop .y { background: var(--yellow); }
+    .row .b, .prop .b { background: var(--cyan); }
+    .row .i, .prop .i { background: var(--indigo); }
+    .row .p, .prop .p { background: var(--violet); }
+    .row .r, .prop .r { background: var(--red); }
+    .row .o, .prop .o { background: var(--orange); }
+    .row .g, .prop .g { background: var(--green); }
+
+    .supply { text-align: center; }
+    .supply kbd {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .62rem;
+      letter-spacing: .16em;
+      color: var(--mute);
+      margin-bottom: .15rem;
+    }
+    .supply b {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(2.8rem, 9vw, 5.6rem);
+      letter-spacing: -.07em;
+      line-height: .9;
+      color: #fff;
+    }
+    .supply b em {
+      font-style: normal;
+      color: var(--hl);
+      font-size: .38em;
+      letter-spacing: -.04em;
+      margin-left: .12em;
+    }
+    .chart {
+      margin-top: .4rem;
+      width: min(40rem, 100%);
+      color: var(--hl);
+    }
+    .chart svg { width: 100%; height: auto; display: block; }
+    .chart.live svg { cursor: crosshair; touch-action: pan-y; }
+    .gcheck { width: min(40rem, 100%); display: grid; gap: .55rem; }
+    .gkick { font-family: 'JetBrains Mono', monospace; font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--mute); text-align: center; }
+    .lpane[hidden] { display: none; }
+    .lpane { width: 100%; display: flex; justify-content: center; }
+    /* genesis checker — prysm sabers: a button is a transparent region framed by vertical glowing lines,
+       an input is a field over a glowing underline. the field area has a fixed height so tabs never move the panel. */
+    .gtabs { display: flex; gap: .55rem; flex-wrap: wrap; justify-content: center; }
+    .saber, .gcheck .sb { --sc: rgba(255,255,255,.55); --sg: rgba(255,255,255,.14); position: relative; display: inline-flex; align-items: center; justify-content: center; min-height: 2.5rem; padding: .55rem 1.25rem; background: linear-gradient(90deg, var(--sg), transparent 28%, transparent 72%, var(--sg)); color: #9a9a9a; font-family: 'JetBrains Mono', monospace; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; transition: color .15s ease, background .15s ease, --sg .15s ease; }
+    .saber::before, .saber::after, .gcheck .sb::before, .gcheck .sb::after { content: ''; position: absolute; top: 0; bottom: 0; width: 1px; background: var(--sc); box-shadow: 0 0 8px var(--sc); }
+    .saber::before, .gcheck .sb::before { left: 0; } .saber::after, .gcheck .sb::after { right: 0; }
+    .gtab:hover { color: #d7d7d7; }
+    .gtab.on, .gcheck .sb.go { --sc: var(--green); --sg: color-mix(in srgb, var(--green) 30%, transparent); color: var(--green); text-shadow: 0 0 12px color-mix(in srgb, var(--green) 60%, transparent); }
+    .gcheck .sb.go { font-weight: 700; } .gcheck .sb.clr { --sc: rgba(255,255,255,.45); --sg: rgba(255,255,255,.1); color: #ddd; }
+    .gcheck .sb:active { transform: scale(.96); }
+    .gfield { min-height: 5.2rem; display: grid; align-items: center; }
+    .gfield > [data-in] { width: 100%; }
+    .gfield input, .gfield textarea { width: 100%; display: block; background: transparent; color: #fff; border: 0; border-bottom: 1px solid rgba(255,255,255,.55); border-radius: 0; padding: .7rem .4rem .55rem; font-family: 'JetBrains Mono', monospace; font-size: .9rem; outline: none; text-align: center; box-shadow: 0 10px 18px -12px rgba(255,255,255,.45); transition: border-color .15s ease, box-shadow .15s ease; }
+    .gfield input::placeholder, .gfield textarea::placeholder { color: #555; }
+    .gfield input:focus, .gfield textarea:focus { border-color: var(--green); box-shadow: 0 10px 20px -11px var(--green); }
+    .gfield textarea { height: 4.6rem; resize: none; line-height: 1.4; }
+    .grow { display: flex; gap: .75rem; justify-content: center; }
+    .gaddr { font-family: 'JetBrains Mono', monospace; font-size: .7rem; color: var(--accent); word-break: break-all; text-align: center; min-height: 1em; }
+    .gout { text-align: center; }
+    .gout .big { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: clamp(1.9rem, 5vw, 3.6rem); letter-spacing: -.06em; line-height: 1; color: var(--accent); word-break: break-all; }
+    .gout .big em { font-style: normal; font-size: .4em; color: #fff; margin-left: .25em; letter-spacing: 0; }
+    .gout .sub { font-family: 'JetBrains Mono', monospace; font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--mute); margin-top: .35rem; }
+    .gout .pass { font-family: 'JetBrains Mono', monospace; font-size: .78rem; color: #ddd; margin-top: .4rem; }
+    .gout .pass b { color: #fff; }
+    .gerr { font-family: 'JetBrains Mono', monospace; font-size: .78rem; color: var(--red); text-align: center; }
+    .ghint { font-family: 'JetBrains Mono', monospace; font-size: .7rem; color: var(--mute); text-align: center; }
+    .cmp-note { font-size: .7rem; }
+    .cap-line {
+      margin-top: 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .78rem;
+      letter-spacing: .04em;
+      color: var(--mute);
+      text-align: center;
+    }
+    .cap-line strong { color: #fff; font-weight: 700; }
+
+    .bagel {
+      --r-lab: 41%;
+      position: relative;
+      width: min(30rem, 86%);
+      aspect-ratio: 1;
+      flex: 1 1 auto;
+      min-height: 0;
+      max-height: 100%;
+      margin: 0 auto;
+    }
+    .bagel svg { width: 100%; height: 100%; display: block; overflow: visible; }
+    .bagel .track { fill: none; stroke: #181818; }
+    .bagel .arc { fill: none; stroke-width: 9; opacity: .4; stroke-linecap: butt; transition: opacity .2s ease; }
+    .bagel .hit { fill: none; stroke: transparent; stroke-width: 16; }
+    .bagel .seg { cursor: pointer; }
+    .bagel .seg.on .arc, .bagel .seg:hover .arc { opacity: 1; }
+    .bagel-thirds .arc { stroke-width: 16; opacity: .45; }
+    .bagel-thirds .hit { stroke-width: 22; }
+    .bagel-thirds { --r-lab: 46%; }
+    .bagel-hub {
+      position: absolute;
+      inset: 26%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      pointer-events: none;
+    }
+    .bagel-hub b {
+      font-size: clamp(1.15rem, 3.4vw, 1.75rem);
+      font-weight: 700;
+      letter-spacing: -.04em;
+      line-height: 1.05;
+      color: var(--seg, var(--hl));
+      min-height: 2.2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .bagel-hub span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(.68rem, 1.5vw, .85rem);
+      letter-spacing: .1em;
+      color: var(--mute);
+      margin-top: .3rem;
+      text-transform: uppercase;
+    }
+    .bagel-lab {
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      padding: .2rem .35rem;
+      border: 0;
+      background: none;
+      color: #f2f2f2;
+      text-align: center;
+      cursor: pointer;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .bagel-lab b {
+      display: block;
+      font-size: clamp(.78rem, 1.7vw, 1.05rem);
+      font-weight: 700;
+      letter-spacing: -.03em;
+    }
+    .bagel-lab span {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(.58rem, 1.2vw, .7rem);
+      letter-spacing: .1em;
+      color: var(--mute);
+      margin-top: .12rem;
+    }
+    .bagel-lab.on b, .bagel-lab:hover b, .bagel-lab:focus-visible b {
+      color: var(--c, var(--hl));
+    }
+    .bagel-thirds .bagel-lab b {
+      font-size: clamp(1rem, 2.4vw, 1.35rem);
+    }
+    .bagel-thirds .bagel-lab span {
+      font-size: clamp(.72rem, 1.5vw, .88rem);
+      letter-spacing: .14em;
+    }
+
+    .split {
+      margin-top: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .85rem;
+      letter-spacing: .06em;
+      color: #fff;
+    }
+    .split em {
+      color: var(--hl);
+      font-style: normal;
+    }
+
+    .cta-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .tone-w .cta { background: #fff; color: #000; }
+    .cta {
+      display: inline-block;
+      padding: .9rem 1.25rem;
+      background: var(--green);
+      color: #000;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: .85rem;
+      letter-spacing: .06em;
+      text-decoration: none;
+    }
+    .cta.ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1px #333; }
+    .get {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      width: min(36rem, 100%);
+      height: 100%;
+    }
+    .oses {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .95rem;
+    }
+    .os {
+      width: 1.7rem;
+      height: 1.7rem;
+      color: #fff;
+      opacity: .34;
+      display: grid;
+      place-items: center;
+      text-decoration: none;
+    }
+    .os svg { width: 1.28rem; height: 1.28rem; display: block; }
+    .os:hover, .os.on { opacity: 1; }
+    .get .rows { width: 100%; margin-top: .35rem; }
+
+    .bar {
+      --lift: 7px;
+      display: flex;
+      align-items: stretch;
+      min-height: calc(3.25rem + var(--lift));
+      background: #000;
+      padding-top: var(--lift);
+      padding-bottom: env(safe-area-inset-bottom);
+      position: relative;
+      z-index: 5;
+    }
+    .track {
+      flex: 1 1 0px;
+      width: 0;
+      min-width: 0;
+      overflow: visible;
+      display: grid;
+      grid-template-columns: repeat(9, minmax(0, 1fr));
+      min-height: 3.25rem;
+    }
+    .dot {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+      min-height: 3.25rem;
+      padding: 0 .2rem;
+      border: 0;
+      border-radius: 0;
+      cursor: pointer;
+      font-family: 'Play', system-ui, sans-serif;
+      font-weight: 700;
+      font-size: clamp(.58rem, 1.05vw, .8rem);
+      letter-spacing: -.02em;
+      line-height: 1;
+      opacity: .48;
+      transition: opacity .28s ease, margin-top .35s cubic-bezier(.22, .82, .16, 1), padding-top .35s cubic-bezier(.22, .82, .16, 1);
+    }
+    .dot.r { background: var(--red); color: #fff; }
+    .dot.o { background: var(--orange); color: #000; }
+    .dot.y { background: var(--yellow); color: #000; }
+    .dot.g { background: var(--green); color: #000; }
+    .dot.b { background: var(--cyan); color: #000; }
+    .dot.bl { background: var(--indigo); color: #fff; }
+    .dot.p { background: var(--violet); color: #fff; }
+    .dot.k { background: #000; color: #fff; box-shadow: inset 0 0 0 1px #2a2a2a; }
+    .dot.w { background: #fff; color: #000; }
+    .dot.getcyb {
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: .04em;
+      font-size: clamp(.52rem, .95vw, .72rem);
+    }
+    .dot.long { font-size: clamp(.5rem, .88vw, .68rem); letter-spacing: -.04em; }
+    .dot span { white-space: nowrap; }
+    .dot.on {
+      opacity: 1;
+      margin-top: calc(var(--lift) * -1);
+      padding-top: var(--lift);
+    }
+    .dot.k.on { box-shadow: inset 0 0 0 1px #3a3a3a; }
+    .dot:hover { filter: none; opacity: .82; }
+    .dot.on:hover { opacity: 1; }
+
+
+    /* smart — the horizontal comparison: five kinds of money, what creates each, what each is worth today */
+    .cmp { width: 100%; max-width: 62rem; display: grid; gap: .5rem; }
+    .cmp-strip {
+      display: flex;
+      gap: .55rem;
+      width: 100%;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: .2rem .1rem .6rem;
+      scrollbar-width: none;
+    }
+    .cmp-strip::-webkit-scrollbar { display: none; }
+    .cmp-g {
+      flex: 1 0 11.2rem;
+      scroll-snap-align: center;
+      display: grid;
+      gap: .5rem;
+      align-content: start;
+      padding: .85rem .85rem .9rem;
+      border: 1px solid #1c1c1c;
+      border-radius: 14px;
+      background: #050505;
+      cursor: pointer;
+      opacity: .42;
+      transition: opacity .2s ease, border-color .2s ease, transform .2s ease;
+      text-align: left;
+    }
+    .cmp-g.on, .cmp-g:hover { opacity: 1; border-color: var(--gc); }
+    .cmp-g.on { transform: translateY(-3px); box-shadow: 0 0 0 1px var(--gc), 0 18px 40px -24px var(--gc); }
+    .cmp-g kbd {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .6rem;
+      letter-spacing: .18em;
+      color: var(--gc);
+      display: flex; align-items: center; gap: .45rem;
+    }
+    .cmp-g kbd::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--gc); }
+    .cmp-g .ins { display: flex; flex-wrap: wrap; gap: .4rem; margin: .35rem 0 .2rem; }
+    .cmp-i { display: block; width: 2rem; height: 2rem; }
+    .cmp-i svg { width: 100%; height: 100%; display: block; }
+    .cmp-g .sum { font-family: 'JetBrains Mono', monospace; font-weight: 700; letter-spacing: -.05em; font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1; color: #fff; margin-top: .2rem; }
+    .cmp-g .sum i { font-style: normal; font-size: .5em; color: var(--mute); margin-left: .15em; letter-spacing: 0; }
+    .cmp-g.on .sum { color: var(--gc); }
+    .cmp-note { font-family: 'JetBrains Mono', monospace; font-size: .58rem; letter-spacing: .1em; color: var(--mute); text-align: center; width: 100%; }
+    @media (max-width: 640px) {
+      .cmp-strip { gap: .45rem; padding-bottom: .4rem; }
+      .cmp-g { flex-basis: 78vw; }
+    }
+    @media (max-width: 640px) {
+      .ticker { font-size: 4.6rem; }
+      .belong { font-size: 1.15rem; }
+      .caption .belong { font-size: 1.15rem; }
+      .phrase { padding: calc(2.2rem + env(safe-area-inset-top)) 16px 4px; }
+      .caption { padding: 6px 16px 2.6rem; }
+      .caption p { font-size: 1.05rem; line-height: 1.28; max-width: 34ch; }
+      .sheet h2 { font-size: 1.7rem; }
+      .caption p { font-size: 1.12rem; line-height: 1.3; max-width: 32ch; }
+      .prop b { font-size: 2.15rem; }
+      .stage { grid-template-columns: 2rem minmax(0, 1fr) 2rem; }
+      .row { column-gap: .6rem; font-size: 1.15rem; }
+      .rows.pack .row { padding: .26rem 0; font-size: 1.02rem; }
+      .oses { gap: .7rem; }
+      .bar { --lift: 9px; min-height: calc(5.4rem + var(--lift)); }
+      .track, .dot { min-height: 5.4rem; }
+      .dot span {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        font-size: .68rem;
+        letter-spacing: .1em;
+      }
+      .dot.getcyb span { font-size: .62rem; letter-spacing: .08em; }
+      .bagel { width: min(22rem, 88%); }
+      .bagel-lab span { display: none; }
+      .bagel-lab b { font-size: .78rem; }
+      .bagel-thirds .bagel-lab b { font-size: .95rem; }
+      .bagel-hub b { font-size: 1.2rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .chapter, .chapter.active, .sheet h2, .chapter .stage {
+        transition: opacity .2s ease, visibility .2s;
+        transform: none !important;
+      }
+      .dot { transition: opacity .2s ease; }
+      .app[data-current-step="0"] .pane-d.hint:not(:disabled) { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <script type="module" src="https://lytics.cyb.ai/tracker/loader.js" data-endpoint="https://lytics.cyb.ai"></script>
+<div class="app" id="app" data-current-step="0">
+    <div class="chapters">
+      <section class="chapter cover active" data-step="0">
+        <div class="sheet">
+          <div class="phrase">
+            <button type="button" class="pane-btn pane-u" data-dy="-1" aria-label="Previous quality"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 15.2 L12 6.4 l8.4 8.8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+            <h2>the best money</h2>
+          </div>
+          <div class="stage">
+            <button type="button" class="pane-btn pane-l" data-dx="-1" aria-label="Previous property"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 3.6 L6.4 12 l8.8 8.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+            <div class="pane">
+              <h1 class="ticker"><span class="ico globe" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><radialGradient id="gt" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#b6ffcc"/><stop offset=".45" stop-color="#00ff41"/><stop offset="1" stop-color="#007a1f"/></radialGradient></defs><circle cx="20" cy="20" r="18" fill="url(#gt)"/></svg></span><span class="name">CYB</span></h1>
+            </div>
+            <button type="button" class="pane-btn pane-r" data-dx="1" aria-label="Next property"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.8 3.6 L17.6 12 l-8.8 8.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+          </div>
+          <div class="caption">
+            <p class="belong">
+              <svg class="flag" viewBox="15.5 15 69 68" aria-hidden="true">
+                <circle cx="50" cy="26.25" r="10" fill="#00ff01"/>
+                <circle cx="68.57" cy="35.19" r="10" fill="#00b4ff"/>
+                <circle cx="73.15" cy="55.28" r="10" fill="#1700fe"/>
+                <circle cx="60.30" cy="71.40" r="10" fill="#6b00fe"/>
+                <circle cx="39.70" cy="71.40" r="10" fill="#fe0000"/>
+                <circle cx="26.85" cy="55.28" r="10" fill="#ff6501"/>
+                <circle cx="31.43" cy="35.19" r="10" fill="#ffc501"/>
+              </svg>
+              the money of Cyberia
+            </p>
+            <button type="button" class="pane-btn pane-d hint" data-dy="1" aria-label="Next quality"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 8.8 L12 17.6 l8.4 -8.8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter tone-g" data-step="1" data-deck="smart">
+        <div class="sheet">
+          <div class="phrase">
+            <button type="button" class="pane-btn pane-u" data-dy="-1" aria-label="Previous quality"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 15.2 L12 6.4 l8.4 8.8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+            <h2>Every money is defined by <span class="hl">what creates it.</span></h2>
+          </div>
+          <div class="stage">
+            <button type="button" class="pane-btn pane-l" data-dx="-1" aria-label="Previous property"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 3.6 L6.4 12 l8.8 8.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+            <div class="pane">
+              <div class="cmp" id="cmp"></div>
+            </div>
+            <button type="button" class="pane-btn pane-r" data-dx="1" aria-label="Next property"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.8 3.6 L17.6 12 l-8.8 8.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+          </div>
+          <div class="caption">
+            <p data-cap></p>
+            <div class="subdots" data-dots></div>
+            <button type="button" class="pane-btn pane-d" data-dy="1" aria-label="Next quality"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 8.8 L12 17.6 l8.4 -8.8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter tone-c" data-step="2" data-deck="safe">
+        <div class="sheet">
+          <div class="phrase">
+            <button type="button" class="pane-btn pane-u" data-dy="-1" aria-label="Previous quality"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 15.2 L12 6.4 l8.4 8.8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+            <h2>Once it is yours it <span class="hl">stays yours.</span></h2>
+          </div>
+          <div class="stage">
+            <button type="button" class="pane-btn pane-l" data-dx="-1" aria-label="Previous property"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 3.6 L6.4 12 l8.8 8.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+            <div class="pane">
+              <div class="rows">
+                <div class="row" data-s="0"><i class="y"></i><kbd>PRIVATE</kbd><b>Invisible</b></div>
+                <div class="row" data-s="1"><i class="i"></i><kbd>DURABLE</kbd><b>Post-quantum</b></div>
+                <div class="row" data-s="2"><i class="r"></i><kbd>UNCENSORABLE</kbd><b>No freeze</b></div>
+                <div class="row" data-s="3"><i class="g"></i><kbd>VERIFIABLE</kbd><b>Zheng</b></div>
+              </div>
+            </div>
+            <button type="button" class="pane-btn pane-r" data-dx="1" aria-label="Next property"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.8 3.6 L17.6 12 l-8.8 8.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+          </div>
+          <div class="caption">
+            <p data-cap></p>
+            <div class="subdots" data-dots></div>
+            <button type="button" class="pane-btn pane-d" data-dy="1" aria-label="Next quality"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 8.8 L12 17.6 l8.4 -8.8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter tone-p" data-step="3" data-deck="easy">
+        <div class="sheet">
+          <div class="phrase">
+            <button type="button" class="pane-btn pane-u" data-dy="-1" aria-label="Previous quality"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 15.2 L12 6.4 l8.4 8.8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+            <h2>Then it <span class="hl">goes.</span></h2>
+          </div>
+          <div class="stage">
+            <button type="button" class="pane-btn pane-l" data-dx="-1" aria-label="Previous property"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 3.6 L6.4 12 l8.8 8.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+            <div class="pane">
+              <div class="rows pack">
+                <div class="row" data-s="0"><i class="y"></i><kbd>SIMPLE</kbd><b>Hold, send, receive</b></div>
+                <div class="row" data-s="1"><i class="g"></i><kbd>FAST</kbd><b>1 second</b></div>
+                <div class="row" data-s="2"><i class="b"></i><kbd>CHEAP</kbd><b>0.1%</b></div>
+                <div class="row" data-s="3"><i class="r"></i><kbd>OPEN</kbd><b>Anyone</b></div>
+                <div class="row" data-s="4"><i class="o"></i><kbd>NAMED</kbd><b>A name</b></div>
+                <div class="row" data-s="5"><i class="p"></i><kbd>LIGHT</kbd><b>A phone</b></div>
+                <div class="row" data-s="6"><i class="i"></i><kbd>DIVISIBLE</kbd><b>10¹² cy</b></div>
+                <div class="row" data-s="7"><i class="g"></i><kbd>SCALABLE</kbd><b>10⁶ /s</b></div>
+              </div>
+            </div>
+            <button type="button" class="pane-btn pane-r" data-dx="1" aria-label="Next property"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.8 3.6 L17.6 12 l-8.8 8.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+          </div>
+          <div class="caption">
+            <p data-cap></p>
+            <div class="subdots" data-dots></div>
+            <button type="button" class="pane-btn pane-d" data-dy="1" aria-label="Next quality"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 8.8 L12 17.6 l8.4 -8.8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter tone-r" data-step="4" data-deck="useful">
+        <div class="sheet">
+          <div class="phrase">
+            <button type="button" class="pane-btn pane-u" data-dy="-1" aria-label="Previous quality"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 15.2 L12 6.4 l8.4 8.8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+            <h2>Spent on <span class="hl">intelligence.</span></h2>
+          </div>
+          <div class="stage">
+            <button type="button" class="pane-btn pane-l" data-dx="-1" aria-label="Previous property"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 3.6 L6.4 12 l8.8 8.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+            <div class="pane">
+              <div class="rows">
+                <div class="row" data-s="0"><i class="g"></i><kbd>COMPUTE</kbd><b>Prove</b></div>
+                <div class="row" data-s="1"><i class="b"></i><kbd>STORAGE</kbd><b>Hold</b></div>
+                <div class="row" data-s="2"><i class="y"></i><kbd>BANDWIDTH</kbd><b>The pipe</b></div>
+                <div class="row" data-s="3"><i class="p"></i><kbd>INFERENCE</kbd><b>Answers</b></div>
+              </div>
+            </div>
+            <button type="button" class="pane-btn pane-r" data-dx="1" aria-label="Next property"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.8 3.6 L17.6 12 l-8.8 8.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+          </div>
+          <div class="caption">
+            <p data-cap></p>
+            <div class="subdots" data-dots></div>
+            <button type="button" class="pane-btn pane-d" data-dy="1" aria-label="Next quality"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 8.8 L12 17.6 l8.4 -8.8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter tone-y" data-step="5" data-deck="alive">
+        <div class="sheet">
+          <div class="phrase">
+            <button type="button" class="pane-btn pane-u" data-dy="-1" aria-label="Previous quality"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 15.2 L12 6.4 l8.4 8.8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+            <h2>Inflation bootstraps.<br><span class="hl">Use replaces it.</span></h2>
+          </div>
+          <div class="stage">
+            <button type="button" class="pane-btn pane-l" data-dx="-1" aria-label="Previous property"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 3.6 L6.4 12 l8.8 8.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+            <div class="pane">
+              <div class="bagel bagel-thirds" id="cyb-donut"></div>
+            </div>
+            <button type="button" class="pane-btn pane-r" data-dx="1" aria-label="Next property"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.8 3.6 L17.6 12 l-8.8 8.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+          </div>
+          <div class="caption">
+            <p data-cap></p>
+            <div class="subdots" data-dots></div>
+            <button type="button" class="pane-btn pane-d" data-dy="1" aria-label="Next quality"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 8.8 L12 17.6 l8.4 -8.8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter tone-o" data-step="6" data-deck="growing">
+        <div class="sheet">
+          <div class="phrase">
+            <button type="button" class="pane-btn pane-u" data-dy="-1" aria-label="Previous quality"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 15.2 L12 6.4 l8.4 8.8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+            <h2>The more the network learns,<br><span class="hl">the better the money.</span></h2>
+          </div>
+          <div class="stage">
+            <button type="button" class="pane-btn pane-l" data-dx="-1" aria-label="Previous property"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 3.6 L6.4 12 l8.8 8.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+            <div class="pane">
+              <div class="bagel" id="cyb-ring"></div>
+            </div>
+            <button type="button" class="pane-btn pane-r" data-dx="1" aria-label="Next property"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.8 3.6 L17.6 12 l-8.8 8.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+          </div>
+          <div class="caption">
+            <p data-cap></p>
+            <div class="subdots" data-dots></div>
+            <button type="button" class="pane-btn pane-d" data-dy="1" aria-label="Next quality"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 8.8 L12 17.6 l8.4 -8.8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter tone-i" data-step="7">
+        <div class="sheet">
+          <div class="phrase">
+            <button type="button" class="pane-btn pane-u" data-dy="-1" aria-label="Previous quality"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 15.2 L12 6.4 l8.4 8.8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+            <h2>Capped forever.<br><span class="hl">The rush is early.</span></h2>
+          </div>
+          <div class="stage">
+            <button type="button" class="pane-btn pane-l" data-dx="-1" aria-label="Previous property"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 3.6 L6.4 12 l8.8 8.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+            <div class="pane">
+              <div class="supply">
+                <kbd>THE CAP · NEVER MORE</kbd>
+                <b id="v-cap">18,446,744<em>CYB</em></b>
+              </div>
+              <div class="chart" id="emission"></div>
+            </div>
+            <button type="button" class="pane-btn pane-r" data-dx="1" aria-label="Next property"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.8 3.6 L17.6 12 l-8.8 8.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+          </div>
+          <div class="caption">
+            <p data-cap id="emission-cap"></p>
+            <button type="button" class="pane-btn pane-d" data-dy="1" aria-label="Next quality"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 8.8 L12 17.6 l8.4 -8.8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter tone-w" data-step="8" data-deck="launch">
+        <div class="sheet">
+          <div class="phrase">
+            <button type="button" class="pane-btn pane-u" data-dy="-1" aria-label="Previous quality"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 15.2 L12 6.4 l8.4 8.8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+            <h2>Not launched yet. <span class="hl">First, the chains.</span></h2>
+          </div>
+          <div class="stage">
+            <button type="button" class="pane-btn pane-l" data-dx="-1" aria-label="Previous property"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 3.6 L6.4 12 l8.8 8.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+            <div class="pane">
+              <div class="lpane" data-s="0"><div class="get">
+                <a class="cta" id="dl" href="https://github.com/cyberia-to/cyb/releases/download/v0.16.0/cyb-0.16.0.dmg">Get the robot</a>
+                <div class="oses" aria-label="download for your machine">
+                  <a class="os" data-os="mac" href="https://github.com/cyberia-to/cyb/releases/download/v0.16.0/cyb-0.16.0.dmg" title="macOS" aria-label="macOS"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.7 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.9-3.4-1.9-1.4-.2-2.8.9-3.5.9s-2-.8-3.4-.8c-1.7.1-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.3 2.5 1.3-.1 1.8-.8 3.4-.8s2 .8 3.4.8c1.8 0 3.1-1.6 4.2-3.1 1-1.4 1.4-2.7 1.4-2.8 0 0-2.8-1.1-2.8-4.2zm-2.4-7.1c.7-.9 1.2-2.1 1.1-3.3-1 .1-2.3.7-3 1.6-.7.8-1.2 2.1-1.1 3.2 1.1.1 2.2-.6 3-1.5z"/></svg></a>
+                  <a class="os" data-os="linux" href="https://github.com/cyberia-to/cyb/releases/download/v0.16.0/cyb-0.16.0-linux-x86_64.tar.gz" title="Linux" aria-label="Linux"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3c2.2 0 4 2.1 4 4.7 0 1.2-.4 2.3-1 3.1 1.7 1 2.8 2.7 2.8 4.6 0 .7-.2 1.4-.5 2 .9.5 1.7 1.4 1.7 2.6 0 1.6-1.6 2.5-3.4 2.5-1.1 0-2.1-.3-2.8-.9-.5.1-1 .2-1.8.2s-1.3-.1-1.8-.2c-.7.6-1.7.9-2.8.9-1.8 0-3.4-.9-3.4-2.5 0-1.2.8-2.1 1.7-2.6-.3-.6-.5-1.3-.5-2 0-1.9 1.1-3.6 2.8-4.6-.6-.8-1-1.9-1-3.1C8 5.1 9.8 3 12 3zm-1.7 5.2a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2zm3.4 0a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2z"/></svg></a>
+                  <a class="os" data-os="win" href="https://github.com/cyberia-to/cyb/releases/download/v0.16.0/cyb-0.16.0-windows-x86_64.zip" title="Windows" aria-label="Windows"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 4.5 11 3.4v8.1H3zm9.2-1.3L21 2v9.5h-8.8zM3 13.3h8V21L3 19.8zm9.2 0H21V22l-8.8-1.4z"/></svg></a>
+                  <a class="os" data-os="android" href="https://github.com/cyberia-to/cyb/releases/download/v0.16.0/cyb-0.16.0.apk" title="Android" aria-label="Android"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.2 4.7L6.6 2.5l1-.6 1.7 2.3-1.1.5zm7.6 0l-1.1-.5 1.7-2.3 1 .6-1.6 2.2zM12 2.5l1.2 2A4.8 4.8 0 0 1 17 9H7a4.8 4.8 0 0 1 3.8-4.5L12 2.5zM5.5 10.2h13v7.3a2 2 0 0 1-2 2h-9a2 2 0 0 1-2-2zM3.6 11.3h1.6v4H3.6zm15.2 0h1.6v4h-1.6z"/></svg></a>
+                  <a class="os" data-os="ios" href="https://github.com/cyberia-to/cyb/releases/download/v0.16.0/cyb-0.16.0.ipa" title="iOS" aria-label="iOS"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2" width="11" height="20" rx="2.2" fill="currentColor"/><circle cx="12" cy="19.3" r=".9" fill="#000"/></svg></a>
+                </div>
+                <div class="rows pack">
+                  <a class="row" href="https://bostrom.network" target="_blank" rel="noopener" data-get="bostrom"><i class="g"></i><kbd>BOSTROM.NETWORK</kbd><b>Reborn <span data-days>when the code is ready</span></b></a>
+                  <a class="row" href="https://spacepussy.ai" target="_blank" rel="noopener" data-get="pussy"><i class="p"></i><kbd>SPACEPUSSY.AI</kbd><b>Reborn first — the canary</b></a>
+                  <a class="row" href="https://cyb.ai" target="_blank" rel="noopener" data-get="robot"><i class="r"></i><kbd>CYB.AI</kbd><b>The robot</b></a>
+                  <a class="row" href="https://cyber.page" target="_blank" rel="noopener" data-get="protocol"><i class="b"></i><kbd>CYBER.PAGE</kbd><b>The protocol</b></a>
+                  <a class="row" href="https://soft3.org" target="_blank" rel="noopener" data-get="stack"><i class="y"></i><kbd>SOFT3.ORG</kbd><b>The stack</b></a>
+                </div>
+              </div></div>
+              <div class="lpane" data-s="1" hidden><div class="gcheck" id="gcheck"><p class="gkick">what you get at genesis</p>
+                <div class="gtabs"><button type="button" class="gtab saber on" data-m="name">name</button><button type="button" class="gtab saber" data-m="addr">address</button><button type="button" class="gtab saber" data-m="mnem">mnemonic</button><button type="button" class="gtab saber" data-m="priv">private key</button><button type="button" class="gtab saber" data-m="ledger">ledger</button></div>
+                <div class="gfield">
+                  <div data-in="name"><input id="g-name" placeholder="passport name" autocomplete="off"></div>
+                  <div data-in="addr" hidden><input id="g-addr" placeholder="bostrom1…" autocomplete="off"></div>
+                  <div data-in="mnem" hidden><textarea id="g-mnem" placeholder="twelve or twenty-four words — derived locally, never sent anywhere"></textarea></div>
+                  <div data-in="priv" hidden><input id="g-priv" placeholder="private key hex — derived locally" autocomplete="off"></div>
+                  <div data-in="ledger" hidden><p class="ghint">connect a Ledger with the Cosmos app open, then check.</p></div>
+                </div>
+                <div class="grow"><button type="button" class="sb go" id="g-go">check</button><button type="button" class="sb clr" id="g-clr">clear</button></div>
+                <div class="gaddr" id="g-derived"></div>
+                <div class="gout" id="g-out"></div>
+                <div class="gerr" id="g-err"></div>
+              </div></div>
+            </div>
+            <button type="button" class="pane-btn pane-r" data-dx="1" aria-label="Next property"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.8 3.6 L17.6 12 l-8.8 8.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+          </div>
+          <div class="caption">
+            <p data-cap>Not launched. First the chains: bostrom and space pussy are reborn when the code is ready. Then CYB, claims first.</p>
+            <div class="subdots" data-dots></div>
+            <button type="button" class="pane-btn pane-d" data-dy="1" aria-label="Next quality"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 8.8 L12 17.6 l8.4 -8.8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="bar">
+      <nav class="track" id="track" aria-label="what this money is">
+        <button type="button" class="dot k on" data-go="0" data-prop="best" title="the best money" aria-label="Best"><span>Best</span></button>
+        <button type="button" class="dot g" data-go="1" data-prop="smart" title="CYB is minted when the network learns." aria-label="Smart"><span>Smart</span></button>
+        <button type="button" class="dot b" data-go="2" data-prop="safe" title="Once it is yours it stays yours." aria-label="Safe"><span>Safe</span></button>
+        <button type="button" class="dot p" data-go="3" data-prop="easy" title="Then it goes." aria-label="Easy"><span>Easy</span></button>
+        <button type="button" class="dot r" data-go="4" data-prop="useful" title="Spent on intelligence." aria-label="Useful"><span>Useful</span></button>
+        <button type="button" class="dot y" data-go="5" data-prop="alive" title="Inflation bootstraps. Use replaces it." aria-label="Alive"><span>Alive</span></button>
+        <button type="button" class="dot o" data-go="6" data-prop="growing" title="The more the network learns, the better the money." aria-label="Growing"><span>Growing</span></button>
+        <button type="button" class="dot bl" data-go="7" data-prop="scarce" title="Capped forever. The rush is early." aria-label="Scarce"><span>Scarce</span></button>
+        <button type="button" class="dot w getcyb" data-go="8" data-prop="launch" title="Not launched yet. First, the chains." aria-label="launch"><span>launch</span></button>
+      </nav>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const app = document.getElementById('app');
+      const chapters = [...document.querySelectorAll('.chapter')];
+      const n = chapters.length;
+      const PROPS = ['best', 'smart', 'safe', 'easy', 'useful', 'alive', 'growing', 'scarce', 'launch'];
+      const ALIAS = {
+        complete: 0,
+        spend: 4, resources: 4, use: 4,
+        viable: 5, sustain: 5, sustainable: 5, sustainably: 5, living: 5,
+        compound: 6, compounding: 6, looped: 6, ring: 6,
+        fair: 7, finite: 7,
+        get: 8, download: 8, robot: 8, claim: 8, balance: 8, check: 8
+      };
+      const DECKS = {
+        launch: [
+          { slug: 'chains', caption: '' },
+          { slug: 'genesis', caption: 'TOCYB on bostrom becomes CYB at genesis, ×666. Read in your browser; keys never leave this page.' }
+        ],
+        smart: [
+          { slug: 'force', caption: 'Force money: issued as debt, backed by the land a state holds and the army that holds it.' },
+          { slug: 'production', caption: 'Production money: dug, refined, stored. Supply is what the mines add; worth is the labour it took.' },
+          { slug: 'energy', caption: 'Energy money: minted by burning electricity into hashes. Scarce and honest, but the work is thrown away.' },
+          { slug: 'capital', caption: 'Capital money: minted by locking capital. Cheap to run, but the bag decides who mints.' },
+          { slug: 'information', caption: 'Information money: minted when the network learns. The work is the proof, the proof is the answer.' }
+        ],
+        safe: [
+          { slug: 'private', kbd: 'PRIVATE', punch: 'Invisible', dot: 'y', caption: 'One shielded pool: a payment proves it balances without showing the amount or the payer.' },
+          { slug: 'durable', kbd: 'DURABLE', punch: 'Post-quantum', dot: 'i', caption: 'Hash-only proofs, post-quantum signatures, implementations that cross-check. Time does not eat it.' },
+          { slug: 'uncensorable', kbd: 'UNCENSORABLE', punch: 'No freeze', dot: 'r', caption: 'No admin key. Nobody freezes or seizes an account. Kill one binary and the others still settle.' },
+          { slug: 'verifiable', kbd: 'VERIFIABLE', punch: 'Zheng', dot: 'g', caption: 'Every mint and every move carries a zheng proof, no trusted setup. You verify, you do not trust.' }
+        ],
+        easy: [
+          { slug: 'simple', kbd: 'SIMPLE', punch: 'Hold, send, receive', dot: 'y', caption: 'Hold, send, receive — that is the whole money. Coins and a cyberlink. No extra product to rent.' },
+          { slug: 'fast', kbd: 'FAST', punch: '1 second', dot: 'g', caption: 'One second to final. Fold packs the proofs so the whole network accepts one claim.' },
+          { slug: 'cheap', kbd: 'CHEAP', punch: '0.1%', dot: 'b', caption: '0.1% is a consensus parameter, not a company fee. A phone proves its own hops. Visa asks more.' },
+          { slug: 'open', kbd: 'OPEN', punch: 'Anyone', dot: 'r', caption: 'Humans, agents, animals. A key, not a passport. No KYC, and no government in the path.' },
+          { slug: 'named', kbd: 'NAMED', punch: 'A name', dot: 'o', caption: 'Send to a name. oikos resolves it to one particle — latest link wins. Not a 64-byte address.' },
+          { slug: 'light', kbd: 'LIGHT', punch: 'A phone', dot: 'p', caption: 'A phone is sure it sent and received. It follows the fold tip and never stores the world.' },
+          { slug: 'divisible', kbd: 'DIVISIBLE', punch: '10¹² cy', dot: 'i', caption: '1 CYB = 10¹² cy. Native arithmetic, any amount, down to one cy — not a display trick.' },
+          { slug: 'scalable', kbd: 'SCALABLE', punch: '10⁶ /s', dot: 'g', caption: 'Fold, locality, parallel settlement: a million signals a second per machine, one small proof.' }
+        ],
+        useful: [
+          { slug: 'compute', kbd: 'COMPUTE', punch: 'Prove', dot: 'g', caption: 'Cycles. The work of proving.' },
+          { slug: 'storage', kbd: 'STORAGE', punch: 'Hold', dot: 'b', caption: 'Particles stay. The graph holds them.' },
+          { slug: 'bandwidth', kbd: 'BANDWIDTH', punch: 'The pipe', dot: 'y', caption: 'Gossip. The network is the pipe.' },
+          { slug: 'inference', kbd: 'INFERENCE', punch: 'Answers', dot: 'p', caption: 'All three, plus a mind. That is answers.' }
+        ],
+        alive: [
+          { slug: 'burn', caption: 'A dividend to everyone who holds. Empty hops cost; remaining units worth more.' },
+          { slug: 'earners', caption: 'Value to those who create it — miners and stakers, the slow replacement of inflation.' },
+          { slug: 'self', caption: 'Public good the cybergraph names. Spent on what the graph infers is worth doing.' }
+        ],
+        growing: [
+          { slug: 'fairness', caption: 'A larger population returns here: more minds on the work. Hashrate splits who taught what.' },
+          { slug: 'finality', caption: 'Fair work is useless if it does not stick. Fold packs the proofs into one claim the network accepts.' },
+          { slug: 'truth', caption: 'Final settlement is what staking can trust. Capital takes a side because the fold will hold.' },
+          { slug: 'intelligence', caption: 'Fair split, final fold, staked truth — denser knowledge. That is answers.' },
+          { slug: 'revenue', caption: 'Intelligence is used. Every move pays 0.1% — a third burns, a third to earners, a third to self.' },
+          { slug: 'efficiency', caption: 'Revenue buys GFP silicon. The same chip mines and proves — cheaper fairness, cheaper answers.' },
+          { slug: 'population', caption: 'Cheaper chips, plus a residual on every robot you ship. Then fairness starts again, larger.' }
+        ]
+      };
+      const painters = {};
+      // no date: the chains launch when the code passes its gates (the owner's call, the launch page tracks the gates)
+      const LAUNCH_CAP = () => 'Not launched. First the chains: bostrom and space pussy are reborn when the code is ready. Then CYB, claims first.';
+      document.querySelectorAll('[data-days]').forEach((e) => { e.textContent = 'when the code is ready'; });
+      DECKS.launch[0].caption = LAUNCH_CAP();
+      painters.launch = (i) => { document.querySelectorAll('.lpane').forEach((el) => { el.hidden = +el.getAttribute('data-s') !== i; }); };
+      let step = -1;
+      let sub = 0;
+      let lock = 0;
+      let hinted = false;
+
+      const setH = () => document.documentElement.style.setProperty('--app-height', window.innerHeight + 'px');
+      setH();
+      window.addEventListener('resize', setH);
+
+      const dots = [...document.querySelectorAll('.dot')];
+      function pathFor(i, s) {
+        if (!i) return '/';
+        const id = PROPS[i] || i;
+        const deck = DECKS[id];
+        if (deck && s) return '/' + id + '/' + deck[s].slug;
+        return '/' + id;
+      }
+      function tokenIndex(tok) {
+        if (!tok) return 0;
+        tok = tok.toLowerCase();
+        const pi = PROPS.indexOf(tok);
+        if (pi >= 0) return pi;
+        if (tok in ALIAS) return ALIAS[tok];
+        const n = parseInt(tok, 10);
+        return Number.isFinite(n) ? n : 0;
+      }
+      function findSub(tok) {
+        tok = (tok || '').toLowerCase();
+        for (const id of Object.keys(DECKS)) {
+          const idx = DECKS[id].findIndex((x) => x.slug === tok);
+          if (idx >= 0) return { i: PROPS.indexOf(id), s: idx };
+        }
+        return null;
+      }
+      function parseRoute() {
+        let path = (location.pathname || '/').replace(/^\/+|\/+$/g, '');
+        if (!path) {
+          const h = (location.hash || '').replace(/^#/, '');
+          if (h) path = h;
+        }
+        const parts = path.split('/').filter(Boolean);
+        if (!parts.length) return { i: 0, s: 0 };
+        if (parts[0] === 'safe' && parts[1] === 'scarce') return { i: PROPS.indexOf('scarce'), s: 0 };
+        const hit = findSub(parts[0]);
+        let i = tokenIndex(parts[0]);
+        let s = 0;
+        if (hit && PROPS.indexOf(parts[0]) < 0 && !(parts[0] in ALIAS)) {
+          i = hit.i;
+          s = hit.s;
+        }
+        if (parts[1] && DECKS[PROPS[i]]) {
+          const idx = DECKS[PROPS[i]].findIndex((x) => x.slug === (parts[1].toLowerCase() === 'debt' ? 'force' : parts[1].toLowerCase()));
+          if (idx >= 0) s = idx;
+        }
+        return { i: i, s: s };
+      }
+      function syncUrl(push) {
+        const url = pathFor(step, sub);
+        const cur = (location.pathname.replace(/\/+$/, '') || '/') + (location.hash || '');
+        const state = { i: step, s: sub };
+        if (push !== false && cur !== url) history.pushState(state, '', url);
+        else if (location.hash || cur !== url) history.replaceState(state, '', url);
+      }
+      function showSub(s, push) {
+        const id = PROPS[step];
+        const deck = DECKS[id];
+        const ch = chapters[step];
+        if (!deck) {
+          sub = 0;
+          app.dataset.currentSub = '0';
+          if (id === 'launch' && ch) {
+            const cap = ch.querySelector('[data-cap]');
+            if (cap) cap.textContent = LAUNCH_CAP();
+          }
+          if (push !== false) syncUrl(push);
+          return;
+        }
+        if (!ch) return;
+        s = ((s % deck.length) + deck.length) % deck.length;
+        sub = s;
+        const item = deck[s];
+        const cap = ch.querySelector('[data-cap]');
+        const dotsEl = ch.querySelector('[data-dots]');
+        ch.querySelectorAll('.row[data-s], .cmp-g[data-s]').forEach((row) => {
+          row.classList.toggle('on', +row.getAttribute('data-s') === s);
+        });
+        if (painters[id]) painters[id](s);
+        if (cap) cap.textContent = item.caption;
+        if (dotsEl) {
+          dotsEl.innerHTML = deck.map(function (_, idx) {
+            return '<button type="button" data-s="' + idx + '"' + (idx === s ? ' class="on"' : '') + ' aria-label="property ' + (idx + 1) + '"></button>';
+          }).join('');
+        }
+        app.dataset.currentSub = String(s);
+        syncUrl(push);
+        compass(step);
+      }
+      function goSub(dx, push) {
+        const deck = DECKS[PROPS[step]];
+        if (!deck) return;
+        showSub(sub + dx, push);
+      }
+      // flat navigation: every chapter and every property inside it is one state in one sequence.
+      // left/right, up/down, wheel and swipe on either axis all move one state forward or back.
+      const FLAT = [];
+      PROPS.forEach(function (id, i) {
+        const len = DECKS[id] ? DECKS[id].length : 1;
+        for (let k = 0; k < len; k++) FLAT.push({ i: i, s: k });
+      });
+      function flatPos() {
+        const i = Math.max(0, step);
+        const len = DECKS[PROPS[i]] ? DECKS[PROPS[i]].length : 1;
+        const k = Math.max(0, Math.min(len - 1, sub));
+        return FLAT.findIndex(function (f) { return f.i === i && f.s === k; });
+      }
+      function flatGo(d, push) {
+        const pos = Math.max(0, Math.min(FLAT.length - 1, flatPos() + d));
+        const f = FLAT[pos];
+        go(f.i, push, f.s);
+      }
+      function compass(i) {
+        const pos = flatPos();
+        const first = pos <= 0, last = pos >= FLAT.length - 1;
+        document.querySelectorAll('[data-dy="-1"], [data-dx="-1"]').forEach((b) => { b.disabled = first; });
+        document.querySelectorAll('[data-dy="1"], [data-dx="1"]').forEach((b) => { b.disabled = last; });
+        const coverDown = chapters[0].querySelector('.pane-d');
+        if (!coverDown) return;
+        if (i === 0 && !hinted) coverDown.classList.add('hint');
+        else {
+          coverDown.classList.remove('hint');
+          if (i !== 0) hinted = true;
+        }
+      }
+      function go(i, push, s) {
+        i = Math.max(0, Math.min(n - 1, i | 0));
+        const wantSub = s == null ? 0 : s;
+        if (i === step) {
+          compass(i);
+          showSub(wantSub, push);
+          return;
+        }
+        const dir = step < 0 ? 0 : (i > step ? 1 : -1);
+        const outgoing = step >= 0 ? chapters[step] : null;
+        const incoming = chapters[i];
+        chapters.forEach((c) => c.classList.remove('from-down', 'from-up', 'to-up', 'to-down', 'no-anim'));
+        if (outgoing) {
+          outgoing.classList.remove('active');
+          if (dir > 0) outgoing.classList.add('to-up');
+          else if (dir < 0) outgoing.classList.add('to-down');
+        }
+        if (dir !== 0) {
+          incoming.classList.add('no-anim', dir > 0 ? 'from-down' : 'from-up');
+          incoming.offsetWidth;
+          incoming.classList.remove('no-anim', 'from-down', 'from-up');
+        }
+        incoming.classList.add('active');
+        chapters.forEach((c, k) => { if (k !== i) c.classList.remove('active'); });
+        step = i;
+        app.dataset.currentStep = String(i);
+        dots.forEach((d, k) => {
+          d.classList.toggle('on', k === i);
+          d.setAttribute('aria-current', k === i ? 'step' : 'false');
+        });
+        compass(i);
+        showSub(wantSub, push);
+      }
+
+      document.querySelectorAll('[data-deck] .row[data-s], [data-deck] .cmp-g[data-s]').forEach((row) => {
+        row.addEventListener('mouseenter', () => {
+          if (row.closest('.chapter') !== chapters[step]) return;
+          showSub(+row.getAttribute('data-s'), false);
+        });
+      });
+      document.getElementById('track').addEventListener('click', e => {
+        const b = e.target.closest('[data-go]');
+        if (b) go(+b.getAttribute('data-go'));
+      });
+      document.addEventListener('click', e => {
+        const dyb = e.target.closest('[data-dy]');
+        if (dyb) {
+          e.preventDefault();
+          flatGo(+dyb.getAttribute('data-dy'));
+          return;
+        }
+        const dxb = e.target.closest('[data-dx]');
+        if (dxb && dxb.closest('.stage')) {
+          e.preventDefault();
+          flatGo(+dxb.getAttribute('data-dx'));
+          return;
+        }
+        const sb = e.target.closest('[data-s]');
+        if (sb && (sb.closest('.subdots') || sb.closest('.rows') || sb.closest('.cmp'))) {
+          e.preventDefault();
+          showSub(+sb.getAttribute('data-s'));
+          return;
+        }
+        const a = e.target.closest('a[href^="#"], a[href^="/"]');
+        if (!a) return;
+        const href = a.getAttribute('href');
+        let path = '';
+        if (href.startsWith('#')) path = href.slice(1);
+        else {
+          try {
+            const u = new URL(href, location.origin);
+            if (u.origin !== location.origin) return;
+            path = u.pathname.replace(/^\/+|\/+$/g, '');
+          } catch (err) { return; }
+        }
+        if (!path && href !== '/' && href !== '#') return;
+        const parts = path.split('/').filter(Boolean);
+        const tok = parts[0] || '';
+        const i = tokenIndex(tok);
+        const subHit = findSub(tok);
+        if (tok && i === 0 && tok !== 'best' && tok !== 'complete' && !/^\d+$/.test(tok) && !subHit) return;
+        e.preventDefault();
+        if (subHit && PROPS.indexOf(tok) < 0 && !(tok in ALIAS)) go(subHit.i, true, subHit.s);
+        else {
+          let s = 0;
+          if (parts[1] && DECKS[PROPS[i]]) {
+            const idx = DECKS[PROPS[i]].findIndex((x) => x.slug === parts[1].toLowerCase());
+            if (idx >= 0) s = idx;
+          }
+          go(i, true, s);
+        }
+      });
+      window.addEventListener('popstate', e => {
+        if (e.state && Number.isInteger(e.state.i)) {
+          go(e.state.i, false, Number.isInteger(e.state.s) ? e.state.s : 0);
+          return;
+        }
+        const r = parseRoute();
+        go(r.i, false, r.s);
+      });
+      window.addEventListener('keydown', e => {
+        if (e.target.closest('a, input, textarea')) {
+          if (e.key === ' ' || e.key === 'Enter') return;
+        }
+        if (e.key >= '1' && e.key <= String(n)) { e.preventDefault(); go(+e.key - 1); return; }
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
+          e.preventDefault(); flatGo(1);
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') {
+          e.preventDefault(); flatGo(-1);
+        } else if (e.key === 'Home') { e.preventDefault(); go(0); }
+        else if (e.key === 'End') { e.preventDefault(); go(n - 1, true, FLAT[FLAT.length - 1].s); }
+      });
+
+
+
+      window.addEventListener('wheel', e => {
+        if (Date.now() < lock) return;
+        const horizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+        const delta = horizontal ? e.deltaX : e.deltaY;
+        if (Math.abs(delta) < 24) return;
+        if (!horizontal) {
+          const ch = chapters[step];
+          if (ch && ch.scrollHeight > ch.clientHeight + 8) {
+            const top = ch.scrollTop <= 0;
+            const bot = ch.scrollTop + ch.clientHeight >= ch.scrollHeight - 2;
+            if (!(delta > 0 && bot) && !(delta < 0 && top)) return;
+          }
+        }
+        e.preventDefault();
+        lock = Date.now() + 640;
+        flatGo(delta > 0 ? 1 : -1);
+      }, { passive: false });
+
+      let tx = 0, ty = 0;
+      window.addEventListener('touchstart', e => {
+        tx = e.changedTouches[0].clientX;
+        ty = e.changedTouches[0].clientY;
+      }, { passive: true });
+      window.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - tx;
+        const dy = e.changedTouches[0].clientY - ty;
+        if (Math.abs(dx) < 48 && Math.abs(dy) < 48) return;
+        if (Math.abs(dx) > Math.abs(dy)) {
+          flatGo(dx < 0 ? 1 : -1);
+          return;
+        }
+        const ch = chapters[step];
+        if (ch && ch.scrollHeight > ch.clientHeight + 8) {
+          const top = ch.scrollTop <= 0;
+          const bot = ch.scrollTop + ch.clientHeight >= ch.scrollHeight - 2;
+          if (!(dy < 0 && bot) && !(dy > 0 && top)) return;
+        }
+        flatGo(dy < 0 ? 1 : -1);
+      }, { passive: true });
+
+      const CAP = 18446744069414584321n;
+      const X = 666n;
+      const CYB = 10n ** 12n;
+      const group = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      const fmtCyb = (native) => {
+        const q = native / CYB;
+        const r = native % CYB;
+        return group(r * 2n >= CYB ? q + 1n : q);
+      };
+
+      async function valuation() {
+        const fallback = { tocybSupply: 281405532467645n };
+        let tocybSupply = fallback.tocybSupply;
+        try {
+          const s = await fetch('https://lcd.bostrom.cybernode.ai/cosmos/bank/v1beta1/supply/by_denom?denom=tocyb').then(r => r.json());
+          if (s && s.amount && s.amount.amount) tocybSupply = BigInt(s.amount.amount);
+        } catch (e) {}
+        const native = tocybSupply * X;
+        const shown = fmtCyb(native);
+        document.getElementById('v-cap').innerHTML = fmtCyb(CAP) + '<em>CYB</em>';
+
+      }
+      valuation();
+
+      (function getRobot() {
+        const builds = {
+          mac: { href: 'https://github.com/cyberia-to/cyb/releases/download/v0.16.0/cyb-0.16.0.dmg', cap: 'Apple Silicon. Mount the dmg, then xattr -cr /Applications/cyb.app — not notarized yet.' },
+          linux: { href: 'https://github.com/cyberia-to/cyb/releases/download/v0.16.0/cyb-0.16.0-linux-x86_64.tar.gz', cap: 'Unpack the tarball and run ./cyb. Or cargo install cyb.' },
+          win: { href: 'https://github.com/cyberia-to/cyb/releases/download/v0.16.0/cyb-0.16.0-windows-x86_64.zip', cap: 'Unzip and run cyb.exe. Same robot, same terminal.' },
+          android: { href: 'https://github.com/cyberia-to/cyb/releases/download/v0.16.0/cyb-0.16.0.apk', cap: 'Sideload the APK. Allow unknown sources. The graph lives in the app.' },
+          ios: { href: 'https://github.com/cyberia-to/cyb/releases/download/v0.16.0/cyb-0.16.0.ipa', cap: 'TrollStore IPA, or a jailbreak. App Store is a later cut.' }
+        };
+        const links = {
+          bostrom: 'bostrom, the bootloader of superintelligence, returns five years to the second after its block 1 — with $BOOT, every balance and the whole graph. Check your balance there.',
+          pussy: 'space pussy, the sister chain, is reborn fifteen minutes after bostrom, with $PUSSY and its graph. Same keys, same balances.',
+          robot: 'cyb — the robot. One binary that thinks on your silicon, links, proves and mines. Download it today; it reads both chains at rebirth.',
+          protocol: 'The protocol: how the graph learns, how a neuron earns, how proofs settle. Read it on cyber.page.',
+          stack: 'soft3 — collective, private, provable computing. The stack both chains are reborn on.'
+        };
+        const def = LAUNCH_CAP();
+        const ua = navigator.userAgent || '';
+        const plat = navigator.platform || '';
+        let os = 'mac';
+        if (/Android/i.test(ua)) os = 'android';
+        else if (/iPhone|iPad|iPod/i.test(ua)) os = 'ios';
+        else if (/Win/i.test(ua) || /Win/i.test(plat)) os = 'win';
+        else if (/Mac/i.test(plat) || /Mac OS/i.test(ua)) os = 'mac';
+        else if (/Linux/i.test(ua) || /Linux/i.test(plat)) os = 'linux';
+        const dl = document.getElementById('dl');
+        const cap = document.querySelector('.tone-w [data-cap]');
+        if (dl && builds[os]) dl.href = builds[os].href;
+        document.querySelectorAll('.os').forEach((a) => {
+          a.classList.toggle('on', a.getAttribute('data-os') === os);
+          a.addEventListener('mouseenter', () => {
+            const k = a.getAttribute('data-os');
+            if (cap && builds[k]) cap.textContent = builds[k].cap;
+          });
+        });
+        document.querySelectorAll('[data-get]').forEach((a) => {
+          a.addEventListener('mouseenter', () => {
+            const k = a.getAttribute('data-get');
+            if (cap && links[k] && sub === 0) cap.textContent = links[k];
+          });
+        });
+        const root = document.querySelector('.get');
+        if (root) root.addEventListener('mouseleave', () => { if (cap && sub === 0) cap.textContent = def; });
+      })();
+
+
+      (function compare() {
+        const root = document.getElementById('cmp');
+        if (!root) return;
+        // what each kind of money is worth today. metals: above-ground stock × spot;
+        // fiat: broad money (M2); coins: market cap. live where a free endpoint exists,
+        // the recorded figure otherwise. all USD.
+        const AS_OF = '2026-10-21';
+        const OZ_PER_T = 32150.75;
+        const ICON = {
+          gold: ['Au', '#ffc501'], silver: ['Ag', '#c9ced4'], btc: ['₿', '#f7931a'], xmr: ['ɱ', '#ff6600'], zec: ['ⓩ', '#f4b728'],
+          eth: ['Ξ', '#8b9cff'], sol: ['◎', '#14f195'], more: ['…', '#6b6b6b'], usd: ['$', '#00b4ff'], cny: ['¥', '#ff4d4d'], eur: ['€', '#4d7cff'], cyb: ['', '#00ff01']
+        };
+        const flag = '<svg viewBox="15.5 15 69 68" aria-hidden="true"><circle cx="50" cy="26.25" r="10" fill="#00ff01"/><circle cx="68.57" cy="35.19" r="10" fill="#00b4ff"/><circle cx="73.15" cy="55.28" r="10" fill="#1700fe"/><circle cx="60.30" cy="71.40" r="10" fill="#6b00fe"/><circle cx="39.70" cy="71.40" r="10" fill="#fe0000"/><circle cx="26.85" cy="55.28" r="10" fill="#ff6501"/><circle cx="31.43" cy="35.19" r="10" fill="#ffc501"/></svg>';
+        const CUSTOM = { eth: '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#627eea"/><path d="M20 7v9.6l8 3.6z" fill="#fff" fill-opacity=".6"/><path d="M20 7l-8 13.2 8-3.6z" fill="#fff"/><path d="M20 16.6v7.9l8-4.3z" fill="#fff" fill-opacity=".2"/><path d="M20 16.6l-8 3.6 8 4.3z" fill="#fff" fill-opacity=".6"/><path d="M20 26.1V33l8-11.2z" fill="#fff" fill-opacity=".6"/><path d="M20 33v-6.9l-8-4.3z" fill="#fff"/></svg>', pussy: '<svg viewBox="0 0 40 40" aria-hidden="true"><defs><radialGradient id="gp" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#ffd1ec"/><stop offset=".45" stop-color="#ff2d9b"/><stop offset="1" stop-color="#8a0a4e"/></radialGradient></defs><circle cx="20" cy="20" r="18" fill="url(#gp)"/></svg>', boot: '<svg viewBox="0 0 40 40" aria-hidden="true"><defs><radialGradient id="gb" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#ffb3b3"/><stop offset=".45" stop-color="#fe0000"/><stop offset="1" stop-color="#7a0000"/></radialGradient></defs><circle cx="20" cy="20" r="18" fill="url(#gb)"/></svg>', cyb: '<svg viewBox="0 0 40 40" aria-hidden="true"><defs><radialGradient id="gc" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#b6ffcc"/><stop offset=".45" stop-color="#00ff41"/><stop offset="1" stop-color="#007a1f"/></radialGradient></defs><circle cx="20" cy="20" r="18" fill="url(#gc)"/></svg>', xmr: '<svg viewBox="0 0 40 40" aria-hidden="true"><defs><clipPath id="xmrc"><circle cx="20" cy="20" r="18"/></clipPath></defs><circle cx="20" cy="20" r="18" fill="#ff6600"/><rect x="0" y="25" width="40" height="15" fill="#4c4c4c" clip-path="url(#xmrc)"/><path d="M9 32V13l11 11 11-11v19" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="miter" clip-path="url(#xmrc)"/><rect x="0" y="25" width="40" height="15" fill="none"/></svg>', sol: '<svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="solg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#9945ff"/><stop offset="1" stop-color="#14f195"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="#0b0b0b" stroke="#14f195" stroke-opacity=".5" stroke-width="1.4"/><path d="M12.5 11.5h16.5l-3.8 3.8H8.7zM12.5 24.7h16.5l-3.8 3.8H8.7zM8.7 18.1h16.5l3.8 3.8H12.5z" fill="url(#solg)"/></svg>', zec: '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#f4b728"/><path d="M13 12h14v3l-9.5 10H27v3H13v-3l9.5-10H13zM18.5 8h3v4.5h-3zM18.5 27.5h3V32h-3z" fill="#231f20"/></svg>' };
+        const icon = (k) => {
+          if (CUSTOM[k]) return CUSTOM[k];
+          const [g, c] = ICON[k];
+          const fs = g.length > 1 ? 17 : 22;
+          return '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="' + c + '" fill-opacity=".14" stroke="' + c + '" stroke-width="1.6"/><text x="20" y="21" text-anchor="middle" dominant-baseline="central" font-family="JetBrains Mono,monospace" font-weight="700" font-size="' + fs + '" fill="' + c + '">' + g + '</text></svg>';
+        };
+        const G = [
+          { slug: 'force', label: 'FORCE', tone: '#00b4ff', by: 'issued as debt, backed by the land a state holds and the army that holds it',
+            items: [{ k: 'usd', n: 'USD', note: 'M2', usd: 22.3e12 }, { k: 'cny', n: 'CNY', note: 'M2', usd: 46.5e12 }, { k: 'eur', n: 'EUR', note: 'M2', usd: 19.5e12 }], unit: 'broad money' },
+          { slug: 'production', label: 'PRODUCTION', tone: '#ffc501', by: 'made by work on matter — dug, refined, stored',
+            items: [{ k: 'gold', n: 'GOLD', note: '216,265 t × spot', usd: 216265 * OZ_PER_T * 4139.5 }, { k: 'silver', n: 'SILVER', note: '1.74M t × spot', usd: 1740000 * OZ_PER_T * 57.95 }], unit: 'above-ground stock' },
+          { slug: 'energy', label: 'ENERGY', tone: '#fe0000', by: 'minted by burning electricity into hashes',
+            items: [{ k: 'btc', n: 'BTC', id: 'bitcoin', usd: 1.682e12 }, { k: 'xmr', n: 'XMR', id: 'monero', usd: 11.2e9 }, { k: 'zec', n: 'ZEC', id: 'zcash', usd: 22.4e9 }], unit: 'market cap' },
+          { slug: 'capital', label: 'CAPITAL', tone: '#6b00fe', by: 'minted by locking capital and validating',
+            items: [{ k: 'eth', n: 'ETH', id: 'ethereum', usd: 301e9 }, { k: 'sol', n: 'SOL', id: 'solana', usd: 63e9 }, { k: 'more', n: 'and the rest of proof of stake', usd: 636e9 }], fixed: 1e12, unit: 'market cap' },
+          { slug: 'information', label: 'INFORMATION', tone: '#00ff01', by: 'minted when the network learns',
+            items: [{ k: 'cyb', n: 'CYB', note: 'genesis 187,416 CYB', usd: null }, { k: 'pussy', n: 'PUSSY', usd: null }, { k: 'boot', n: 'BOOT', usd: null }], unit: 'not launched' }
+        ];
+        // one approximate order per group: prices move, the magnitude does not
+        // one scale for every card ($T), rounded to the order; below a trillion show one decimal of a trillion
+        const money = (v) => {
+          if (v === null) return '<i>soon</i>';
+          const t = v / 1e12;
+          const r = t >= 10 ? Math.round(t / 10) * 10 : t >= 1 ? Math.round(t) : Math.round(t * 10) / 10;
+          return '~' + r + '<i>$T</i>';
+        };
+        const live = {};
+        function render() {
+          root.innerHTML = '<div class="cmp-strip">' + G.map((g, gi) => {
+            const total = g.fixed || (g.items.every((it) => it.usd === null) ? null : g.items.reduce((a, it) => a + (it.usd || 0), 0));
+            return '<button type="button" class="cmp-g" data-s="' + gi + '" style="--gc:' + g.tone + '" title="' + g.by + '"><kbd>' + g.label + '</kbd><span class="ins">' +
+              g.items.map((it) => '<span class="cmp-i" title="' + it.n + '">' + icon(it.k) + '</span>').join('') +
+              '</span><span class="sum">' + money(total) + '</span></button>';
+          }).join('') + '</div>';
+          root.querySelectorAll('.cmp-g').forEach((el) => {
+            const i = +el.getAttribute('data-s');
+            el.addEventListener('mouseenter', () => { if (document.querySelector('.chapter.active') === el.closest('.chapter')) showSub(i, false); });
+            el.addEventListener('click', () => showSub(i, true));
+          });
+          if (step === 1) showSub(sub, false);
+        }
+        painters.smart = (i) => {
+          root.querySelectorAll('.cmp-g').forEach((el, k) => el.classList.toggle('on', k === i));
+          const el = root.querySelectorAll('.cmp-g')[i];
+          const strip = root.querySelector('.cmp-strip');
+          if (el && strip && strip.scrollWidth > strip.clientWidth + 4) el.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+        };
+        render();
+        // live market caps — fetched after first paint, never on the critical path
+        const ids = G.flatMap((g) => g.items.filter((it) => it.id).map((it) => it.id));
+        const refresh = () => fetch('https://api.coingecko.com/api/v3/simple/price?ids=' + ids.join(',') + '&vs_currencies=usd&include_market_cap=true')
+          .then((r) => r.json())
+          .then((d) => {
+            let n = 0;
+            G.forEach((g) => g.items.forEach((it) => { const v = it.id && d[it.id] && d[it.id].usd_market_cap; if (v > 0) { it.usd = v; live[it.id] = true; n++; } }));
+            if (n) render();
+          }).catch(() => {});
+        if ('requestIdleCallback' in window) requestIdleCallback(refresh, { timeout: 4000 }); else setTimeout(refresh, 1500);
+      })();
+
+      (function genesisCheck() {
+        const root = document.getElementById('gcheck');
+        if (!root) return;
+        const SNAP = 'https://bostrom.network';
+        const $ = (id) => document.getElementById(id);
+        let mode = 'name', LIB = null, HOLD = null, PASS = null, NICK = null;
+        root.querySelectorAll('.gtab').forEach((t) => t.addEventListener('click', () => {
+          mode = t.dataset.m;
+          root.querySelectorAll('.gtab').forEach((x) => x.classList.toggle('on', x === t));
+          root.querySelectorAll('[data-in]').forEach((d) => { d.hidden = d.dataset.in !== mode; });
+          $('g-derived').textContent = ''; $('g-out').innerHTML = ''; $('g-err').textContent = '';
+        }));
+        ['g-name', 'g-addr', 'g-priv'].forEach((id) => $(id).addEventListener('keydown', (e) => { if (e.key === 'Enter') $('g-go').click(); }));
+        $('g-clr').addEventListener('click', () => { ['g-name', 'g-addr', 'g-mnem', 'g-priv'].forEach((id) => { $(id).value = ''; }); $('g-derived').textContent = ''; $('g-out').innerHTML = ''; $('g-err').textContent = ''; });
+        const libs = async () => { if (LIB) return LIB; const v = await import(SNAP + '/vendor.js?v=5'); LIB = { bip39: v.bip39, bip32: v.bip32, secp: v.secp, sha: v.sha, rip: v.rip, base: v.base }; return LIB; };
+        const addrOf = async (pub) => { const { sha, rip, base } = await libs(); const h = rip.ripemd160(sha.sha256(pub)); return base.bech32.encode('bostrom', base.bech32.toWords(h)); };
+        const fromMnemonic = async (m) => { const { bip39, bip32, secp } = await libs(); const seed = await bip39.mnemonicToSeed(m.trim().replace(/\s+/g, ' ')); const hd = bip32.HDKey.fromMasterSeed(seed).derive("m/44'/118'/0'/0/0"); return addrOf(secp.secp256k1.getPublicKey(hd.privateKey, true)); };
+        const fromPriv = async (hex) => { const { secp, base } = await libs(); const pk = base.hex.decode(hex.trim().replace(/^0x/, '').toLowerCase()); return addrOf(secp.secp256k1.getPublicKey(pk, true)); };
+        const fromLedger = async () => { const tp = (await import('https://cdn.jsdelivr.net/npm/@ledgerhq/hw-transport-webusb@6.28.1/+esm')).default; const Cosmos = (await import('https://cdn.jsdelivr.net/npm/@ledgerhq/hw-app-cosmos@6.30.0/+esm')).default; const app = new Cosmos(await tp.create()); return (await app.getAddress("m/44'/118'/0'/0/0", 'bostrom')).address; };
+        const load = async () => {
+          if (HOLD) return HOLD;
+          const [txt, ps] = await Promise.all([fetch(SNAP + '/holdings.jsonl?v=5').then((r) => r.text()), fetch(SNAP + '/passports_by_owner.json?v=5').then((r) => r.json()).catch(() => null)]);
+          PASS = ps; HOLD = {};
+          for (const line of txt.split('\n')) { if (!line.trim()) continue; const r = JSON.parse(line); HOLD[r.address] = r.holdings; }
+          return HOLD;
+        };
+        const N = (x) => Number(x).toLocaleString('en-US');
+        $('g-go').addEventListener('click', async () => {
+          const err = $('g-err'), der = $('g-derived'), out = $('g-out'); err.textContent = ''; out.innerHTML = ''; der.textContent = 'deriving…';
+          try {
+            let addr;
+            if (mode === 'name') { const q = $('g-name').value.trim().toLowerCase(); if (!q) { der.textContent = ''; err.textContent = 'enter a passport name'; return; } der.textContent = 'looking up…'; await load(); if (!NICK) { NICK = {}; for (const o in (PASS || {})) for (const n of PASS[o]) NICK[n.toLowerCase()] = o; } addr = NICK[q]; if (!addr) { der.textContent = ''; err.textContent = 'passport "' + q + '" not found in the snapshot'; return; } }
+            else if (mode === 'addr') addr = $('g-addr').value.trim();
+            else if (mode === 'mnem') addr = await fromMnemonic($('g-mnem').value);
+            else if (mode === 'priv') addr = await fromPriv($('g-priv').value);
+            else addr = await fromLedger();
+            if (!addr || !addr.startsWith('bostrom1')) { der.textContent = ''; err.textContent = 'not a bostrom address'; return; }
+            der.textContent = addr; out.innerHTML = '<p class="ghint">reading the snapshot…</p>';
+            const H = await load(); const rec = H[addr] || {};
+            let tocyb = 0; for (const d in rec) if (rec[d].label === 'TOCYB') tocyb += rec[d].total;
+            const cy = BigInt(Math.round(tocyb)) * X;
+            const whole = cy / CYB, frac = cy % CYB;
+            const shown = whole >= 1000n ? N(whole) : (Number(whole) + Number(frac) / 1e12).toLocaleString('en-US', { maximumFractionDigits: whole > 0n ? 2 : 6 });
+            const nicks = PASS && PASS[addr];
+            out.innerHTML = '<div class="big">' + shown + '<em>CYB</em></div><div class="sub">at the $CYB genesis · ' + N(tocyb) + ' TOCYB × 666 · 1 CYB = 10¹² cy</div>' + (nicks && nicks.length ? '<div class="pass">passport' + (nicks.length > 1 ? 's' : '') + ': ' + nicks.map((n) => '<b>' + n.replace(/</g, '&lt;') + '</b>').join(' · ') + '</div>' : '') + (tocyb ? '' : '<div class="pass">no TOCYB on this address at halt — no CYB at genesis; BOOT and PUSSY do not convert</div>');
+          } catch (e) { der.textContent = ''; err.textContent = String(e.message || e); }
+        });
+      })();
+
+      (function emissionChart() {
+        const el = document.getElementById('emission');
+        if (!el) return;
+        // illustrative power-law emission from the genesis balance to the cap:
+        // M(t) = G + (cap − G)·(1 − (1 + t/τ)^−k). the schedule is not frozen — see the launch page.
+        const tau = 0.33, k = 0.5, years = 20;
+        const p = Number(CAP / CYB);
+        const G0 = 187416;
+        const M = (t) => G0 + (p - G0) * (1 - Math.pow(1 + t / tau, -k));
+        const W = 720, H = 260, L = 36, T = 16, R = 12, B = 32;
+        const pw = W - L - R, ph = H - T - B, N = years + 1, bw = pw / N, gap = Math.max(2, bw * .18);
+        const xc = (i) => L + (i + .5) * bw;
+        const y = (v) => T + (1 - v / p) * ph;
+        const V = []; for (let i = 0; i < N; i++) V.push(i ? M(i) : G0);
+        let bars = '';
+        for (let i = 0; i < N; i++) bars += '<rect class="bar" data-i="' + i + '" x="' + (L + i * bw + gap / 2).toFixed(1) + '" y="' + Math.min(y(V[i]), y(0) - 4).toFixed(1) + '" width="' + (bw - gap).toFixed(1) + '" height="' + Math.max(4, y(0) - y(V[i])).toFixed(1) + '" fill="' + (i ? 'currentColor' : '#00ff01') + '" fill-opacity="' + (i ? '.32' : '1') + '"/>';
+        const ticks = [0, 1, 5, 10, 20];
+        const xt = ticks.map((t) => '<text x="' + xc(t).toFixed(1) + '" y="' + (H - 10) + '" text-anchor="middle" fill="#8a8a8a" font-family="JetBrains Mono,monospace" font-size="11">' + t + 'y</text>').join('');
+        el.innerHTML =
+          '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet">' +
+          '<line x1="' + L + '" y1="' + y(p).toFixed(1) + '" x2="' + (W - R) + '" y2="' + y(p).toFixed(1) + '" stroke="#333" stroke-dasharray="4 4"/>' +
+          bars +
+          '<text x="' + (W - R) + '" y="' + (y(p) - 6).toFixed(1) + '" text-anchor="end" fill="#8a8a8a" font-family="JetBrains Mono,monospace" font-size="11">cap 18.4m</text>' +
+          xt + '</svg>';
+        const svg = el.querySelector('svg'), rects = svg.querySelectorAll('.bar'), cap = document.getElementById('emission-cap');
+        const fmt = (v) => Math.round(v).toLocaleString('en-US');
+        const pct = (v) => (100 * v / p).toFixed(v / p < .1 ? 1 : 0) + ' %';
+        let cur = -1;
+        const show = (i) => {
+          i = Math.max(0, Math.min(years, Math.round(i)));
+          if (i === cur) return; cur = i;
+          rects.forEach((r, k) => { r.setAttribute('fill-opacity', k === i ? '1' : (k ? '.32' : '.55')); });
+          if (!cap) return;
+          if (i === 0) { cap.textContent = 'genesis: ' + fmt(G0) + ' CYB out, ' + pct(G0) + ' of the cap. we are here.'; return; }
+          const infl = 100 * (V[i] - V[i - 1]) / V[i - 1];
+          cap.textContent = 'year ' + i + ': ' + fmt(V[i]) + ' CYB out, ' + pct(V[i]) + ' of the cap. inflation that year ' + (infl >= 100 ? fmt(infl) : infl.toFixed(1)) + ' %.';
+        };
+        const toI = (clientX) => { const r = svg.getBoundingClientRect(); const sx = (clientX - r.left) / r.width * W; return (sx - L) / bw - .5; };
+        svg.addEventListener('mousemove', (e) => show(toI(e.clientX)));
+        svg.addEventListener('touchstart', (e) => { show(toI(e.touches[0].clientX)); }, { passive: true });
+        svg.addEventListener('touchmove', (e) => { show(toI(e.touches[0].clientX)); e.preventDefault(); }, { passive: false });
+        svg.addEventListener('mouseleave', () => show(0));
+        show(0);
+        el.classList.add('live');
+      })();
+
+      (function bagels() {
+        const INK = { '#1700fe': '#8b9cff', '#6b00fe': '#c090ff' };
+        function polar(cx, cy, r, ang) {
+          return [cx + r * Math.cos(ang), cy + r * Math.sin(ang)];
+        }
+        function arcPath(cx, cy, r, a0, a1) {
+          const p0 = polar(cx, cy, r, a0), p1 = polar(cx, cy, r, a1);
+          const large = (a1 - a0) > Math.PI ? 1 : 0;
+          return 'M ' + p0[0].toFixed(2) + ' ' + p0[1].toFixed(2) +
+            ' A ' + r + ' ' + r + ' 0 ' + large + ' 1 ' + p1[0].toFixed(2) + ' ' + p1[1].toFixed(2);
+        }
+        function mount(root, steps, opts) {
+          if (!root) return;
+          const n = steps.length;
+          const R = opts.r;
+          const gap = opts.gap;
+          const sweep = Math.PI * 2 / n;
+          const aStart = -Math.PI / 2;
+          const lr = parseFloat(getComputedStyle(root).getPropertyValue('--r-lab')) || 41;
+          let arcs = '';
+          let labs = '';
+          for (let i = 0; i < n; i++) {
+            const a0 = aStart + i * sweep + gap / 2;
+            const a1 = aStart + (i + 1) * sweep - gap / 2;
+            const mid = (a0 + a1) / 2;
+            const s = steps[i];
+            const x = 50 + lr * Math.cos(mid);
+            const y = 50 + lr * Math.sin(mid);
+            arcs +=
+              '<g class="seg" data-i="' + i + '">' +
+              '<path class="hit" d="' + arcPath(50, 50, R, a0, a1) + '"></path>' +
+              '<path class="arc" d="' + arcPath(50, 50, R, a0, a1) + '" stroke="' + s.color + '"></path>' +
+              '</g>';
+            labs +=
+              '<button type="button" class="bagel-lab" data-i="' + i +
+              '" style="--x:' + x.toFixed(2) + '%;--y:' + y.toFixed(2) + '%;--c:' + (INK[s.color] || s.color) +
+              '" aria-pressed="false">' +
+              '<b>' + s.label + '</b><span>' + s.sub + '</span></button>';
+          }
+          root.innerHTML =
+            '<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">' +
+            '<circle class="track" cx="50" cy="50" r="' + R + '" stroke-width="' + (opts.track || 9) + '"></circle>' +
+            arcs +
+            '</svg>' +
+            '<div class="bagel-hub"><b></b><span></span></div>' +
+            labs;
+          const hubB = root.querySelector('.bagel-hub b');
+          const hubS = root.querySelector('.bagel-hub span');
+          function paint(i) {
+            const s = steps[i];
+            const ink = INK[s.color] || s.color;
+            root.style.setProperty('--seg', ink);
+            root.querySelectorAll('.seg').forEach((el, idx) => el.classList.toggle('on', idx === i));
+            root.querySelectorAll('.bagel-lab').forEach((el, idx) => {
+              const on = idx === i;
+              el.classList.toggle('on', on);
+              el.setAttribute('aria-pressed', on ? 'true' : 'false');
+            });
+            hubB.textContent = s.hub || s.label;
+            hubS.textContent = s.hubSub || s.sub;
+          }
+          function bind(el) {
+            const i = +el.getAttribute('data-i');
+            el.addEventListener('mouseenter', () => showSub(i, false));
+            el.addEventListener('focus', () => showSub(i, false));
+            el.addEventListener('click', () => showSub(i, true));
+          }
+          root.querySelectorAll('.seg, .bagel-lab').forEach(bind);
+          painters[opts.id] = paint;
+          paint(0);
+        }
+
+        mount(document.getElementById('cyb-ring'), [
+          { label: 'fairness', sub: 'split', color: '#00ff01',
+            body: 'A larger population returns here: more minds on the work. Hashrate splits who taught what — no bag required.' },
+          { label: 'finality', sub: 'fold', color: '#00b4ff',
+            body: 'Fair work is useless if it does not stick. Fold packs those proofs into one claim the whole network accepts.' },
+          { label: 'truth', sub: 'stake', color: '#1700fe',
+            body: 'Final settlement is what staking can trust. Capital takes a side because the fold will hold. Idle bags do not mint.' },
+          { label: 'intelligence', sub: 'answers', color: '#6b00fe',
+            body: 'Fair split, final fold, staked truth — denser knowledge. That is answers. Demand follows quality.' },
+          { label: 'revenue', sub: 'use pays', color: '#fe0000',
+            body: 'Intelligence is used. Every move pays 0.1% — a third burns, a third to earners, a third to self.' },
+          { label: 'efficiency', sub: 'GFP', color: '#ff6501',
+            body: 'Revenue buys GFP silicon. The same chip mines and proves — cheaper fairness and cheaper answers next round.' },
+          { label: 'population', sub: 'robots', color: '#ffc501',
+            body: 'Cheaper chips, plus a residual on every robot you ship. Efficiency and referral fill the graph. Then fairness starts again, larger.' }
+        ], { r: 29, gap: 0.08, track: 9, id: 'growing' });
+
+        mount(document.getElementById('cyb-donut'), [
+          { label: 'burn', sub: '⅓ of V', color: '#fe0000', hub: 'burn', hubSub: '⅓ of every move',
+            k: '⅓ BURN',
+            body: 'A dividend to everyone who holds. Empty hops cost; remaining units worth more.' },
+          { label: 'earners', sub: '⅓ of V', color: '#00ff01', hub: 'earners', hubSub: '⅓ of every move',
+            k: '⅓ EARNERS',
+            body: 'Value to those who create it — miners and stakers, the slow replacement of inflation.' },
+          { label: 'self', sub: '⅓ of V', color: '#6b00fe', hub: 'self', hubSub: '⅓ of every move',
+            k: '⅓ SELF',
+            body: 'Public good the cybergraph names. Spent by the protocol neuron on what the graph infers is worth doing.' }
+        ], { r: 33, gap: 0.06, track: 16, id: 'alive' });
+
+        const start = parseRoute();
+        go(start.i, false, start.s);
+      })();
+    })();
+  </script>
+</body>
+</html>
