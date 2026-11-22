@@ -87,8 +87,7 @@ parameter tables remain with their component/domain owners.
 | Tip / clock C and finality evidence | `foculus/src/tip.rs`, `finality_evidence.rs` |
 | Pay proof | `foculus/src/pay_proof.rs` |
 | Native signed adapter | `soft3/crate/src/node/` |
-| Product executable | `cyber/src/main.rs` |
-| Native client | `true-cyber/src/` |
+| Client executable | `cyber/src/main.rs`, the package `true-cyber` (binary `cyber`); the node is `cybernode` |
 | Robot commands | `cy neuron`, `cy task`, `cy notes`; local money development commands |
 
 The development `cy fund/balance/send/events/sense/finalize` path exercises

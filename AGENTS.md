@@ -15,11 +15,14 @@
   `docs:`, `test:`, `chore:`.
 ## Knowledge Graph Purpose
 
-This repository owns the cyber product binary and the seed knowledge base
-for planetary superintelligence. `src/` contains product orchestration;
-component algorithms remain in sibling repositories. `Cargo.toml` consumes
-the soft3 assembly library. `specs/node-product.md` and `specs/cyb-node.md`
-describe the current runtime boundary and integration contract. Pages
+This repository is the cargo package `true-cyber` and the seed knowledge base
+for planetary superintelligence. `src/` is the client `cyber`, the command
+line of a neuron: transfer, cyberlink, claim (`docs/client.md`); its history
+came from the repository `true-cyber` on 2026-11-22. `Cargo.toml` names only
+the client's files in `include`, so the package never carries the graph. The
+node is `cybernode`; `specs/node-product.md`, `specs/cyb-node.md` and
+`specs/cli.md` describe the launcher that lived in `src/` before and left
+that day. Pages
 are pure markdown with YAML frontmatter. The publisher is
 [optica](https://github.com/cyberia-to/optica) — a standalone knowledge
 graph publisher.

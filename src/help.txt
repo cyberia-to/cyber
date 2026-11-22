@@ -1,0 +1,26 @@
+cyber — the phase-1 root chain client (soft3/specs/chain.md)
+
+  cyber status                              chain, chain id, height, tip, root
+  cyber balance [OWNER] [--token T]         native balance of OWNER (default: you)
+  cyber balances [OWNER]                    every token of OWNER
+  cyber nonce [NEURON]                      next nonce (mempool-aware)
+  cyber tip | block HEIGHT|ID | history [--after N] [--limit N]
+  cyber tx transfer TO AMOUNT [--token T]   move AMOUNT of T (default pussy) to TO
+  cyber tx link P Q [--valence -1|0|1]      cyberlink P -> Q (amount 0 in rule set 1)
+  cyber tx claim                            move an address-only genesis balance to your neuron
+  cyber tx show TXID                        mempool | included {height, block}
+  cyber neuron [new]                        your neuron, pubkey, address, account id
+  cyber fees | version | help
+
+tx options:  --fee N (default: the floor, 1 unit per byte)  --nonce N (default: ask the node)
+             --wait SECS (default 120)  --no-wait  --json
+node:        --rpc URL (default https://cyb.ai/pussy; env CYBER_RPC)
+             --chain-id HEX (pin; default: the node's /status genesis field; env CYBER_CHAIN_ID)
+key:         --spell FILE (env CYBER_SPELL; default $CYBER_HOME/spell, ~/.cyber/spell,
+             then cyb's ~/cyb/spell or ~/cyb/mnemonic)   --hrp pussy|bostrom (address display)
+
+OWNER, TO, P, Q are 64 hex digits, or a text label hashed with hemera. T is a denom
+(pussy, boot, hydrogen) or 64 hex digits. Every tx is signed with mudra NSIG1 over
+hemera("soft3/chain/sign/v1\0" || chain || tx) — the chain id is in the signature,
+so nothing signed for pussy is valid on bostrom. A snapshot holder whose pubkey the
+old chain saw signs with the same words; an address-only account needs `tx claim`.
