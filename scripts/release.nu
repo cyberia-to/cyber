@@ -29,12 +29,11 @@ def main [--locked-sources, --previous-binary: string = ""] {
     let extension = if $nu.os-info.name == "windows" { ".exe" } else { "" }
     let binary = ($metadata.target_directory | path join $"release/cyber($extension)")
     with-env {CYBER_TEST_BINARY: $binary} {
-        ^cargo test --locked --test node
+        ^cargo test --locked --test chain_client
         if $env.LAST_EXIT_CODE != 0 { error make {msg: "release binary integration failed"} }
     }
     if $previous != null {
-        ^cargo run --locked --example node_storage_compat -- $previous $binary
-        if $env.LAST_EXIT_CODE != 0 { error make {msg: "previous-writer compatibility failed"} }
+        error make {msg: "previous-writer compatibility was the launcher's check; the launcher left on 2026-11-22 and the node is cybernode"}
         if (open --raw $previous | hash sha256) != $previous_sha256 {
             error make {msg: "previous binary changed during compatibility qualification"}
         }

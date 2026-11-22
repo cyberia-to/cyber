@@ -1,32 +1,36 @@
+# ---
+# tags: cyber, cli, config
+# crystal-type: source
+# crystal-domain: cyber
+# ---
+# true-cyber — product CLI. cargo install true-cyber → binary `cyber`
 [package]
 name = "true-cyber"
 version = "0.8.0"
 edition = "2021"
-rust-version = "1.95"
-description = "Cyber node and local cyb integration over soft3"
-repository = "https://github.com/cyberia-to/cyber"
+description = "cyber — the phase-1 root chain client: transfer, cyberlink, claim over soft3"
 license-file = "LICENSE"
-publish = false
+repository = "https://github.com/cyberia-to/cyber"
+homepage = "https://cyber.page"
+readme = "docs/client.md"
+# the repository is the graph of cyber; the package is only the client
+include = ["Cargo.toml", "Cargo.lock", "LICENSE", "docs/client.md", "src/**", "tests/**", "tools.toml"]
+keywords = ["cyber", "soft3", "chain", "wallet", "cli"]
+categories = ["command-line-utilities"]
+rust-version = "1.95"
 
 [[bin]]
 name = "cyber"
 path = "src/main.rs"
 
 [dependencies]
-soft3 = { path = "../soft3/crate", version = "0.10.0" }
-clap = { version = "4", features = ["derive"] }
-serde = { version = "1", features = ["derive"] }
+# The chain client is soft3::wallet; this binary is the command line around it.
+soft3 = { version = "0.10", path = "../soft3/crate" }
 serde_json = "1"
-toml = "0.8"
-fs2 = "0.4"
-ureq = { version = "2", default-features = false, features = ["tls", "json"] }
 
 [dev-dependencies]
 tempfile = "3"
-cybergraph = { path = "../cybergraph", features = ["local-storage"] }
-foculus = { path = "../foculus", default-features = false }
-hemera = { package = "cyber-hemera", path = "../hemera/rs" }
-mudra = { package = "cyber-mudra", path = "../mudra", default-features = false }
-neuron-model = { path = "../neuron/model", default-features = false, features = ["serde"] }
+hemera = { package = "cyber-hemera", version = "0.3", path = "../hemera/rs" }
 
+# the package stands alone: the graph around it is no workspace
 [workspace]
