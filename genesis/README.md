@@ -15,7 +15,7 @@ How block 0 of cyber is made, in four files.
 | [graph.toml](graph.toml) | the starting graph: empty |
 | [genesis.lock](genesis.lock) | the result, by digest: not built yet |
 
-cyber differs from its two elder networks in one thing: it buries no chain. pussy and bostrom carry the balances and the cyberlinks of the chains they are reborn from. cyber starts empty and reads them: a holder of TOCYB proves the balance in the state of bostrom and mints CYB here.
+cyber differs from its two elder networks in one thing: it buries no chain. [[space pussy]] and [[bostrom]] carry the balances and the cyberlinks of the chains they are reborn from. cyber starts empty and reads them: a holder of [[$TOCYB]] proves the balance in the state of bostrom and mints [[cyber/$CYB|CYB]] here. What is minted and what it is for: [[docs/economics|the economy of CYB]].
 
 ## what is missing before it can be built
 

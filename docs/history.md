@@ -21,7 +21,7 @@ The history of cyber is the road of the two networks that carry its promise: it 
 
 ## the promise
 
-TOCYB said one thing: hold it, and receive CYB when the network arrives. 30 % of it entered the genesis of 2021 and 70 % stayed in the gift that was never fully claimed. It is carried into the new bostrom unchanged, and at the genesis of cyber every TOCYB claims 666 CYB.
+TOCYB said one thing: hold it, and receive CYB when the network arrives. 30 % of it entered the genesis of 2021 and 70 % stayed in the gift that was never fully claimed. It is carried into the new bostrom unchanged, and at the genesis of cyber every TOCYB claims 666 [[cyber/$CYB|CYB]]. The rules that mint it: [[genesis/README|the genesis of cyber]].
 
 ## the order
 
@@ -29,6 +29,8 @@ pussy first, as the canary; bostrom, the bootloader; cyber last. The two elder n
 
 ## this repository
 
-The repository cyber is three things at once: the graph of the protocol behind cyber.page, the cargo package `true-cyber` with the client `cyber`, and, by this layout, the network repository of cyber. For a time the package and the network lived in a repository of their own, true-cyber; they came home on 2026-11-22.
+The repository cyber is three things at once: the graph of the protocol behind cyber.page, the cargo package `true-cyber` with the client `cyber` ([[docs/run-a-node|run a node of cyber]]), and, by this layout, the network repository of cyber. For a time the package and the network lived in a repository of their own, true-cyber; they came home on 2026-11-22.
+
+What the coin is for: [[docs/economics|the economy of CYB]], and the three coins beside it, [[tokens]].
 
 More of the road: the history of [bostrom](https://github.com/cyberia-to/bostrom/blob/main/docs/history.md) and of [space-pussy](https://github.com/cyberia-to/space-pussy/blob/main/docs/history.md).

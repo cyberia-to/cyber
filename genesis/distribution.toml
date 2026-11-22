@@ -7,8 +7,7 @@ rate = 666                                    # every tocyb becomes 666 CYB
 once = true                                   # a balance is claimed once
 
 [supply]
-genesis_supply = "nothing: block 0 carries no balance"
-value = "0"                                   # the integer the lock carries, genesis/genesis.lock [contents]
+genesis_supply = "0"                          # nothing: block 0 carries no balance. The same integer the lock carries, genesis/genesis.lock [contents]
 claimable = "187416084623451570"              # 281,405,532,467,645 tocyb at the halt of bostrom, times 666: about 1 % of the cap
 cap = "18446744069414584321"                  # the order of the Goldilocks field
 

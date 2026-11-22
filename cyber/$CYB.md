@@ -45,7 +45,7 @@ Cap is arithmetic, not a governance vote. On the [[bootloader]] ([[bostrom]]) th
 
 ## genesis
 
-Block 0 carries no balance: CYB is minted by claims. Every [[$TOCYB]] of [[bostrom]] claims 666 CYB, so 187,416,084,623,451,570 CYB ≈ 1% of p (281,405,532,467,645 snapshot × 666) is claimable — a holder proves the balance in the proven state of bostrom and mints here. Continuity of prior stake into the soft3 field; remaining mass is reserved for the emission schedule. The rules are `genesis/` of this repository
+Block 0 carries no balance: CYB is minted by claims. Every [[$TOCYB]] of [[bostrom]] claims 666 CYB, so 187,416,084,623,451,570 CYB ≈ 1% of p (281,405,532,467,645 snapshot × 666) is claimable — a holder proves the balance in the proven state of bostrom and mints here. Continuity of prior stake into the soft3 field; remaining mass is reserved for the emission schedule. The rules are `genesis/` of this repository, [[genesis/README|the genesis of cyber]]; what the money is for is [[docs/economics|the economy of CYB]]
 
 ## emission
 
