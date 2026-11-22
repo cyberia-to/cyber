@@ -1,3 +1,9 @@
+---
+title: the genesis of cyber
+tags: cyber, genesis
+crystal-type: article
+crystal-domain: cyber
+---
 # genesis
 
 How block 0 of cyber is made, in four files.

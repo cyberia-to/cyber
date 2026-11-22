@@ -21,7 +21,7 @@ scheme = "hash"                  # hash-based only (soft3 projects/network-repos
 
 [emission]
 # the cap is arithmetic: the order of the Goldilocks field. The schedule is a function of the
-# network's age alone; who receives it is a function of focus. Proposed: https://cyber.page/cyber/$cyb/
+# network's age alone; who receives it is a function of focus. Proposed: cyber/$CYB.md
 cap = "18446744069414584321"     # p = 2^64 - 2^32 + 1
 schedule = "M(t) = p * (1 - (1 + t / tau)^(-k))"
 tau_years = "0.33"

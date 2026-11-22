@@ -14,7 +14,8 @@ block0_id = ""
 state_root = ""
 
 [contents]
-genesis_supply = "0"             # block 0 carries no balance; 187416084623451570 CYB is claimable
+genesis_supply = "0"             # block 0 carries no balance
+claimable = "187416084623451570" # what every tocyb of bostrom claims, genesis/distribution.toml
 balance_frames = 0
 link_frames = 0
 

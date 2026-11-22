@@ -7,7 +7,7 @@ crystal-domain: cyber
 ---
 # the history of cyber
 
-cyber has no first life to bury. Its history is the road of the two networks that carry its promise.
+The history of cyber is the road of the two networks that carry its promise: it starts empty, with no first life to bury.
 
 | when | what |
 |---|---|
@@ -15,13 +15,13 @@ cyber has no first life to bury. Its history is the road of the two networks tha
 | 2018 | the euler network puts a rank over a graph inside consensus; its tokens are test tokens |
 | 2021-11-05 | bostrom begins as the bootloader. Its genesis distributes two tokens by one structure: BOOT, the coin of the bootloader, and TOCYB, the promise of the coin of cyber |
 | 2022 | space-pussy begins beside it |
-| 2026-06-14 | space-pussy is halted at height 19,940,993 |
+| 2026-06-14 | space-pussy is halted at height 19,940,993, at 08:36:41 UTC ([the old chain](https://github.com/cyberia-to/space-pussy/blob/main/docs/the-old-chain.md), space-pussy `genesis/sources.toml`) |
 | 2026-08-05 | bostrom is halted at height 25,120,712 with 281,405,532,467,645 TOCYB in its bank |
 | 2026-08-28 | both states are buried, every file pinned |
 
 ## the promise
 
-TOCYB said one thing: hold it, and receive CYB when the network arrives. 30 % of it entered the genesis of 2021 and 70 % stayed in the gift that was never fully claimed. It is carried into the new bostrom unchanged, and at the genesis of cyber every TOCYB becomes 666 CYB.
+TOCYB said one thing: hold it, and receive CYB when the network arrives. 30 % of it entered the genesis of 2021 and 70 % stayed in the gift that was never fully claimed. It is carried into the new bostrom unchanged, and at the genesis of cyber every TOCYB claims 666 CYB.
 
 ## the order
 

@@ -7,11 +7,11 @@ crystal-domain: economics
 ---
 # the economy of CYB
 
-What CYB is for, what is proposed and what is still open. Nothing of it runs: cyber is not launched and the node knows no network by that name.
+What CYB is for, what is proposed and what is still open. All of it is on paper: cyber launches in phase 3, and the node learns the network then.
 
 ## the job
 
-CYB is the coin of cyber, the root money. It is one of three coins with three jobs ([tokens](https://cyber.page/tokens/)):
+CYB is the coin of cyber, the root money. It is one of three coins with three jobs ([[tokens]]):
 
 | | CYB | BOOT | PUSSY |
 |---|---|---|---|
@@ -23,16 +23,16 @@ cyber arrives last, after pussy and bostrom have proven the machine. Its money m
 
 ## running
 
-Nothing. The promise of CYB runs instead: TOCYB, a token of bostrom, carried into the genesis of the new bostrom unchanged.
+The promise of CYB runs, and CYB itself does not yet: TOCYB, a token of bostrom, carried into the genesis of the new bostrom unchanged.
 
 ## proposed
 
-The full text with its charts: [CYB](https://cyber.page/cyber/$cyb/).
+The full text with its charts: [[cyber/$CYB|CYB]].
 
 | | proposed |
 |---|---|
 | the cap | p = 2⁶⁴ − 2³² + 1 = 18,446,744,069,414,584,321, the order of the Goldilocks field: arithmetic, with no vote over it |
-| the supply at genesis | 187,416,084,623,451,570 CYB, about 1 % of the cap: every TOCYB at the halt of bostrom, 281,405,532,467,645, times 666 |
+| the supply at block 0 | nothing: block 0 carries no balance. 187,416,084,623,451,570 CYB, about 1 % of the cap, is claimable: every TOCYB at the halt of bostrom, 281,405,532,467,645, times 666 |
 | how it enters | by claims: a holder proves the TOCYB balance in the state of bostrom and mints CYB |
 | emission | by the network's age alone: M(t) = p · (1 − (1 + t/τ)^−k), τ = 0.33 year, k = 0.5; no steps and no halvings; about half of the cap in the first year |
 | who receives it | work: mining and active stake, split by how much is staked; a passive stake earns rank and no income |

@@ -223,4 +223,4 @@ This repository is also the network repository of cyber, in the layout of cybern
 - `site/` — cyb.money: static files, no build, no Node. `landing/` is cyber.page and is another thing
 - `docs/history.md`, `docs/economics.md`, `docs/run-a-node.md` — the three pages every network repository carries
 
-Nothing of cyber runs. A file here never says otherwise: a value is decided, proposed or open, and says which. `docs/economics.md` follows `cyber/$CYB.md`; a figure changes there first. `genesis/genesis.lock` is written by the first build, with a receipt in `audit/` of two independent builds.
+Every file here describes a network on paper: cyber launches in phase 3 and nothing of it runs yet. A file here says as much: a value is decided, proposed or open, and says which. `docs/economics.md` follows `cyber/$CYB.md`; a figure changes there first. `genesis/genesis.lock` is written by the first build, with a receipt in `audit/` of two independent builds.

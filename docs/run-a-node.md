@@ -6,7 +6,7 @@ crystal-domain: cyber
 ---
 # run a node of cyber
 
-There is no node of cyber to run: the network is not launched and [cybernode](https://github.com/cyberia-to/cybernode) knows no network by that name.
+A node of cyber is raised in phase 3, when the network launches and [cybernode](https://github.com/cyberia-to/cybernode) carries it: today the binary knows no network by that name, so there is nothing of cyber to run.
 
 What can be run today:
 

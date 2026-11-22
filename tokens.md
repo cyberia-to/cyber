@@ -21,7 +21,7 @@ figures marked *proposed* are the 2026-09-27 proposal for the 2026-11-05 launch 
 | purpose ¹ | hard money | small kernel | fast growth |
 | launch | phase 3 | 11-05 13:22:42 UTC | 11-05 13:37 UTC |
 | job | root money | bootloader | community |
-| genesis supply | 1.87 × 10¹⁷ ² | 482.3T ³ | 10¹⁸ ³ |
+| genesis supply | 0; 1.87 × 10¹⁷ claimable ² | 482.3T ³ | 10¹⁸ ³ |
 | cap | field order p | policy | none |
 | ΔS_E | ultrasound | up once | up for years |
 | emission ⁴ | by time | 3× base, year 1 | 9× base, year 1 |
@@ -39,7 +39,7 @@ figures marked *proposed* are the 2026-09-27 proposal for the 2026-11-05 launch 
 | parameters | fixed | fixed | vote |
 
 1. why three economies and not one. cyber's money must be as hard as arithmetic, so its emission is fixed by time and its cap by the field; nothing may be tried on it. the kernel has the opposite need: a graph that must fit in a device and stay clean, and a founder's majority that must be diluted by work, so it burns for space, caps stake weight and mints once, fast. the community must grow faster than it decays, so it locks instead of burning, mints for years and prices registration low. one policy cannot hold all three signs of ΔS at once; three coins can, and the root fee is the only bond between them.
-2. the cap of cyber is the Goldilocks field order p = 2⁶⁴ − 2³² + 1. genesis: every tocyb × 666, ≈ 1 % of the cap; the promise of the bootloader resolved.
+2. the cap of cyber is the Goldilocks field order p = 2⁶⁴ − 2³² + 1. block 0 of cyber carries no balance: every tocyb claims 666 CYB, ≈ 1 % of the cap claimable; the promise of the bootloader resolved.
 3. at halt, bonded uniformly from the snapshot; milliampere and millivolt counted in the bond.
 4. *proposed.* emission goes only to work: settlement mining (§7), the subsidy (§8) and the annuity; pussy also pays for serving bytes by particle. bostrom mints 3× the halt base in the first year, half of it in the first quarter, then nothing: it dilutes the founder's ≈ 60 % without touching a balance, because passive stake earns rank and never income (§9), and emission goes only to work (mining §7, subsidy §8, annuity). pussy mints 9× the halt base in the first year, then halves each year to a floor of 3 %/yr: a community chain can afford what the root money cannot. cyber's emission is a function of time alone; who receives it is a function of φ*.
 5. *proposed.* weight in rank and consensus per neuron: √-stake on cyber and pussy, a hard cap of 5 % of effective stake on the kernel. owning 60 % never weighs 60 %.
@@ -62,7 +62,7 @@ the idea arrived in 2016 as cyberChain. the euler network put pagerank inside co
 | [[bootloader/tokens/$H|$H]] | `hydrogen` | liquid staking derivative and the everyday unit; burned to mint &#36;V and &#36;A | 305,452,862,328,021 |
 | [[bootloader/tokens/$V|$V]] | `millivolt` | will, bandwidth: a cyberlink burned &#36;V at the dynamic bandwidth price; price doubled every 4B ever minted | 2,182,319,343 |
 | [[bootloader/tokens/$A|$A]] | `milliampere` | focus: weighted a neuron's links in the GPU diffusion; never burned by linking; price doubled every 32B | 13,889,231,915 |
-| [[bootloader/tokens/$TOCYB|$TOCYB]] | `tocyb` | the promise: hold tocyb, receive &#36;CYB when the network arrives; 30 % entered genesis, 70 % stayed unallocated | 281,405,532,467,645 → × 666 = &#36;CYB genesis |
+| [[bootloader/tokens/$TOCYB|$TOCYB]] | `tocyb` | the promise: hold tocyb, receive &#36;CYB when the network arrives; 30 % entered genesis, 70 % stayed unallocated | 281,405,532,467,645 → × 666 = &#36;CYB claimable |
 | [[bostrom/root/lithium|$LI]] | cw-20 | the late gateway token: 1 peta, stepped-decay emission, 1 % burn per transfer, 10 % to referrals | — |
 
 distribution at genesis followed one structure for &#36;BOOT and &#36;TOCYB: [[cybergift]] 70 %, [[cybercongress]] 11.6 %, epizode zero community 8.3 %, senate 5.1 %, great web foundation 5 %. most of the gift stayed parked in multisigs through the five years (the ledger is [[finalization of $BOOT distribution]]: 603T &#36;BOOT and 700T &#36;TOCYB in the gift multisig, 148T claimed through prog), which is why control of the majority of &#36;BOOT ended with the founder, and why the bootloader's first job after rebirth is to dilute that by work.
